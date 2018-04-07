@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class TicketListViewController: ViewController {
 
@@ -24,8 +25,31 @@ class TicketListViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.tickets.bind(to: tableView.rx.items(cellIdentifier: "TicketCollapsedTableViewCell", cellType: TicketCollapsedTableViewCell.self)) { index, viewModel, cell in
-            cell.stationsLabel.text = viewModel.sourceName
-        }.disposed(by: disposeBag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>(configureCell: { dataSource, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCollapsedTableViewCell", for: indexPath) as! TicketCollapsedTableViewCell
+            cell.dateLabel.text = item.dateText
+            cell.routeLabel.text = item.routeText
+            return cell
+        })
+        let sections = viewModel.tickets.map { $0.map { SectionModel(model: "123", items: [$0]) } }
+        sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.tableFooterView = UIView()
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension TicketListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 10.0))
+        view.backgroundColor = UIColor.clear
+        //view.backgroundColor = UIColor.red
+        return view
     }
 }

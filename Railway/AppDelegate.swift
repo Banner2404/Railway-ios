@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        window?.rootViewController = TicketListViewController.loadFromStoryboard(viewModel: TicketListViewModel())
+        let rootController = TicketListViewController.loadFromStoryboard(viewModel: TicketListViewModel())
+        let navigationController = UINavigationController(rootViewController: rootController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }

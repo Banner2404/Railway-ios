@@ -10,5 +10,16 @@ import UIKit
 
 class TicketCollapsedTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var stationsLabel: UILabel!
+    @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var routeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+    }
+    
+    private func setup() {
+        mainView.layer.cornerRadius = 10.0
+    }
 }

@@ -11,10 +11,21 @@ import RxSwift
 import RxCocoa
 
 class TicketViewModel {
+
+    var routeText: String
+    var dateText: String
     
-    var sourceName: String
-    
+    private static var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, d MMMM, yyyy h:mm"
+        return dateFormatter
+    }()
+
     init(_ ticket: Ticket) {
-        sourceName = ticket.sourceStation.name
+        let sourceName = ticket.sourceStation.name
+        let destinationName = ticket.destinationStation.name
+        routeText = sourceName + " - " + destinationName
+        dateText = TicketViewModel.dateFormatter.string(from: ticket.departure)
+        
     }
 }
