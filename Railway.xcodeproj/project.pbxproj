@@ -3,25 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D12BEBBD207934ED0044F6F1 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
+		D12BEBC0207936A10044F6F1 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */; };
+		D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
-		D1DBE71420741A06000587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71320741A06000587C8 /* ViewController.swift */; };
 		D1DBE71720741A06000587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71520741A06000587C8 /* Main.storyboard */; };
 		D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71A20741A07000587C8 /* LaunchScreen.storyboard */; };
+		D1DBE72420741BB1000587C8 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72320741BB1000587C8 /* Ticket.swift */; };
+		D1DBE72620741C20000587C8 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72520741C20000587C8 /* Station.swift */; };
+		D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72720741C92000587C8 /* TicketListViewController.swift */; };
+		D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72B20741CF8000587C8 /* ViewController.swift */; };
+		D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */; };
+		EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.release.xcconfig"; sourceTree = "<group>"; };
+		59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.debug.xcconfig"; sourceTree = "<group>"; };
+		D12BEBBC207934ED0044F6F1 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
+		D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCollapsedTableViewCell.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1DBE71320741A06000587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D1DBE71620741A06000587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1DBE71820741A07000587C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1DBE71B20741A07000587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1DBE71D20741A07000587C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1DBE72320741BB1000587C8 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		D1DBE72520741C20000587C8 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		D1DBE72720741C92000587C8 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
+		D1DBE72B20741CF8000587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
+		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +47,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D12BEBBB207934860044F6F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1DBE72320741BB1000587C8 /* Ticket.swift */,
+				D1DBE72520741C20000587C8 /* Station.swift */,
+				D12BEBBC207934ED0044F6F1 /* Place.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D12BEBBE207936890044F6F1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */,
+				D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D12BEBC12079389E0044F6F1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1DBE72B20741CF8000587C8 /* ViewController.swift */,
+				D1DBE72720741C92000587C8 /* TicketListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D12BEBC2207938E50044F6F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D1DBE70520741A06000587C8 = {
 			isa = PBXGroup;
 			children = (
 				D1DBE71020741A06000587C8 /* Railway */,
 				D1DBE70F20741A06000587C8 /* Products */,
+				E0396B275D6BBF7FE0DB7C48 /* Pods */,
+				E110037B107136DD757F6919 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +112,33 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE71120741A06000587C8 /* AppDelegate.swift */,
-				D1DBE71320741A06000587C8 /* ViewController.swift */,
+				D12BEBBB207934860044F6F1 /* Models */,
+				D12BEBBE207936890044F6F1 /* ViewModels */,
+				D12BEBC2207938E50044F6F1 /* Views */,
+				D12BEBC12079389E0044F6F1 /* ViewControllers */,
 				D1DBE71520741A06000587C8 /* Main.storyboard */,
 				D1DBE71820741A07000587C8 /* Assets.xcassets */,
 				D1DBE71A20741A07000587C8 /* LaunchScreen.storyboard */,
 				D1DBE71D20741A07000587C8 /* Info.plist */,
 			);
 			path = Railway;
+			sourceTree = "<group>";
+		};
+		E0396B275D6BBF7FE0DB7C48 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */,
+				484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E110037B107136DD757F6919 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +148,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1DBE72020741A07000587C8 /* Build configuration list for PBXNativeTarget "Railway" */;
 			buildPhases = (
+				4E086722840C194ECD999425 /* [CP] Check Pods Manifest.lock */,
 				D1DBE70A20741A06000587C8 /* Sources */,
 				D1DBE70B20741A06000587C8 /* Frameworks */,
 				D1DBE70C20741A06000587C8 /* Resources */,
+				35EC9A7E4F070911FE4DDA85 /* [CP] Embed Pods Frameworks */,
+				E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,11 +176,12 @@
 				TargetAttributes = {
 					D1DBE70D20741A06000587C8 = {
 						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = D1DBE70920741A06000587C8 /* Build configuration list for PBXProject "Railway" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -130,13 +211,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		35EC9A7E4F070911FE4DDA85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E086722840C194ECD999425 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Railway-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D1DBE70A20741A06000587C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1DBE71420741A06000587C8 /* ViewController.swift in Sources */,
+				D12BEBC0207936A10044F6F1 /* TicketViewModel.swift in Sources */,
+				D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */,
+				D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */,
+				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
+				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
+				D1DBE72620741C20000587C8 /* Station.swift in Sources */,
+				D12BEBBD207934ED0044F6F1 /* Place.swift in Sources */,
+				D1DBE72420741BB1000587C8 /* Ticket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,22 +414,19 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		D1DBE72120741A07000587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Railway/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +436,12 @@
 		};
 		D1DBE72220741A07000587C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Railway/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
