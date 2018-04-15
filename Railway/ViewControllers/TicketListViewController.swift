@@ -31,11 +31,21 @@ class TicketListViewController: ViewController {
             cell.routeLabel.text = item.routeText
             return cell
         })
-        let sections = viewModel.tickets.map { $0.map { SectionModel(model: "123", items: [$0]) } }
+        let sections = viewModel.tickets.map { $0.map { SectionModel(model: "", items: [$0]) } }
         sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView()
+        tableView.rx.itemSelected
+            .map { self.viewModel.ticketViewModel(at: $0.section) }
+            .subscribe(onNext: { viewModel in
+                self.showDetails(with: viewModel)})
+            .disposed(by: disposeBag)
+    }
+    
+    private func showDetails(with viewModel: TicketDetailsViewModel) {
+        let detailController = TicketDetailsViewController.loadFromStoryboard(viewModel)
+        navigationController?.pushViewController(detailController, animated: true)
     }
 }
 

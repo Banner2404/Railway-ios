@@ -13,10 +13,13 @@ import RxCocoa
 class TicketListViewModel {
     
     var tickets: Observable<[TicketViewModel]> {
-        return ticketsRelay.asObservable()
+        return ticketViewModelRelay.asObservable()
     }
-    private var ticketsRelay = BehaviorRelay<[TicketViewModel]>(value: [])
+    
+    private var ticketViewModelRelay = BehaviorRelay<[TicketViewModel]>(value: [])
+    private var ticketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager
+    private let disposeBag = DisposeBag()
     
     init(databaseManager: DatabaseManager) {
         self.databaseManager = databaseManager
@@ -28,7 +31,15 @@ class TicketListViewModel {
 //        databaseManager.create(ticketOne)
 //        databaseManager.create(ticketTwo)
         let tickets = databaseManager.loadTickets()
-        
-        ticketsRelay.accept(tickets.map { TicketViewModel($0) })
+        ticketsRelay
+            .map { $0.map { TicketViewModel($0)} }
+            .bind(to: ticketViewModelRelay)
+            .disposed(by: disposeBag)
+        ticketsRelay.accept(tickets)
+    }
+    
+    func ticketViewModel(at index: Int) -> TicketDetailsViewModel {
+        let ticket = ticketsRelay.value[index]
+        return TicketDetailsViewModel(ticket)
     }
 }
