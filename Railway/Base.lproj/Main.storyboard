@@ -214,6 +214,7 @@
                         <outlet property="dateLabel" destination="Xfh-Sl-U2u" id="d6v-db-apV"/>
                         <outlet property="departureLabel" destination="WnY-XQ-eZr" id="gee-3v-bgj"/>
                         <outlet property="stationsLabel" destination="48q-Hm-EOc" id="SCv-FB-M2S"/>
+                        <outlet property="ticketsStackView" destination="2DM-Kd-z1C" id="kjn-HF-djb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unc-AV-vg9" userLabel="First Responder" sceneMemberID="firstResponder"/>

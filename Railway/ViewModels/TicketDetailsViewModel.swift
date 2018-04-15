@@ -14,11 +14,13 @@ class TicketDetailsViewModel {
     let departureTimeText: String
     let arrivalTimeText: String
     let dateText: String
+    let places: [PlaceViewModel]
     
     init(_ ticket: Ticket) {
         stationsText = "\(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
         departureTimeText = DateFormatters.shortTime.string(from: ticket.departure)
         arrivalTimeText = DateFormatters.shortTime.string(from: ticket.arrival)
         dateText = DateFormatters.longDate.string(from: ticket.departure)
+        places = ticket.places.map { PlaceViewModel($0) }
     }
 }

@@ -15,6 +15,7 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var ticketsStackView: UIStackView!
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadFromStoryboard() as TicketDetailsViewController
@@ -32,5 +33,11 @@ class TicketDetailsViewController: ViewController {
         departureLabel.text = viewModel.departureTimeText
         arrivalLabel.text = viewModel.arrivalTimeText
         dateLabel.text = viewModel.dateText
+        for place in viewModel.places {
+            let view = PlaceView()
+            view.carriageLabel.text = place.carriageText
+            view.seatLabel.text = place.seatText
+            ticketsStackView.addArrangedSubview(view)
+        }
     }
 }

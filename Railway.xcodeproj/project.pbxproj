@@ -21,6 +21,10 @@
 		D133E9762083C31400D007F4 /* TicketDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9752083C31400D007F4 /* TicketDetailsViewController.swift */; };
 		D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9792083CC1900D007F4 /* TicketDetailsViewModel.swift */; };
 		D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
+		D133E97F2083D3A400D007F4 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
+		D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
+		D133E9842083D63D00D007F4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
+		D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9852083D90100D007F4 /* PlaceViewModel.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
 		D1DBE71720741A06000587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71520741A06000587C8 /* Main.storyboard */; };
 		D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
@@ -50,6 +54,10 @@
 		D133E9752083C31400D007F4 /* TicketDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsViewController.swift; sourceTree = "<group>"; };
 		D133E9792083CC1900D007F4 /* TicketDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketDetailsViewModel.swift; sourceTree = "<group>"; };
 		D133E97C2083CC9B00D007F4 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
+		D133E97E2083D3A400D007F4 /* PlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceView.xib; sourceTree = "<group>"; };
+		D133E9802083D5CF00D007F4 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		D133E9832083D63D00D007F4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D133E9852083D90100D007F4 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1DBE71620741A06000587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 				D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */,
 				D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */,
 				D133E9792083CC1900D007F4 /* TicketDetailsViewModel.swift */,
+				D133E9852083D90100D007F4 /* PlaceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -113,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */,
+				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
+				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,6 +139,14 @@
 				D133E96C2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D133E9822083D62E00D007F4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D133E9832083D63D00D007F4 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D1DBE70520741A06000587C8 = {
@@ -153,6 +172,7 @@
 			children = (
 				D1DBE71120741A06000587C8 /* AppDelegate.swift */,
 				D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */,
+				D133E9822083D62E00D007F4 /* Extensions */,
 				D12BEBBB207934860044F6F1 /* Models */,
 				D12BEBBE207936890044F6F1 /* ViewModels */,
 				D12BEBC2207938E50044F6F1 /* Views */,
@@ -246,6 +266,7 @@
 			files = (
 				D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */,
 				D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */,
+				D133E97F2083D3A400D007F4 /* PlaceView.xib in Resources */,
 				D1DBE71720741A06000587C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,13 +342,16 @@
 			files = (
 				D12BEBC0207936A10044F6F1 /* TicketViewModel.swift in Sources */,
 				D133E96E2083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift in Sources */,
+				D133E9842083D63D00D007F4 /* UIView.swift in Sources */,
 				D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */,
+				D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */,
 				D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */,
 				D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */,
 				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
+				D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */,
 				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
 				D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
