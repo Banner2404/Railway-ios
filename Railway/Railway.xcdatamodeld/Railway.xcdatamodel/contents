@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PlaceCoreDataModel" representedClassName="PlaceCoreDataModel" syncable="YES">
+        <attribute name="carriage" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="seat" attributeType="String" syncable="YES"/>
+        <relationship name="ticket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TicketCoreDataModel" inverseName="places" inverseEntity="TicketCoreDataModel" syncable="YES"/>
+    </entity>
+    <entity name="StationCoreDataModel" representedClassName="StationCoreDataModel" syncable="YES">
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="destTicket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TicketCoreDataModel" inverseName="destinationStation" inverseEntity="TicketCoreDataModel" syncable="YES"/>
+        <relationship name="sourceTicket" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TicketCoreDataModel" inverseName="sourceStation" inverseEntity="TicketCoreDataModel" syncable="YES"/>
+    </entity>
+    <entity name="TicketCoreDataModel" representedClassName="TicketCoreDataModel" syncable="YES">
+        <attribute name="arrival" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="departure" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <relationship name="destinationStation" maxCount="1" deletionRule="Nullify" destinationEntity="StationCoreDataModel" inverseName="destTicket" inverseEntity="StationCoreDataModel" syncable="YES"/>
+        <relationship name="places" toMany="YES" deletionRule="Cascade" destinationEntity="PlaceCoreDataModel" inverseName="ticket" inverseEntity="PlaceCoreDataModel" syncable="YES"/>
+        <relationship name="sourceStation" maxCount="1" deletionRule="Nullify" destinationEntity="StationCoreDataModel" inverseName="sourceTicket" inverseEntity="StationCoreDataModel" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PlaceCoreDataModel" positionX="214" positionY="141" width="128" height="103"/>
+        <element name="StationCoreDataModel" positionX="-209" positionY="149" width="128" height="103"/>
+        <element name="TicketCoreDataModel" positionX="36" positionY="96" width="128" height="133"/>
+    </elements>
+</model>

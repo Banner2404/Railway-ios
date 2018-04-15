@@ -9,6 +9,13 @@
 import Foundation
 
 struct Place {
+    let id: String
     let carriage: Int
     let seat: String
+    
+    init(carriage: Int, seat: String) {
+        self.id = UUID().uuidString
+        self.carriage = carriage
+        self.seat = seat
+    }
 }

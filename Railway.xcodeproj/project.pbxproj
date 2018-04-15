@@ -10,6 +10,14 @@
 		D12BEBBD207934ED0044F6F1 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
 		D12BEBC0207936A10044F6F1 /* TicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */; };
 		D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */; };
+		D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */; };
+		D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9672083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift */; };
+		D133E96E2083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9682083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift */; };
+		D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9692083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift */; };
+		D133E9702083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96A2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift */; };
+		D133E9712083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96B2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift */; };
+		D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96C2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift */; };
+		D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9732083A33F00D007F4 /* DatabaseManager.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
 		D1DBE71720741A06000587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71520741A06000587C8 /* Main.storyboard */; };
 		D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
@@ -28,6 +36,14 @@
 		D12BEBBC207934ED0044F6F1 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D12BEBBF207936A10044F6F1 /* TicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewModel.swift; sourceTree = "<group>"; };
 		D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCollapsedTableViewCell.swift; sourceTree = "<group>"; };
+		D12BEBE7207956850044F6F1 /* Railway.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Railway.xcdatamodel; sourceTree = "<group>"; };
+		D133E9672083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StationCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D133E9682083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StationCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D133E9692083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TicketCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D133E96A2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TicketCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D133E96B2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceCoreDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D133E96C2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaceCoreDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D133E9732083A33F00D007F4 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1DBE71620741A06000587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,9 +73,11 @@
 		D12BEBBB207934860044F6F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D12BEBE9207957E30044F6F1 /* CoreData */,
 				D1DBE72320741BB1000587C8 /* Ticket.swift */,
 				D1DBE72520741C20000587C8 /* Station.swift */,
 				D12BEBBC207934ED0044F6F1 /* Place.swift */,
+				D133E9732083A33F00D007F4 /* DatabaseManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +108,19 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D12BEBE9207957E30044F6F1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D133E9672083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift */,
+				D133E9682083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift */,
+				D133E9692083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift */,
+				D133E96A2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift */,
+				D133E96B2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift */,
+				D133E96C2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		D1DBE70520741A06000587C8 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE71120741A06000587C8 /* AppDelegate.swift */,
+				D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */,
 				D12BEBBB207934860044F6F1 /* Models */,
 				D12BEBBE207936890044F6F1 /* ViewModels */,
 				D12BEBC2207938E50044F6F1 /* Views */,
@@ -279,12 +311,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D12BEBC0207936A10044F6F1 /* TicketViewModel.swift in Sources */,
+				D133E96E2083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift in Sources */,
 				D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */,
 				D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */,
+				D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */,
+				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
+				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
 				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
+				D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
+				D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
+				D133E9702083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1DBE72620741C20000587C8 /* Station.swift in Sources */,
+				D133E9712083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
 				D12BEBBD207934ED0044F6F1 /* Place.swift in Sources */,
 				D1DBE72420741BB1000587C8 /* Ticket.swift in Sources */,
 			);
@@ -431,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
@@ -446,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
@@ -477,6 +519,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D12BEBE7207956850044F6F1 /* Railway.xcdatamodel */,
+			);
+			currentVersion = D12BEBE7207956850044F6F1 /* Railway.xcdatamodel */;
+			path = Railway.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D1DBE70620741A06000587C8 /* Project object */;
 }

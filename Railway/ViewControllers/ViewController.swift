@@ -13,7 +13,7 @@ protocol ViewControllerProtocol: class {
 }
 
 extension ViewControllerProtocol where Self: UIViewController {
-    
+        
     static func loadFromStoryboard() -> Self {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let identifier = String(describing: self)

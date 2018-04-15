@@ -49,7 +49,6 @@ extension TicketListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 10.0))
         view.backgroundColor = UIColor.clear
-        //view.backgroundColor = UIColor.red
         return view
     }
 }
