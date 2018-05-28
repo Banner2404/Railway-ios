@@ -9,12 +9,12 @@
 import UIKit
 
 protocol ViewControllerProtocol: class {
-    static func loadFromStoryboard() -> Self
+    static func loadViewControllerFromStoryboard() -> Self
 }
 
 extension ViewControllerProtocol where Self: UIViewController {
         
-    static func loadFromStoryboard() -> Self {
+    static func loadViewControllerFromStoryboard() -> Self {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let identifier = String(describing: self)
         return storyboard.instantiateViewController(withIdentifier: identifier) as! Self

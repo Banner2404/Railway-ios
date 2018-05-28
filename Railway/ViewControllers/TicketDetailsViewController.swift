@@ -18,7 +18,7 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet private weak var ticketsStackView: UIStackView!
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
-        let viewController = loadFromStoryboard() as TicketDetailsViewController
+        let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
         viewController.viewModel = viewModel
         return viewController
     }

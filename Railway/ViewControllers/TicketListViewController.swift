@@ -18,7 +18,7 @@ class TicketListViewController: ViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     class func loadFromStoryboard(viewModel: TicketListViewModel) -> TicketListViewController {
-        let viewController = loadFromStoryboard() as TicketListViewController
+        let viewController = loadViewControllerFromStoryboard() as TicketListViewController
         viewController.viewModel = viewModel
         return viewController
     }
@@ -41,6 +41,11 @@ class TicketListViewController: ViewController {
             .subscribe(onNext: { viewModel in
                 self.showDetails(with: viewModel)})
             .disposed(by: disposeBag)
+    }
+    
+    @IBAction private func addButtonTap(_ sender: Any) {
+        let viewController = AddTicketViewController.loadFromStoryboard(viewModel.addViewModel())
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     private func showDetails(with viewModel: TicketDetailsViewModel) {

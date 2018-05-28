@@ -22,6 +22,12 @@ class DateFormatters {
         return dateFormatter
     }()
     
+    static var shortDateAndTime: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMMM, h:mm"
+        return dateFormatter
+    }()
+    
     static var shortTime: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none

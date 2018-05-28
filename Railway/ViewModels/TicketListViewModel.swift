@@ -46,4 +46,8 @@ class TicketListViewModel {
         let ticket = ticketsRelay.value[index]
         return TicketDetailsViewModel(ticket)
     }
+    
+    func addViewModel() -> AddTicketViewModel {
+        return AddTicketViewModel()
+    }
 }
