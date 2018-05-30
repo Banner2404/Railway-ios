@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlaceView" customModule="Railway" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPlaceView" customModule="Railway" customModuleProvider="target">
+            <connections>
+                <outlet property="carriageTextField" destination="JUc-Sp-yxK" id="byD-pz-U5n"/>
+                <outlet property="placeTextField" destination="YNM-nc-e6t" id="Whe-lv-Z8L"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRF-bV-GE9">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn5-VN-0qk">
-                    <rect key="frame" x="8" y="7" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jn5-VN-0qk">
+                    <rect key="frame" x="8" y="3" width="38" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="kW4-Sl-zs7"/>
+                        <constraint firstAttribute="width" secondItem="jn5-VN-0qk" secondAttribute="height" multiplier="1:1" id="q76-LN-V1J"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="-2"/>
+                    <state key="normal" image="remove_place_button"/>
                     <connections>
                         <action selector="buttonTap:" destination="-1" eventType="touchUpInside" id="NWT-Lh-DyN"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwD-Qd-kmv">
-                    <rect key="frame" x="217" y="0.0" width="158" height="44"/>
+                    <rect key="frame" x="213" y="0.0" width="162" height="44"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNM-nc-e6t">
-                            <rect key="frame" x="56" y="11" width="97" height="21"/>
+                            <rect key="frame" x="56" y="11" width="101" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
@@ -48,7 +59,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-hX-y37">
-                    <rect key="frame" x="59" y="0.0" width="158" height="44"/>
+                    <rect key="frame" x="51" y="0.0" width="162" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Вагон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4z-Dn-0vQ">
                             <rect key="frame" x="0.0" y="12" width="47" height="20.5"/>
@@ -57,7 +68,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Вагон" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-Sp-yxK">
-                            <rect key="frame" x="52" y="11.5" width="101" height="21"/>
+                            <rect key="frame" x="52" y="11.5" width="105" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
@@ -91,4 +102,7 @@
             <viewLayoutGuide key="safeArea" id="JTn-pE-JBU"/>
         </view>
     </objects>
+    <resources>
+        <image name="remove_place_button" width="38" height="38"/>
+    </resources>
 </document>

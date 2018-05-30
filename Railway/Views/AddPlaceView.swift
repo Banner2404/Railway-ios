@@ -14,6 +14,8 @@ protocol AddPlaceViewDelegate: class {
 
 class AddPlaceView: UIView {
     
+    @IBOutlet weak var carriageTextField: UITextField!
+    @IBOutlet weak var placeTextField: UITextField!
     weak var delegate: AddPlaceViewDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)

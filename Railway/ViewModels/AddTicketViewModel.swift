@@ -16,6 +16,7 @@ class AddTicketViewModel {
     let destinationName = BehaviorRelay<String>(value: "")
     let departureDate = BehaviorRelay<Date>(value: Date())
     let arrivalDate = BehaviorRelay<Date>(value: Date())
+    var places: [AddPlaceViewModel] = []
     let bag = DisposeBag()
     
     init() {

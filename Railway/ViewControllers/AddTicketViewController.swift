@@ -42,6 +42,10 @@ class AddTicketViewController: ViewController {
             .disposed(by: disposeBag)
     }
     
+    @IBAction func saveButtonTap(_ sender: Any) {
+        print(viewModel.places.map { $0.carriage.value + " " + $0.seat.value })
+    }
+    
     private func createDatePicker() -> UIDatePicker {
         let picker = UIDatePicker(frame: .zero)
         picker.datePickerMode = .dateAndTime
@@ -71,7 +75,7 @@ class AddTicketViewController: ViewController {
     }
     
     private func setupPlacesView() {
-        let placesViewController = AddPlaceViewController.loadFromStoryboard()
+        let placesViewController = AddPlaceViewController.loadFromStoryboard(viewModel: viewModel)
         placesView.addSubview(placesViewController.view)
         addChildViewController(placesViewController)
         placesViewController.didMove(toParentViewController: self)
