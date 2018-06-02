@@ -12,6 +12,7 @@ import RxCocoa
 
 class AddTicketViewModel {
     
+    let databaseManager: DatabaseManager
     let sourceName = BehaviorRelay<String>(value: "")
     let destinationName = BehaviorRelay<String>(value: "")
     let departureDate = BehaviorRelay<Date>(value: Date())
@@ -20,7 +21,8 @@ class AddTicketViewModel {
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
     
-    init() {
+    init(databaseManager: DatabaseManager) {
+        self.databaseManager = databaseManager
         let sourceNameValid = sourceName
             .map { !$0.isEmpty }
             .share()
@@ -42,5 +44,22 @@ class AddTicketViewModel {
             .bind(to: isValid)
             .disposed(by: bag)
         
+    }
+    
+    func save() {
+        let ticket = createTicket()
+        databaseManager.create(ticket)
+    }
+    
+    private func createTicket() -> Ticket {
+        let source = Station(name: sourceName.value)
+        let destination = Station(name: destinationName.value)
+        let places = self.places.value.map { $0.createPlace() }
+        
+        return Ticket(sourceStation: source,
+               destinationStation: destination,
+               departure: departureDate.value,
+               arrival: arrivalDate.value,
+               places: places)
     }
 }

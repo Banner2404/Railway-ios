@@ -48,6 +48,6 @@ class TicketListViewModel {
     }
     
     func addViewModel() -> AddTicketViewModel {
-        return AddTicketViewModel()
+        return AddTicketViewModel(databaseManager: databaseManager)
     }
 }

@@ -56,6 +56,7 @@ class AddTicketViewController: ViewController {
     }
     
     @IBAction func saveButtonTap(_ sender: Any) {
+        viewModel.save()
     }
     
     private func createDatePicker() -> UIDatePicker {

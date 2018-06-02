@@ -30,4 +30,9 @@ class AddPlaceViewModel {
             .bind(to: isValid)
             .disposed(by: disposeBag)
     }
+    
+    func createPlace() -> Place {
+        return Place(carriage: carriage.value,
+                     seat: seat.value)
+    }
 }
