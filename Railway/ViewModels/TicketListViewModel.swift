@@ -48,6 +48,10 @@ class TicketListViewModel {
     }
     
     func addViewModel() -> AddTicketViewModel {
-        return AddTicketViewModel(databaseManager: databaseManager)
+        let viewModel = AddTicketViewModel(databaseManager: databaseManager)
+        viewModel.addedTicket.debug().subscribe(onNext: { ticket in
+            self.ticketsRelay.accept(self.ticketsRelay.value + [ticket])
+        }).disposed(by: disposeBag)
+        return viewModel
     }
 }

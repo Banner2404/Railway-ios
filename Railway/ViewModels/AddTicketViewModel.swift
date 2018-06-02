@@ -20,6 +20,7 @@ class AddTicketViewModel {
     let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel()])
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
+    let addedTicket = PublishSubject<Ticket>()
     
     init(databaseManager: DatabaseManager) {
         self.databaseManager = databaseManager
@@ -49,6 +50,8 @@ class AddTicketViewModel {
     func save() {
         let ticket = createTicket()
         databaseManager.create(ticket)
+        addedTicket.onNext(ticket)
+        addedTicket.onCompleted()
     }
     
     private func createTicket() -> Ticket {

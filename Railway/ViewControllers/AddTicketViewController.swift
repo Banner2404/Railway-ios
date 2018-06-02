@@ -57,6 +57,7 @@ class AddTicketViewController: ViewController {
     
     @IBAction func saveButtonTap(_ sender: Any) {
         viewModel.save()
+        navigationController?.popViewController(animated: true)
     }
     
     private func createDatePicker() -> UIDatePicker {

@@ -370,13 +370,18 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.5844907407407407" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="mgG-fU-VrD" secondAttribute="bottom" constant="8" id="ABa-u8-jVe"/>
                                             <constraint firstAttribute="trailing" secondItem="mgG-fU-VrD" secondAttribute="trailing" constant="8" id="Aok-ax-Uha"/>
                                             <constraint firstItem="mgG-fU-VrD" firstAttribute="leading" secondItem="aGi-yw-mat" secondAttribute="leading" constant="8" id="SVx-c5-XlE"/>
                                             <constraint firstItem="mgG-fU-VrD" firstAttribute="top" secondItem="aGi-yw-mat" secondAttribute="top" constant="8" id="pfl-Oy-aAP"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <constraints>
