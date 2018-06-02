@@ -16,11 +16,13 @@ class AddTicketViewController: ViewController {
     private let disposeBag = DisposeBag()
     private var departureDatePicker: UIDatePicker!
     private var arrivalDatePicker: UIDatePicker!
+    @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var sourceTextField: UITextField!
     @IBOutlet private weak var destinationTextField: UITextField!
     @IBOutlet private weak var departureTimeTextField: UITextField!
     @IBOutlet private weak var arrivalTimeTextField: UITextField!
     @IBOutlet private weak var placesView: UIView!
+    @IBOutlet private weak var saveButton: UIBarButtonItem!
     
     class func loadFromStoryboard(_ viewModel: AddTicketViewModel) -> AddTicketViewController {
         let viewController = loadViewControllerFromStoryboard() as AddTicketViewController
@@ -40,10 +42,20 @@ class AddTicketViewController: ViewController {
             .map{ $0 ?? "" }
             .bind(to: viewModel.destinationName)
             .disposed(by: disposeBag)
+        
+        viewModel.isValid
+            .bind(to: saveButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     @IBAction func saveButtonTap(_ sender: Any) {
-        print(viewModel.places.map { $0.carriage.value + " " + $0.seat.value })
     }
     
     private func createDatePicker() -> UIDatePicker {
@@ -85,4 +97,16 @@ class AddTicketViewController: ViewController {
         placesView.topAnchor.constraint(equalTo: placesViewController.view.topAnchor).isActive = true
         placesView.bottomAnchor.constraint(equalTo: placesViewController.view.bottomAnchor).isActive = true
     }
+    
+    @objc
+    private func keyboardWillShow(_ notification: Notification) {
+        guard let frame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height, right: 0)
+    }
+    
+    @objc
+    private func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
 }

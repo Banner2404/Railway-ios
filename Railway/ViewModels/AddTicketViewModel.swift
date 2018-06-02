@@ -16,15 +16,31 @@ class AddTicketViewModel {
     let destinationName = BehaviorRelay<String>(value: "")
     let departureDate = BehaviorRelay<Date>(value: Date())
     let arrivalDate = BehaviorRelay<Date>(value: Date())
-    var places: [AddPlaceViewModel] = []
+    let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel()])
     let bag = DisposeBag()
+    let isValid = BehaviorRelay<Bool>(value: true)
     
     init() {
-        sourceName.subscribe {
-            print($0)
-        }.disposed(by: bag)
-        destinationName.subscribe {
-            print($0)
-        }.disposed(by: bag)
+        let sourceNameValid = sourceName
+            .map { !$0.isEmpty }
+            .share()
+        let destinationNameValid = destinationName
+            .map { !$0.isEmpty }
+            .share()
+        let placesValid = places.asObservable()
+            .flatMapLatest { item -> Observable<Bool> in
+                if item.isEmpty { return Observable.just(false) }
+                return Observable.combineLatest(item.map { $0.isValid }).debug().map { values in
+                    values.reduce(true, { $0 && $1 })
+                }
+            }
+            .share()
+        
+        
+        Observable.combineLatest(sourceNameValid, destinationNameValid, placesValid)
+            .map { $0 && $1 && $2 }
+            .bind(to: isValid)
+            .disposed(by: bag)
+        
     }
 }

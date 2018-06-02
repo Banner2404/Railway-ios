@@ -22,22 +22,33 @@ class AddPlaceViewController: ViewController {
         return viewController
     }
     
+    override func viewDidLoad() {
+        for viewModel in viewModel.places.value {
+            addPlaceView(for: viewModel)
+        }
+    }
+    
     @IBAction func addPlaceTap(_ sender: Any) {
+        
+        let placeViewModel = AddPlaceViewModel()
+        viewModel.places.value.append(placeViewModel)
+        addPlaceView(for: placeViewModel)
+        
+    }
+    
+    func addPlaceView(for placeViewModel: AddPlaceViewModel) {
         let view = AddPlaceView(frame: .zero)
         view.delegate = self
         let count = stackView.arrangedSubviews.count
         stackView.insertArrangedSubview(view, at: count - 1)
-        
-        let placeViewModel = AddPlaceViewModel()
         view.carriageTextField.rx.text
-            .map { $0 ?? "" }
+            .map { Int($0 ?? "") ?? 0 }
             .bind(to: placeViewModel.carriage)
             .disposed(by: disposeBag)
         view.placeTextField.rx.text
             .map { $0 ?? "" }
             .bind(to: placeViewModel.seat)
             .disposed(by: disposeBag)
-        viewModel.places.append(placeViewModel)
     }
 }
 
@@ -45,8 +56,9 @@ class AddPlaceViewController: ViewController {
 extension AddPlaceViewController: AddPlaceViewDelegate {
     
     func addPlaceViewDidTapRemove(_ view: AddPlaceView) {
+        guard let index = stackView.arrangedSubviews.index(of: view) else { return }
         stackView.removeArrangedSubview(view)
         view.removeFromSuperview()
-        viewModel.places.removeLast()
+        viewModel.places.value.remove(at: index)
     }
 }

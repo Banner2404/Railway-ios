@@ -410,6 +410,8 @@
                         <outlet property="departureTimeTextField" destination="o0q-2J-iRS" id="SyY-Ke-dSO"/>
                         <outlet property="destinationTextField" destination="YN9-jW-0RO" id="fIf-oh-yoo"/>
                         <outlet property="placesView" destination="Qr1-c2-H7T" id="Ls7-gR-YQe"/>
+                        <outlet property="saveButton" destination="8D8-iM-hJw" id="ztZ-NJ-zIT"/>
+                        <outlet property="scrollView" destination="c1r-ls-jKN" id="O0v-1j-Ct3"/>
                         <outlet property="sourceTextField" destination="Dqu-xE-eWi" id="uvz-Tf-H4Q"/>
                     </connections>
                 </viewController>
