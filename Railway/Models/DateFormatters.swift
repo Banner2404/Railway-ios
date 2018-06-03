@@ -28,10 +28,22 @@ class DateFormatters {
         return dateFormatter
     }()
     
+    static var emailDateAndTime: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy dd.MM HH:mm"
+        return dateFormatter
+    }()
+    
     static var shortTime: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
+    
+    static var year: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy"
         return dateFormatter
     }()
 }

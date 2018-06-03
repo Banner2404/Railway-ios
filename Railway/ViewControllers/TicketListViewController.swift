@@ -15,6 +15,7 @@ class TicketListViewController: ViewController {
 
     private var viewModel: TicketListViewModel!
     private let disposeBag = DisposeBag()
+    private let showOldest = BehaviorRelay<Bool>(value: false)
     @IBOutlet private weak var tableView: UITableView!
     
     class func loadFromStoryboard(viewModel: TicketListViewModel) -> TicketListViewController {
@@ -25,14 +26,28 @@ class TicketListViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>(configureCell: { dataSource, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCollapsedTableViewCell", for: indexPath) as! TicketCollapsedTableViewCell
-            cell.dateLabel.text = item.dateText
-            cell.routeLabel.text = item.routeText
-            return cell
-        })
-        let sections = viewModel.tickets.map { $0.map { SectionModel(model: "", items: [$0]) } }
-        sections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>(
+            configureCell: { dataSource, tableView, indexPath, item in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCollapsedTableViewCell", for: indexPath) as! TicketCollapsedTableViewCell
+                cell.dateLabel.text = item.dateText
+                cell.routeLabel.text = item.routeText
+                return cell
+            })
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].model
+        }
+        let allSections = Observable.combineLatest(createPastSection(),
+                                                   createFutureSection(),
+                                                   showOldest)
+            .map { arg -> [SectionModel<String, TicketViewModel>] in
+                if arg.2 {
+                    return [arg.0, arg.1]
+                } else {
+                    return [arg.1]
+                }
+                
+        }
+        allSections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView()
@@ -41,6 +56,7 @@ class TicketListViewController: ViewController {
             .subscribe(onNext: { viewModel in
                 self.showDetails(with: viewModel)})
             .disposed(by: disposeBag)
+        setupPullToOldest()
     }
     
     @IBAction private func addButtonTap(_ sender: Any) {
@@ -48,22 +64,37 @@ class TicketListViewController: ViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func settingsButtonTap(_ sender: Any) {
+        let viewController = SettingsViewController.loadFromStoryboard()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     private func showDetails(with viewModel: TicketDetailsViewModel) {
         let detailController = TicketDetailsViewController.loadFromStoryboard(viewModel)
         navigationController?.pushViewController(detailController, animated: true)
+    }
+    
+    private func createFutureSection() -> Observable<SectionModel<String, TicketViewModel>> {
+        return viewModel.futureTickets.map { SectionModel(model: "Новые", items: $0) }
+    }
+    
+    private func createPastSection() -> Observable<SectionModel<String, TicketViewModel>> {
+        return viewModel.pastTickets.map { SectionModel(model: "Старые", items: $0) }
+    }
+    
+    @objc
+    private func loadOldest() {
+        showOldest.accept(true)
+    }
+    
+    private func setupPullToOldest() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.clear
+        refreshControl.addTarget(self, action: #selector(loadOldest), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 }
 
 //MARK: - UITableViewDelegate
 extension TicketListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 10.0))
-        view.backgroundColor = UIColor.clear
-        return view
-    }
 }

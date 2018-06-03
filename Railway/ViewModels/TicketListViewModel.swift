@@ -12,33 +12,29 @@ import RxCocoa
 
 class TicketListViewModel {
     
-    var tickets: Observable<[TicketViewModel]> {
-        return ticketViewModelRelay.asObservable()
+    var pastTickets: Observable<[TicketViewModel]> {
+        return ticketsRelay.map { $0
+            .sorted { $0.departure < $1.departure }
+            .filter { $0.departure <= Date() }
+            .map { TicketViewModel($0) }
+        }
     }
     
-    private var ticketViewModelRelay = BehaviorRelay<[TicketViewModel]>(value: [])
+    var futureTickets: Observable<[TicketViewModel]> {
+        return ticketsRelay.map { $0
+            .sorted { $0.departure < $1.departure }
+            .filter { $0.departure > Date() }
+            .map { TicketViewModel($0) }
+        }
+    }
+    
     private var ticketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager
     private let disposeBag = DisposeBag()
     
     init(databaseManager: DatabaseManager) {
         self.databaseManager = databaseManager
-//        let minsk = Station(name: "Minsk test")
-//        let brest = Station(name: "Brest")
-//        let gomel = Station(name: "Gomel")
-//        let place1 = Place(carriage: 10, seat: "10a")
-//        let place2 = Place(carriage: 10, seat: "11a")
-//        let place3 = Place(carriage: 9, seat: "10")
-//
-//        let ticketOne = Ticket(sourceStation: minsk, destinationStation: brest, departure: Date(), arrival: Date(), places: [place1, place2, place3])
-        //let ticketTwo = Ticket(sourceStation: minsk, destinationStation: gomel, departure: Date(), arrival: Date(), places: [])
-        //databaseManager.create(ticketOne)
-        //databaseManager.create(ticketTwo)
         let tickets = databaseManager.loadTickets()
-        ticketsRelay
-            .map { $0.map { TicketViewModel($0)} }
-            .bind(to: ticketViewModelRelay)
-            .disposed(by: disposeBag)
         ticketsRelay.accept(tickets)
     }
     
@@ -49,7 +45,7 @@ class TicketListViewModel {
     
     func addViewModel() -> AddTicketViewModel {
         let viewModel = AddTicketViewModel(databaseManager: databaseManager)
-        viewModel.addedTicket.debug().subscribe(onNext: { ticket in
+        viewModel.addedTicket.subscribe(onNext: { ticket in
             self.ticketsRelay.accept(self.ticketsRelay.value + [ticket])
         }).disposed(by: disposeBag)
         return viewModel

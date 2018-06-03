@@ -40,6 +40,9 @@
 		D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72720741C92000587C8 /* TicketListViewController.swift */; };
 		D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72B20741CF8000587C8 /* ViewController.swift */; };
 		D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */; };
+		D1DD9C6220C3BEA20050D56F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */; };
+		D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */; };
+		D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6520C3EDF50050D56F /* Date.swift */; };
 		EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,9 @@
 		D1DBE72720741C92000587C8 /* TicketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewController.swift; sourceTree = "<group>"; };
 		D1DBE72B20741CF8000587C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D1DBE72D20741F1D000587C8 /* TicketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListViewModel.swift; sourceTree = "<group>"; };
+		D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
+		D1DD9C6520C3EDF50050D56F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +111,7 @@
 				D12BEBBC207934ED0044F6F1 /* Place.swift */,
 				D133E9732083A33F00D007F4 /* DatabaseManager.swift */,
 				D133E97C2083CC9B00D007F4 /* DateFormatters.swift */,
+				D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 				D133E9752083C31400D007F4 /* TicketDetailsViewController.swift */,
 				D1280D8020BC771300A386ED /* AddTicketViewController.swift */,
 				D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */,
+				D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D133E9832083D63D00D007F4 /* UIView.swift */,
+				D1DD9C6520C3EDF50050D56F /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +310,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${PODS_ROOT}/Reveal-SDK/RevealServer-13/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-15/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -309,6 +322,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -343,9 +360,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,13 +397,16 @@
 				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
 				D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */,
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
+				D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */,
 				D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
 				D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
 				D133E9702083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1DBE72620741C20000587C8 /* Station.swift in Sources */,
 				D133E9712083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
+				D1DD9C6220C3BEA20050D56F /* SettingsViewController.swift in Sources */,
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
 				D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */,
+				D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */,
 				D133E9762083C31400D007F4 /* TicketDetailsViewController.swift in Sources */,
 				D12BEBBD207934ED0044F6F1 /* Place.swift in Sources */,
 				D1DBE72420741BB1000587C8 /* Ticket.swift in Sources */,
@@ -534,7 +557,7 @@
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -550,7 +573,7 @@
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = company.Railway;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
