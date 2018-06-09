@@ -11,18 +11,25 @@ import PDFKit
 
 class MessageProcessor {
     
-    static func process(messageData: String) -> Ticket? {
+    static func process(messageData: String) -> [Ticket] {
         let fixedString = messageData.fixed
         guard let data = Data(base64Encoded: fixedString),
-            let document = PDFDocument(data: data) else { return nil }
-        return ticket(from: document)
+            let document = PDFDocument(data: data) else { return [] }
+        return tickets(from: document)
     }
     
-    private static func ticket(from document: PDFDocument) -> Ticket? {
-        let strings = document.string?.split(separator: "\n") ?? []
-        for string in strings {
-            print(string)
+    private static func tickets(from document: PDFDocument) -> [Ticket] {
+        var result = [Ticket]()
+        for index in 0..<document.pageCount {
+            guard let page = document.page(at: index),
+                let ticket = ticket(from: page) else { continue }
+            result.append(ticket)
         }
+        return result
+    }
+    
+    private static func ticket(from page: PDFPage) -> Ticket? {
+        let strings = page.string?.split(separator: "\n") ?? []
         let departureDay = String(strings[14])
         let departureTime = String(strings[15])
         guard let departure = date(fromDateString: departureDay, timeString: departureTime) else { return nil }
@@ -30,8 +37,6 @@ class MessageProcessor {
         let arrivalDay = String(strings[18])
         let arrivalTime = String(strings[19])
         guard let arrival = date(fromDateString: arrivalDay, timeString: arrivalTime) else { return nil }
-        print(DateFormatters.longDateAndTime.string(from: departure))
-        print(DateFormatters.longDateAndTime.string(from: arrival))
 
         let route = strings[16].split(separator: "→")
         guard let from = route.first?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized,

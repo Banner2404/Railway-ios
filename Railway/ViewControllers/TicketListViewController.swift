@@ -65,7 +65,7 @@ class TicketListViewController: ViewController {
     }
     
     @IBAction func settingsButtonTap(_ sender: Any) {
-        let viewController = SettingsViewController.loadFromStoryboard()
+        let viewController = SettingsViewController.loadFromStoryboard(viewModel: viewModel.settingsViewModel())
         navigationController?.pushViewController(viewController, animated: true)
     }
     

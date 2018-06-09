@@ -30,10 +30,12 @@ class TicketListViewModel {
     
     private var ticketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager
+    private let mailSyncronizer: MailSyncronizer
     private let disposeBag = DisposeBag()
     
-    init(databaseManager: DatabaseManager) {
+    init(databaseManager: DatabaseManager, mailSyncronizer: MailSyncronizer) {
         self.databaseManager = databaseManager
+        self.mailSyncronizer = mailSyncronizer
         let tickets = databaseManager.loadTickets()
         ticketsRelay.accept(tickets)
     }
@@ -49,5 +51,9 @@ class TicketListViewModel {
             self.ticketsRelay.accept(self.ticketsRelay.value + [ticket])
         }).disposed(by: disposeBag)
         return viewModel
+    }
+    
+    func settingsViewModel() -> SettingsViewModel {
+        return SettingsViewModel(mailSyncronizer: mailSyncronizer)
     }
 }

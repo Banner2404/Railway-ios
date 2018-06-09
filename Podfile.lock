@@ -6,18 +6,18 @@ PODS:
     - GoogleAPIClientForREST/Core
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleSignIn (4.1.2):
-    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
-    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
     - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
-  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4):
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
     - GoogleToolboxForMac/DebugUtils (= 2.1.4)
     - GoogleToolboxForMac/Defines (= 2.1.4)
-    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)
-  - GoogleToolboxForMac/NSString+URLArguments (2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
   - GTMSessionFetcher (1.1.15):
@@ -26,13 +26,13 @@ PODS:
   - GTMSessionFetcher/Full (1.1.15):
     - GTMSessionFetcher/Core (= 1.1.15)
   - Reveal-SDK (15)
-  - RxCocoa (4.1.2):
+  - RxCocoa (4.2.0):
     - RxSwift (~> 4.0)
   - RxDataSources (3.0.2):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
+  - RxSwift (4.2.0)
 
 DEPENDENCIES:
   - GoogleAPIClientForREST/Gmail (~> 1.2.1)
@@ -42,6 +42,19 @@ DEPENDENCIES:
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Differentiator
+    - GoogleAPIClientForREST
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMOAuth2
+    - GTMSessionFetcher
+    - Reveal-SDK
+    - RxCocoa
+    - RxDataSources
+    - RxSwift
+
 SPEC CHECKSUMS:
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
@@ -50,10 +63,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Reveal-SDK: 25e21896c478b60b948f876043f91570d368d23d
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
 PODFILE CHECKSUM: b35022e3b7e751a65089847bc929bedf0b73e16c
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
