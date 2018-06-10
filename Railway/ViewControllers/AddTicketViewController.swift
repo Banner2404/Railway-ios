@@ -36,10 +36,12 @@ class AddTicketViewController: ViewController {
         setupDatePickers()
         sourceTextField.rx.text
             .map{ $0 ?? "" }
+            .map{ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
             .bind(to: viewModel.sourceName)
             .disposed(by: disposeBag)
         destinationTextField.rx.text
             .map{ $0 ?? "" }
+            .map{ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
             .bind(to: viewModel.destinationName)
             .disposed(by: disposeBag)
         
