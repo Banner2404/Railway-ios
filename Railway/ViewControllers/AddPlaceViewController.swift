@@ -28,6 +28,11 @@ class AddPlaceViewController: ViewController {
         }
     }
     
+    override func becomeFirstResponder() -> Bool {
+        super.becomeFirstResponder()
+        return stackView.arrangedSubviews.first?.becomeFirstResponder() ?? false
+    }
+    
     @IBAction func addPlaceTap(_ sender: Any) {
         
         let placeViewModel = AddPlaceViewModel()
@@ -60,5 +65,15 @@ extension AddPlaceViewController: AddPlaceViewDelegate {
         stackView.removeArrangedSubview(view)
         view.removeFromSuperview()
         viewModel.places.value.remove(at: index)
+    }
+    
+    func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool {
+        let views = stackView.arrangedSubviews.filter { $0 is AddPlaceView }
+        if let index = views.firstIndex(of: view), index < views.endIndex - 1 {
+            views[index + 1].becomeFirstResponder()
+        } else {
+            view.resignFirstResponder()
+        }
+        return false
     }
 }

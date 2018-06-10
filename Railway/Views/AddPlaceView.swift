@@ -9,6 +9,7 @@
 import UIKit
 
 protocol AddPlaceViewDelegate: class {
+    func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool
     func addPlaceViewDidTapRemove(_ view: AddPlaceView)
 }
 
@@ -20,6 +21,16 @@ class AddPlaceView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        super.becomeFirstResponder()
+        return carriageTextField.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        super.resignFirstResponder()
+        return placeTextField.resignFirstResponder()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,5 +54,17 @@ private extension AddPlaceView {
         rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension AddPlaceView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField === carriageTextField {
+            placeTextField.becomeFirstResponder()
+            return false
+        }
+        return delegate?.addPlaceViewShouldReturn(self) ?? false
     }
 }

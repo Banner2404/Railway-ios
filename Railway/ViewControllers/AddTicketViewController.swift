@@ -16,6 +16,7 @@ class AddTicketViewController: ViewController {
     private let disposeBag = DisposeBag()
     private var departureDatePicker: UIDatePicker!
     private var arrivalDatePicker: UIDatePicker!
+    private var placesViewController: AddPlaceViewController!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var sourceTextField: UITextField!
     @IBOutlet private weak var destinationTextField: UITextField!
@@ -91,7 +92,7 @@ class AddTicketViewController: ViewController {
     }
     
     private func setupPlacesView() {
-        let placesViewController = AddPlaceViewController.loadFromStoryboard(viewModel: viewModel)
+        placesViewController = AddPlaceViewController.loadFromStoryboard(viewModel: viewModel)
         placesView.addSubview(placesViewController.view)
         addChildViewController(placesViewController)
         placesViewController.didMove(toParentViewController: self)
@@ -113,4 +114,18 @@ class AddTicketViewController: ViewController {
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
+}
+
+//MARK: - UITextFieldDelegate
+extension AddTicketViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let textFields = [sourceTextField, destinationTextField, departureTimeTextField, arrivalTimeTextField]
+        if let index = textFields.firstIndex(of: textField), index < textFields.endIndex - 1 {
+            textFields[index + 1]?.becomeFirstResponder()
+        } else {
+            _ = placesViewController.becomeFirstResponder()
+        }
+        return false
+    }
 }
