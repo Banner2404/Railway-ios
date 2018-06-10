@@ -58,7 +58,7 @@ class DefaultDatabaseManager: DatabaseManager {
                 .fetch(TicketCoreDataModel.fetchRequest())
                 .map { Ticket($0 as! TicketCoreDataModel) }
             self.tickets.onNext(tickets)
-            print(tickets)
+            print(tickets.map { ($0.arrival.timeIntervalSince1970, $0.departure.timeIntervalSince1970) })
         } catch {
             fatalError("Unable to read from core data \(error)")
         }
@@ -73,13 +73,24 @@ class DefaultDatabaseManager: DatabaseManager {
             _ = createEntity(ticket)
         }
         saveContext()
+        loadTickets()
     }
     
     private func getSimilarTicket(for ticket: Ticket) -> [TicketCoreDataModel] {
         let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
+        print(ticket.arrival.minuteStart.timeIntervalSince1970)
+        print(ticket.arrival.minuteEnd.timeIntervalSince1970)
+
         request.predicate = NSPredicate(format: "sourceStation.name == %@ AND " +
-                                                "destinationStation.name == %@",
-                                        ticket.sourceStation.name, ticket.destinationStation.name)
+                                                "destinationStation.name == %@ AND " +
+                                                "arrival >= %@ AND arrival <= %@ AND " +
+                                                "departure >= %@ AND departure <= %@",
+                                        ticket.sourceStation.name,
+                                        ticket.destinationStation.name,
+                                        ticket.arrival.minuteStart as NSDate,
+                                        ticket.arrival.minuteEnd as NSDate,
+                                        ticket.departure.minuteStart as NSDate,
+                                        ticket.departure.minuteEnd as NSDate)
         do {
             return try managedContext.fetch(request)
         } catch {
