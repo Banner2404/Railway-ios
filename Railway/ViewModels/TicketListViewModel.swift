@@ -12,23 +12,12 @@ import RxCocoa
 
 class TicketListViewModel {
     
-    var pastTickets: Observable<[TicketViewModel]> {
-        return ticketsRelay.map { $0
-            .sorted { $0.departure < $1.departure }
-            .filter { $0.departure <= Date() }
-            .map { TicketViewModel($0) }
-        }
+    var allTickets: Observable<[TicketViewModel]> {
+        return allTicketsViewModelsRelay.asObservable()
     }
     
-    var futureTickets: Observable<[TicketViewModel]> {
-        return ticketsRelay.map { $0
-            .sorted { $0.departure < $1.departure }
-            .filter { $0.departure > Date() }
-            .map { TicketViewModel($0) }
-        }
-    }
-    
-    private var ticketsRelay = BehaviorRelay<[Ticket]>(value: [])
+    private let allTicketsViewModelsRelay = BehaviorRelay<[TicketViewModel]>(value: [])
+    private let allTicketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager
     private let mailSyncronizer: MailSyncronizer
     private let disposeBag = DisposeBag()
@@ -36,21 +25,31 @@ class TicketListViewModel {
     init(databaseManager: DatabaseManager, mailSyncronizer: MailSyncronizer) {
         self.databaseManager = databaseManager
         self.mailSyncronizer = mailSyncronizer
-        let tickets = databaseManager.loadTickets()
-        ticketsRelay.accept(tickets)
+        
+        allTicketsRelay
+            .map { tickets in
+                tickets.map { ticket in
+                    TicketViewModel(ticket)
+                }
+            }
+            .bind(to: allTicketsViewModelsRelay)
+            .disposed(by: disposeBag)
+
+        databaseManager.tickets.map { tickets in
+                tickets.sorted { $0.departure < $1.departure }
+            }
+            .bind(to: allTicketsRelay)
+            .disposed(by: disposeBag)
     }
     
-    func ticketViewModel(at index: Int) -> TicketDetailsViewModel {
-        let ticket = ticketsRelay.value[index]
+    func detailedTicketViewModel(for viewModel: TicketViewModel) -> TicketDetailsViewModel? {
+        guard let index = allTicketsViewModelsRelay.value.index(where: { $0 === viewModel }) else { return nil }
+        let ticket = allTicketsRelay.value[index]
         return TicketDetailsViewModel(ticket)
     }
     
     func addViewModel() -> AddTicketViewModel {
-        let viewModel = AddTicketViewModel(databaseManager: databaseManager)
-        viewModel.addedTicket.subscribe(onNext: { ticket in
-            self.ticketsRelay.accept(self.ticketsRelay.value + [ticket])
-        }).disposed(by: disposeBag)
-        return viewModel
+        return AddTicketViewModel(databaseManager: databaseManager)
     }
     
     func settingsViewModel() -> SettingsViewModel {

@@ -14,12 +14,14 @@ class TicketViewModel {
 
     var routeText: String
     var dateText: String
+    var referenceDate: Date
 
     init(_ ticket: Ticket) {
         let sourceName = ticket.sourceStation.name
         let destinationName = ticket.destinationStation.name
         routeText = sourceName + " - " + destinationName
         dateText = DateFormatters.longDateAndTime.string(from: ticket.departure)
+        referenceDate = ticket.arrival
         
     }
 }

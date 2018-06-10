@@ -37,8 +37,10 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     private let gmailService: GTLRGmailService
     private var signInHandler: ((SingleEvent<Void>) -> Void)?
     private let disposeBag = DisposeBag()
+    private let databaseManager: DatabaseManager
     
-    override init() {
+    init(databaseManager: DatabaseManager) {
+        self.databaseManager = databaseManager
         googleSignIn = GIDSignIn.sharedInstance()
         gmailService = GTLRGmailService()
         super.init()
@@ -49,6 +51,12 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .subscribe { _ in
                 self.sync()
         }
+            .disposed(by: disposeBag)
+        
+        newTickets
+            .subscribe(onNext: { ticket in
+                databaseManager.add(ticket)
+            })
             .disposed(by: disposeBag)
     }
     
@@ -81,9 +89,10 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .map { data in
                 MessageProcessor.process(messageData: data)
             }
-            .subscribe { tickets in
-                print(tickets)
+            .flatMap { tickets in
+                Observable.from(tickets)
             }
+            .bind(to: newTicketsSubject)
             .disposed(by: disposeBag)
     }
     

@@ -49,7 +49,7 @@ class AddTicketViewModel {
     
     func save() {
         let ticket = createTicket()
-        databaseManager.create(ticket)
+        databaseManager.add(ticket)
         addedTicket.onNext(ticket)
         addedTicket.onCompleted()
     }

@@ -8,16 +8,19 @@
 
 import Foundation
 import CoreData
+import RxSwift
 
 protocol DatabaseManager {
     
-    func loadTickets() -> [Ticket]
-    func create(_ ticket: Ticket)
+    var tickets: BehaviorSubject<[Ticket]> { get }
+    
+    func add(_ ticket: Ticket)
 }
 
 
 class DefaultDatabaseManager: DatabaseManager {
     
+    let tickets = BehaviorSubject<[Ticket]>(value: [])
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Railway")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -33,6 +36,7 @@ class DefaultDatabaseManager: DatabaseManager {
     
     init() {
         _ = persistentContainer
+        loadTickets()
     }
 
     
@@ -47,20 +51,40 @@ class DefaultDatabaseManager: DatabaseManager {
             }
         }
     }
-    
-    func loadTickets() -> [Ticket] {
+
+    func loadTickets() {
         do {
-            return try managedContext
+            let tickets = try managedContext
                 .fetch(TicketCoreDataModel.fetchRequest())
                 .map { Ticket($0 as! TicketCoreDataModel) }
+            self.tickets.onNext(tickets)
+            print(tickets)
         } catch {
             fatalError("Unable to read from core data \(error)")
         }
     }
     
-    func create(_ ticket: Ticket) {
-        _ = createEntity(ticket)
+    func add(_ ticket: Ticket) {
+        if let similar = getSimilarTicket(for: ticket).first {
+            for place in ticket.places {
+                similar.addToPlaces(createEntity(place))
+            }
+        } else {
+            _ = createEntity(ticket)
+        }
         saveContext()
+    }
+    
+    private func getSimilarTicket(for ticket: Ticket) -> [TicketCoreDataModel] {
+        let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
+        request.predicate = NSPredicate(format: "sourceStation.name == %@ AND " +
+                                                "destinationStation.name == %@",
+                                        ticket.sourceStation.name, ticket.destinationStation.name)
+        do {
+            return try managedContext.fetch(request)
+        } catch {
+            fatalError("Unable to fetch")
+        }
     }
     
     private func createEntity(_ ticket: Ticket) -> TicketCoreDataModel {

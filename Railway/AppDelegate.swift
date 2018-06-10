@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let viewModel = TicketListViewModel(databaseManager: DefaultDatabaseManager(), mailSyncronizer: GmailSyncronizer())
+        let database = DefaultDatabaseManager()
+        let mail = GmailSyncronizer(databaseManager: database)
+        let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mail)
         let rootController = TicketListViewController.loadFromStoryboard(viewModel: viewModel)
         let navigationController = UINavigationController(rootViewController: rootController)
         window?.rootViewController = navigationController

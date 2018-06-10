@@ -16,6 +16,10 @@ class TicketListViewController: ViewController {
     private var viewModel: TicketListViewModel!
     private let disposeBag = DisposeBag()
     private let showOldest = BehaviorRelay<Bool>(value: false)
+    private var oldTickets: Observable<[TicketViewModel]>!
+    private var newTickets: Observable<[TicketViewModel]>!
+    private var shownTickets: Observable<[[TicketViewModel]]>!
+
     @IBOutlet private weak var tableView: UITableView!
     
     class func loadFromStoryboard(viewModel: TicketListViewModel) -> TicketListViewController {
@@ -26,6 +30,29 @@ class TicketListViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oldTickets = viewModel.allTickets
+            .map { tickets in
+                tickets.filter { ticket in
+                    ticket.referenceDate < Date()
+                }
+        }
+        
+        newTickets = viewModel.allTickets
+            .map { tickets in
+                tickets.filter { ticket in
+                    ticket.referenceDate >= Date()
+                }
+        }
+        
+        shownTickets = Observable.combineLatest(oldTickets, newTickets, showOldest)
+            .map { arguments -> [[TicketViewModel]] in
+                if arguments.2 {
+                    return [arguments.0, arguments.1]
+                } else {
+                    return [arguments.1]
+                }
+        }
+        
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>(
             configureCell: { dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCollapsedTableViewCell", for: indexPath) as! TicketCollapsedTableViewCell
@@ -36,24 +63,20 @@ class TicketListViewController: ViewController {
         dataSource.titleForHeaderInSection = { ds, index in
             return ds.sectionModels[index].model
         }
-        let allSections = Observable.combineLatest(createPastSection(),
-                                                   createFutureSection(),
-                                                   showOldest)
-            .map { arg -> [SectionModel<String, TicketViewModel>] in
-                if arg.2 {
-                    return [arg.0, arg.1]
-                } else {
-                    return [arg.1]
+        let allSections = shownTickets.map { sections in
+                sections.map { viewModels in
+                    SectionModel<String, TicketViewModel>.init(model: "test", items: viewModels)
                 }
-                
         }
         allSections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.tableFooterView = UIView()
         tableView.rx.itemSelected
-            .map { self.viewModel.ticketViewModel(at: $0.section) }
+            .map { dataSource.sectionModels[$0.section].items[$0.row] }
+            .map { self.viewModel.detailedTicketViewModel(for: $0) }
             .subscribe(onNext: { viewModel in
+                guard let viewModel = viewModel else { return }
                 self.showDetails(with: viewModel)})
             .disposed(by: disposeBag)
         setupPullToOldest()
@@ -72,14 +95,6 @@ class TicketListViewController: ViewController {
     private func showDetails(with viewModel: TicketDetailsViewModel) {
         let detailController = TicketDetailsViewController.loadFromStoryboard(viewModel)
         navigationController?.pushViewController(detailController, animated: true)
-    }
-    
-    private func createFutureSection() -> Observable<SectionModel<String, TicketViewModel>> {
-        return viewModel.futureTickets.map { SectionModel(model: "Новые", items: $0) }
-    }
-    
-    private func createPastSection() -> Observable<SectionModel<String, TicketViewModel>> {
-        return viewModel.pastTickets.map { SectionModel(model: "Старые", items: $0) }
     }
     
     @objc
