@@ -46,4 +46,10 @@ class DateFormatters {
         dateFormatter.dateFormat = "yyyy"
         return dateFormatter
     }()
+    
+    static var gmailQuery: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        return dateFormatter
+    }()
 }

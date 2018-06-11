@@ -58,12 +58,14 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
                 databaseManager.add(ticket)
             })
             .disposed(by: disposeBag)
+        
+        googleSignIn.delegate = self
+        googleSignIn.scopes = [kGTLRAuthScopeGmailReadonly]
+        googleSignIn.signInSilently()
     }
     
     func requestSignIn(on viewController: UIViewController) -> Single<Void> {
-        googleSignIn.delegate = self
         googleSignIn.uiDelegate = viewController
-        googleSignIn.scopes = [kGTLRAuthScopeGmailReadonly]
         googleSignIn.signIn()
         return Single.create(subscribe: { handler -> Disposable in
             let disposable = Disposables.create()
@@ -98,7 +100,9 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     
     private func fetchMessagesList() -> Single<[GTLRGmail_Message]> {
         let query = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
-        query.q = "from: admpoezd@mnsk.rw.by subject: Заказ на покупку проездных документов (билетов)"
+        query.q = "from: admpoezd@mnsk.rw.by " +
+            "subject: Заказ на покупку проездных документов (билетов) " +
+            (lastSyncQuery() ?? "")
         return Single.create { handler -> Disposable in
             let disposable = Disposables.create()
             self.gmailService.executeQuery(query) { (ticket, data, error) in
@@ -115,6 +119,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
                     handler(.error(GenericError.message("Incorrect data type from server")))
                     return
                 }
+                self.saveSyncDate()
                 handler(.success(messages))
             }
             return disposable
@@ -176,6 +181,21 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             return disposable
         }
     }
+    
+    private func lastSyncQuery() -> String? {
+        guard let date = lastSyncDate() else { return nil }
+        let dateString = DateFormatters.gmailQuery.string(from: date)
+        return "after: " + dateString
+    }
+    
+    private func saveSyncDate() {
+        UserDefaults.standard.set(Date().timeIntervalSince1970, forKey: "GmailSyncDate")
+    }
+    
+    private func lastSyncDate() -> Date? {
+        let timestamp = UserDefaults.standard.double(forKey: "GmailSyncDate")
+        return Date(timeIntervalSince1970: timestamp)
+    }
 }
 
 //MARK: - GIDSignInDelegate
@@ -186,7 +206,7 @@ extension GmailSyncronizer: GIDSignInDelegate {
             signInHandler = nil
         }
         if let error = error {
-            print(error)
+            print(error.localizedDescription)
             isAuthenticatedRelay.accept(false)
             signInHandler?(.error(error))
             return

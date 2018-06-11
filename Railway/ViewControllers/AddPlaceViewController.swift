@@ -72,7 +72,7 @@ extension AddPlaceViewController: AddPlaceViewDelegate {
         if let index = views.firstIndex(of: view), index < views.endIndex - 1 {
             views[index + 1].becomeFirstResponder()
         } else {
-            view.resignFirstResponder()
+            _ = view.resignFirstResponder()
         }
         return false
     }
