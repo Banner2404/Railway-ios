@@ -26,6 +26,7 @@ class SettingsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        
     }
 }
 
@@ -33,10 +34,19 @@ class SettingsViewController: ViewController {
 private extension SettingsViewController {
     
     func setupTableView() {
-        let gmailSection = SectionModel(model: "test", items: ["section"])
-        let sections = Observable.just([gmailSection])
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { ds, tableView, indexPath, _ in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "GmailTableViewCell", for: indexPath)
+        let gmailConnectSection = Observable.just(SettingsSection(items: [.gmailConnect]))
+        let gmailDisconnectSection = Observable.just(SettingsSection(items: [.gmailDisconnect]))
+
+        let sections = Observable.combineLatest(gmailConnectSection, gmailDisconnectSection, viewModel!.isGmailConnected)
+            .map { arg -> [SettingsSection] in
+                if arg.2 {
+                    return [arg.1]
+                } else {
+                    return [arg.0]
+                }
+        }
+        let dataSource = RxTableViewSectionedReloadDataSource<SettingsSection>(configureCell: { ds, tableView, indexPath, model in
+            let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath)
             return cell
         })
         sections
@@ -45,8 +55,13 @@ private extension SettingsViewController {
         
         tableView.tableFooterView = UIView()
         tableView.rx.itemSelected
-            .filter { $0.section == 0 }
+            .filter { dataSource.sectionModels[$0.section].items[$0.item] == .gmailConnect }
             .subscribe(onNext: { _ in self.connectGmail() })
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .filter { dataSource.sectionModels[$0.section].items[$0.item] == .gmailDisconnect }
+            .subscribe(onNext: { _ in self.disconnectGmail() })
             .disposed(by: disposeBag)
     }
     
@@ -56,5 +71,9 @@ private extension SettingsViewController {
                 print(error)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func disconnectGmail() {
+        viewModel.signOutMail()
     }
 }

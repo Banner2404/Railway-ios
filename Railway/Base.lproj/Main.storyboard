@@ -511,7 +511,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GmailTableViewCell" rowHeight="41" id="Wqf-dE-B0g">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GmailConnectCell" rowHeight="41" id="Wqf-dE-B0g">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wqf-dE-B0g" id="JsC-Em-nmq">
@@ -552,6 +552,52 @@
                                                 <constraint firstItem="UyQ-Q0-0h7" firstAttribute="top" secondItem="JsC-Em-nmq" secondAttribute="top" id="IMT-0t-zhW"/>
                                                 <constraint firstItem="UyQ-Q0-0h7" firstAttribute="leading" secondItem="JsC-Em-nmq" secondAttribute="leading" constant="8" id="ZH9-Cn-jDH"/>
                                                 <constraint firstAttribute="bottom" secondItem="UyQ-Q0-0h7" secondAttribute="bottom" id="nmF-1c-rH4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GmailDisconnectCell" rowHeight="41" id="oCk-Qp-wPH">
+                                        <rect key="frame" x="0.0" y="96.5" width="375" height="41"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCk-Qp-wPH" id="Emn-3m-RWO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLh-nK-1PH">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="41"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отключить Gmail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjG-kH-9tO">
+                                                            <rect key="frame" x="8" y="8" width="343" height="25"/>
+                                                            <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="TBB-t1-h6F"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.53725490200000003" green="0.59607843140000005" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="ZjG-kH-9tO" secondAttribute="trailing" constant="8" id="Hcm-vf-eHl"/>
+                                                        <constraint firstAttribute="bottom" secondItem="ZjG-kH-9tO" secondAttribute="bottom" constant="8" id="Miq-yq-efb"/>
+                                                        <constraint firstItem="ZjG-kH-9tO" firstAttribute="centerY" secondItem="yLh-nK-1PH" secondAttribute="centerY" id="hnU-9r-PrY"/>
+                                                        <constraint firstItem="ZjG-kH-9tO" firstAttribute="top" secondItem="yLh-nK-1PH" secondAttribute="top" constant="8" id="s28-9o-fwP"/>
+                                                        <constraint firstItem="ZjG-kH-9tO" firstAttribute="leading" secondItem="yLh-nK-1PH" secondAttribute="leading" constant="8" id="x2V-tf-Jh9"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="yLh-nK-1PH" secondAttribute="bottom" id="2u8-8U-jeZ"/>
+                                                <constraint firstItem="yLh-nK-1PH" firstAttribute="leading" secondItem="Emn-3m-RWO" secondAttribute="leading" constant="8" id="EvF-Lf-j9L"/>
+                                                <constraint firstItem="yLh-nK-1PH" firstAttribute="top" secondItem="Emn-3m-RWO" secondAttribute="top" id="sWd-dX-n4U"/>
+                                                <constraint firstAttribute="trailing" secondItem="yLh-nK-1PH" secondAttribute="trailing" constant="8" id="uIe-k8-9fj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

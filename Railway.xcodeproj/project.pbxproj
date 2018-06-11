@@ -29,6 +29,7 @@
 		D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
 		D133E9842083D63D00D007F4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
 		D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9852083D90100D007F4 /* PlaceViewModel.swift */; };
+		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
@@ -74,6 +75,7 @@
 		D133E9802083D5CF00D007F4 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		D133E9832083D63D00D007F4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D133E9852083D90100D007F4 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceView.xib; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */,
 				D12BC03020CB174D0005CBD1 /* MailSyncronizer.swift */,
 				D12BC03220CB1A400005CBD1 /* Typealiases.swift */,
+				D15AFF3920CF09370023E596 /* SettingsSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */,
 				D12BC03120CB174D0005CBD1 /* MailSyncronizer.swift in Sources */,
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
+				D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */,
 				D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */,
 				D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */,
 				D12BC03320CB1A400005CBD1 /* Typealiases.swift in Sources */,

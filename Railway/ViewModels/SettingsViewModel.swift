@@ -11,6 +11,10 @@ import RxSwift
 import RxCocoa
 
 class SettingsViewModel {
+
+    var isGmailConnected: Observable<Bool> {
+        return mailSyncronizer.isAuthenticated
+    }
     
     private let mailSyncronizer: MailSyncronizer
     
@@ -20,6 +24,10 @@ class SettingsViewModel {
     
     func signInMail(on viewController: UIViewController) -> Single<Void> {
         return mailSyncronizer.requestSignIn(on: viewController)
+    }
+    
+    func signOutMail() {
+        mailSyncronizer.signOut()
     }
     
     func syncTickets() {

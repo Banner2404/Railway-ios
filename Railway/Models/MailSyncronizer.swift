@@ -18,6 +18,7 @@ protocol MailSyncronizer {
     var isAuthenticated: Observable<Bool> { get }
     
     func requestSignIn(on viewController: UIViewController) -> Single<Void>
+    func signOut()
     func sync()
 }
 
@@ -72,6 +73,11 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             self.signInHandler = handler
             return disposable
         })
+    }
+    
+    func signOut() {
+        googleSignIn.signOut()
+        isAuthenticatedRelay.accept(false)
     }
     
     func sync() {
