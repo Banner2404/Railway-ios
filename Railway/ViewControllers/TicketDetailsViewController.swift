@@ -38,8 +38,15 @@ class TicketDetailsViewController: ViewController {
     }
     
     @IBAction func deleteTicketTap(_ sender: Any) {
-        viewModel.delete()
-        navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет от станции \(viewModel.fromText.value) до станции \(viewModel.toText.value)?", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
+            self.viewModel.delete()
+            self.navigationController?.popViewController(animated: true)
+        }
+        let noAction = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        alert.addAction(yesAction)
+        alert.addAction(noAction)
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func editButtonTap(_ sender: Any) {

@@ -12,6 +12,8 @@ import RxCocoa
 
 class TicketDetailsViewModel {
     
+    let fromText = BehaviorRelay<String>(value: "")
+    let toText = BehaviorRelay<String>(value: "")
     let stationsText = BehaviorRelay<String>(value: "")
     let departureTimeText = BehaviorRelay<String>(value: "")
     let arrivalTimeText = BehaviorRelay<String>(value: "")
@@ -36,6 +38,8 @@ class TicketDetailsViewModel {
     
     func set(_ ticket: Ticket) {
         stationsText.accept("\(ticket.sourceStation.name) - \(ticket.destinationStation.name)")
+        fromText.accept(ticket.sourceStation.name)
+        toText.accept(ticket.destinationStation.name)
         departureTimeText.accept(DateFormatters.shortTime.string(from: ticket.departure))
         arrivalTimeText.accept(DateFormatters.shortTime.string(from: ticket.arrival))
         dateText.accept(DateFormatters.longDate.string(from: ticket.departure))
