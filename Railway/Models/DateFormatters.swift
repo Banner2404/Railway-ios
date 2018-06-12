@@ -12,7 +12,7 @@ class DateFormatters {
     
     static var longDateAndTime: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE, d MMMM, yyyy h:mm"
+        dateFormatter.dateFormat = "EEEE, d MMMM, HH:mm"
         return dateFormatter
     }()
     
