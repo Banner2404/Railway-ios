@@ -47,6 +47,9 @@
 		D1DD9C6220C3BEA20050D56F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */; };
 		D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */; };
 		D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6520C3EDF50050D56F /* Date.swift */; };
+		D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
+		D1F6AB1C20D0554A00461579 /* HighlightableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */; };
+		D1F6AB1E20D055D700461579 /* GmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */; };
 		EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +98,9 @@
 		D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
 		D1DD9C6520C3EDF50050D56F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		D1F6AB1920D0549500461579 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightableTableViewCell.swift; sourceTree = "<group>"; };
+		D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailTableViewCell.swift; sourceTree = "<group>"; };
 		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,7 +163,9 @@
 		D12BEBC2207938E50044F6F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */,
 				D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */,
+				D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
@@ -184,6 +192,7 @@
 			children = (
 				D133E9832083D63D00D007F4 /* UIView.swift */,
 				D1DD9C6520C3EDF50050D56F /* Date.swift */,
+				D1F6AB1920D0549500461579 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1280D8320BC7AB100A386ED /* AddTicketViewModel.swift in Sources */,
+				D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */,
 				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
 				D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */,
 				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
@@ -414,9 +424,11 @@
 				D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
 				D133E9702083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1DBE72620741C20000587C8 /* Station.swift in Sources */,
+				D1F6AB1C20D0554A00461579 /* HighlightableTableViewCell.swift in Sources */,
 				D133E9712083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
 				D1DD9C6220C3BEA20050D56F /* SettingsViewController.swift in Sources */,
 				D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */,
+				D1F6AB1E20D055D700461579 /* GmailTableViewCell.swift in Sources */,
 				D12BC03120CB174D0005CBD1 /* MailSyncronizer.swift in Sources */,
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
 				D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */,

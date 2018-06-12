@@ -8,9 +8,8 @@
 
 import UIKit
 
-class TicketCollapsedTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var mainView: UIView!
+class TicketCollapsedTableViewCell: HighlightableTableViewCell {
+    
     @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
