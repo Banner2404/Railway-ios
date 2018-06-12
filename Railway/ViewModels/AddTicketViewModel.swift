@@ -12,18 +12,20 @@ import RxCocoa
 
 class AddTicketViewModel {
     
-    let databaseManager: DatabaseManager
     let sourceName = BehaviorRelay<String>(value: "")
     let destinationName = BehaviorRelay<String>(value: "")
     let departureDate = BehaviorRelay<Date>(value: Date())
     let arrivalDate = BehaviorRelay<Date>(value: Date())
-    let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel()])
+    let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel(place: nil)])
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
     let addedTicket = PublishSubject<Ticket>()
+    private let currentTicket: Ticket?
     
-    init(databaseManager: DatabaseManager) {
-        self.databaseManager = databaseManager
+    init(currentTicket: Ticket?) {
+        self.currentTicket = currentTicket
+        setupDefaultInfo()
+
         let sourceNameValid = sourceName
             .map { !$0.isEmpty }
             .share()
@@ -49,9 +51,18 @@ class AddTicketViewModel {
     
     func save() {
         let ticket = createTicket()
-        databaseManager.add(ticket)
         addedTicket.onNext(ticket)
         addedTicket.onCompleted()
+    }
+    
+    func setupDefaultInfo() {
+        guard let currentTicket = currentTicket else { return }
+        sourceName.accept(currentTicket.sourceStation.name)
+        destinationName.accept(currentTicket.destinationStation.name)
+        departureDate.accept(currentTicket.departure)
+        arrivalDate.accept(currentTicket.arrival)
+        places.value = currentTicket.places.map { AddPlaceViewModel(place: $0) }
+
     }
     
     private func createTicket() -> Ticket {
@@ -59,10 +70,14 @@ class AddTicketViewModel {
         let destination = Station(name: destinationName.value)
         let places = self.places.value.map { $0.createPlace() }
         
-        return Ticket(sourceStation: source,
+        var ticket = Ticket(sourceStation: source,
                destinationStation: destination,
                departure: departureDate.value,
                arrival: arrivalDate.value,
                places: places)
+        if let current = currentTicket {
+            ticket.id = current.id
+        }
+        return ticket
     }
 }

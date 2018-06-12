@@ -51,11 +51,36 @@ class TicketListViewModel {
                 self.databaseManager.delete(ticket)
             })
             .disposed(by: disposeBag)
+        
+        viewModel.editObservable
+            .subscribe(onNext: { _ in
+                viewModel.editViewModel.onNext(self.editViewModel(ticket, detailsViewModel: viewModel))
+            })
+            .disposed(by: disposeBag)
         return viewModel
     }
     
     func addViewModel() -> AddTicketViewModel {
-        return AddTicketViewModel(databaseManager: databaseManager)
+        let viewModel = AddTicketViewModel(currentTicket: nil)
+        viewModel.addedTicket
+            .subscribe(onNext: { ticket in
+                self.databaseManager.add(ticket)
+            })
+            .disposed(by: disposeBag)
+        return viewModel
+    }
+    
+    func editViewModel(_ ticket: Ticket, detailsViewModel: TicketDetailsViewModel) -> AddTicketViewModel {
+        let viewModel = AddTicketViewModel(currentTicket: ticket)
+        viewModel.addedTicket
+            .subscribe(onNext: { ticket in
+                self.databaseManager.update(ticket)
+                detailsViewModel.set(ticket)
+            })
+            .disposed(by: disposeBag)
+        
+        
+        return viewModel
     }
     
     func settingsViewModel() -> SettingsViewModel {

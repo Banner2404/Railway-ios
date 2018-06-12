@@ -17,7 +17,7 @@ class AddPlaceViewModel {
     let isValid = BehaviorRelay<Bool>(value: true)
     let disposeBag = DisposeBag()
     
-    init() {
+    init(place: Place?) {
         let carriageValid = carriage
             .map { $0 > 0 }
             .share()
@@ -29,6 +29,13 @@ class AddPlaceViewModel {
             .map { $0 && $1 }
             .bind(to: isValid)
             .disposed(by: disposeBag)
+        setupDefailtInfo(place: place)
+    }
+    
+    func setupDefailtInfo(place: Place?) {
+        guard let place = place else { return }
+        carriage.accept(place.carriage)
+        seat.accept(place.seat)
     }
     
     func createPlace() -> Place {

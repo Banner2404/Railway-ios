@@ -35,6 +35,8 @@ class AddTicketViewController: ViewController {
         super.viewDidLoad()
         setupPlacesView()
         setupDatePickers()
+        setupDefaultInfo()
+
         sourceTextField.rx.text
             .map{ $0 ?? "" }
             .map{ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
@@ -44,6 +46,22 @@ class AddTicketViewController: ViewController {
             .map{ $0 ?? "" }
             .map{ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
             .bind(to: viewModel.destinationName)
+            .disposed(by: disposeBag)
+        
+        departureDatePicker.rx.value
+            .map { DateFormatters.shortDateAndTime.string(from: $0) }
+            .bind(to: departureTimeTextField.rx.text)
+            .disposed(by: disposeBag)
+        departureDatePicker.rx.value
+            .bind(to: viewModel.departureDate)
+            .disposed(by: disposeBag)
+        
+        arrivalDatePicker.rx.value
+            .map { DateFormatters.shortDateAndTime.string(from: $0) }
+            .bind(to: arrivalTimeTextField.rx.text)
+            .disposed(by: disposeBag)
+        arrivalDatePicker.rx.value
+            .bind(to: viewModel.arrivalDate)
             .disposed(by: disposeBag)
         
         viewModel.isValid
@@ -63,6 +81,13 @@ class AddTicketViewController: ViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    private func setupDefaultInfo() {
+        sourceTextField.text = viewModel.sourceName.value
+        destinationTextField.text = viewModel.destinationName.value
+        departureDatePicker.date = viewModel.departureDate.value
+        arrivalDatePicker.date = viewModel.arrivalDate.value
+    }
+    
     private func createDatePicker() -> UIDatePicker {
         let picker = UIDatePicker(frame: .zero)
         picker.datePickerMode = .dateAndTime
@@ -71,23 +96,9 @@ class AddTicketViewController: ViewController {
     
     private func setupDatePickers() {
         departureDatePicker = createDatePicker()
-        departureDatePicker.rx.value
-            .map { DateFormatters.shortDateAndTime.string(from: $0) }
-            .bind(to: departureTimeTextField.rx.text)
-            .disposed(by: disposeBag)
-        departureDatePicker.rx.value
-            .bind(to: viewModel.departureDate)
-            .disposed(by: disposeBag)
         departureTimeTextField.inputView = departureDatePicker
         
         arrivalDatePicker = createDatePicker()
-        arrivalDatePicker.rx.value
-            .map { DateFormatters.shortDateAndTime.string(from: $0) }
-            .bind(to: arrivalTimeTextField.rx.text)
-            .disposed(by: disposeBag)
-        arrivalDatePicker.rx.value
-            .bind(to: viewModel.arrivalDate)
-            .disposed(by: disposeBag)
         arrivalTimeTextField.inputView = arrivalDatePicker
     }
     

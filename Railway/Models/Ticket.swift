@@ -9,7 +9,7 @@
 import Foundation
 
 struct Ticket {
-    let id: String
+    var id: String
     let sourceStation: Station
     let destinationStation: Station
     let departure: Date

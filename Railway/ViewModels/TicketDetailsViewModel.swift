@@ -8,29 +8,45 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class TicketDetailsViewModel {
     
-    let stationsText: String
-    let departureTimeText: String
-    let arrivalTimeText: String
-    let dateText: String
-    let places: [PlaceViewModel]
+    let stationsText = BehaviorRelay<String>(value: "")
+    let departureTimeText = BehaviorRelay<String>(value: "")
+    let arrivalTimeText = BehaviorRelay<String>(value: "")
+    let dateText = BehaviorRelay<String>(value: "")
+    let places = BehaviorRelay<[PlaceViewModel]>(value: [])
     var deleteObservable: Observable<Void> {
         return deleteSubject.asObservable()
     }
     
-    private let deleteSubject = PublishSubject<Void>()
+    var editObservable: Observable<Void> {
+        return editSubject.asObservable()
+    }
     
+    var editViewModel = PublishSubject<AddTicketViewModel>()
+    
+    private let deleteSubject = PublishSubject<Void>()
+    private let editSubject = PublishSubject<Void>()
+
     init(_ ticket: Ticket) {
-        stationsText = "\(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
-        departureTimeText = DateFormatters.shortTime.string(from: ticket.departure)
-        arrivalTimeText = DateFormatters.shortTime.string(from: ticket.arrival)
-        dateText = DateFormatters.longDate.string(from: ticket.departure)
-        places = ticket.places.map { PlaceViewModel($0) }
+        set(ticket)
+    }
+    
+    func set(_ ticket: Ticket) {
+        stationsText.accept("\(ticket.sourceStation.name) - \(ticket.destinationStation.name)")
+        departureTimeText.accept(DateFormatters.shortTime.string(from: ticket.departure))
+        arrivalTimeText.accept(DateFormatters.shortTime.string(from: ticket.arrival))
+        dateText.accept(DateFormatters.longDate.string(from: ticket.departure))
+        places.accept(ticket.places.map { PlaceViewModel($0) })
     }
     
     func delete() {
         deleteSubject.onNext(())
+    }
+    
+    func edit() {
+        editSubject.onNext(())
     }
 }

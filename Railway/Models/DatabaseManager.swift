@@ -14,6 +14,7 @@ protocol DatabaseManager {
     
     var tickets: BehaviorSubject<[Ticket]> { get }
     func add(_ ticket: Ticket)
+    func update(_ ticket: Ticket)
     func delete(_ ticket: Ticket)
 }
 
@@ -76,16 +77,34 @@ class DefaultDatabaseManager: DatabaseManager {
         loadTickets()
     }
     
+    func update(_ ticket: Ticket) {
+        guard let model = getModel(for: ticket) else { return }
+        model.sourceStation = createEntity(ticket.sourceStation)
+        model.destinationStation = createEntity(ticket.destinationStation)
+        model.departure = ticket.departure as NSDate
+        model.arrival = ticket.arrival as NSDate
+        if let places = model.places {
+            model.removeFromPlaces(places)
+        }
+        ticket.places
+            .map { createEntity($0) }
+            .forEach { model.addToPlaces($0) }
+        saveContext()
+        loadTickets()
+    }
+    
     func delete(_ ticket: Ticket) {
+        guard let model = getModel(for: ticket) else { return }
+        managedContext.delete(model)
+        saveContext()
+        loadTickets()
+    }
+    
+    private func getModel(for ticket: Ticket) -> TicketCoreDataModel? {
         let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
         request.predicate = NSPredicate(format: "id == %@", ticket.id)
         do {
-            let objects = try managedContext.fetch(request)
-            objects.forEach { object in
-                self.managedContext.delete(object)
-            }
-            saveContext()
-            loadTickets()
+            return try managedContext.fetch(request).first
         } catch {
             fatalError("Unable to read from core data \(error)")
         }

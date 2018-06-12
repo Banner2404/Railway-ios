@@ -23,9 +23,8 @@ class AddPlaceViewController: ViewController {
     }
     
     override func viewDidLoad() {
-        for viewModel in viewModel.places.value {
-            addPlaceView(for: viewModel)
-        }
+        super.viewDidLoad()
+        setupDefaultInfo()
     }
     
     override func becomeFirstResponder() -> Bool {
@@ -35,7 +34,7 @@ class AddPlaceViewController: ViewController {
     
     @IBAction func addPlaceTap(_ sender: Any) {
         
-        let placeViewModel = AddPlaceViewModel()
+        let placeViewModel = AddPlaceViewModel(place: nil)
         viewModel.places.value.append(placeViewModel)
         addPlaceView(for: placeViewModel)
         
@@ -43,6 +42,9 @@ class AddPlaceViewController: ViewController {
     
     func addPlaceView(for placeViewModel: AddPlaceViewModel) {
         let view = AddPlaceView(frame: .zero)
+        let carriage = placeViewModel.carriage.value
+        view.carriageTextField.text = carriage == 0 ? "" : String(carriage)
+        view.placeTextField.text = placeViewModel.seat.value
         view.delegate = self
         let count = stackView.arrangedSubviews.count
         stackView.insertArrangedSubview(view, at: count - 1)
@@ -54,6 +56,12 @@ class AddPlaceViewController: ViewController {
             .map { $0 ?? "" }
             .bind(to: placeViewModel.seat)
             .disposed(by: disposeBag)
+    }
+    
+    private func setupDefaultInfo() {
+        for viewModel in viewModel.places.value {
+            addPlaceView(for: viewModel)
+        }
     }
 }
 
