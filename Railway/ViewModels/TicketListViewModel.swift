@@ -45,7 +45,13 @@ class TicketListViewModel {
     func detailedTicketViewModel(for viewModel: TicketViewModel) -> TicketDetailsViewModel? {
         guard let index = allTicketsViewModelsRelay.value.index(where: { $0 === viewModel }) else { return nil }
         let ticket = allTicketsRelay.value[index]
-        return TicketDetailsViewModel(ticket)
+        let viewModel = TicketDetailsViewModel(ticket)
+        viewModel.deleteObservable
+            .subscribe(onNext: { _ in
+                self.databaseManager.delete(ticket)
+            })
+            .disposed(by: disposeBag)
+        return viewModel
     }
     
     func addViewModel() -> AddTicketViewModel {

@@ -13,8 +13,8 @@ import RxSwift
 protocol DatabaseManager {
     
     var tickets: BehaviorSubject<[Ticket]> { get }
-    
     func add(_ ticket: Ticket)
+    func delete(_ ticket: Ticket)
 }
 
 
@@ -74,6 +74,21 @@ class DefaultDatabaseManager: DatabaseManager {
         }
         saveContext()
         loadTickets()
+    }
+    
+    func delete(_ ticket: Ticket) {
+        let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
+        request.predicate = NSPredicate(format: "id == %@", ticket.id)
+        do {
+            let objects = try managedContext.fetch(request)
+            objects.forEach { object in
+                self.managedContext.delete(object)
+            }
+            saveContext()
+            loadTickets()
+        } catch {
+            fatalError("Unable to read from core data \(error)")
+        }
     }
     
     private func getSimilarTicket(for ticket: Ticket) -> [TicketCoreDataModel] {

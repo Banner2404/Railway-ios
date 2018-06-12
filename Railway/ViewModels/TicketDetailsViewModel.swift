@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class TicketDetailsViewModel {
     
@@ -15,6 +16,11 @@ class TicketDetailsViewModel {
     let arrivalTimeText: String
     let dateText: String
     let places: [PlaceViewModel]
+    var deleteObservable: Observable<Void> {
+        return deleteSubject.asObservable()
+    }
+    
+    private let deleteSubject = PublishSubject<Void>()
     
     init(_ ticket: Ticket) {
         stationsText = "\(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
@@ -22,5 +28,9 @@ class TicketDetailsViewModel {
         arrivalTimeText = DateFormatters.shortTime.string(from: ticket.arrival)
         dateText = DateFormatters.longDate.string(from: ticket.departure)
         places = ticket.places.map { PlaceViewModel($0) }
+    }
+    
+    func delete() {
+        deleteSubject.onNext(())
     }
 }

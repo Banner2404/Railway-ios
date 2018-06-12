@@ -28,6 +28,11 @@ class TicketDetailsViewController: ViewController {
         setupTicketInfo()
     }
     
+    @IBAction func deleteTicketTap(_ sender: Any) {
+        viewModel.delete()
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setupTicketInfo() {
         stationsLabel.text = viewModel.stationsText
         departureLabel.text = viewModel.departureTimeText
