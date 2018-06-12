@@ -18,6 +18,9 @@ class TicketListViewController: ViewController {
     private let showOldest = BehaviorRelay<Bool>(value: false)
     private var oldTickets: Observable<[TicketViewModel]>!
     private var newTickets: Observable<[TicketViewModel]>!
+    private var closestTickets: Observable<[TicketViewModel]>!
+    private var futureTickets: Observable<[TicketViewModel]>!
+
     private var shownTickets: Observable<[[TicketViewModel]]>!
 
     @IBOutlet private weak var tableView: UITableView!
@@ -42,14 +45,25 @@ class TicketListViewController: ViewController {
                 tickets.filter { ticket in
                     ticket.referenceDate >= Date()
                 }
-        }
+            }
         
-        shownTickets = Observable.combineLatest(oldTickets, newTickets, showOldest)
-            .map { arguments -> [[TicketViewModel]] in
-                if arguments.2 {
-                    return [arguments.0, arguments.1]
+        closestTickets = newTickets
+            .map { [$0.first].compactMap { $0 } }
+        
+        futureTickets = newTickets
+            .map { Array($0.dropFirst()) }
+        
+        let allSections = Observable.combineLatest(oldTickets, closestTickets, futureTickets, showOldest).debug()
+            .map { arguments -> [SectionModel<String, TicketViewModel>] in
+                let old = SectionModel(model: "Старые", items: arguments.0)
+                let next = SectionModel(model: "Ближайший", items: arguments.1)
+                let future = SectionModel(model: "Будущие", items: arguments.2)
+                
+                if arguments.3 {
+                    
+                    return [old, next, future]
                 } else {
-                    return [arguments.1]
+                    return [next, future]
                 }
         }
         
@@ -63,11 +77,7 @@ class TicketListViewController: ViewController {
         dataSource.titleForHeaderInSection = { ds, index in
             return ds.sectionModels[index].model
         }
-        let allSections = shownTickets.map { sections in
-                sections.map { viewModels in
-                    SectionModel<String, TicketViewModel>.init(model: "test", items: viewModels)
-                }
-        }
+        
         allSections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
