@@ -33,13 +33,13 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwD-Qd-kmv">
-                    <rect key="frame" x="213" y="0.0" width="162" height="44"/>
+                    <rect key="frame" x="217" y="0.0" width="158" height="44"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNM-nc-e6t">
-                            <rect key="frame" x="56" y="11.5" width="101" height="21"/>
+                            <rect key="frame" x="56" y="11.5" width="97" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="WDX-PW-9gm"/>
                             </connections>
@@ -61,7 +61,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-hX-y37">
-                    <rect key="frame" x="51" y="0.0" width="162" height="44"/>
+                    <rect key="frame" x="51" y="0.0" width="158" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Вагон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4z-Dn-0vQ">
                             <rect key="frame" x="0.0" y="12" width="47" height="20.5"/>
@@ -70,10 +70,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Вагон" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-Sp-yxK">
-                            <rect key="frame" x="52" y="11.5" width="105" height="21"/>
+                            <rect key="frame" x="52" y="11.5" width="101" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="stA-an-cVd"/>
                             </connections>
@@ -92,7 +92,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ekA-hX-y37" secondAttribute="bottom" id="3Bq-Nc-plg"/>
-                <constraint firstItem="YwD-Qd-kmv" firstAttribute="leading" secondItem="ekA-hX-y37" secondAttribute="trailing" id="G5s-M9-q8K"/>
+                <constraint firstItem="YwD-Qd-kmv" firstAttribute="leading" secondItem="ekA-hX-y37" secondAttribute="trailing" constant="8" id="G5s-M9-q8K"/>
                 <constraint firstItem="ekA-hX-y37" firstAttribute="top" secondItem="eRF-bV-GE9" secondAttribute="top" id="L0J-9W-XTu"/>
                 <constraint firstItem="jn5-VN-0qk" firstAttribute="leading" secondItem="eRF-bV-GE9" secondAttribute="leading" constant="8" id="Mft-gf-dKD"/>
                 <constraint firstAttribute="height" constant="44" id="NPJ-Mt-pks"/>

@@ -110,6 +110,7 @@ class TicketListViewController: ViewController {
     @objc
     private func loadOldest() {
         showOldest.accept(true)
+        tableView.refreshControl?.endRefreshing()
     }
     
     private func setupPullToOldest() {
@@ -122,4 +123,12 @@ class TicketListViewController: ViewController {
 
 //MARK: - UITableViewDelegate
 extension TicketListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
 }

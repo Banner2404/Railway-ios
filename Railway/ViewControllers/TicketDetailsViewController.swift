@@ -70,6 +70,10 @@ class TicketDetailsViewController: ViewController {
         
         viewModel.places
             .subscribe(onNext: { places in
+                for view in self.ticketsStackView.arrangedSubviews {
+                    self.ticketsStackView.removeArrangedSubview(view)
+                    view.removeFromSuperview()
+                }
                 for place in places {
                     let view = PlaceView()
                     view.carriageLabel.text = place.carriageText
