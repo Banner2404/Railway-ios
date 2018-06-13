@@ -14,14 +14,16 @@ struct Ticket {
     let destinationStation: Station
     let departure: Date
     let arrival: Date
+    let notes: String
     let places: [Place]
 
-    init(sourceStation: Station, destinationStation: Station, departure: Date, arrival: Date, places: [Place]) {
+    init(sourceStation: Station, destinationStation: Station, departure: Date, arrival: Date, notes: String, places: [Place]) {
         self.id = UUID().uuidString
         self.sourceStation = sourceStation
         self.destinationStation = destinationStation
         self.departure = departure
         self.arrival = arrival
         self.places = places
+        self.notes = notes
     }
 }

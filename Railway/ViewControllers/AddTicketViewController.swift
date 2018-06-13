@@ -24,6 +24,7 @@ class AddTicketViewController: ViewController {
     @IBOutlet private weak var arrivalTimeTextField: UITextField!
     @IBOutlet private weak var placesView: UIView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
+    @IBOutlet private weak var notesTextView: UITextView!
     
     class func loadFromStoryboard(_ viewModel: AddTicketViewModel) -> AddTicketViewController {
         let viewController = loadViewControllerFromStoryboard() as AddTicketViewController
@@ -64,6 +65,11 @@ class AddTicketViewController: ViewController {
             .bind(to: viewModel.arrivalDate)
             .disposed(by: disposeBag)
         
+        notesTextView.rx.value
+            .map { $0 ?? "" }
+            .bind(to: viewModel.notes)
+            .disposed(by: disposeBag)
+        
         viewModel.isValid
             .bind(to: saveButton.rx.isEnabled)
             .disposed(by: disposeBag)
@@ -86,6 +92,7 @@ class AddTicketViewController: ViewController {
         destinationTextField.text = viewModel.destinationName.value
         departureDatePicker.date = viewModel.departureDate.value
         arrivalDatePicker.date = viewModel.arrivalDate.value
+        notesTextView.text = viewModel.notes.value
     }
     
     private func createDatePicker() -> UIDatePicker {

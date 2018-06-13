@@ -16,6 +16,7 @@ class AddTicketViewModel {
     let destinationName = BehaviorRelay<String>(value: "")
     let departureDate = BehaviorRelay<Date>(value: Date())
     let arrivalDate = BehaviorRelay<Date>(value: Date())
+    let notes = BehaviorRelay<String>(value: "")
     let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel(place: nil)])
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
@@ -62,7 +63,7 @@ class AddTicketViewModel {
         departureDate.accept(currentTicket.departure)
         arrivalDate.accept(currentTicket.arrival)
         places.value = currentTicket.places.map { AddPlaceViewModel(place: $0) }
-
+        notes.accept(currentTicket.notes)
     }
     
     private func createTicket() -> Ticket {
@@ -74,6 +75,7 @@ class AddTicketViewModel {
                destinationStation: destination,
                departure: departureDate.value,
                arrival: arrivalDate.value,
+               notes: notes.value,
                places: places)
         if let current = currentTicket {
             ticket.id = current.id

@@ -18,6 +18,7 @@ class TicketDetailsViewModel {
     let departureTimeText = BehaviorRelay<String>(value: "")
     let arrivalTimeText = BehaviorRelay<String>(value: "")
     let dateText = BehaviorRelay<String>(value: "")
+    let notes = BehaviorRelay<String>(value: "")
     let places = BehaviorRelay<[PlaceViewModel]>(value: [])
     var deleteObservable: Observable<Void> {
         return deleteSubject.asObservable()
@@ -43,6 +44,7 @@ class TicketDetailsViewModel {
         departureTimeText.accept(DateFormatters.shortTime.string(from: ticket.departure))
         arrivalTimeText.accept(DateFormatters.shortTime.string(from: ticket.arrival))
         dateText.accept(DateFormatters.longDate.string(from: ticket.departure))
+        notes.accept(ticket.notes)
         places.accept(ticket.places.map { PlaceViewModel($0) })
     }
     

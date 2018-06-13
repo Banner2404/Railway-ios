@@ -48,7 +48,7 @@ class MessageProcessor {
         let placeString = strings[23]
         guard let place = self.place(from: String(placeString)) else { return nil }
 
-        return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, places: [place])
+        return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: [place])
     }
     
     private static func date(fromDateString dateString: String, timeString: String) -> Date? {

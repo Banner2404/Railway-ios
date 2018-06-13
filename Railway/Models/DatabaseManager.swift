@@ -83,6 +83,7 @@ class DefaultDatabaseManager: DatabaseManager {
         model.destinationStation = createEntity(ticket.destinationStation)
         model.departure = ticket.departure as NSDate
         model.arrival = ticket.arrival as NSDate
+        model.notes = ticket.notes
         if let places = model.places {
             model.removeFromPlaces(places)
         }
@@ -112,8 +113,6 @@ class DefaultDatabaseManager: DatabaseManager {
     
     private func getSimilarTicket(for ticket: Ticket) -> [TicketCoreDataModel] {
         let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
-        print(ticket.arrival.minuteStart.timeIntervalSince1970)
-        print(ticket.arrival.minuteEnd.timeIntervalSince1970)
 
         request.predicate = NSPredicate(format: "sourceStation.name == %@ AND " +
                                                 "destinationStation.name == %@ AND " +
@@ -137,6 +136,7 @@ class DefaultDatabaseManager: DatabaseManager {
         ticketModel.id = ticket.id
         ticketModel.arrival = ticket.arrival as NSDate
         ticketModel.departure = ticket.departure as NSDate
+        ticketModel.notes = ticket.notes
         
         ticketModel.sourceStation = createEntity(ticket.sourceStation)
         ticketModel.destinationStation = createEntity(ticket.destinationStation)
@@ -173,6 +173,7 @@ extension Ticket {
         self.arrival = ticket.arrival! as Date
         self.departure = ticket.departure! as Date
         self.places = ticket.places!.map { Place($0 as! PlaceCoreDataModel) }
+        self.notes = ticket.notes ?? ""
     }
 }
 
