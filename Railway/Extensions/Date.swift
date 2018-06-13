@@ -28,4 +28,12 @@ extension Date {
     var minuteEnd: Date {
         return minuteStart.addingTimeInterval(60 - 1)
     }
+    
+    var nextHour: Date {
+        let calendar = Calendar.current
+        guard var date = calendar.date(bySetting: .minute, value: 0, of: self) else {
+            fatalError("Unable to get minute start")
+        }
+        return date
+    }
 }

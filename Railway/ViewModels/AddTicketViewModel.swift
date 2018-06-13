@@ -14,17 +14,21 @@ class AddTicketViewModel {
     
     let sourceName = BehaviorRelay<String>(value: "")
     let destinationName = BehaviorRelay<String>(value: "")
-    let departureDate = BehaviorRelay<Date>(value: Date())
-    let arrivalDate = BehaviorRelay<Date>(value: Date())
+    let departureDate = BehaviorRelay<Date>(value: Date().nextHour)
+    let arrivalDate = BehaviorRelay<Date>(value: Date().nextHour.addingTimeInterval(60 * 60))
     let notes = BehaviorRelay<String>(value: "")
     let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel(place: nil)])
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
+    let isValidArrival: Observable<Bool>
     let addedTicket = PublishSubject<Ticket>()
     private let currentTicket: Ticket?
     
     init(currentTicket: Ticket?) {
         self.currentTicket = currentTicket
+        isValidArrival = Observable.combineLatest(departureDate, arrivalDate)
+            .map { $0 < $1 }
+            .share()
         setupDefaultInfo()
 
         let sourceNameValid = sourceName
@@ -43,8 +47,8 @@ class AddTicketViewModel {
             .share()
         
         
-        Observable.combineLatest(sourceNameValid, destinationNameValid, placesValid)
-            .map { $0 && $1 && $2 }
+        Observable.combineLatest(sourceNameValid, destinationNameValid, placesValid, isValidArrival)
+            .map { $0 && $1 && $2 && $3 }
             .bind(to: isValid)
             .disposed(by: bag)
         

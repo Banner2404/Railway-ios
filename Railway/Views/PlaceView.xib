@@ -24,7 +24,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t0b-KM-vey">
                     <rect key="frame" x="147" y="0.0" width="147" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="место" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1v-Ec-wBy">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="место" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1v-Ec-wBy">
                             <rect key="frame" x="16" y="16" width="51.5" height="22"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                             <nil key="textColor"/>
@@ -41,6 +41,7 @@
                     <constraints>
                         <constraint firstItem="mcs-OZ-7qi" firstAttribute="leading" secondItem="L1v-Ec-wBy" secondAttribute="trailing" constant="16" id="XSy-O5-CwR"/>
                         <constraint firstItem="mcs-OZ-7qi" firstAttribute="centerY" secondItem="t0b-KM-vey" secondAttribute="centerY" id="aKV-s6-fe9"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mcs-OZ-7qi" secondAttribute="trailing" constant="5" id="aMu-RB-6pj"/>
                         <constraint firstItem="L1v-Ec-wBy" firstAttribute="leading" secondItem="t0b-KM-vey" secondAttribute="leading" constant="16" id="mW7-9x-gTN"/>
                         <constraint firstItem="mcs-OZ-7qi" firstAttribute="bottom" secondItem="L1v-Ec-wBy" secondAttribute="bottom" id="yKM-uf-WiC"/>
                     </constraints>
@@ -48,7 +49,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNc-oI-bA6">
                     <rect key="frame" x="0.0" y="0.0" width="147" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="вагон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3r-Ib-Xya">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="вагон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3r-Ib-Xya">
                             <rect key="frame" x="16" y="16" width="47.5" height="22"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                             <nil key="textColor"/>
@@ -63,6 +64,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zO7-89-6W9" secondAttribute="trailing" constant="5" id="Kxw-Ye-ylh"/>
                         <constraint firstItem="zO7-89-6W9" firstAttribute="bottom" secondItem="z3r-Ib-Xya" secondAttribute="bottom" id="SHa-hR-DSn"/>
                         <constraint firstItem="z3r-Ib-Xya" firstAttribute="leading" secondItem="UNc-oI-bA6" secondAttribute="leading" constant="16" id="jVY-xi-f1f"/>
                         <constraint firstItem="zO7-89-6W9" firstAttribute="centerY" secondItem="UNc-oI-bA6" secondAttribute="centerY" id="lMV-Ku-IzI"/>

@@ -74,6 +74,15 @@ class AddTicketViewController: ViewController {
             .bind(to: saveButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        viewModel.isValidArrival
+            .map { isValid in
+                isValid ? UIColor.black : UIColor.red
+            }
+            .subscribe(onNext: { color in
+                self.arrivalTimeTextField.textColor = color
+            })
+            .disposed(by: disposeBag)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
     }
