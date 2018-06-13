@@ -23,6 +23,7 @@ class TicketListViewController: ViewController {
 
     private var shownTickets: Observable<[[TicketViewModel]]>!
 
+    @IBOutlet private weak var syncIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
     class func loadFromStoryboard(viewModel: TicketListViewModel) -> TicketListViewController {
@@ -53,7 +54,7 @@ class TicketListViewController: ViewController {
         futureTickets = newTickets
             .map { Array($0.dropFirst()) }
         
-        let allSections = Observable.combineLatest(oldTickets, closestTickets, futureTickets, showOldest).debug()
+        let allSections = Observable.combineLatest(oldTickets, closestTickets, futureTickets, showOldest)
             .map { arguments -> [SectionModel<String, TicketViewModel>] in
                 let old = SectionModel(model: "Старые", items: arguments.0)
                 let next = SectionModel(model: "Ближайший", items: arguments.1)
@@ -88,6 +89,12 @@ class TicketListViewController: ViewController {
             .subscribe(onNext: { viewModel in
                 guard let viewModel = viewModel else { return }
                 self.showDetails(with: viewModel)})
+            .disposed(by: disposeBag)
+        
+        viewModel.isSyncronizing
+            .debug()
+            .map { !$0 }
+            .bind(to: syncIndicator.rx.isHidden)
             .disposed(by: disposeBag)
         setupPullToOldest()
     }

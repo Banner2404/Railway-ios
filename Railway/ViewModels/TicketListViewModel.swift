@@ -16,6 +16,10 @@ class TicketListViewModel {
         return allTicketsViewModelsRelay.asObservable()
     }
     
+    var isSyncronizing: Observable<Bool> {
+        return mailSyncronizer.isSyncronizing
+    }
+    
     private let allTicketsViewModelsRelay = BehaviorRelay<[TicketViewModel]>(value: [])
     private let allTicketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager

@@ -14,6 +14,7 @@ import GoogleAPIClientForREST
 
 protocol MailSyncronizer {
     
+    var isSyncronizing: Observable<Bool> { get }
     var newTickets: Observable<Ticket> { get }
     var isAuthenticated: Observable<Bool> { get }
     
@@ -23,6 +24,10 @@ protocol MailSyncronizer {
 }
 
 class GmailSyncronizer: NSObject, MailSyncronizer {
+    
+    var isSyncronizing: Observable<Bool> {
+        return isSyncronizingRelay.debug().asObservable()
+    }
 
     var newTickets: Observable<Ticket> {
         return newTicketsSubject.asObservable()
@@ -32,6 +37,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         return isAuthenticatedRelay.asObservable()
     }
     
+    private let isSyncronizingRelay = BehaviorRelay<Bool>(value: false)
     private let isAuthenticatedRelay = BehaviorRelay<Bool>(value: false)
     private let newTicketsSubject = PublishSubject<Ticket>()
     private let googleSignIn: GIDSignIn
@@ -52,6 +58,10 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .subscribe { _ in
                 self.sync()
         }
+            .disposed(by: disposeBag)
+        
+        isAuthenticated.debug()
+            .bind(to: isSyncronizingRelay)
             .disposed(by: disposeBag)
         
         newTickets
@@ -81,6 +91,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     }
     
     func sync() {
+        isSyncronizingRelay.accept(true)
         fetchMessagesList()
             .asObservable()
             .flatMap { messages in
@@ -100,7 +111,14 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .flatMap { tickets in
                 Observable.from(tickets)
             }
-            .bind(to: newTicketsSubject)
+            .debug()
+            .subscribe(onNext: { ticket in
+                self.newTicketsSubject.onNext(ticket)
+            }, onError: { _ in
+                self.isSyncronizingRelay.accept(false)
+            }, onCompleted: {
+                self.isSyncronizingRelay.accept(false)
+            })
             .disposed(by: disposeBag)
     }
     
