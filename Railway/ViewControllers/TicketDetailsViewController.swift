@@ -20,6 +20,7 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var ticketsStackView: UIStackView!
     @IBOutlet private weak var notesTextView: UITextView!
+    @IBOutlet private weak var notesView: UIView!
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -78,6 +79,11 @@ class TicketDetailsViewController: ViewController {
         
         viewModel.notes
             .bind(to: notesTextView.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.notes
+            .map { $0.isEmpty }
+            .bind(to: notesView.rx.isHidden)
             .disposed(by: disposeBag)
         
         viewModel.places
