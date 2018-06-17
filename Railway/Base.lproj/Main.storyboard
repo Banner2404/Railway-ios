@@ -22,6 +22,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="deviceRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="h5L-At-xbe">
+                                    <rect key="frame" x="0.0" y="161.5" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет Билетов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzH-ih-JDD">
+                                            <rect key="frame" x="138" y="11.5" width="99" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="jzH-ih-JDD" firstAttribute="centerY" secondItem="h5L-At-xbe" secondAttribute="centerY" id="DZp-4w-nxo"/>
+                                        <constraint firstItem="jzH-ih-JDD" firstAttribute="centerX" secondItem="h5L-At-xbe" secondAttribute="centerX" id="GB6-Hl-YOD"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TicketCollapsedTableViewCell" rowHeight="88" id="riQ-h5-ccg" customClass="TicketCollapsedTableViewCell" customModule="Railway" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="88"/>

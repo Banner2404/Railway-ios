@@ -56,17 +56,18 @@ class TicketListViewController: ViewController {
         
         let allSections = Observable.combineLatest(oldTickets, closestTickets, futureTickets, showOldest)
             .map { arguments -> [SectionModel<String, TicketViewModel>] in
-                let old = SectionModel(model: "Старые", items: arguments.0)
+                let old = SectionModel(model: "Прошедшие", items: arguments.0)
                 let next = SectionModel(model: "Ближайший", items: arguments.1)
                 let future = SectionModel(model: "Будущие", items: arguments.2)
                 
+                let sections: [SectionModel<String, TicketViewModel>]
                 if arguments.3 {
-                    
-                    return [old, next, future]
+                    sections = [old, next, future]
                 } else {
-                    return [next, future]
+                    sections = [next, future]
                 }
-        }
+                return sections.filter { $0.items.count > 0 }
+            }
         
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>(
             configureCell: { dataSource, tableView, indexPath, item in
@@ -82,7 +83,6 @@ class TicketListViewController: ViewController {
         allSections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        tableView.tableFooterView = UIView()
         tableView.rx.itemSelected
             .map { dataSource.sectionModels[$0.section].items[$0.row] }
             .map { self.viewModel.detailedTicketViewModel(for: $0) }
