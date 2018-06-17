@@ -15,11 +15,13 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var notificationManager: NotificationManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = "828532157765-6v55upkt90dsau7mh3m8qvi13bbiveq4.apps.googleusercontent.com"
         let database = DefaultDatabaseManager()
+        notificationManager = NotificationManager(database: database)
         let mail = GmailSyncronizer(databaseManager: database)
         let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mail)
         let rootController = TicketListViewController.loadFromStoryboard(viewModel: viewModel)
