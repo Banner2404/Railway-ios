@@ -1,5 +1,8 @@
 PODS:
+  - Crashlytics (3.10.2):
+    - Fabric (~> 1.7.7)
   - Differentiator (3.0.2)
+  - Fabric (1.7.7)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Gmail (1.2.1):
@@ -35,6 +38,8 @@ PODS:
   - RxSwift (4.2.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - GoogleAPIClientForREST/Gmail (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
   - Reveal-SDK
@@ -44,7 +49,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Crashlytics
     - Differentiator
+    - Fabric
     - GoogleAPIClientForREST
     - GoogleSignIn
     - GoogleToolboxForMac
@@ -56,7 +63,9 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
+  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
@@ -67,6 +76,6 @@ SPEC CHECKSUMS:
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: b35022e3b7e751a65089847bc929bedf0b73e16c
+PODFILE CHECKSUM: 6b091846c8150918b6b1357459f01f7346385d57
 
 COCOAPODS: 1.5.3
