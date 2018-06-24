@@ -29,11 +29,15 @@
 		D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
 		D133E9842083D63D00D007F4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
 		D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9852083D90100D007F4 /* PlaceViewModel.swift */; };
+		D13F4B2B20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */; };
 		D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
+		D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046720DF9CDA007155ED /* NotificationsViewController.swift */; };
+		D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */; };
+		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
 		D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */; };
 		D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
@@ -79,6 +83,7 @@
 		D133E9802083D5CF00D007F4 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		D133E9832083D63D00D007F4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D133E9852083D90100D007F4 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsToggleTableViewCell.swift; sourceTree = "<group>"; };
 		D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +91,9 @@
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
 		D16C046520DF98B1007155ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		D16C046620DF98B2007155ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D16C046720DF9CDA007155ED /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewModel.swift; sourceTree = "<group>"; };
 		D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,11 +164,13 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE72B20741CF8000587C8 /* ViewController.swift */,
+				D16C046B20DFA032007155ED /* ContainerViewController.swift */,
 				D1DBE72720741C92000587C8 /* TicketListViewController.swift */,
 				D133E9752083C31400D007F4 /* TicketDetailsViewController.swift */,
 				D1280D8020BC771300A386ED /* AddTicketViewController.swift */,
 				D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */,
 				D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */,
+				D16C046720DF9CDA007155ED /* NotificationsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -171,6 +181,8 @@
 				D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */,
 				D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */,
 				D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */,
+				D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */,
+				D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
@@ -438,11 +450,14 @@
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1280D8320BC7AB100A386ED /* AddTicketViewModel.swift in Sources */,
 				D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */,
+				D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */,
+				D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */,
 				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
 				D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */,
 				D1DBE72820741C92000587C8 /* TicketListViewController.swift in Sources */,
 				D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */,
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
+				D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */,
 				D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */,
 				D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
 				D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -457,6 +472,7 @@
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
 				D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */,
 				D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */,
+				D13F4B2B20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift in Sources */,
 				D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */,
 				D12BC03320CB1A400005CBD1 /* Typealiases.swift in Sources */,
 				D133E9762083C31400D007F4 /* TicketDetailsViewController.swift in Sources */,

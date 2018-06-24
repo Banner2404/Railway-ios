@@ -19,6 +19,7 @@ struct SettingsSection {
     enum CellType {
         case gmailConnect
         case gmailDisconnect
+        case notifications
         
         var cellIdentifier: String {
             switch self {
@@ -26,6 +27,8 @@ struct SettingsSection {
                 return "GmailConnectCell"
             case .gmailDisconnect:
                 return "GmailDisconnectCell"
+            case .notifications:
+                return "NotificationSettingsTableViewCell"
             }
         }
     }

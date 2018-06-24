@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class SettingsViewController: ViewController {
+class SettingsViewController: ViewController, ContainerViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     private let disposeBag = DisposeBag()
@@ -26,7 +26,6 @@ class SettingsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        
     }
 }
 
@@ -44,9 +43,14 @@ private extension SettingsViewController {
                 } else {
                     return [arg.0]
                 }
-        }
+            }
+            .map { [SettingsSection(items: [.notifications])] + $0 }
+        
         let dataSource = RxTableViewSectionedReloadDataSource<SettingsSection>(configureCell: { ds, tableView, indexPath, model in
             let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: indexPath)
+            if model == .notifications, let cell = cell as? NotificationSettingsTableViewCell {
+                self.setupNotiticationsViewController(in: cell.mainView)
+            }
             return cell
         })
         sections
@@ -75,5 +79,12 @@ private extension SettingsViewController {
     
     func disconnectGmail() {
         viewModel.signOutMail()
+    }
+    
+    private func setupNotiticationsViewController(in view: UIView) {
+        let viewController = NotificationsViewController.loadFromStoryboard()
+        show(viewController, inContainerView: view)
+        viewController.view.setNeedsLayout()
+        viewController.view.layoutIfNeeded()
     }
 }
