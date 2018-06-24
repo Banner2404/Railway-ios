@@ -30,6 +30,9 @@
 		D133E9842083D63D00D007F4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
 		D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9852083D90100D007F4 /* PlaceViewModel.swift */; };
 		D13F4B2B20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */; };
+		D13F4B2D20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B2C20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift */; };
+		D13F4B2F20DFDFDA00A3F8D9 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B2E20DFDFDA00A3F8D9 /* NotificationsViewModel.swift */; };
+		D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */; };
 		D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
@@ -84,6 +87,9 @@
 		D133E9832083D63D00D007F4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		D133E9852083D90100D007F4 /* PlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
 		D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsToggleTableViewCell.swift; sourceTree = "<group>"; };
+		D13F4B2C20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRecordTableViewCell.swift; sourceTree = "<group>"; };
+		D13F4B2E20DFDFDA00A3F8D9 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSection.swift; sourceTree = "<group>"; };
 		D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */,
 				D12BC03220CB1A400005CBD1 /* Typealiases.swift */,
 				D15AFF3920CF09370023E596 /* SettingsSection.swift */,
+				D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +163,7 @@
 				D1280D8220BC7AB100A386ED /* AddTicketViewModel.swift */,
 				D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */,
 				D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */,
+				D13F4B2E20DFDFDA00A3F8D9 /* NotificationsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 				D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */,
 				D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */,
 				D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */,
+				D13F4B2C20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
@@ -440,14 +449,17 @@
 				D133E9842083D63D00D007F4 /* UIView.swift in Sources */,
 				D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */,
 				D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */,
+				D13F4B2F20DFDFDA00A3F8D9 /* NotificationsViewModel.swift in Sources */,
 				D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */,
 				D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */,
 				D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */,
 				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
 				D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */,
 				D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */,
+				D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */,
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
+				D13F4B2D20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift in Sources */,
 				D1280D8320BC7AB100A386ED /* AddTicketViewModel.swift in Sources */,
 				D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */,
 				D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */,

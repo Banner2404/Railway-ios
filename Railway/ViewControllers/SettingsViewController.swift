@@ -82,7 +82,8 @@ private extension SettingsViewController {
     }
     
     private func setupNotiticationsViewController(in view: UIView) {
-        let viewController = NotificationsViewController.loadFromStoryboard()
+        let viewModel = self.viewModel.getNotificationsViewModel()
+        let viewController = NotificationsViewController.loadFromStoryboard(viewModel: viewModel)
         show(viewController, inContainerView: view)
         viewController.view.setNeedsLayout()
         viewController.view.layoutIfNeeded()

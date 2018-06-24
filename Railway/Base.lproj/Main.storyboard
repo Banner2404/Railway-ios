@@ -842,10 +842,40 @@
                                             <outlet property="switchControl" destination="kUW-ri-b95" id="Wj3-em-Xjo"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationRecordTableViewCell" id="7Jj-Su-60X" customClass="NotificationRecordTableViewCell" customModule="Railway" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Jj-Su-60X" id="eC5-xG-7Tc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Первое" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVh-yM-p6i">
+                                                    <rect key="frame" x="15" y="11" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За 2 часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-3j-S8n">
+                                                    <rect key="frame" x="285" y="11.5" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yVh-yM-p6i" firstAttribute="leading" secondItem="eC5-xG-7Tc" secondAttribute="leading" constant="15" id="D7Z-Ir-cN1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hwt-3j-S8n" secondAttribute="trailing" constant="15" id="FtF-kB-uAB"/>
+                                                <constraint firstItem="Hwt-3j-S8n" firstAttribute="centerY" secondItem="eC5-xG-7Tc" secondAttribute="centerY" id="Phf-av-njd"/>
+                                                <constraint firstItem="yVh-yM-p6i" firstAttribute="top" secondItem="eC5-xG-7Tc" secondAttribute="topMargin" id="nlx-yx-by6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yVh-yM-p6i" secondAttribute="bottom" constant="1" id="wCh-Lq-9pw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="yVh-yM-p6i" id="vMA-93-Gq9"/>
+                                            <outlet property="valueLabel" destination="Hwt-3j-S8n" id="9hp-sn-Ikc"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Fq2-Dd-TEX" id="uic-Xo-LZz"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

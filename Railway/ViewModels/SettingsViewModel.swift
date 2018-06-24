@@ -33,4 +33,8 @@ class SettingsViewModel {
     func syncTickets() {
         mailSyncronizer.sync()
     }
+    
+    func getNotificationsViewModel() -> NotificationsViewModel {
+        return NotificationsViewModel()
+    }
 }
