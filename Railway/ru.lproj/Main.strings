@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Monday, January 1, 2018 10:20"; ObjectID = "438-ar-SDx"; */
+"438-ar-SDx.text" = "Monday, January 1, 2018 10:20";
+
+/* Class = "UILabel"; text = "Минск-Пассажирский - Ивацевичи"; ObjectID = "48q-Hm-EOc"; */
+"48q-Hm-EOc.text" = "Минск-Пассажирский - Ивацевичи";
+
+/* Class = "UILabel"; text = "Прибытие"; ObjectID = "689-qg-nyT"; */
+"689-qg-nyT.text" = "Прибытие";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "8D8-iM-hJw"; */
+"8D8-iM-hJw.title" = "Сохранить";
+
+/* Class = "UINavigationItem"; title = "Настройки"; ObjectID = "AGj-Od-iHs"; */
+"AGj-Od-iHs.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Добавить место"; ObjectID = "Avq-De-njp"; */
+"Avq-De-njp.text" = "Добавить место";
+
+/* Class = "UILabel"; text = "Откуда"; ObjectID = "Ccr-ve-9LP"; */
+"Ccr-ve-9LP.text" = "Откуда";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "Dqu-xE-eWi"; */
+"Dqu-xE-eWi.placeholder" = "Отправление";
+
+/* Class = "UIButton"; normalTitle = "Удалить Билет"; ObjectID = "S1W-GA-4Yc"; */
+"S1W-GA-4Yc.normalTitle" = "Удалить Билет";
+
+/* Class = "UILabel"; text = "10:20"; ObjectID = "WnY-XQ-eZr"; */
+"WnY-XQ-eZr.text" = "10:20";
+
+/* Class = "UILabel"; text = "Отправление"; ObjectID = "WuG-qK-9OV"; */
+"WuG-qK-9OV.text" = "Отправление";
+
+/* Class = "UILabel"; text = "Вторник, 10 марта 2018"; ObjectID = "Xfh-Sl-U2u"; */
+"Xfh-Sl-U2u.text" = "Вторник, 10 марта 2018";
+
+/* Class = "UITextField"; placeholder = "Назначение"; ObjectID = "YN9-jW-0RO"; */
+"YN9-jW-0RO.placeholder" = "Назначение";
+
+/* Class = "UILabel"; text = "Отключить Gmail"; ObjectID = "ZjG-kH-9tO"; */
+"ZjG-kH-9tO.text" = "Отключить Gmail";
+
+/* Class = "UITextView"; text = "Заметки"; ObjectID = "asW-tC-bVH"; */
+"asW-tC-bVH.text" = "Заметки";
+
+/* Class = "UIBarButtonItem"; title = "Настройки"; ObjectID = "cry-OD-8ZD"; */
+"cry-OD-8ZD.title" = "Настройки";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "dNZ-Ib-Zor"; */
+"dNZ-Ib-Zor.placeholder" = "Отправление";
+
+/* Class = "UIButton"; normalTitle = "Ред"; ObjectID = "dWN-NB-gFM"; */
+"dWN-NB-gFM.normalTitle" = "Ред";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "eEQ-bw-zGY"; */
+"eEQ-bw-zGY.text" = "-";
+
+/* Class = "UILabel"; text = "Билеты"; ObjectID = "eP5-ec-3yv"; */
+"eP5-ec-3yv.text" = "Билеты";
+
+/* Class = "UILabel"; text = "Minsk - Brest Central"; ObjectID = "eUA-yq-m5n"; */
+"eUA-yq-m5n.text" = "Minsk - Brest Central";
+
+/* Class = "UILabel"; text = "20:30"; ObjectID = "fwQ-jR-Bes"; */
+"fwQ-jR-Bes.text" = "20:30";
+
+/* Class = "UILabel"; text = "Нет Билетов"; ObjectID = "jzH-ih-JDD"; */
+"jzH-ih-JDD.text" = "Нет Билетов";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "o0q-2J-iRS"; */
+"o0q-2J-iRS.placeholder" = "Отправление";
+
+/* Class = "UILabel"; text = "Куда"; ObjectID = "q7z-vG-4If"; */
+"q7z-vG-4If.text" = "Куда";
+
+/* Class = "UILabel"; text = "Подключить Gmail"; ObjectID = "qJL-TC-XQy"; */
+"qJL-TC-XQy.text" = "Подключить Gmail";
+
+/* Class = "UINavigationItem"; title = "Новый Билет"; ObjectID = "tQD-VZ-hao"; */
+"tQD-VZ-hao.title" = "Новый Билет";
+
+/* Class = "UINavigationItem"; title = "Билеты"; ObjectID = "v0V-y1-rpb"; */
+"v0V-y1-rpb.title" = "Билеты";

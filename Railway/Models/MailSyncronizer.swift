@@ -26,7 +26,7 @@ protocol MailSyncronizer {
 class GmailSyncronizer: NSObject, MailSyncronizer {
     
     var isSyncronizing: Observable<Bool> {
-        return isSyncronizingRelay.debug().asObservable()
+        return isSyncronizingRelay.asObservable()
     }
 
     var newTickets: Observable<Ticket> {
@@ -60,7 +60,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         }
             .disposed(by: disposeBag)
         
-        isAuthenticated.debug()
+        isAuthenticated
             .bind(to: isSyncronizingRelay)
             .disposed(by: disposeBag)
         
@@ -111,7 +111,6 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .flatMap { tickets in
                 Observable.from(tickets)
             }
-            .debug()
             .subscribe(onNext: { ticket in
                 self.newTicketsSubject.onNext(ticket)
             }, onError: { _ in
@@ -208,8 +207,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     
     private func lastSyncQuery() -> String? {
         guard let date = lastSyncDate() else { return nil }
-        let dateString = DateFormatters.gmailQuery.string(from: date)
-        return "after: " + dateString
+        return "after: \(Int(date.timeIntervalSince1970))"
     }
     
     private func saveSyncDate() {

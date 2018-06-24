@@ -13,11 +13,13 @@ import UserNotifications
 
 class NotificationManager {
     
+    private let timeInterval: TimeInterval = 60 * 60
     private let database: DatabaseManager
     private let disposeBag = DisposeBag()
     private let notificationCenter = UNUserNotificationCenter.current()
     private lazy var dateComponentsFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .full
         formatter.allowedUnits = [.hour, .minute]
         formatter.includesApproximationPhrase = false
         formatter.includesTimeRemainingPhrase = false
@@ -54,7 +56,7 @@ class NotificationManager {
     
     private func setupNotifications(for tickets: [Ticket]) {
         resetNotifications()
-        for ticket in tickets {
+        for ticket in tickets where ticket.departure > Date() {
             setupNotifications(for: ticket)
         }
     }
@@ -72,13 +74,19 @@ class NotificationManager {
     
     private func createNotificationContent(for ticket: Ticket) -> UNNotificationContent {
         let content = UNMutableNotificationContent()
-        content.title = "Поезд"
-        content.body = "Поезд по маршруту \(ticket.sourceStation.name) - \(ticket.destinationStation.name) отправляется через \(dateComponentsFormatter.string(from: Date(), to: ticket.departure) ?? "")"
+        content.title = "Поезд \(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
+        content.body = "Через \(dateComponentsFormatter.string(from: timeInterval) ?? "")\(seatString(for: ticket))"
         return content
     }
     
+    private func seatString(for ticket: Ticket) -> String {
+        guard ticket.places.count == 1 else { return "" }
+        let place = ticket.places[0]
+        return "\n\(place.carriage) вагон \(place.seat) место"
+    }
+    
     private func createNotificationTrigger(for ticket: Ticket) -> UNNotificationTrigger {
-        let components = getNotificationComponents(from: ticket.departure.addingTimeInterval(-60 * 2))
+        let components = getNotificationComponents(from: ticket.departure.addingTimeInterval(-timeInterval))
         return UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
     }
     
