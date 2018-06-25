@@ -13,6 +13,9 @@ import UserNotifications
 
 class NotificationManager {
     
+    var isEnabled = Variable<Bool>(false)
+    var alerts = Variable<NotificationAlert>([.fiveMinutes, .oneHour])
+    
     private let timeInterval: TimeInterval = 60 * 60
     private let database: DatabaseManager
     private let disposeBag = DisposeBag()

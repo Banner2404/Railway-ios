@@ -12,6 +12,17 @@ import RxCocoa
 
 class NotificationsViewModel {
     
-    var isEnabled = Variable<Bool>(false)
+    var isEnabled: Variable<Bool> {
+        return notificationManager.isEnabled
+    }
     
+    var alerts: Variable<NotificationAlert> {
+        return notificationManager.alerts
+    }
+    
+    private let notificationManager: NotificationManager
+    
+    init(notificationManager: NotificationManager) {
+        self.notificationManager = notificationManager
+    }
 }

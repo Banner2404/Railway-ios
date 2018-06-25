@@ -46,9 +46,9 @@ private extension NotificationsViewController {
     }
     
     func setupSections() -> Observable<[NotificationsSection]> {
-        let section = NotificationsSection(items: [.toggle, .record, .record, .record, .record])
-        let sections = Observable.just([section])
-        return sections
+        return viewModel.alerts.asObservable()
+            .map { $0.included.enumerated().map { NotificationsSection.Item.record(alert: $0.element) } }
+            .map { [NotificationsSection(items: [.toggle] + $0)] }
     }
     
     func setupDataSource() -> RxTableViewSectionedReloadDataSource<NotificationsSection> {
@@ -56,6 +56,9 @@ private extension NotificationsViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: index)
             if let cell = cell as? NotificationsToggleTableViewCell {
                 self.setupToggle(cell: cell)
+            }
+            if let cell = cell as? NotificationRecordTableViewCell, case .record(let alert) = model {
+                self.setupRecord(cell: cell, alert: alert, index: index.row)
             }
             return cell
         })
@@ -71,9 +74,14 @@ private extension NotificationsViewController {
     }
     
     func setupToggle(cell: NotificationsToggleTableViewCell) {
-        viewModel.isEnabled
-            .asObservable()
-            .bind(to: cell.switchControl.rx.isOn)
+        cell.switchControl.isOn = viewModel.isEnabled.value
+        cell.switchControl.rx.isOn
+            .bind(to: viewModel.isEnabled)
             .disposed(by: disposeBag)
+    }
+    
+    func setupRecord(cell: NotificationRecordTableViewCell, alert: NotificationAlert, index: Int) {
+        cell.valueLabel.text = alert.string
+        cell.titleLabel.text = index.string
     }
 }

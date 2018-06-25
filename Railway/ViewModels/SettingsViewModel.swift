@@ -17,9 +17,11 @@ class SettingsViewModel {
     }
     
     private let mailSyncronizer: MailSyncronizer
+    private let notificationManager: NotificationManager
     
-    init(mailSyncronizer: MailSyncronizer) {
+    init(mailSyncronizer: MailSyncronizer, notificationManager: NotificationManager) {
         self.mailSyncronizer = mailSyncronizer
+        self.notificationManager = notificationManager
     }
     
     func signInMail(on viewController: UIViewController) -> Single<Void> {
@@ -35,6 +37,6 @@ class SettingsViewModel {
     }
     
     func getNotificationsViewModel() -> NotificationsViewModel {
-        return NotificationsViewModel()
+        return NotificationsViewModel(notificationManager: notificationManager)
     }
 }

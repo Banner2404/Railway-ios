@@ -24,11 +24,13 @@ class TicketListViewModel {
     private let allTicketsRelay = BehaviorRelay<[Ticket]>(value: [])
     private let databaseManager: DatabaseManager
     private let mailSyncronizer: MailSyncronizer
+    private let notificationManager: NotificationManager
     private let disposeBag = DisposeBag()
     
-    init(databaseManager: DatabaseManager, mailSyncronizer: MailSyncronizer) {
+    init(databaseManager: DatabaseManager, mailSyncronizer: MailSyncronizer, notificationManager: NotificationManager) {
         self.databaseManager = databaseManager
         self.mailSyncronizer = mailSyncronizer
+        self.notificationManager = notificationManager
         
         allTicketsRelay
             .map { tickets in
@@ -88,6 +90,6 @@ class TicketListViewModel {
     }
     
     func settingsViewModel() -> SettingsViewModel {
-        return SettingsViewModel(mailSyncronizer: mailSyncronizer)
+        return SettingsViewModel(mailSyncronizer: mailSyncronizer, notificationManager: notificationManager)
     }
 }

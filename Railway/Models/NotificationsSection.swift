@@ -18,7 +18,7 @@ struct NotificationsSection {
     
     enum CellType {
         case toggle
-        case record
+        case record(alert: NotificationAlert)
         
         var cellIdentifier: String {
             switch self {
