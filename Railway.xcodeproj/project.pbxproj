@@ -60,6 +60,8 @@
 		D1F6AB1E20D055D700461579 /* GmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */; };
 		D1F78BA520E15798003DA8AF /* NotificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA420E15798003DA8AF /* NotificationAlert.swift */; };
 		D1F78BA720E16599003DA8AF /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA620E16599003DA8AF /* Int.swift */; };
+		D1F78BA920E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */; };
+		D1F78BAB20E171F1003DA8AF /* NotificationPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */; };
 		EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailTableViewCell.swift; sourceTree = "<group>"; };
 		D1F78BA420E15798003DA8AF /* NotificationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlert.swift; sourceTree = "<group>"; };
 		D1F78BA620E16599003DA8AF /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAddAlertTableViewCell.swift; sourceTree = "<group>"; };
+		D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPickerTableViewCell.swift; sourceTree = "<group>"; };
 		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,6 +201,8 @@
 				D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */,
 				D13F4B2A20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift */,
 				D13F4B2C20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift */,
+				D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */,
+				D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
@@ -462,8 +468,10 @@
 				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
 				D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */,
 				D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */,
+				D1F78BAB20E171F1003DA8AF /* NotificationPickerTableViewCell.swift in Sources */,
 				D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */,
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
+				D1F78BA920E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1F78BA720E16599003DA8AF /* Int.swift in Sources */,
 				D13F4B2D20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift in Sources */,

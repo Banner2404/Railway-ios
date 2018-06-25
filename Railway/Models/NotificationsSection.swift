@@ -19,6 +19,8 @@ struct NotificationsSection {
     enum CellType {
         case toggle
         case record(alert: NotificationAlert)
+        case add
+        case picker
         
         var cellIdentifier: String {
             switch self {
@@ -26,6 +28,10 @@ struct NotificationsSection {
                 return "NotificationsToggleTableViewCell"
             case .record:
                 return "NotificationRecordTableViewCell"
+            case .add:
+                return "NotificationAddAlertTableViewCell"
+            case .picker:
+                return "NotificationPickerTableViewCell"
             }
         }
     }

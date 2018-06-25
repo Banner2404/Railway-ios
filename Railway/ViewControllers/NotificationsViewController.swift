@@ -15,6 +15,7 @@ class NotificationsViewController: ViewController {
 
     private let disposeBag = DisposeBag()
     private var viewModel: NotificationsViewModel!
+    private let footerCells = ReplaySubject<[NotificationsSection.Item]>.create(bufferSize: 1)
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var tableViewHeightConstraint: NSLayoutConstraint!
     
@@ -40,15 +41,27 @@ class NotificationsViewController: ViewController {
 //MARK: - Private
 private extension NotificationsViewController {
     
+    func addButtonTap() {
+        footerCells.onNext([.add, .add])
+        adjustTableViewHeight()
+    }
+    
     func adjustTableViewHeight() {
         tableViewHeightConstraint.constant = tableView.contentSize.height
         print("Child", tableView.contentSize.height)
     }
     
     func setupSections() -> Observable<[NotificationsSection]> {
-        return viewModel.alerts.asObservable()
+        let toggle = Observable.just([NotificationsSection.Item.toggle])
+        let alerts = viewModel.alerts.asObservable()
             .map { $0.included.enumerated().map { NotificationsSection.Item.record(alert: $0.element) } }
-            .map { [NotificationsSection(items: [.toggle] + $0)] }
+        let footer = footerCells
+        footerCells.onNext([.add])
+        return Observable.combineLatest(toggle, alerts, footer) { toggle, alerts, footer in
+                return toggle + alerts + footer
+            }
+            .debug()
+            .map { [NotificationsSection(items: $0)] }
     }
     
     func setupDataSource() -> RxTableViewSectionedReloadDataSource<NotificationsSection> {
@@ -59,6 +72,9 @@ private extension NotificationsViewController {
             }
             if let cell = cell as? NotificationRecordTableViewCell, case .record(let alert) = model {
                 self.setupRecord(cell: cell, alert: alert, index: index.row)
+            }
+            if let cell = cell as? NotificationAddAlertTableViewCell {
+                self.setupAdd(cell: cell)
             }
             return cell
         })
@@ -83,5 +99,11 @@ private extension NotificationsViewController {
     func setupRecord(cell: NotificationRecordTableViewCell, alert: NotificationAlert, index: Int) {
         cell.valueLabel.text = alert.string
         cell.titleLabel.text = index.string
+    }
+    
+    func setupAdd(cell: NotificationAddAlertTableViewCell) {
+        cell.tap
+            .subscribe(onNext: addButtonTap)
+            .disposed(by: disposeBag)
     }
 }
