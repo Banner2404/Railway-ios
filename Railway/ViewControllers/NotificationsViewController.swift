@@ -72,6 +72,11 @@ private extension NotificationsViewController {
         resizeTableView()
     }
     
+    func delete(alert: NotificationAlert) {
+        viewModel.alerts.value.remove(alert)
+        resizeTableView()
+    }
+    
     func saveButtonTap() {
         guard let index = pickerView?.selectedRow(inComponent: 0) else { return }
         let alert = availableAlerts[index]
@@ -122,7 +127,7 @@ private extension NotificationsViewController {
     }
     
     func setupDataSource() -> RxTableViewSectionedReloadDataSource<NotificationsSection> {
-        return RxTableViewSectionedReloadDataSource(configureCell: { (ds, tableView, index, model) -> UITableViewCell in
+        let dataSource = RxTableViewSectionedReloadDataSource<NotificationsSection>(configureCell: { (ds, tableView, index, model) -> UITableViewCell in
             let cell = tableView.dequeueReusableCell(withIdentifier: model.cellIdentifier, for: index)
             if let cell = cell as? NotificationsToggleTableViewCell {
                 self.setupToggle(cell: cell)
@@ -141,6 +146,17 @@ private extension NotificationsViewController {
             }
             return cell
         })
+        
+        dataSource.canEditRowAtIndexPath = { ds, index in
+            guard let model = (try? dataSource.model(at: index)) as? NotificationsSection.Item else { return false }
+            switch model {
+            case .record(_):
+                return true
+            default:
+                return false
+            }
+        }
+        return dataSource
     }
     
     func setupTableView() {
@@ -149,6 +165,27 @@ private extension NotificationsViewController {
         sections
             .debug()
             .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemDeleted
+            .map { indexPath in
+                return dataSource.sectionModels[indexPath.section].items[indexPath.row]
+            }
+            .flatMap { item -> Observable<NotificationAlert> in
+                switch item {
+                case .record(let alert):
+                    return Observable<NotificationAlert>.just(alert)
+                default:
+                    return  Observable<NotificationAlert>.empty()
+                }
+            }
+            .subscribe(onNext: { [weak self] alert in
+                self?.delete(alert: alert)
+            })
+            .disposed(by: disposeBag)
+        
+        
+        tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
     }
@@ -219,5 +256,13 @@ extension NotificationsViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let alert = availableAlerts[row]
         return alert.string
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension NotificationsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
     }
 }

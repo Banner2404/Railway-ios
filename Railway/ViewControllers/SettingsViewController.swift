@@ -67,6 +67,7 @@ private extension SettingsViewController {
             .filter { dataSource.sectionModels[$0.section].items[$0.item] == .gmailDisconnect }
             .subscribe(onNext: { _ in self.disconnectGmail() })
             .disposed(by: disposeBag)
+        
     }
     
     func connectGmail() {
