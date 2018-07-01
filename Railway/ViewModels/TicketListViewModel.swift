@@ -53,13 +53,13 @@ class TicketListViewModel {
         let ticket = allTicketsRelay.value[index]
         let viewModel = TicketDetailsViewModel(ticket)
         viewModel.deleteObservable
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { ticket in
                 self.databaseManager.delete(ticket)
             })
             .disposed(by: disposeBag)
         
         viewModel.editObservable
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { ticket in
                 viewModel.editViewModel.onNext(self.editViewModel(ticket, detailsViewModel: viewModel))
             })
             .disposed(by: disposeBag)

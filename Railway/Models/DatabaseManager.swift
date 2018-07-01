@@ -16,6 +16,9 @@ protocol DatabaseManager {
     func add(_ ticket: Ticket)
     func update(_ ticket: Ticket)
     func delete(_ ticket: Ticket)
+    
+    func getNotificationSettings() -> (isEnabled: Bool, alerts: NotificationAlert)?
+    func saveNotificationSettings(isEnabled: Bool, alerts: NotificationAlert)
 }
 
 
@@ -99,6 +102,30 @@ class DefaultDatabaseManager: DatabaseManager {
         managedContext.delete(model)
         saveContext()
         loadTickets()
+    }
+    
+    func getNotificationSettings() -> (isEnabled: Bool, alerts: NotificationAlert)? {
+        let request: NSFetchRequest = NotificationSettingsCoreDataModel.fetchRequest()
+        guard let settings = (try? managedContext.fetch(request))?.first else { return nil }
+        let alerts = NotificationAlert(rawValue: Int(settings.rawValue))
+        return (settings.isEnabled, alerts)
+    }
+    
+    func saveNotificationSettings(isEnabled: Bool, alerts: NotificationAlert) {
+        clearNotificationSettings()
+        let settings = createEntity(NotificationSettingsCoreDataModel.self)
+        settings.isEnabled = isEnabled
+        settings.rawValue = Int64(alerts.rawValue)
+        saveContext()
+    }
+    
+    private func clearNotificationSettings() {
+        let request: NSFetchRequest = NotificationSettingsCoreDataModel.fetchRequest()
+        guard let objects = try? managedContext.fetch(request) else { return }
+        for object in objects {
+            managedContext.delete(object)
+        }
+        saveContext()
     }
     
     private func getModel(for ticket: Ticket) -> TicketCoreDataModel? {

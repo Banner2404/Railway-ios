@@ -41,6 +41,27 @@ struct NotificationAlert: OptionSet  {
         }
     }
     
+    var timeInterval: TimeInterval? {
+        switch self {
+        case .atEventTime:
+            return 0.0
+        case .fiveMinutes:
+            return 5 * 60.0
+        case .tenMinutes:
+            return 10 * 60.0
+        case .fifteenMinutes:
+            return 15 * 60.0
+        case .halfHour:
+            return 30 * 60.0
+        case .oneHour:
+            return 60 * 60.0
+        case .twoHours:
+            return 2 * 60 * 60.0
+        default:
+            return nil
+        }
+    }
+    
     var included: [NotificationAlert] {
         return NotificationAlert.all.filter { self.contains($0) }
     }

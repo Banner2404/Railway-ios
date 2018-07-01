@@ -17,7 +17,7 @@ extension Int {
         case 2:
             return "Второе"
         case 3:
-            return "Третее"
+            return "Третье"
         case 4:
             return "Четвертое"
         case 5:

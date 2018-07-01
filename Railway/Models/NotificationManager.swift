@@ -16,7 +16,6 @@ class NotificationManager {
     var isEnabled = Variable<Bool>(false)
     var alerts = Variable<NotificationAlert>([.fiveMinutes, .oneHour])
     
-    private let timeInterval: TimeInterval = 60 * 60
     private let database: DatabaseManager
     private let disposeBag = DisposeBag()
     private let notificationCenter = UNUserNotificationCenter.current()
@@ -32,11 +31,42 @@ class NotificationManager {
     init(database: DatabaseManager) {
         self.database = database
         checkAuthorization()
+        loadSettings()
         database.tickets
-            .subscribe(onNext: { tickets in
-                self.setupNotifications(for: tickets)
+            .subscribe(onNext: { _ in
+                self.updateNotifications()
             })
             .disposed(by: disposeBag)
+        
+        isEnabled.asObservable()
+            .subscribe(onNext: { _ in
+                self.saveSettings()
+                self.updateNotifications()
+            })
+            .disposed(by: disposeBag)
+        
+        alerts.asObservable()
+            .subscribe(onNext: { _ in
+                self.saveSettings()
+                self.updateNotifications()
+            })
+            .disposed(by: disposeBag)
+        
+    }
+    
+    private func loadSettings() {
+        if let (enabled, alerts) = database.getNotificationSettings() {
+            self.isEnabled.value = enabled
+            self.alerts.value = alerts
+        } else {
+            self.isEnabled.value = false
+            self.alerts.value = [.fiveMinutes, .oneHour]
+        }
+       
+    }
+    
+    private func saveSettings() {
+        database.saveNotificationSettings(isEnabled: isEnabled.value, alerts: alerts.value)
     }
     
     private func checkAuthorization() {
@@ -57,17 +87,30 @@ class NotificationManager {
         notificationCenter.removeAllPendingNotificationRequests()
     }
     
+    private func updateNotifications() {
+        guard let tickets = try? database.tickets.value() else { return }
+        setupNotifications(for: tickets)
+    }
+    
     private func setupNotifications(for tickets: [Ticket]) {
         resetNotifications()
+        if !isEnabled.value { return }
         for ticket in tickets where ticket.departure > Date() {
             setupNotifications(for: ticket)
         }
     }
     
     private func setupNotifications(for ticket: Ticket) {
-        let content = createNotificationContent(for: ticket)
-        let trigger = createNotificationTrigger(for: ticket)
-        let notificationRequest = UNNotificationRequest(identifier: ticket.id, content: content, trigger: trigger)
+        for alert in alerts.value.included {
+            setupNotifications(for: ticket, alert: alert)
+        }
+    }
+    
+    private func setupNotifications(for ticket: Ticket, alert: NotificationAlert) {
+        let content = createNotificationContent(for: ticket, alert: alert)
+        let trigger = createNotificationTrigger(for: ticket, alert: alert)
+        let identifier = createNotificationIdentifier(for: ticket, alert: alert)
+        let notificationRequest = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         notificationCenter.add(notificationRequest) { error in
             if let error = error {
                 print(error.localizedDescription)
@@ -75,11 +118,21 @@ class NotificationManager {
         }
     }
     
-    private func createNotificationContent(for ticket: Ticket) -> UNNotificationContent {
+    private func createNotificationIdentifier(for ticket: Ticket, alert: NotificationAlert) -> String {
+        return "\(ticket.id)-\(alert.rawValue)"
+    }
+    
+    private func createNotificationContent(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationContent {
         let content = UNMutableNotificationContent()
+        content.sound = UNNotificationSound.default()
         content.title = "Поезд \(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
-        content.body = "Через \(dateComponentsFormatter.string(from: timeInterval) ?? "")\(seatString(for: ticket))"
+        content.body = "\(timeString(for: alert))\(seatString(for: ticket))"
         return content
+    }
+    
+    private func timeString(for alert: NotificationAlert) -> String {
+        if alert == .atEventTime { return "Сейчас" }
+        return "Через \(dateComponentsFormatter.string(from: alert.timeInterval ?? 0.0) ?? "")"
     }
     
     private func seatString(for ticket: Ticket) -> String {
@@ -88,7 +141,8 @@ class NotificationManager {
         return "\n\(place.carriage) вагон \(place.seat) место"
     }
     
-    private func createNotificationTrigger(for ticket: Ticket) -> UNNotificationTrigger {
+    private func createNotificationTrigger(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationTrigger {
+        guard let timeInterval = alert.timeInterval else { fatalError("incorrect notification alert") }
         let components = getNotificationComponents(from: ticket.departure.addingTimeInterval(-timeInterval))
         return UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
     }

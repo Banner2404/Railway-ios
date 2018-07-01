@@ -20,24 +20,27 @@ class TicketDetailsViewModel {
     let dateText = BehaviorRelay<String>(value: "")
     let notes = BehaviorRelay<String>(value: "")
     let places = BehaviorRelay<[PlaceViewModel]>(value: [])
-    var deleteObservable: Observable<Void> {
+    var deleteObservable: Observable<Ticket> {
         return deleteSubject.asObservable()
     }
     
-    var editObservable: Observable<Void> {
+    var editObservable: Observable<Ticket> {
         return editSubject.asObservable()
     }
     
     var editViewModel = PublishSubject<AddTicketViewModel>()
     
-    private let deleteSubject = PublishSubject<Void>()
-    private let editSubject = PublishSubject<Void>()
+    private var ticket: Ticket
+    private let deleteSubject = PublishSubject<Ticket>()
+    private let editSubject = PublishSubject<Ticket>()
 
     init(_ ticket: Ticket) {
+        self.ticket = ticket
         set(ticket)
     }
     
     func set(_ ticket: Ticket) {
+        self.ticket = ticket
         stationsText.accept("\(ticket.sourceStation.name) - \(ticket.destinationStation.name)")
         fromText.accept(ticket.sourceStation.name)
         toText.accept(ticket.destinationStation.name)
@@ -49,10 +52,10 @@ class TicketDetailsViewModel {
     }
     
     func delete() {
-        deleteSubject.onNext(())
+        deleteSubject.onNext(ticket)
     }
     
     func edit() {
-        editSubject.onNext(())
+        editSubject.onNext(ticket)
     }
 }

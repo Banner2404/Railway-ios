@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.9" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14270.11" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NotificationSettingsCoreDataModel" representedClassName="NotificationSettingsCoreDataModel" syncable="YES">
+        <attribute name="isEnabled" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rawValue" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <entity name="PlaceCoreDataModel" representedClassName="PlaceCoreDataModel" syncable="YES">
         <attribute name="carriage" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
@@ -25,5 +29,6 @@
         <element name="PlaceCoreDataModel" positionX="214" positionY="141" width="128" height="103"/>
         <element name="StationCoreDataModel" positionX="-209" positionY="149" width="128" height="103"/>
         <element name="TicketCoreDataModel" positionX="36" positionY="96" width="128" height="150"/>
+        <element name="NotificationSettingsCoreDataModel" positionX="0" positionY="162" width="128" height="75"/>
     </elements>
 </model>
