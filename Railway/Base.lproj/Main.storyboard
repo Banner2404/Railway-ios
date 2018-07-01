@@ -753,7 +753,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CZ-9v-KaT">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CZ-9v-KaT">
                                                     <rect key="frame" x="8" y="0.0" width="359" height="150"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" red="0.53725490200000003" green="0.59607843140000005" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -806,12 +806,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-As-bKu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EkE-As-bKu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="999" constant="450" id="ZwW-ie-j34"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationsToggleTableViewCell" id="ZWK-1d-kGt" customClass="NotificationsToggleTableViewCell" customModule="Railway" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -891,16 +892,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpg-k7-92d">
-                                                    <rect key="frame" x="15" y="7.5" width="345" height="30"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="44.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="t1a-55-ZJd"/>
+                                                        <constraint firstAttribute="height" constant="44" id="t1a-55-ZJd"/>
                                                     </constraints>
-                                                    <state key="normal" title="Добавить"/>
+                                                    <state key="normal" title="Добавить">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cpg-k7-92d" firstAttribute="top" secondItem="rXM-PS-aUK" secondAttribute="top" constant="7" id="NKc-w3-OYv"/>
-                                                <constraint firstAttribute="bottom" secondItem="cpg-k7-92d" secondAttribute="bottom" constant="7" id="O3r-ah-RdQ"/>
+                                                <constraint firstItem="cpg-k7-92d" firstAttribute="top" secondItem="rXM-PS-aUK" secondAttribute="top" id="NKc-w3-OYv"/>
+                                                <constraint firstAttribute="bottom" secondItem="cpg-k7-92d" secondAttribute="bottom" id="O3r-ah-RdQ"/>
                                                 <constraint firstItem="cpg-k7-92d" firstAttribute="centerY" secondItem="rXM-PS-aUK" secondAttribute="centerY" id="hVy-vy-BjA"/>
                                                 <constraint firstAttribute="trailing" secondItem="cpg-k7-92d" secondAttribute="trailing" constant="15" id="nin-lf-yvM"/>
                                                 <constraint firstItem="cpg-k7-92d" firstAttribute="leading" secondItem="rXM-PS-aUK" secondAttribute="leading" constant="15" id="nln-Y6-Zr4"/>
@@ -920,7 +923,7 @@
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-bv-Ibx">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" priority="999" constant="161" id="a2J-wQ-CQp"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="162" id="a2J-wQ-CQp"/>
                                                     </constraints>
                                                 </pickerView>
                                             </subviews>
@@ -943,26 +946,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-ve-3vh">
-                                                    <rect key="frame" x="192.5" y="7.5" width="167.5" height="30"/>
-                                                    <state key="normal" title="Сохранить"/>
+                                                    <rect key="frame" x="192.5" y="0.0" width="167.5" height="44.5"/>
+                                                    <state key="normal" title="Сохранить">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-mN-3Po">
-                                                    <rect key="frame" x="15" y="7.5" width="167.5" height="30"/>
+                                                    <rect key="frame" x="15" y="0.0" width="167.5" height="44.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="tnt-dl-TRR"/>
+                                                        <constraint firstAttribute="height" constant="44" id="tnt-dl-TRR"/>
                                                     </constraints>
-                                                    <state key="normal" title="Отмена"/>
+                                                    <state key="normal" title="Отмена">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="NGQ-mN-3Po" secondAttribute="bottom" constant="7" id="3Db-VB-1gC"/>
+                                                <constraint firstAttribute="bottom" secondItem="NGQ-mN-3Po" secondAttribute="bottom" id="3Db-VB-1gC"/>
                                                 <constraint firstItem="Tvj-ve-3vh" firstAttribute="width" secondItem="NGQ-mN-3Po" secondAttribute="width" id="4Yz-eJ-3xd"/>
                                                 <constraint firstAttribute="trailing" secondItem="Tvj-ve-3vh" secondAttribute="trailing" constant="15" id="8L3-Mq-8jq"/>
-                                                <constraint firstAttribute="bottom" secondItem="Tvj-ve-3vh" secondAttribute="bottom" constant="7" id="9na-k4-mJN"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tvj-ve-3vh" secondAttribute="bottom" id="9na-k4-mJN"/>
                                                 <constraint firstItem="Tvj-ve-3vh" firstAttribute="leading" secondItem="NGQ-mN-3Po" secondAttribute="trailing" constant="10" id="ZSB-IK-qgP"/>
-                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" constant="7" id="cg6-9m-EPt"/>
+                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" id="cg6-9m-EPt"/>
                                                 <constraint firstItem="NGQ-mN-3Po" firstAttribute="leading" secondItem="lzf-7m-Lqk" secondAttribute="leading" constant="15" id="fo0-za-uK6"/>
-                                                <constraint firstItem="NGQ-mN-3Po" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" constant="7" id="ovk-IU-atJ"/>
+                                                <constraint firstItem="NGQ-mN-3Po" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" id="ovk-IU-atJ"/>
+                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="height" secondItem="NGQ-mN-3Po" secondAttribute="height" id="wST-t3-9dE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

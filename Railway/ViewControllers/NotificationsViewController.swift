@@ -21,12 +21,13 @@ class NotificationsViewController: ViewController {
     private let disposeBag = DisposeBag()
     private var viewModel: NotificationsViewModel!
     private let footerCells = ReplaySubject<[NotificationsSection.Item]>.create(bufferSize: 1)
+    private var tableType = TableType.closed {
+        didSet {
+            tableTypeDidUpdate()
+        }
+    }
     private var availableAlerts: [NotificationAlert] {
         return viewModel.alerts.value.excluded
-    }
-    private var hasAvailableAlerts: Observable<Bool> {
-        return viewModel.alerts.asObservable()
-            .map { $0.excluded.count > 0 }
     }
     private weak var pickerView: UIPickerView?
     @IBOutlet private weak var tableView: UITableView!
@@ -40,6 +41,7 @@ class NotificationsViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableTypeDidUpdate()
         setupTableView()
         tableView.reloadData()
     }
@@ -54,13 +56,19 @@ class NotificationsViewController: ViewController {
 //MARK: - Private
 private extension NotificationsViewController {
     
+    func toggleValueChanged(enabled: Bool) {
+        if enabled == viewModel.isEnabled.value { return }
+        viewModel.isEnabled.value = enabled
+        resizeTableView()
+    }
+    
     func addButtonTap() {
-        footerCells.onNext([.picker, .save])
+        tableType = .open
         resizeTableView()
     }
     
     func cancelButtonTap() {
-        footerCells.onNext([.add])
+        tableType = .closed
         resizeTableView()
     }
     
@@ -68,7 +76,7 @@ private extension NotificationsViewController {
         guard let index = pickerView?.selectedRow(inComponent: 0) else { return }
         let alert = availableAlerts[index]
         viewModel.alerts.value.insert(alert)
-        footerCells.onNext([.add])
+        tableType = .closed
         resizeTableView()
     }
     
@@ -84,16 +92,32 @@ private extension NotificationsViewController {
         tableViewHeightConstraint.constant = height
     }
     
+    func tableTypeDidUpdate() {
+        switch tableType {
+        case .closed:
+            if availableAlerts.count > 0 {
+                footerCells.onNext([.add])
+            } else {
+                footerCells.onNext([])
+            }
+        case .open:
+            footerCells.onNext([.picker, .save])
+        }
+    }
+    
     func setupSections() -> Observable<[NotificationsSection]> {
         let toggle = Observable.just([NotificationsSection.Item.toggle])
         let alerts = viewModel.alerts.asObservable()
             .map { $0.included.enumerated().map { NotificationsSection.Item.record(alert: $0.element) } }
         let footer = footerCells
-        footerCells.onNext([.add])
-        return Observable.combineLatest(toggle, alerts, footer) { toggle, alerts, footer in
-                return toggle + alerts + footer
+        let enabled = viewModel.isEnabled.asObservable().distinctUntilChanged()
+        return Observable.combineLatest(enabled, toggle, alerts, footer) { enabled, toggle, alerts, footer in
+                if enabled {
+                    return toggle + alerts + footer
+                } else {
+                    return toggle
+                }
             }
-            .debug()
             .map { [NotificationsSection(items: $0)] }
     }
     
@@ -132,8 +156,10 @@ private extension NotificationsViewController {
     func setupToggle(cell: NotificationsToggleTableViewCell) {
         cell.switchControl.isOn = viewModel.isEnabled.value
         cell.switchControl.rx.isOn
-            .bind(to: viewModel.isEnabled)
-            .disposed(by: cell.disposeBag)
+            .subscribe(onNext: { [weak self] enabled in
+                self?.toggleValueChanged(enabled: enabled)
+            })
+            .disposed(by: disposeBag)
     }
     
     func setupRecord(cell: NotificationRecordTableViewCell, alert: NotificationAlert, index: Int) {
@@ -142,9 +168,6 @@ private extension NotificationsViewController {
     }
     
     func setupAdd(cell: NotificationAddAlertTableViewCell) {
-        hasAvailableAlerts
-            .bind(to: cell.addButton.rx.isEnabled)
-            .disposed(by: cell.disposeBag)
         cell.addButton.rx.tap
             .subscribe(onNext: addButtonTap)
             .disposed(by: cell.disposeBag)
@@ -153,6 +176,7 @@ private extension NotificationsViewController {
     func setupPicker(cell: NotificationPickerTableViewCell) {
         cell.pickerView.dataSource = self
         cell.pickerView.delegate = self
+        cell.pickerView.selectRow(0, inComponent: 0, animated: false)
         pickerView = cell.pickerView
     }
     
@@ -168,6 +192,11 @@ private extension NotificationsViewController {
                 self?.saveButtonTap()
             })
             .disposed(by: cell.disposeBag)
+    }
+    
+    enum TableType {
+        case closed
+        case open
     }
 }
 
