@@ -810,7 +810,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="450" id="ZwW-ie-j34"/>
+                                    <constraint firstAttribute="height" priority="999" constant="450" id="ZwW-ie-j34"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationsToggleTableViewCell" id="ZWK-1d-kGt" customClass="NotificationsToggleTableViewCell" customModule="Railway" customModuleProvider="target">
@@ -830,15 +830,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUW-ri-b95">
-                                                    <rect key="frame" x="311" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="311" y="7.5" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="5nk-Qp-duP" firstAttribute="leading" secondItem="Ouh-5e-gJw" secondAttribute="leading" constant="15" id="4wd-BO-jWL"/>
+                                                <constraint firstItem="kUW-ri-b95" firstAttribute="centerY" secondItem="Ouh-5e-gJw" secondAttribute="centerY" id="8Wh-IG-Qe5"/>
                                                 <constraint firstAttribute="bottom" secondItem="5nk-Qp-duP" secondAttribute="bottom" constant="12" id="JGP-LO-Y6u"/>
                                                 <constraint firstAttribute="trailing" secondItem="kUW-ri-b95" secondAttribute="trailing" constant="15" id="OsC-Pg-MFS"/>
-                                                <constraint firstItem="kUW-ri-b95" firstAttribute="centerY" secondItem="Ouh-5e-gJw" secondAttribute="centerY" id="QbU-Dh-Axv"/>
                                                 <constraint firstItem="5nk-Qp-duP" firstAttribute="top" secondItem="Ouh-5e-gJw" secondAttribute="top" constant="11" id="lpJ-lG-kWD"/>
+                                                <constraint firstItem="kUW-ri-b95" firstAttribute="top" secondItem="Ouh-5e-gJw" secondAttribute="top" constant="7" id="pOF-Eu-XCb"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -862,7 +863,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За 2 часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwt-3j-S8n">
-                                                    <rect key="frame" x="285" y="12" width="75" height="21"/>
+                                                    <rect key="frame" x="285" y="12.5" width="75" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -872,6 +873,7 @@
                                                 <constraint firstItem="yVh-yM-p6i" firstAttribute="leading" secondItem="eC5-xG-7Tc" secondAttribute="leading" constant="15" id="D7Z-Ir-cN1"/>
                                                 <constraint firstAttribute="trailing" secondItem="Hwt-3j-S8n" secondAttribute="trailing" constant="15" id="FtF-kB-uAB"/>
                                                 <constraint firstItem="Hwt-3j-S8n" firstAttribute="centerY" secondItem="eC5-xG-7Tc" secondAttribute="centerY" id="Phf-av-njd"/>
+                                                <constraint firstItem="Hwt-3j-S8n" firstAttribute="top" secondItem="eC5-xG-7Tc" secondAttribute="topMargin" constant="1" id="Ti5-MP-yYt"/>
                                                 <constraint firstItem="yVh-yM-p6i" firstAttribute="top" secondItem="eC5-xG-7Tc" secondAttribute="top" constant="11" id="WCc-ae-S2V"/>
                                                 <constraint firstAttribute="bottom" secondItem="yVh-yM-p6i" secondAttribute="bottom" constant="12" id="bKt-pY-BsC"/>
                                             </constraints>
@@ -911,14 +913,14 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationPickerTableViewCell" rowHeight="162" id="hnQ-NM-Jn8" customClass="NotificationPickerTableViewCell" customModule="Railway" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="375" height="162"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnQ-NM-Jn8" id="sZa-oS-lxX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hnQ-NM-Jn8" id="sZa-oS-lxX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-bv-Ibx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="161" id="a2J-wQ-CQp"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="161" id="a2J-wQ-CQp"/>
                                                     </constraints>
                                                 </pickerView>
                                             </subviews>
@@ -929,6 +931,44 @@
                                                 <constraint firstItem="pCi-bv-Ibx" firstAttribute="leading" secondItem="sZa-oS-lxX" secondAttribute="leading" id="vNO-A8-Db0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pickerView" destination="pCi-bv-Ibx" id="BF8-o2-doO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationSaveTableViewCell" id="qMJ-8l-wMb" customClass="NotificationSaveTableViewCell" customModule="Railway" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="322" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qMJ-8l-wMb" id="lzf-7m-Lqk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-ve-3vh">
+                                                    <rect key="frame" x="192.5" y="7.5" width="167.5" height="30"/>
+                                                    <state key="normal" title="Сохранить"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-mN-3Po">
+                                                    <rect key="frame" x="15" y="7.5" width="167.5" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="tnt-dl-TRR"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Отмена"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="NGQ-mN-3Po" secondAttribute="bottom" constant="7" id="3Db-VB-1gC"/>
+                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="width" secondItem="NGQ-mN-3Po" secondAttribute="width" id="4Yz-eJ-3xd"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tvj-ve-3vh" secondAttribute="trailing" constant="15" id="8L3-Mq-8jq"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tvj-ve-3vh" secondAttribute="bottom" constant="7" id="9na-k4-mJN"/>
+                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="leading" secondItem="NGQ-mN-3Po" secondAttribute="trailing" constant="10" id="ZSB-IK-qgP"/>
+                                                <constraint firstItem="Tvj-ve-3vh" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" constant="7" id="cg6-9m-EPt"/>
+                                                <constraint firstItem="NGQ-mN-3Po" firstAttribute="leading" secondItem="lzf-7m-Lqk" secondAttribute="leading" constant="15" id="fo0-za-uK6"/>
+                                                <constraint firstItem="NGQ-mN-3Po" firstAttribute="top" secondItem="lzf-7m-Lqk" secondAttribute="top" constant="7" id="ovk-IU-atJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cancelButton" destination="NGQ-mN-3Po" id="f55-Lq-atk"/>
+                                            <outlet property="saveButton" destination="Tvj-ve-3vh" id="NtH-0Y-vHr"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

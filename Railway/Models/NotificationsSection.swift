@@ -21,6 +21,7 @@ struct NotificationsSection {
         case record(alert: NotificationAlert)
         case add
         case picker
+        case save
         
         var cellIdentifier: String {
             switch self {
@@ -32,6 +33,8 @@ struct NotificationsSection {
                 return "NotificationAddAlertTableViewCell"
             case .picker:
                 return "NotificationPickerTableViewCell"
+            case .save:
+                return "NotificationSaveTableViewCell"
             }
         }
     }

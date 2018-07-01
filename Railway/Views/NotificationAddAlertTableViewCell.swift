@@ -10,11 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class NotificationAddAlertTableViewCell: UITableViewCell {
-    
-    var tap: ControlEvent<Void> {
-        return addButton.rx.tap
-    }
-    @IBOutlet private weak var addButton: UIButton!
+class NotificationAddAlertTableViewCell: DisposableTableViewCell {
+
+    @IBOutlet weak var addButton: UIButton!
 
 }

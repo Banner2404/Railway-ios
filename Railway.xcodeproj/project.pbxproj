@@ -55,6 +55,8 @@
 		D1DD9C6220C3BEA20050D56F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */; };
 		D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */; };
 		D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6520C3EDF50050D56F /* Date.swift */; };
+		D1F4985120E8E07900796F93 /* NotificationSaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4985020E8E07900796F93 /* NotificationSaveTableViewCell.swift */; };
+		D1F4985320E8E89E00796F93 /* DisposableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4985220E8E89E00796F93 /* DisposableTableViewCell.swift */; };
 		D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1F6AB1C20D0554A00461579 /* HighlightableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */; };
 		D1F6AB1E20D055D700461579 /* GmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */; };
@@ -120,6 +122,8 @@
 		D1DD9C6120C3BEA20050D56F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1DD9C6320C3E9D70050D56F /* MessageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessor.swift; sourceTree = "<group>"; };
 		D1DD9C6520C3EDF50050D56F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		D1F4985020E8E07900796F93 /* NotificationSaveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSaveTableViewCell.swift; sourceTree = "<group>"; };
+		D1F4985220E8E89E00796F93 /* DisposableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableTableViewCell.swift; sourceTree = "<group>"; };
 		D1F6AB1920D0549500461579 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightableTableViewCell.swift; sourceTree = "<group>"; };
 		D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailTableViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */,
+				D1F4985220E8E89E00796F93 /* DisposableTableViewCell.swift */,
 				D12BEBC3207939070044F6F1 /* TicketCollapsedTableViewCell.swift */,
 				D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */,
 				D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */,
@@ -203,6 +208,7 @@
 				D13F4B2C20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift */,
 				D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */,
 				D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */,
+				D1F4985020E8E07900796F93 /* NotificationSaveTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
@@ -467,6 +473,7 @@
 				D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */,
 				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
 				D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */,
+				D1F4985120E8E07900796F93 /* NotificationSaveTableViewCell.swift in Sources */,
 				D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */,
 				D1F78BAB20E171F1003DA8AF /* NotificationPickerTableViewCell.swift in Sources */,
 				D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */,
@@ -500,6 +507,7 @@
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
 				D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */,
 				D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */,
+				D1F4985320E8E89E00796F93 /* DisposableTableViewCell.swift in Sources */,
 				D13F4B2B20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift in Sources */,
 				D1DD9C6620C3EDF50050D56F /* Date.swift in Sources */,
 				D12BC03320CB1A400005CBD1 /* Typealiases.swift in Sources */,

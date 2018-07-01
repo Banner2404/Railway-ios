@@ -44,4 +44,8 @@ struct NotificationAlert: OptionSet  {
     var included: [NotificationAlert] {
         return NotificationAlert.all.filter { self.contains($0) }
     }
+    
+    var excluded: [NotificationAlert] {
+        return NotificationAlert.all.filter { !self.contains($0) }
+    }
 }

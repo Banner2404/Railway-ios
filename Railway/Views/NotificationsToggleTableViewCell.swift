@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsToggleTableViewCell: UITableViewCell {
+class NotificationsToggleTableViewCell: DisposableTableViewCell {
     
     @IBOutlet weak var switchControl: UISwitch!
 }

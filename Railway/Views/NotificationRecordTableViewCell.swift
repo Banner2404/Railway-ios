@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationRecordTableViewCell: UITableViewCell {
+class NotificationRecordTableViewCell: DisposableTableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!

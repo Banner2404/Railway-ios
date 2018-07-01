@@ -8,6 +8,7 @@
 
 import UIKit
 
-class NotificationPickerTableViewCell: UITableViewCell {
+class NotificationPickerTableViewCell: DisposableTableViewCell {
 
+    @IBOutlet weak var pickerView: UIPickerView!
 }

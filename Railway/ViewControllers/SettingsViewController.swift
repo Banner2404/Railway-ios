@@ -85,6 +85,14 @@ private extension SettingsViewController {
         let viewModel = self.viewModel.getNotificationsViewModel()
         let viewController = NotificationsViewController.loadFromStoryboard(viewModel: viewModel)
         show(viewController, inContainerView: view)
+        
+        viewController.resizeCell
+            .debug()
+            .subscribe(onNext: { [weak self] _ in
+                self?.tableView.beginUpdates()
+                self?.tableView.endUpdates()
+            })
+            .disposed(by: disposeBag)
         viewController.view.setNeedsLayout()
         viewController.view.layoutIfNeeded()
     }
