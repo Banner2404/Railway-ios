@@ -28,7 +28,7 @@ class TicketCollapsedTableViewCell: HighlightableTableViewCell {
     private let DeleteButtonWidth: CGFloat = 100.0
     private let MaxOvershootWidth: CGFloat = 200.0
     private let MaxUndershootWidth: CGFloat = 50.0
-    private let SnapAnimationTiming: TimeInterval = 0.4
+    private let SnapAnimationTiming: TimeInterval = 0.35
     private let VelocityThreshold: CGFloat = 10.0
     private let AnimationSpringDamping: CGFloat = 0.7
     private lazy var deleteButton: UIButton = createDeleteButton()
@@ -47,15 +47,6 @@ class TicketCollapsedTableViewCell: HighlightableTableViewCell {
     func hideDeleteButton() {
         hideButton(velocity: 0.0)
     }
-//    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        if gestureRecognizer === self.swipeGestureRecognizer {
-//            return true
-//        } else if otherGestureRecognizer === self.swipeGestureRecognizer {
-//            return false
-//        } else {
-//            return false
-//        }
-//    }
     
     //MARK: - UIGestureRecognizerDelegate
     override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

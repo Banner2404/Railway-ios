@@ -41,11 +41,13 @@ class TicketListViewController: ViewController {
     }
     
     @IBAction private func addButtonTap(_ sender: Any) {
+        hideDeleteButtonIfNeeded()
         let viewController = AddTicketViewController.loadFromStoryboard(viewModel.addViewModel())
         navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func settingsButtonTap(_ sender: Any) {
+        hideDeleteButtonIfNeeded()
         let viewController = SettingsViewController.loadFromStoryboard(viewModel: viewModel.settingsViewModel())
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -56,6 +58,7 @@ class TicketListViewController: ViewController {
 private extension TicketListViewController {
     
     func showDetails(with viewModel: TicketDetailsViewModel) {
+        hideDeleteButtonIfNeeded()
         let detailController = TicketDetailsViewController.loadFromStoryboard(viewModel)
         navigationController?.pushViewController(detailController, animated: true)
     }
@@ -168,6 +171,10 @@ extension TicketListViewController: UITableViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        hideDeleteButtonIfNeeded()
+    }
+    
+    func hideDeleteButtonIfNeeded() {
         activeCell?.hideDeleteButton()
         activeCell = nil
     }
