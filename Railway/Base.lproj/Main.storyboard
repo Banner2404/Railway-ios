@@ -47,47 +47,60 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M11-qu-wKD">
-                                                    <rect key="frame" x="8" y="0.0" width="359" height="80"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lna-gy-ghw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4tL-pd-da7">
-                                                            <rect key="frame" x="8" y="15" width="343" height="50"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M11-qu-wKD">
+                                                            <rect key="frame" x="8" y="0.0" width="359" height="80"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minsk - Brest Central" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-yq-m5n">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 1, 2018 10:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="438-ar-SDx">
-                                                                    <rect key="frame" x="0.0" y="29.5" width="343" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4tL-pd-da7">
+                                                                    <rect key="frame" x="8" y="15" width="343" height="50"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minsk - Brest Central" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUA-yq-m5n">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="21.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 1, 2018 10:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="438-ar-SDx">
+                                                                            <rect key="frame" x="0.0" y="29.5" width="343" height="20.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                             </subviews>
-                                                        </stackView>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="4tL-pd-da7" firstAttribute="centerY" secondItem="M11-qu-wKD" secondAttribute="centerY" id="Fe5-pf-4gw"/>
+                                                                <constraint firstItem="4tL-pd-da7" firstAttribute="leading" secondItem="M11-qu-wKD" secondAttribute="leading" constant="8" id="qF4-pc-OqP"/>
+                                                                <constraint firstAttribute="trailing" secondItem="4tL-pd-da7" secondAttribute="trailing" constant="8" id="uno-d4-KC9"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="4tL-pd-da7" firstAttribute="centerY" secondItem="M11-qu-wKD" secondAttribute="centerY" id="Fe5-pf-4gw"/>
-                                                        <constraint firstItem="4tL-pd-da7" firstAttribute="leading" secondItem="M11-qu-wKD" secondAttribute="leading" constant="8" id="qF4-pc-OqP"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4tL-pd-da7" secondAttribute="trailing" constant="8" id="uno-d4-KC9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="M11-qu-wKD" secondAttribute="bottom" constant="8" id="hEG-m6-vCt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="M11-qu-wKD" secondAttribute="trailing" constant="8" id="qnq-9c-gI6"/>
+                                                        <constraint firstItem="M11-qu-wKD" firstAttribute="leading" secondItem="lna-gy-ghw" secondAttribute="leading" constant="8" id="tQX-17-bOQ"/>
+                                                        <constraint firstItem="M11-qu-wKD" firstAttribute="top" secondItem="lna-gy-ghw" secondAttribute="top" id="tcs-lR-tkk"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="M11-qu-wKD" firstAttribute="top" secondItem="hDU-Jc-TUj" secondAttribute="top" id="3uz-qN-Uf3"/>
-                                                <constraint firstAttribute="bottom" secondItem="M11-qu-wKD" secondAttribute="bottom" constant="8" id="BHR-Lp-lfy"/>
-                                                <constraint firstItem="M11-qu-wKD" firstAttribute="leading" secondItem="hDU-Jc-TUj" secondAttribute="leading" constant="8" id="DuV-f2-bUp"/>
-                                                <constraint firstAttribute="trailing" secondItem="M11-qu-wKD" secondAttribute="trailing" constant="8" id="sik-qE-u3c"/>
+                                                <constraint firstAttribute="bottom" secondItem="lna-gy-ghw" secondAttribute="bottom" id="H5w-cg-Zj9"/>
+                                                <constraint firstItem="lna-gy-ghw" firstAttribute="width" secondItem="hDU-Jc-TUj" secondAttribute="width" id="haL-A7-7Ea"/>
+                                                <constraint firstItem="lna-gy-ghw" firstAttribute="top" secondItem="hDU-Jc-TUj" secondAttribute="top" id="jlk-sX-5R7"/>
+                                                <constraint firstItem="lna-gy-ghw" firstAttribute="leading" secondItem="hDU-Jc-TUj" secondAttribute="leading" id="oZc-Rs-Qvn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="438-ar-SDx" id="Khh-sg-FYy"/>
+                                            <outlet property="leadingConstraint" destination="oZc-Rs-Qvn" id="qD8-T0-7MI"/>
                                             <outlet property="mainView" destination="M11-qu-wKD" id="Wfz-wn-cRE"/>
                                             <outlet property="routeLabel" destination="eUA-yq-m5n" id="dj0-N2-gOa"/>
+                                            <outlet property="swipeContentView" destination="lna-gy-ghw" id="omT-Fu-IhI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

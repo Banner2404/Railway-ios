@@ -92,4 +92,10 @@ class TicketListViewModel {
     func settingsViewModel() -> SettingsViewModel {
         return SettingsViewModel(mailSyncronizer: mailSyncronizer, notificationManager: notificationManager)
     }
+    
+    func deleteTicket(viewModel: TicketViewModel) {
+        guard let index = allTicketsViewModelsRelay.value.index(where: { $0 === viewModel }) else { return }
+        let ticket = allTicketsRelay.value[index]
+        databaseManager.delete(ticket)
+    }
 }
