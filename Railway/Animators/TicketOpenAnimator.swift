@@ -13,7 +13,7 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var initialFrame: CGRect = .zero
     var initialView: UIView?
     
-    private let AnimationDuration: TimeInterval = 2.0
+    let AnimationDuration: TimeInterval = 2.0
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return AnimationDuration
@@ -97,6 +97,7 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         view.alpha = 0
         return view
     }
+
     
     func createFinalCardView(from viewController: TicketDetailsViewController) -> UIView {
         viewController.view.layoutIfNeeded()

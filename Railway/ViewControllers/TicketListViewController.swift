@@ -42,6 +42,11 @@ class TicketListViewController: ViewController {
         navigationController?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     @IBAction private func addButtonTap(_ sender: Any) {
         hideDeleteButtonIfNeeded()
         let viewController = AddTicketViewController.loadFromStoryboard(viewModel.addViewModel())
@@ -63,6 +68,23 @@ private extension TicketListViewController {
         hideDeleteButtonIfNeeded()
         let detailController = TicketDetailsViewController.loadFromStoryboard(viewModel)
         navigationController?.pushViewController(detailController, animated: true)
+    }
+    
+    func expandTableView(at indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        guard let index = tableView.visibleCells.firstIndex(of: cell) else { return }
+        let topCells = tableView.visibleCells.prefix(upTo: index)
+        let bottomCells = tableView.visibleCells.suffix(from: index + 1)
+        topCells.forEach { self.animate(cell: $0, multiplier: -1) }
+        bottomCells.forEach { self.animate(cell: $0, multiplier: +1) }
+    }
+    
+    func animate(cell: UITableViewCell, multiplier: Int) {
+        let offset = view.frame.height / 2
+        UIView.animate(withDuration: transitionAnimator.AnimationDuration * 0.7) {
+            cell.frame.origin.y = cell.frame.origin.y + CGFloat(multiplier) * offset
+            cell.alpha = 0
+        }
     }
     
     @objc func loadOldest() {
@@ -142,6 +164,7 @@ private extension TicketListViewController {
         tableView.rx.itemSelected
             .do(onNext: { indexPath in
                 self.updateAnimatorInitialFrame(for: indexPath)
+                self.expandTableView(at: indexPath)
             })
             .map { self.dataSource.sectionModels[$0.section].items[$0.row] }
             .map { self.viewModel.detailedTicketViewModel(for: $0) }
