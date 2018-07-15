@@ -332,6 +332,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dTY-C6-I2m" firstAttribute="leading" secondItem="MCZ-hf-0fk" secondAttribute="leading" constant="8" id="7EH-bm-hEZ"/>
                                     <constraint firstAttribute="bottom" secondItem="dTY-C6-I2m" secondAttribute="bottom" constant="16" id="Zqu-Xf-JPL"/>
@@ -359,6 +360,7 @@
                         <outlet property="notesTextView" destination="asW-tC-bVH" id="P6V-7A-J4i"/>
                         <outlet property="notesView" destination="z3V-uI-gXh" id="bQQ-Wz-O55"/>
                         <outlet property="stationsLabel" destination="48q-Hm-EOc" id="SCv-FB-M2S"/>
+                        <outlet property="ticketCardView" destination="dTY-C6-I2m" id="uzO-Xq-Zn6"/>
                         <outlet property="ticketsStackView" destination="2DM-Kd-z1C" id="kjn-HF-djb"/>
                     </connections>
                 </viewController>

@@ -43,6 +43,7 @@
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
 		D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */; };
 		D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */; };
+		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
 		D1DBE71720741A06000587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71520741A06000587C8 /* Main.storyboard */; };
 		D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewModel.swift; sourceTree = "<group>"; };
 		D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1DBE71620741A06000587C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -247,6 +249,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D1D40F1D20EA7CFE002BE278 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */,
+			);
+			path = Animators;
+			sourceTree = "<group>";
+		};
 		D1DBE70520741A06000587C8 = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 				D12BEBBB207934860044F6F1 /* Models */,
 				D12BEBBE207936890044F6F1 /* ViewModels */,
 				D12BEBC2207938E50044F6F1 /* Views */,
+				D1D40F1D20EA7CFE002BE278 /* Animators */,
 				D12BEBC12079389E0044F6F1 /* ViewControllers */,
 				D1DBE71520741A06000587C8 /* Main.storyboard */,
 				D1DBE71820741A07000587C8 /* Assets.xcassets */,
@@ -487,6 +498,7 @@
 				D1F4985B20E910C000796F93 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */,
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
 				D1F78BA920E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift in Sources */,
+				D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1F78BA720E16599003DA8AF /* Int.swift in Sources */,
 				D13F4B2D20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift in Sources */,

@@ -23,6 +23,7 @@ class TicketListViewController: ViewController {
     private var futureTickets: Observable<[TicketViewModel]>!
     private var shownTickets: Observable<[[TicketViewModel]]>!
     private weak var activeCell: TicketCollapsedTableViewCell?
+    private var transitionAnimator = TicketOpenAnimator()
     @IBOutlet private weak var syncIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -38,6 +39,7 @@ class TicketListViewController: ViewController {
         setupTableView()
         setupActivityIndicator()
         setupPullToOldest()
+        navigationController?.delegate = self
     }
     
     @IBAction private func addButtonTap(_ sender: Any) {
@@ -138,6 +140,9 @@ private extension TicketListViewController {
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.rx.itemSelected
+            .do(onNext: { indexPath in
+                self.updateAnimatorInitialFrame(for: indexPath)
+            })
             .map { self.dataSource.sectionModels[$0.section].items[$0.row] }
             .map { self.viewModel.detailedTicketViewModel(for: $0) }
             .subscribe(onNext: { viewModel in
@@ -152,6 +157,15 @@ private extension TicketListViewController {
             .map { !$0 }
             .bind(to: syncIndicator.rx.isHidden)
             .disposed(by: disposeBag)
+    }
+    
+    func updateAnimatorInitialFrame(for selectedIndexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: selectedIndexPath) as? TicketCollapsedTableViewCell else { return }
+        let cellContentView = cell.mainView!
+        let frame = view.convert(cellContentView.bounds, from: cellContentView)
+        let snapshot = cell.mainView.snapshotView(afterScreenUpdates: false)
+        transitionAnimator.initialView = snapshot
+        transitionAnimator.initialFrame = frame
     }
 }
 
@@ -195,4 +209,17 @@ extension TicketListViewController: TicketCollapsedTableViewCellDelegate {
         self.viewModel.deleteTicket(viewModel: viewModel)
         
     }
+}
+
+//MARK: - UINavigationControllerDelegate
+extension TicketListViewController: UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if toVC is TicketDetailsViewController, operation == .push {
+            return transitionAnimator
+        } else {
+            return nil
+        }
+    }
+    
 }

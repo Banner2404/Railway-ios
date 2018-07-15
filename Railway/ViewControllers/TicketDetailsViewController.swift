@@ -11,9 +11,14 @@ import RxSwift
 import RxCocoa
 
 class TicketDetailsViewController: ViewController {
+    
+    var ticketCardViewFrame: CGRect {
+        return ticketCardView.convert(ticketCardView.bounds, to: view)
+    }
 
     private let disposeBag = DisposeBag()
     private var viewModel: TicketDetailsViewModel!
+    @IBOutlet weak var ticketCardView: UIView!
     @IBOutlet private weak var stationsLabel: UILabel!
     @IBOutlet private weak var departureLabel: UILabel!
     @IBOutlet private weak var arrivalLabel: UILabel!
