@@ -143,8 +143,7 @@ private extension TicketListViewController {
             configureCell: { dataSource, tableView, indexPath, item in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TicketCollapsedTableViewCell", for: indexPath) as! TicketCollapsedTableViewCell
                 cell.delegate = self
-                cell.dateLabel.text = item.dateText
-                cell.routeLabel.text = item.routeText
+                cell.ticketView.setup(with: item)
                 return cell
         })
         dataSource.titleForHeaderInSection = { ds, index in
@@ -167,10 +166,12 @@ private extension TicketListViewController {
                 self.expandTableView(at: indexPath)
             })
             .map { self.dataSource.sectionModels[$0.section].items[$0.row] }
-            .map { self.viewModel.detailedTicketViewModel(for: $0) }
-            .subscribe(onNext: { viewModel in
-                guard let viewModel = viewModel else { return }
-                self.showDetails(with: viewModel)})
+            .map { ($0, self.viewModel.detailedTicketViewModel(for: $0)) }
+            .subscribe(onNext: { initial, final in
+                guard let final = final else { return }
+                self.transitionAnimator.initialViewModel = initial
+                self.transitionAnimator.finalViewModel = final
+                self.showDetails(with: final)})
             .disposed(by: disposeBag)
     }
     
@@ -186,8 +187,6 @@ private extension TicketListViewController {
         guard let cell = tableView.cellForRow(at: selectedIndexPath) as? TicketCollapsedTableViewCell else { return }
         let cellContentView = cell.mainView!
         let frame = view.convert(cellContentView.bounds, from: cellContentView)
-        let snapshot = cell.mainView.snapshotView(afterScreenUpdates: false)
-        transitionAnimator.initialView = snapshot
         transitionAnimator.initialFrame = frame
     }
 }
@@ -239,7 +238,11 @@ extension TicketListViewController: UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if toVC is TicketDetailsViewController, operation == .push {
-            return transitionAnimator
+            transitionAnimator.transition = .push
+            return nil
+        } else if fromVC is TicketDetailsViewController, operation == .pop {
+            transitionAnimator.transition = .pop
+            return nil
         } else {
             return nil
         }

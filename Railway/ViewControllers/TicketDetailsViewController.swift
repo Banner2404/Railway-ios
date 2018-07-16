@@ -11,21 +11,11 @@ import RxSwift
 import RxCocoa
 
 class TicketDetailsViewController: ViewController {
-    
-    var ticketCardViewFrame: CGRect {
-        return ticketCardView.convert(ticketCardView.bounds, to: view)
-    }
 
+    private var shouldGoBack = false
     private let disposeBag = DisposeBag()
     private var viewModel: TicketDetailsViewModel!
-    @IBOutlet weak var ticketCardView: UIView!
-    @IBOutlet private weak var stationsLabel: UILabel!
-    @IBOutlet private weak var departureLabel: UILabel!
-    @IBOutlet private weak var arrivalLabel: UILabel!
-    @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var ticketsStackView: UIStackView!
-    @IBOutlet private weak var notesTextView: UITextView!
-    @IBOutlet private weak var notesView: UIView!
+    @IBOutlet private weak var ticketView: TicketTransitionView!
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -36,7 +26,7 @@ class TicketDetailsViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTicketInfo()
-        
+        setupActions()
         viewModel.editViewModel
             .subscribe(onNext: { viewModel in
                 self.showEditViewController(with: viewModel)
@@ -44,7 +34,7 @@ class TicketDetailsViewController: ViewController {
             .disposed(by: disposeBag)
     }
     
-    @IBAction func deleteTicketTap(_ sender: Any) {
+    private func deleteButtonTap() {
         let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет от станции \(viewModel.fromText.value) до станции \(viewModel.toText.value)?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
             self.viewModel.delete()
@@ -56,8 +46,21 @@ class TicketDetailsViewController: ViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func editButtonTap(_ sender: Any) {
+    
+    private func editButtonTap() {
         viewModel.edit()
+    }
+    
+    @IBAction func testButtonTap(_ sender: Any) {
+        switch ticketView.state {
+        case .collapsed:
+            ticketView.set(state: .expanded, animated: true)
+        case .expanded:
+            ticketView.set(state: .collapsed, animated: true)
+        }
+        UIView.animate(withDuration: 2.0) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func showEditViewController(with viewModel: AddTicketViewModel) {
@@ -65,45 +68,66 @@ class TicketDetailsViewController: ViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    private func setupTicketInfo() {
+    func setupTicketInfo() {
         viewModel.stationsText
-            .bind(to: stationsLabel.rx.text)
+            .bind(to: ticketView.expandedView.stationsLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.departureTimeText
-            .bind(to: departureLabel.rx.text)
+            .bind(to: ticketView.expandedView.departureLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.arrivalTimeText
-            .bind(to: arrivalLabel.rx.text)
+            .bind(to: ticketView.expandedView.arrivalLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.dateText
-            .bind(to: dateLabel.rx.text)
+            .bind(to: ticketView.expandedView.dateLabel.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.notes
-            .bind(to: notesTextView.rx.text)
+            .bind(to: ticketView.expandedView.notesTextView.rx.text)
             .disposed(by: disposeBag)
         
         viewModel.notes
             .map { $0.isEmpty }
-            .bind(to: notesView.rx.isHidden)
+            .bind(to: ticketView.expandedView.notesView.rx.isHidden)
             .disposed(by: disposeBag)
         
         viewModel.places
             .subscribe(onNext: { places in
-                for view in self.ticketsStackView.arrangedSubviews {
-                    self.ticketsStackView.removeArrangedSubview(view)
-                    view.removeFromSuperview()
-                }
-                for place in places {
+                self.ticketView.expandedView.places = places.map { place in
                     let view = PlaceView()
                     view.carriageLabel.text = place.carriageText
                     view.seatLabel.text = place.seatText
-                    self.ticketsStackView.addArrangedSubview(view)
+                    return view
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    func setupActions() {
+        ticketView.expandedView.editButton.rx.tap
+            .subscribe(onNext: { _ in self.editButtonTap() })
+            .disposed(by: disposeBag)
+        
+        ticketView.expandedView.deleteButton.rx.tap
+            .subscribe(onNext: { _ in self.deleteButtonTap() })
+            .disposed(by: disposeBag)
+    }
+}
+
+//MARK: - UIScrollViewDelegate
+extension TicketDetailsViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let offset = abs(scrollView.contentOffset.y)
+//        if offset > 60.0 && !shouldGoBack {
+//            shouldGoBack = true
+//            ticketView.set(state: .collapsed, animated: true)
+//        } else if offset <= 60.0 && shouldGoBack {
+//            shouldGoBack = false
+//            ticketView.set(state: .expanded, animated: true)
+//        }
     }
 }

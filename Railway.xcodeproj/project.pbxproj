@@ -41,6 +41,11 @@
 		D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046720DF9CDA007155ED /* NotificationsViewController.swift */; };
 		D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */; };
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
+		D189540120FBD0E60040411D /* ExpandedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189540020FBD0E60040411D /* ExpandedTicketView.xib */; };
+		D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189540220FBD2850040411D /* CollapsedTicketView.xib */; };
+		D189540520FBD2BC0040411D /* ExpandedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540420FBD2BC0040411D /* ExpandedTicketView.swift */; };
+		D189540720FBD3BD0040411D /* CollapsedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540620FBD3BD0040411D /* CollapsedTicketView.swift */; };
+		D189540920FBD61F0040411D /* TicketTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540820FBD61F0040411D /* TicketTransitionView.swift */; };
 		D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */; };
 		D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
@@ -109,6 +114,11 @@
 		D16C046720DF9CDA007155ED /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D189540020FBD0E60040411D /* ExpandedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTicketView.xib; sourceTree = "<group>"; };
+		D189540220FBD2850040411D /* CollapsedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollapsedTicketView.xib; sourceTree = "<group>"; };
+		D189540420FBD2BC0040411D /* ExpandedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTicketView.swift; sourceTree = "<group>"; };
+		D189540620FBD3BD0040411D /* CollapsedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedTicketView.swift; sourceTree = "<group>"; };
+		D189540820FBD61F0040411D /* TicketTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTransitionView.swift; sourceTree = "<group>"; };
 		D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewModel.swift; sourceTree = "<group>"; };
 		D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
@@ -219,6 +229,11 @@
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
 				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
 				D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */,
+				D189540020FBD0E60040411D /* ExpandedTicketView.xib */,
+				D189540420FBD2BC0040411D /* ExpandedTicketView.swift */,
+				D189540220FBD2850040411D /* CollapsedTicketView.xib */,
+				D189540620FBD3BD0040411D /* CollapsedTicketView.swift */,
+				D189540820FBD61F0040411D /* TicketTransitionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,9 +389,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D189540120FBD0E60040411D /* ExpandedTicketView.xib in Resources */,
 				D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */,
 				D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */,
 				D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */,
+				D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */,
 				D133E97F2083D3A400D007F4 /* PlaceView.xib in Resources */,
 				D1DBE71720741A06000587C8 /* Main.storyboard in Resources */,
 			);
@@ -506,6 +523,7 @@
 				D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */,
 				D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */,
 				D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */,
+				D189540520FBD2BC0040411D /* ExpandedTicketView.swift in Sources */,
 				D1F78BA520E15798003DA8AF /* NotificationAlert.swift in Sources */,
 				D1DBE72C20741CF8000587C8 /* ViewController.swift in Sources */,
 				D133E9812083D5CF00D007F4 /* PlaceView.swift in Sources */,
@@ -526,6 +544,8 @@
 				D12BC03120CB174D0005CBD1 /* MailSyncronizer.swift in Sources */,
 				D133E97D2083CC9B00D007F4 /* DateFormatters.swift in Sources */,
 				D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */,
+				D189540920FBD61F0040411D /* TicketTransitionView.swift in Sources */,
+				D189540720FBD3BD0040411D /* CollapsedTicketView.swift in Sources */,
 				D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */,
 				D1F4985320E8E89E00796F93 /* DisposableTableViewCell.swift in Sources */,
 				D13F4B2B20DFDF0600A3F8D9 /* NotificationsToggleTableViewCell.swift in Sources */,

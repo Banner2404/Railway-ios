@@ -18,8 +18,8 @@ class TicketCollapsedTableViewCell: HighlightableTableViewCell {
 
     weak var delegate: TicketCollapsedTableViewCellDelegate?
     
-    @IBOutlet weak var routeLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var ticketView: CollapsedTicketView!
+    
     @IBOutlet private weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet private weak var swipeContentView: UIView!
     private var panStart: CGPoint = CGPoint.zero

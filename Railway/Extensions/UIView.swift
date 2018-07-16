@@ -16,4 +16,11 @@ extension UIView {
         let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         return view
     }
+    
+    func attachToFrame(of view: UIView) {
+        self.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        self.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
 }
