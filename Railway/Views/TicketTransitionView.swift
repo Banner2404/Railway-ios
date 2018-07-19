@@ -15,7 +15,7 @@ class TicketTransitionView: UIView {
     private(set) var state = State.collapsed
     private var collapsedBottomConstraint: NSLayoutConstraint!
     private var expandedBottomConstraint: NSLayoutConstraint!
-    private let AnimationDuration = 1.0
+    private let AnimationDuration = 0.3
     init() {
         super.init(frame: .zero)
         setup()

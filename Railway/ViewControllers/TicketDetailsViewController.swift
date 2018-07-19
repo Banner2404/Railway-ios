@@ -21,7 +21,9 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet weak var ticketView: TicketTransitionView!
     @IBOutlet private weak var ticketContainer: UIView!
     @IBOutlet private weak var viewTopConstraint: NSLayoutConstraint!
-    private let SnapAnimationDuration = 2.0
+    @IBOutlet private weak var topLabel: UILabel!
+    @IBOutlet private weak var bottomLabel: UILabel!
+    private let SnapAnimationDuration = 0.5
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -40,19 +42,35 @@ class TicketDetailsViewController: ViewController {
             .disposed(by: disposeBag)
     }
     
-    func animateAppearance() {
+    func animateAppearance(completion: ((Bool) -> Void)? = nil) {
         view.layoutIfNeeded()
         view.backgroundColor = UIColor.clear
-        ticketContainer.backgroundColor = UIColor.clear
         let finalFrame = ticketView.convert(ticketView.bounds, to: view)
         let offset = initialFrame.minY - finalFrame.minY
         viewTopConstraint.constant = offset
         view.layoutIfNeeded()
         ticketView.set(state: .expanded, animated: true)
         viewTopConstraint.constant = 0
-        UIView.animate(withDuration: SnapAnimationDuration) {
+        topLabel.alpha = 0
+        bottomLabel.alpha = 0
+        UIView.animate(withDuration: SnapAnimationDuration, animations: {
             self.view.layoutIfNeeded()
-        }
+            self.view.backgroundColor = UIColor.tableBackgroundColor
+            self.topLabel.alpha = 1
+            self.bottomLabel.alpha = 1
+        }, completion: { finished in
+            completion?(finished)
+        })
+    }
+    
+    func animateDisappearance(completion: ((Bool) -> Void)? = nil) {
+        let finalFrame = ticketContainer.convert(initialFrame, from: view)
+        UIView.animate(withDuration: SnapAnimationDuration, animations: {
+            self.ticketView.frame = finalFrame
+            self.view.backgroundColor = UIColor.clear
+        }, completion: { finished in
+            completion?(finished)
+        })
     }
     
     @IBAction func viewDragged(_ sender: UIPanGestureRecognizer) {
@@ -66,16 +84,17 @@ class TicketDetailsViewController: ViewController {
             if yDiff > 120.0 && !shouldGoBack {
                 shouldGoBack = true
                 ticketView.set(state: .collapsed, animated: true)
+                topLabel.isHidden = true
+                bottomLabel.isHidden = true
             } else if yDiff < 80.0 && shouldGoBack {
                 shouldGoBack = false
                 ticketView.set(state: .expanded, animated: true)
+                topLabel.isHidden = false
+                bottomLabel.isHidden = false
             }
         case .ended, .failed:
             if shouldGoBack {
-                let finalFrame = ticketContainer.convert(initialFrame, from: view)
-                UIView.animate(withDuration: SnapAnimationDuration) {
-                    self.ticketView.frame = finalFrame
-                }
+                navigationController?.popViewController(animated: true)
             } else {
                 viewTopConstraint.constant = 0
                 UIView.animate(withDuration: SnapAnimationDuration) {

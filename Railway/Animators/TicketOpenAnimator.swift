@@ -15,7 +15,7 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var finalViewModel: TicketDetailsViewModel!
     var transition: Transition = .push
     
-    let AnimationDuration: TimeInterval = 2.0
+    let AnimationDuration: TimeInterval = 0.5
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return AnimationDuration
@@ -32,23 +32,27 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     
     func animatePushTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let container = transitionContext.containerView
-        let fromView = transitionContext.view(forKey: .from)!
         let toView = transitionContext.view(forKey: .to)!
         let toVC = transitionContext.viewController(forKey: .to) as! TicketDetailsViewController
         container.addSubview(toView)
         toVC.initialFrame = initialFrame
-        toVC.animateAppearance()
-//        toVC.ticketView.set(state: .expanded, animated: false)
-//        toView.layoutIfNeeded()
-//        let finalFrame = toVC.ticketView.frame
-//        toVC.ticketView.frame = initialFrame
-//        UIView.animate(withDuration: 2.0) {
-//            toVC.ticketView.frame = finalFrame
-//        }
-        transitionContext.completeTransition(true)
+        toVC.animateAppearance { finished in
+            transitionContext.completeTransition(finished)
+        }
     }
     
     func animatePopTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let container = transitionContext.containerView
+        let fromView = transitionContext.view(forKey: .from)!
+        let toView = transitionContext.view(forKey: .to)!
+        let fromVC = transitionContext.viewController(forKey: .from) as! TicketDetailsViewController
+        let toVC = transitionContext.viewController(forKey: .to) as! TicketListViewController
+        container.insertSubview(toView, belowSubview: fromView)
+        toVC.animatePop()
+        fromVC.animateDisappearance { finished in
+            toVC.completePop()
+            transitionContext.completeTransition(finished)
+        }
     }
     
     func expandOrigin(forFinalSize size: CGSize) -> CGPoint {

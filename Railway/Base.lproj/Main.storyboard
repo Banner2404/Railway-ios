@@ -185,7 +185,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="doj-s7-wum" firstAttribute="top" secondItem="dTY-C6-I2m" secondAttribute="bottom" constant="10" id="03D-5U-wKf"/>
                                     <constraint firstAttribute="trailing" secondItem="dTY-C6-I2m" secondAttribute="trailing" constant="8" id="FJa-BL-NuK"/>
@@ -213,8 +213,10 @@
                     <navigationItem key="navigationItem" title="Билеты" id="v0V-y1-rpb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="bottomLabel" destination="doj-s7-wum" id="l2q-j5-eQf"/>
                         <outlet property="ticketContainer" destination="TsP-KF-97B" id="QRB-BW-JcB"/>
                         <outlet property="ticketView" destination="dTY-C6-I2m" id="npZ-M8-H2D"/>
+                        <outlet property="topLabel" destination="bDh-F2-J51" id="Xkf-N1-RN0"/>
                         <outlet property="viewTopConstraint" destination="YZr-zd-SzL" id="0rn-Zv-4kY"/>
                     </connections>
                 </viewController>

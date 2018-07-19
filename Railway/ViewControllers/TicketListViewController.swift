@@ -24,6 +24,7 @@ class TicketListViewController: ViewController {
     private var shownTickets: Observable<[[TicketViewModel]]>!
     private weak var activeCell: TicketCollapsedTableViewCell?
     private var transitionAnimator = TicketOpenAnimator()
+    private var selectedIndexPath: IndexPath?
     @IBOutlet private weak var syncIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
@@ -44,7 +45,7 @@ class TicketListViewController: ViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        //tableView.reloadData()
     }
     
     @IBAction private func addButtonTap(_ sender: Any) {
@@ -57,6 +58,17 @@ class TicketListViewController: ViewController {
         hideDeleteButtonIfNeeded()
         let viewController = SettingsViewController.loadFromStoryboard(viewModel: viewModel.settingsViewModel())
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func animatePop() {
+        guard let selectedIndexPath = selectedIndexPath else { return }
+        collapseTableView(at: selectedIndexPath)
+    }
+    
+    func completePop() {
+        guard let selectedIndexPath = selectedIndexPath else { return }
+        guard let cell = tableView.cellForRow(at: selectedIndexPath) else { return }
+        cell.isHidden = false
     }
     
 }
@@ -73,18 +85,32 @@ private extension TicketListViewController {
     func expandTableView(at indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)!
         guard let index = tableView.visibleCells.firstIndex(of: cell) else { return }
-        let topCells = tableView.visibleCells.prefix(upTo: index)
-        let bottomCells = tableView.visibleCells.suffix(from: index + 1)
-        topCells.forEach { self.animate(cell: $0, multiplier: -1) }
-        bottomCells.forEach { self.animate(cell: $0, multiplier: +1) }
+        let topCells = Array(tableView.visibleCells.prefix(upTo: index))
+        let bottomCells = Array(tableView.visibleCells.suffix(from: index + 1))
+        topCells.forEach { self.moveAnimated(cell: $0, multiplier: -1, alpha: 0.0) }
+        bottomCells.forEach { self.moveAnimated(cell: $0, multiplier: +1, alpha: 0.0) }
+        cell.isHidden = true
     }
     
-    func animate(cell: UITableViewCell, multiplier: Int) {
-        let offset = view.frame.height / 2
+    func collapseTableView(at indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)!
+        guard let index = tableView.visibleCells.firstIndex(of: cell) else { return }
+        let topCells = Array(tableView.visibleCells.prefix(upTo: index))
+        let bottomCells = Array(tableView.visibleCells.suffix(from: index + 1))
+        topCells.forEach { self.moveAnimated(cell: $0, multiplier: +1, alpha: 1.0) }
+        bottomCells.forEach { self.moveAnimated(cell: $0, multiplier: -1, alpha: 1.0) }
+    }
+    
+    func moveAnimated(cell: UITableViewCell, multiplier: Int, alpha: CGFloat) {
         UIView.animate(withDuration: transitionAnimator.AnimationDuration * 0.7) {
-            cell.frame.origin.y = cell.frame.origin.y + CGFloat(multiplier) * offset
-            cell.alpha = 0
+            self.move(cell: cell, multiplier: multiplier, alpha: alpha)
         }
+    }
+    
+    func move(cell: UITableViewCell, multiplier: Int, alpha: CGFloat) {
+        let offset = view.frame.height / 2
+        cell.frame.origin.y = cell.frame.origin.y + CGFloat(multiplier) * offset
+        cell.alpha = alpha
     }
     
     @objc func loadOldest() {
@@ -164,6 +190,7 @@ private extension TicketListViewController {
             .do(onNext: { indexPath in
                 self.updateAnimatorInitialFrame(for: indexPath)
                 self.expandTableView(at: indexPath)
+                self.selectedIndexPath = indexPath
             })
             .map { self.dataSource.sectionModels[$0.section].items[$0.row] }
             .map { ($0, self.viewModel.detailedTicketViewModel(for: $0)) }
@@ -242,7 +269,7 @@ extension TicketListViewController: UINavigationControllerDelegate {
             return transitionAnimator
         } else if fromVC is TicketDetailsViewController, operation == .pop {
             transitionAnimator.transition = .pop
-            return nil
+            return transitionAnimator
         } else {
             return nil
         }
