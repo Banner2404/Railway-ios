@@ -29,6 +29,7 @@ class TicketDetailsViewModel {
     }
     
     var editViewModel = PublishSubject<AddTicketViewModel>()
+    var collapsedTicketViewModel: BehaviorRelay<TicketViewModel>
     
     private var ticket: Ticket
     private let deleteSubject = PublishSubject<Ticket>()
@@ -36,6 +37,7 @@ class TicketDetailsViewModel {
 
     init(_ ticket: Ticket) {
         self.ticket = ticket
+        collapsedTicketViewModel = BehaviorRelay(value: TicketViewModel(ticket))
         set(ticket)
     }
     
@@ -49,6 +51,7 @@ class TicketDetailsViewModel {
         dateText.accept(DateFormatters.longDate.string(from: ticket.departure))
         notes.accept(ticket.notes)
         places.accept(ticket.places.map { PlaceViewModel($0) })
+        collapsedTicketViewModel.accept(TicketViewModel(ticket))
     }
     
     func delete() {

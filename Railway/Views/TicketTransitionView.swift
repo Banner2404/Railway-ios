@@ -15,8 +15,7 @@ class TicketTransitionView: UIView {
     private(set) var state = State.collapsed
     private var collapsedBottomConstraint: NSLayoutConstraint!
     private var expandedBottomConstraint: NSLayoutConstraint!
-    private let AnimationDuration = 2.0
-    
+    private let AnimationDuration = 1.0
     init() {
         super.init(frame: .zero)
         setup()
@@ -48,6 +47,7 @@ private extension TicketTransitionView {
         self.addSubview(collapsedView)
         collapsedBottomConstraint = self.bottomAnchor.constraint(equalTo: collapsedView.bottomAnchor)
         NSLayoutConstraint.activate([
+            collapsedView.heightAnchor.constraint(equalToConstant: 80.0),
             topAnchor.constraint(equalTo: collapsedView.topAnchor),
             leftAnchor.constraint(equalTo: collapsedView.leftAnchor),
             rightAnchor.constraint(equalTo: collapsedView.rightAnchor)
@@ -69,40 +69,51 @@ private extension TicketTransitionView {
     func updateState(animated: Bool) {
         switch state {
         case .collapsed:
-            expandedBottomConstraint.isActive = false
-            collapsedBottomConstraint.isActive = true
-            if animated {
-                self.collapsedView.isHidden = false
-                UIView.animate(withDuration: AnimationDuration, animations: {
-                    self.expandedView.alpha = 0.0
-                    self.collapsedView.alpha = 1.0
-                    self.layoutIfNeeded()
-                }, completion: { _ in
-                    self.expandedView.isHidden = true
-                })
-            } else {
-                expandedView.alpha = 0.0
-                collapsedView.alpha = 1.0
-                expandedView.isHidden = true
-                collapsedView.isHidden = false
-            }
+            expand(animated: animated)
         case .expanded:
-            collapsedBottomConstraint.isActive = false
-            expandedBottomConstraint.isActive = true
-            if animated {
-                self.expandedView.isHidden = false
-                UIView.animate(withDuration: AnimationDuration, animations: {
-                    self.expandedView.alpha = 1.0
-                    self.collapsedView.alpha = 0.0
-                    self.layoutIfNeeded()
-                }, completion: { _ in
+            collapse(animated: animated)
+        }
+    }
+    
+    func expand(animated: Bool) {
+        expandedBottomConstraint.isActive = false
+        collapsedBottomConstraint.isActive = true
+        collapsedView.isHidden = false
+        if animated {
+            UIView.animate(withDuration: AnimationDuration, animations: {
+                self.expandedView.alpha = 0.0
+                self.collapsedView.alpha = 1.0
+                self.superview?.layoutIfNeeded()
+            }, completion: { finished in
+                if finished {
+                    self.expandedView.isHidden = true
+                }
+            })
+        } else {
+            expandedView.alpha = 0.0
+            collapsedView.alpha = 1.0
+            expandedView.isHidden = true
+        }
+    }
+    
+    func collapse(animated: Bool) {
+        collapsedBottomConstraint.isActive = false
+        expandedBottomConstraint.isActive = true
+        expandedView.isHidden = false
+        if animated {
+            UIView.animate(withDuration: AnimationDuration, animations: {
+                self.expandedView.alpha = 1.0
+                self.collapsedView.alpha = 0.0
+                self.superview?.layoutIfNeeded()
+            }, completion: { finished in
+                if finished {
                     self.collapsedView.isHidden = true
-                })
-            } else {
-                expandedView.alpha = 1.0
-                collapsedView.alpha = 0.0
-                expandedView.isHidden = false
-                collapsedView.isHidden = true            }
+                }
+            })
+        } else {
+            expandedView.alpha = 1.0
+            collapsedView.alpha = 0.0
+            collapsedView.isHidden = true
         }
     }
     

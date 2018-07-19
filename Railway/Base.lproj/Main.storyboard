@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -212,24 +212,14 @@
                                     <outlet property="delegate" destination="JFg-2i-GdA" id="Vag-Fc-P0w"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nd1-SH-toJ">
-                                <rect key="frame" x="40" y="597" width="37" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="TEST"/>
-                                <connections>
-                                    <action selector="testButtonTap:" destination="JFg-2i-GdA" eventType="touchUpInside" id="fxT-ht-siP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="Nd1-SH-toJ" firstAttribute="leading" secondItem="pdo-ui-f7D" secondAttribute="leading" constant="40" id="1wO-TB-gqX"/>
                             <constraint firstItem="MCZ-hf-0fk" firstAttribute="leading" secondItem="g0m-tP-EZ2" secondAttribute="leading" id="2Vh-WV-dTg"/>
                             <constraint firstItem="TsP-KF-97B" firstAttribute="width" secondItem="g0m-tP-EZ2" secondAttribute="width" id="OlZ-Fa-mE3"/>
                             <constraint firstItem="pdo-ui-f7D" firstAttribute="bottom" secondItem="MCZ-hf-0fk" secondAttribute="bottom" id="boj-4Q-K2H"/>
                             <constraint firstItem="MCZ-hf-0fk" firstAttribute="top" secondItem="pdo-ui-f7D" secondAttribute="top" id="dTB-mr-mJd"/>
                             <constraint firstItem="pdo-ui-f7D" firstAttribute="trailing" secondItem="MCZ-hf-0fk" secondAttribute="trailing" id="dce-EC-fGc"/>
-                            <constraint firstItem="pdo-ui-f7D" firstAttribute="bottom" secondItem="Nd1-SH-toJ" secondAttribute="bottom" constant="40" id="yXN-A8-UdF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pdo-ui-f7D"/>
                     </view>

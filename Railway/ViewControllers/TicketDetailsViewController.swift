@@ -51,18 +51,6 @@ class TicketDetailsViewController: ViewController {
         viewModel.edit()
     }
     
-    @IBAction func testButtonTap(_ sender: Any) {
-        switch ticketView.state {
-        case .collapsed:
-            ticketView.set(state: .expanded, animated: true)
-        case .expanded:
-            ticketView.set(state: .collapsed, animated: true)
-        }
-        UIView.animate(withDuration: 2.0) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
     private func showEditViewController(with viewModel: AddTicketViewModel) {
         let viewController = AddTicketViewController.loadFromStoryboard(viewModel)
         navigationController?.pushViewController(viewController, animated: true)
@@ -104,6 +92,12 @@ class TicketDetailsViewController: ViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        viewModel.collapsedTicketViewModel
+            .subscribe(onNext: { vm in
+                self.ticketView.collapsedView.setup(with: vm)
+            })
+            .disposed(by: disposeBag)
     }
     
     func setupActions() {
@@ -121,13 +115,19 @@ class TicketDetailsViewController: ViewController {
 extension TicketDetailsViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offset = abs(scrollView.contentOffset.y)
-//        if offset > 60.0 && !shouldGoBack {
-//            shouldGoBack = true
-//            ticketView.set(state: .collapsed, animated: true)
-//        } else if offset <= 60.0 && shouldGoBack {
-//            shouldGoBack = false
-//            ticketView.set(state: .expanded, animated: true)
-//        }
+        let offset = abs(scrollView.contentOffset.y)
+        if offset > 60.0 && !shouldGoBack {
+            shouldGoBack = true
+            ticketView.set(state: .collapsed, animated: true)
+        } else if offset <= 30.0 && offset > 1.0 && shouldGoBack {
+            shouldGoBack = false
+            ticketView.set(state: .expanded, animated: true)
+        }
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if shouldGoBack {
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
