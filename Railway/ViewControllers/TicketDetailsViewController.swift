@@ -12,10 +12,16 @@ import RxCocoa
 
 class TicketDetailsViewController: ViewController {
 
+    var initialFrame: CGRect = .zero
+    
     private var shouldGoBack = false
     private let disposeBag = DisposeBag()
     private var viewModel: TicketDetailsViewModel!
-    @IBOutlet private weak var ticketView: TicketTransitionView!
+    private var startPoint = CGPoint.zero
+    @IBOutlet weak var ticketView: TicketTransitionView!
+    @IBOutlet private weak var ticketContainer: UIView!
+    @IBOutlet private weak var viewTopConstraint: NSLayoutConstraint!
+    private let SnapAnimationDuration = 2.0
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -32,6 +38,53 @@ class TicketDetailsViewController: ViewController {
                 self.showEditViewController(with: viewModel)
             })
             .disposed(by: disposeBag)
+    }
+    
+    func animateAppearance() {
+        view.layoutIfNeeded()
+        view.backgroundColor = UIColor.clear
+        ticketContainer.backgroundColor = UIColor.clear
+        let finalFrame = ticketView.convert(ticketView.bounds, to: view)
+        let offset = initialFrame.minY - finalFrame.minY
+        viewTopConstraint.constant = offset
+        view.layoutIfNeeded()
+        ticketView.set(state: .expanded, animated: true)
+        viewTopConstraint.constant = 0
+        UIView.animate(withDuration: SnapAnimationDuration) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func viewDragged(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            startPoint = sender.location(in: view)
+        case .changed:
+            let location = sender.location(in: view)
+            let yDiff = location.y - startPoint.y
+            viewTopConstraint.constant = yDiff
+            if yDiff > 120.0 && !shouldGoBack {
+                shouldGoBack = true
+                ticketView.set(state: .collapsed, animated: true)
+            } else if yDiff < 80.0 && shouldGoBack {
+                shouldGoBack = false
+                ticketView.set(state: .expanded, animated: true)
+            }
+        case .ended, .failed:
+            if shouldGoBack {
+                let finalFrame = ticketContainer.convert(initialFrame, from: view)
+                UIView.animate(withDuration: SnapAnimationDuration) {
+                    self.ticketView.frame = finalFrame
+                }
+            } else {
+                viewTopConstraint.constant = 0
+                UIView.animate(withDuration: SnapAnimationDuration) {
+                    self.view.layoutIfNeeded()
+                }
+            }
+        default:
+            break
+        }
     }
     
     private func deleteButtonTap() {
@@ -108,26 +161,5 @@ class TicketDetailsViewController: ViewController {
         ticketView.expandedView.deleteButton.rx.tap
             .subscribe(onNext: { _ in self.deleteButtonTap() })
             .disposed(by: disposeBag)
-    }
-}
-
-//MARK: - UIScrollViewDelegate
-extension TicketDetailsViewController: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offset = abs(scrollView.contentOffset.y)
-        if offset > 60.0 && !shouldGoBack {
-            shouldGoBack = true
-            ticketView.set(state: .collapsed, animated: true)
-        } else if offset <= 30.0 && offset > 1.0 && shouldGoBack {
-            shouldGoBack = false
-            ticketView.set(state: .expanded, animated: true)
-        }
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if shouldGoBack {
-            navigationController?.popViewController(animated: true)
-        }
     }
 }

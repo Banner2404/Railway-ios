@@ -239,7 +239,7 @@ extension TicketListViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if toVC is TicketDetailsViewController, operation == .push {
             transitionAnimator.transition = .push
-            return nil
+            return transitionAnimator
         } else if fromVC is TicketDetailsViewController, operation == .pop {
             transitionAnimator.transition = .pop
             return nil

@@ -31,6 +31,21 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animatePushTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let container = transitionContext.containerView
+        let fromView = transitionContext.view(forKey: .from)!
+        let toView = transitionContext.view(forKey: .to)!
+        let toVC = transitionContext.viewController(forKey: .to) as! TicketDetailsViewController
+        container.addSubview(toView)
+        toVC.initialFrame = initialFrame
+        toVC.animateAppearance()
+//        toVC.ticketView.set(state: .expanded, animated: false)
+//        toView.layoutIfNeeded()
+//        let finalFrame = toVC.ticketView.frame
+//        toVC.ticketView.frame = initialFrame
+//        UIView.animate(withDuration: 2.0) {
+//            toVC.ticketView.frame = finalFrame
+//        }
+        transitionContext.completeTransition(true)
     }
     
     func animatePopTransition(using transitionContext: UIViewControllerContextTransitioning) {
