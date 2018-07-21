@@ -23,6 +23,7 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet private weak var viewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var topLabel: UILabel!
     private let SnapAnimationDuration = 0.4
+    private let MaxTopOverscroll: CGFloat = 200.0
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -63,10 +64,12 @@ class TicketDetailsViewController: ViewController {
     
     func animateDisappearance(completion: ((Bool) -> Void)? = nil) {
         let finalFrame = ticketContainer.convert(initialFrame, from: view)
+        UIView.animate(withDuration: SnapAnimationDuration / 3) {
+            self.topLabel.alpha = 0
+        }
         UIView.animate(withDuration: SnapAnimationDuration, animations: {
             self.ticketView.frame = finalFrame
             self.view.backgroundColor = UIColor.clear
-            self.topLabel.alpha = 0
         }, completion: { finished in
             completion?(finished)
         })
@@ -94,7 +97,10 @@ class TicketDetailsViewController: ViewController {
             startPoint = sender.location(in: view)
         case .changed:
             let location = sender.location(in: view)
-            let yDiff = location.y - startPoint.y
+            var yDiff = location.y - startPoint.y
+            if yDiff < 0 {
+                yDiff = -MaxTopOverscroll * (1 - MaxTopOverscroll / (MaxTopOverscroll-yDiff))
+            }
             viewTopConstraint.constant = yDiff
             if yDiff > 120.0 && !shouldGoBack {
                 shouldGoBack = true
@@ -118,7 +124,7 @@ class TicketDetailsViewController: ViewController {
     }
     
     private func deleteButtonTap() {
-        let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет от станции \(viewModel.fromText.value) до станции \(viewModel.toText.value)?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
             self.viewModel.delete()
             self.navigationController?.popViewController(animated: true)
