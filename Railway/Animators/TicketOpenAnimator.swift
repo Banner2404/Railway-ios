@@ -15,7 +15,7 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var finalViewModel: TicketDetailsViewModel!
     var transition: Transition = .push
     
-    let AnimationDuration: TimeInterval = 0.5
+    let AnimationDuration: TimeInterval = 0.4
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return AnimationDuration

@@ -22,8 +22,7 @@ class TicketDetailsViewController: ViewController {
     @IBOutlet private weak var ticketContainer: UIView!
     @IBOutlet private weak var viewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var topLabel: UILabel!
-    @IBOutlet private weak var bottomLabel: UILabel!
-    private let SnapAnimationDuration = 0.5
+    private let SnapAnimationDuration = 0.4
     
     class func loadFromStoryboard(_ viewModel: TicketDetailsViewModel) -> TicketDetailsViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketDetailsViewController
@@ -33,6 +32,7 @@ class TicketDetailsViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.hidesBackButton = true
         setupTicketInfo()
         setupActions()
         viewModel.editViewModel
@@ -52,12 +52,10 @@ class TicketDetailsViewController: ViewController {
         ticketView.set(state: .expanded, animated: true)
         viewTopConstraint.constant = 0
         topLabel.alpha = 0
-        bottomLabel.alpha = 0
         UIView.animate(withDuration: SnapAnimationDuration, animations: {
             self.view.layoutIfNeeded()
             self.view.backgroundColor = UIColor.tableBackgroundColor
             self.topLabel.alpha = 1
-            self.bottomLabel.alpha = 1
         }, completion: { finished in
             completion?(finished)
         })
@@ -68,9 +66,26 @@ class TicketDetailsViewController: ViewController {
         UIView.animate(withDuration: SnapAnimationDuration, animations: {
             self.ticketView.frame = finalFrame
             self.view.backgroundColor = UIColor.clear
+            self.topLabel.alpha = 0
         }, completion: { finished in
             completion?(finished)
         })
+    }
+    
+    func animateExpand() {
+        ticketView.set(state: .expanded, animated: true)
+        UIView.animate(withDuration: ticketView.AnimationDuration) {
+            self.topLabel.text = "Cмахните чтобы закрыть"
+            self.topLabel.transform = .identity
+        }
+    }
+    
+    func animateCollapse() {
+        ticketView.set(state: .collapsed, animated: true)
+        UIView.animate(withDuration: ticketView.AnimationDuration) {
+            self.topLabel.text = "Закрыть"
+            self.topLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }
     }
     
     @IBAction func viewDragged(_ sender: UIPanGestureRecognizer) {
@@ -83,14 +98,10 @@ class TicketDetailsViewController: ViewController {
             viewTopConstraint.constant = yDiff
             if yDiff > 120.0 && !shouldGoBack {
                 shouldGoBack = true
-                ticketView.set(state: .collapsed, animated: true)
-                topLabel.isHidden = true
-                bottomLabel.isHidden = true
+                animateCollapse()
             } else if yDiff < 80.0 && shouldGoBack {
                 shouldGoBack = false
-                ticketView.set(state: .expanded, animated: true)
-                topLabel.isHidden = false
-                bottomLabel.isHidden = false
+                animateExpand()
             }
         case .ended, .failed:
             if shouldGoBack {

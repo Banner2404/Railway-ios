@@ -12,10 +12,11 @@ class TicketTransitionView: UIView {
     
     var collapsedView: CollapsedTicketView!
     var expandedView: ExpandedTicketView!
+    let AnimationDuration = 0.3
+
     private(set) var state = State.collapsed
     private var collapsedBottomConstraint: NSLayoutConstraint!
     private var expandedBottomConstraint: NSLayoutConstraint!
-    private let AnimationDuration = 0.3
     init() {
         super.init(frame: .zero)
         setup()
@@ -78,42 +79,38 @@ private extension TicketTransitionView {
     func expand(animated: Bool) {
         expandedBottomConstraint.isActive = false
         collapsedBottomConstraint.isActive = true
-        collapsedView.isHidden = false
         if animated {
-            UIView.animate(withDuration: AnimationDuration, animations: {
-                self.expandedView.alpha = 0.0
-                self.collapsedView.alpha = 1.0
-                self.superview?.layoutIfNeeded()
-            }, completion: { finished in
-                if finished {
-                    self.expandedView.isHidden = true
-                }
-            })
+            UIView.animate(withDuration: AnimationDuration,
+                           delay: 0.0,
+                           options: UIViewAnimationOptions.beginFromCurrentState,
+                           animations: {
+                                self.expandedView.alpha = 0.0
+                                self.collapsedView.alpha = 1.0
+                                self.superview?.layoutIfNeeded() },
+                           completion: nil
+            )
         } else {
             expandedView.alpha = 0.0
             collapsedView.alpha = 1.0
-            expandedView.isHidden = true
         }
     }
     
     func collapse(animated: Bool) {
         collapsedBottomConstraint.isActive = false
         expandedBottomConstraint.isActive = true
-        expandedView.isHidden = false
         if animated {
-            UIView.animate(withDuration: AnimationDuration, animations: {
-                self.expandedView.alpha = 1.0
-                self.collapsedView.alpha = 0.0
-                self.superview?.layoutIfNeeded()
-            }, completion: { finished in
-                if finished {
-                    self.collapsedView.isHidden = true
-                }
-            })
+            UIView.animate(withDuration: AnimationDuration,
+                           delay: 0.0,
+                           options: UIViewAnimationOptions.beginFromCurrentState,
+                           animations: {
+                                self.expandedView.alpha = 1.0
+                                self.collapsedView.alpha = 0.0
+                                self.superview?.layoutIfNeeded() },
+                           completion: nil
+            )
         } else {
             expandedView.alpha = 1.0
             collapsedView.alpha = 0.0
-            collapsedView.isHidden = true
         }
     }
     
