@@ -216,6 +216,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     
     private func lastSyncDate() -> Date? {
         let timestamp = UserDefaults.standard.double(forKey: "GmailSyncDate")
+        if timestamp < 1.0 { return nil }
         return Date(timeIntervalSince1970: timestamp)
     }
 }

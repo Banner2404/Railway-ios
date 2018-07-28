@@ -16,7 +16,8 @@ class TicketListViewController: ViewController {
     private var viewModel: TicketListViewModel!
     private let disposeBag = DisposeBag()
     private var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>>!
-    private let showOldest = BehaviorRelay<Bool>(value: false)
+    private var showOldestSection = true
+    private var shouldMakeInitialScroll = true
     private var oldTickets: Observable<[TicketViewModel]>!
     private var newTickets: Observable<[TicketViewModel]>!
     private var closestTickets: Observable<[TicketViewModel]>!
@@ -39,13 +40,17 @@ class TicketListViewController: ViewController {
         setupTickets()
         setupTableView()
         setupActivityIndicator()
-        setupPullToOldest()
         navigationController?.delegate = self
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        //tableView.reloadData()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(tableView.contentSize)
+        setupTableViewInsets()
+        if shouldMakeInitialScroll {
+            shouldMakeInitialScroll = false
+            scrollToInitialPosition()
+        }
     }
     
     @IBAction private func addButtonTap(_ sender: Any) {
@@ -113,18 +118,6 @@ private extension TicketListViewController {
         cell.alpha = alpha
     }
     
-    @objc func loadOldest() {
-        showOldest.accept(true)
-        tableView.refreshControl?.endRefreshing()
-    }
-    
-    func setupPullToOldest() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = UIColor.clear
-        refreshControl.addTarget(self, action: #selector(loadOldest), for: .valueChanged)
-        tableView.refreshControl = refreshControl
-    }
-    
     func setupTickets() {
         oldTickets = viewModel.allTickets
             .map { tickets in
@@ -148,20 +141,15 @@ private extension TicketListViewController {
     }
     
     func createSections() -> Observable<[SectionModel<String, TicketViewModel>]> {
-        return Observable.combineLatest(oldTickets, closestTickets, futureTickets, showOldest)
+        return Observable.combineLatest(oldTickets, closestTickets, futureTickets)
             .map { arguments -> [SectionModel<String, TicketViewModel>] in
                 let old = SectionModel(model: "Прошедшие", items: arguments.0)
                 let next = SectionModel(model: "Ближайший", items: arguments.1)
                 let future = SectionModel(model: "Будущие", items: arguments.2)
-                
-                let sections: [SectionModel<String, TicketViewModel>]
-                if arguments.3 {
-                    sections = [old, next, future]
-                } else {
-                    sections = [next, future]
-                }
+                let sections = [old, next, future]
                 return sections.filter { $0.items.count > 0 }
-        }
+
+            }
     }
     
     func createDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, TicketViewModel>> {
@@ -182,9 +170,7 @@ private extension TicketListViewController {
     func setupTableView() {
         let allSections = createSections()
         self.dataSource = createDataSource()
-        
         allSections.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
         tableView.rx.itemSelected
             .do(onNext: { indexPath in
@@ -216,6 +202,28 @@ private extension TicketListViewController {
         let frame = view.convert(cellContentView.bounds, from: cellContentView)
         transitionAnimator.initialFrame = frame
     }
+    
+    func setupTableViewInsets() {
+        if tableView.numberOfSections < 1 { return }
+        let visibleHeight = tableView.contentSize.height - tableView.rect(forSection: 0).height
+        tableView.contentInset.bottom = max(tableView.frame.height - visibleHeight - view.safeAreaInsets.top, 0.0)
+    }
+    
+    func hideDeleteButtonIfNeeded() {
+        activeCell?.hideDeleteButton()
+        activeCell = nil
+    }
+    
+    func scrollToInitialPosition() {
+        if tableView.numberOfSections < 1 { return }
+        let contentSize = tableView.contentSize
+        let oldestSize = tableView.rect(forSection: 0)
+        let scrollRect = CGRect(x: 0, y: oldestSize.maxY, width: contentSize.width, height: contentSize.height - oldestSize.height)
+        print(scrollRect)
+        tableView.scrollRectToVisible(scrollRect, animated: false)
+        self.scrollViewDidScroll(tableView)
+        shouldMakeInitialScroll = false
+    }
 }
 
 //MARK: - UITableViewDelegate
@@ -235,11 +243,21 @@ extension TicketListViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         hideDeleteButtonIfNeeded()
-    }
-    
-    func hideDeleteButtonIfNeeded() {
-        activeCell?.hideDeleteButton()
-        activeCell = nil
+        if tableView.numberOfSections < 1 { return }
+        let contentOffset = scrollView.contentOffset
+        let offset = contentOffset.y + scrollView.safeAreaInsets.top
+        let oldTicketsHeight = tableView.rect(forSection: 0).height
+        if offset > oldTicketsHeight - 100 && showOldestSection {
+            showOldestSection = false
+            scrollView.contentInset.top = -oldTicketsHeight
+            scrollView.contentOffset = contentOffset
+            print("Hide")
+        } else if offset < oldTicketsHeight - 120 && !showOldestSection {
+            showOldestSection = true
+            scrollView.contentInset.top = 0
+            scrollView.contentOffset = contentOffset
+            print("Show")
+        }
     }
 }
 
@@ -256,7 +274,6 @@ extension TicketListViewController: TicketCollapsedTableViewCellDelegate {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let viewModel = dataSource.sectionModels[indexPath.section].items[indexPath.row]
         self.viewModel.deleteTicket(viewModel: viewModel)
-        
     }
 }
 
