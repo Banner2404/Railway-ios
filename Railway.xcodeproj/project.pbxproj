@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */; };
+		D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12510FE210F8F2500393C31 /* NotificationCenter.framework */; };
+		D1251102210F8F2500393C31 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1251101210F8F2500393C31 /* TodayViewController.swift */; };
+		D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1251103210F8F2500393C31 /* MainInterface.storyboard */; };
+		D1251109210F8F2500393C31 /* RailwayWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D12510FD210F8F2400393C31 /* RailwayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D1251110210F960400393C31 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9732083A33F00D007F4 /* DatabaseManager.swift */; };
+		D1251111210F973F00393C31 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4985920E910C000796F93 /* NotificationSettingsCoreDataModel+CoreDataClass.swift */; };
+		D1251112210F973F00393C31 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4985820E910C000796F93 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift */; };
+		D1251113210F973F00393C31 /* StationCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9672083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift */; };
+		D1251114210F973F00393C31 /* StationCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9682083A1BF00D007F4 /* StationCoreDataModel+CoreDataProperties.swift */; };
+		D1251115210F973F00393C31 /* TicketCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9692083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift */; };
+		D1251116210F973F00393C31 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96A2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift */; };
+		D1251117210F973F00393C31 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96B2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataClass.swift */; };
+		D1251118210F973F00393C31 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E96C2083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift */; };
+		D1251119210F974500393C31 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72320741BB1000587C8 /* Ticket.swift */; };
+		D125111A210F974500393C31 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72520741C20000587C8 /* Station.swift */; };
+		D125111B210F974500393C31 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
+		D125111C210F974500393C31 /* NotificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA420E15798003DA8AF /* NotificationAlert.swift */; };
+		D125111D210F975100393C31 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DD9C6520C3EDF50050D56F /* Date.swift */; };
+		D125111E210F976000393C31 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
+		D125111F210F992800393C31 /* Railway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */; };
 		D1280D8120BC771300A386ED /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1280D8020BC771300A386ED /* AddTicketViewController.swift */; };
 		D1280D8320BC7AB100A386ED /* AddTicketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1280D8220BC7AB100A386ED /* AddTicketViewModel.swift */; };
 		D12BC03120CB174D0005CBD1 /* MailSyncronizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BC03020CB174D0005CBD1 /* MailSyncronizer.swift */; };
@@ -75,9 +96,42 @@
 		EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D1251107210F8F2500393C31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1DBE70620741A06000587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D12510FC210F8F2400393C31;
+			remoteInfo = RailwayWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D125110D210F8F2500393C31 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1251109210F8F2500393C31 /* RailwayWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RailwayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB2B7B43044D239C734C6C5 /* Pods-RailwayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayWidget/Pods-RailwayWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.release.xcconfig"; sourceTree = "<group>"; };
 		59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.debug.xcconfig"; sourceTree = "<group>"; };
+		D12510FD210F8F2400393C31 /* RailwayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RailwayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D12510FE210F8F2500393C31 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D1251101210F8F2500393C31 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D1251104210F8F2500393C31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D1251106210F8F2500393C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D125110E210F90FF00393C31 /* Railway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Railway.entitlements; sourceTree = "<group>"; };
+		D125110F210F911B00393C31 /* RailwayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RailwayWidget.entitlements; sourceTree = "<group>"; };
 		D1280D8020BC771300A386ED /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
 		D1280D8220BC7AB100A386ED /* AddTicketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewModel.swift; sourceTree = "<group>"; };
 		D12BC03020CB174D0005CBD1 /* MailSyncronizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailSyncronizer.swift; sourceTree = "<group>"; };
@@ -147,10 +201,20 @@
 		D1F78BA620E16599003DA8AF /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAddAlertTableViewCell.swift; sourceTree = "<group>"; };
 		D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPickerTableViewCell.swift; sourceTree = "<group>"; };
+		F9705C045ADDE100088C494D /* Pods-RailwayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayWidget/Pods-RailwayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D12510FA210F8F2400393C31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */,
+				AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1DBE70B20741A06000587C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +226,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D1251100210F8F2500393C31 /* RailwayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D125110F210F911B00393C31 /* RailwayWidget.entitlements */,
+				D1251101210F8F2500393C31 /* TodayViewController.swift */,
+				D1251103210F8F2500393C31 /* MainInterface.storyboard */,
+				D1251106210F8F2500393C31 /* Info.plist */,
+			);
+			path = RailwayWidget;
+			sourceTree = "<group>";
+		};
 		D12BEBBB207934860044F6F1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE71020741A06000587C8 /* Railway */,
+				D1251100210F8F2500393C31 /* RailwayWidget */,
 				D1DBE70F20741A06000587C8 /* Products */,
 				E0396B275D6BBF7FE0DB7C48 /* Pods */,
 				E110037B107136DD757F6919 /* Frameworks */,
@@ -286,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE70E20741A06000587C8 /* Railway.app */,
+				D12510FD210F8F2400393C31 /* RailwayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -293,6 +370,7 @@
 		D1DBE71020741A06000587C8 /* Railway */ = {
 			isa = PBXGroup;
 			children = (
+				D125110E210F90FF00393C31 /* Railway.entitlements */,
 				D1DBE71120741A06000587C8 /* AppDelegate.swift */,
 				D12BEBE6207956850044F6F1 /* Railway.xcdatamodeld */,
 				D133E9822083D62E00D007F4 /* Extensions */,
@@ -314,6 +392,8 @@
 			children = (
 				59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */,
 				484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */,
+				0AB2B7B43044D239C734C6C5 /* Pods-RailwayWidget.debug.xcconfig */,
+				F9705C045ADDE100088C494D /* Pods-RailwayWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -322,6 +402,8 @@
 			isa = PBXGroup;
 			children = (
 				FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */,
+				D12510FE210F8F2500393C31 /* NotificationCenter.framework */,
+				08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -329,6 +411,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D12510FC210F8F2400393C31 /* RailwayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D125110C210F8F2500393C31 /* Build configuration list for PBXNativeTarget "RailwayWidget" */;
+			buildPhases = (
+				F627EA98C91A4AD276D81177 /* [CP] Check Pods Manifest.lock */,
+				D12510F9210F8F2400393C31 /* Sources */,
+				D12510FA210F8F2400393C31 /* Frameworks */,
+				D12510FB210F8F2400393C31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RailwayWidget;
+			productName = RailwayWidget;
+			productReference = D12510FD210F8F2400393C31 /* RailwayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D1DBE70D20741A06000587C8 /* Railway */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1DBE72020741A07000587C8 /* Build configuration list for PBXNativeTarget "Railway" */;
@@ -340,10 +440,12 @@
 				35EC9A7E4F070911FE4DDA85 /* [CP] Embed Pods Frameworks */,
 				E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */,
 				D191AF1320D4F24200F71E67 /* ShellScript */,
+				D125110D210F8F2500393C31 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D1251108210F8F2500393C31 /* PBXTargetDependency */,
 			);
 			name = Railway;
 			productName = Railway;
@@ -356,13 +458,28 @@
 		D1DBE70620741A06000587C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Евгений Соболь";
 				TargetAttributes = {
+					D12510FC210F8F2400393C31 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					D1DBE70D20741A06000587C8 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -380,11 +497,20 @@
 			projectRoot = "";
 			targets = (
 				D1DBE70D20741A06000587C8 /* Railway */,
+				D12510FC210F8F2400393C31 /* RailwayWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D12510FB210F8F2400393C31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1DBE70C20741A06000587C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,11 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -489,9 +611,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Railway/Pods-Railway-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F627EA98C91A4AD276D81177 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RailwayWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D12510F9210F8F2400393C31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1251119210F974500393C31 /* Ticket.swift in Sources */,
+				D125111D210F975100393C31 /* Date.swift in Sources */,
+				D125111B210F974500393C31 /* Place.swift in Sources */,
+				D125111F210F992800393C31 /* Railway.xcdatamodeld in Sources */,
+				D1251117210F973F00393C31 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
+				D125111E210F976000393C31 /* DateFormatters.swift in Sources */,
+				D1251112210F973F00393C31 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1251118210F973F00393C31 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1251114210F973F00393C31 /* StationCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1251116210F973F00393C31 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1251115210F973F00393C31 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
+				D1251110210F960400393C31 /* DatabaseManager.swift in Sources */,
+				D1251111210F973F00393C31 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */,
+				D1251113210F973F00393C31 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
+				D125111A210F974500393C31 /* Station.swift in Sources */,
+				D1251102210F8F2500393C31 /* TodayViewController.swift in Sources */,
+				D125111C210F974500393C31 /* NotificationAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1DBE70A20741A06000587C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -559,7 +723,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D1251108210F8F2500393C31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D12510FC210F8F2400393C31 /* RailwayWidget */;
+			targetProxy = D1251107210F8F2500393C31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		D1251103210F8F2500393C31 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1251104210F8F2500393C31 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		D1DBE71520741A06000587C8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -581,6 +761,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D125110A210F8F2500393C31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AB2B7B43044D239C734C6C5 /* Pods-RailwayWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RailwayWidget/RailwayWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = RailwayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.RailwayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway widget dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D125110B210F8F2500393C31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9705C045ADDE100088C494D /* Pods-RailwayWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = RailwayWidget/RailwayWidget.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RailwayWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.RailwayWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		D1DBE71E20741A07000587C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -700,7 +921,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
@@ -718,7 +941,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
@@ -735,6 +960,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D125110C210F8F2500393C31 /* Build configuration list for PBXNativeTarget "RailwayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D125110A210F8F2500393C31 /* Debug */,
+				D125110B210F8F2500393C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D1DBE70920741A06000587C8 /* Build configuration list for PBXProject "Railway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

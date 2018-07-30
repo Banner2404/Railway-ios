@@ -19,6 +19,8 @@ protocol DatabaseManager {
     
     func getNotificationSettings() -> (isEnabled: Bool, alerts: NotificationAlert)?
     func saveNotificationSettings(isEnabled: Bool, alerts: NotificationAlert)
+    
+    func getNextTicket() -> Ticket?
 }
 
 
@@ -26,7 +28,12 @@ class DefaultDatabaseManager: DatabaseManager {
     
     let tickets = BehaviorSubject<[Ticket]>(value: [])
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Railway")
+        let appName = "Railway"
+        let container = NSPersistentContainer(name: appName)
+        let containerUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.esobol.\(appName)")!
+        let storeUrl = containerUrl.appendingPathComponent("\(appName).sqlite")
+        
+        container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: storeUrl)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -117,6 +124,21 @@ class DefaultDatabaseManager: DatabaseManager {
         settings.isEnabled = isEnabled
         settings.rawValue = Int64(alerts.rawValue)
         saveContext()
+    }
+    
+    func getNextTicket() -> Ticket? {
+        do {
+            let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
+            request.predicate = NSPredicate(format: "arrival > %@", Date() as NSDate)
+            request.sortDescriptors = [NSSortDescriptor(key: "arrival", ascending: true)]
+            request.fetchLimit = 1
+            let tickets = try managedContext
+                .fetch(request)
+                .map { Ticket($0 as! TicketCoreDataModel) }
+            return tickets.first
+        } catch {
+            fatalError("Unable to read from core data \(error)")
+        }
     }
     
     private func clearNotificationSettings() {

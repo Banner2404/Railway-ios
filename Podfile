@@ -11,3 +11,8 @@ target 'Railway' do
     pod 'GoogleAPIClientForREST/Gmail', '~> 1.2.1'
     pod 'GoogleSignIn', '~> 4.1.1'
 end
+
+target 'RailwayWidget' do
+    pod 'RxSwift',    '~> 4.0'
+    pod 'RxCocoa',    '~> 4.0'
+end
