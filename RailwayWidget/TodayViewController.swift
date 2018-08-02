@@ -12,7 +12,8 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     private let database = DefaultDatabaseManager()
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var placeView: PlaceView!
+    @IBOutlet private weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        let ticket = database.getNextTicket()
-        label.text = ticket?.places.first.map { "\($0.carriage) вагон \($0.seat) место"} ?? "no data"
+        guard let ticket = database.getNextTicket() else {
+            completionHandler(.noData)
+            return
+        }
+        dateLabel.text = DateFormatters.longDateAndTime.string(from: ticket.departure)
+        if let place = ticket.places.first {
+            placeView.carriageLabel.text = String(place.carriage)
+            placeView.seatLabel.text = place.seat
+        }
         completionHandler(NCUpdateResult.newData)
     }
     

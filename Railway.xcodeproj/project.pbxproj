@@ -70,6 +70,9 @@
 		D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */; };
 		D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
+		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
+		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
+		D1D676DC211387E300AB0179 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
 		D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE71120741A06000587C8 /* AppDelegate.swift */; };
 		D1DBE71720741A06000587C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71520741A06000587C8 /* Main.storyboard */; };
 		D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
@@ -507,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */,
 				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +652,8 @@
 				D1251116210F973F00393C31 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1251115210F973F00393C31 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1251110210F960400393C31 /* DatabaseManager.swift in Sources */,
+				D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */,
+				D1D676DC211387E300AB0179 /* UIView.swift in Sources */,
 				D1251111210F973F00393C31 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */,
 				D1251113210F973F00393C31 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
 				D125111A210F974500393C31 /* Station.swift in Sources */,

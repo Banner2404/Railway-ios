@@ -128,13 +128,14 @@ class DefaultDatabaseManager: DatabaseManager {
     
     func getNextTicket() -> Ticket? {
         do {
-            let request: NSFetchRequest = TicketCoreDataModel.fetchRequest()
+            let entityName = String(describing: TicketCoreDataModel.self)
+            let request: NSFetchRequest<TicketCoreDataModel> = NSFetchRequest(entityName: entityName)
             request.predicate = NSPredicate(format: "arrival > %@", Date() as NSDate)
             request.sortDescriptors = [NSSortDescriptor(key: "arrival", ascending: true)]
             request.fetchLimit = 1
             let tickets = try managedContext
                 .fetch(request)
-                .map { Ticket($0 as! TicketCoreDataModel) }
+                .map { Ticket($0) }
             return tickets.first
         } catch {
             fatalError("Unable to read from core data \(error)")

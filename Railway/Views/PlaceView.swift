@@ -40,5 +40,6 @@ private extension PlaceView {
         view.frame = bounds
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
+        self.backgroundColor = .clear
     }
 }
