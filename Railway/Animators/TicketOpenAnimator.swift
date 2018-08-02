@@ -14,6 +14,7 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var initialViewModel: TicketViewModel!
     var finalViewModel: TicketDetailsViewModel!
     var transition: Transition = .push
+    var animatePop = true
     
     let AnimationDuration: TimeInterval = 0.4
     
@@ -36,9 +37,11 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toVC = transitionContext.viewController(forKey: .to) as! TicketDetailsViewController
         container.addSubview(toView)
         toVC.initialFrame = initialFrame
+        toVC.animator = self
         toVC.animateAppearance { finished in
             transitionContext.completeTransition(finished)
         }
+        animatePop = true
     }
     
     func animatePopTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -47,12 +50,22 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toView = transitionContext.view(forKey: .to)!
         let fromVC = transitionContext.viewController(forKey: .from) as! TicketDetailsViewController
         let toVC = transitionContext.viewController(forKey: .to) as! TicketListViewController
-        container.insertSubview(toView, belowSubview: fromView)
-        toVC.animatePop()
-        fromVC.animateDisappearance { finished in
-            toVC.completePop()
-            transitionContext.completeTransition(finished)
+        if animatePop {
+            container.insertSubview(toView, belowSubview: fromView)
+            toVC.animatePop()
+            fromVC.animateDisappearance { finished in
+                toVC.completePop()
+                transitionContext.completeTransition(finished)
+            }
+        } else {
+            UIView.transition(from: fromView,
+                              to: toView,
+                              duration: AnimationDuration,
+                              options: [.transitionCrossDissolve]) { finished in
+                                transitionContext.completeTransition(finished)
+            }
         }
+        
     }
     
     func expandOrigin(forFinalSize size: CGSize) -> CGPoint {

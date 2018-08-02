@@ -13,6 +13,7 @@ import RxCocoa
 class TicketDetailsViewController: ViewController {
 
     var initialFrame: CGRect = .zero
+    var animator: TicketOpenAnimator?
     
     private var shouldGoBack = false
     private let disposeBag = DisposeBag()
@@ -127,6 +128,7 @@ class TicketDetailsViewController: ViewController {
         let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
             self.viewModel.delete()
+            self.animator?.animatePop = false
             self.navigationController?.popViewController(animated: true)
         }
         let noAction = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
