@@ -30,6 +30,12 @@ class TicketDetailsViewModel {
     
     var editViewModel = PublishSubject<AddTicketViewModel>()
     var collapsedTicketViewModel: BehaviorRelay<TicketViewModel>
+    var shareMessage: String {
+        return
+            "Поезд \(fromText.value) - \(toText.value)\n" +
+            "\(dateText.value)\n" +
+            "\(departureTimeText.value)-\(arrivalTimeText.value)"
+    }
     
     private var ticket: Ticket
     private let deleteSubject = PublishSubject<Ticket>()

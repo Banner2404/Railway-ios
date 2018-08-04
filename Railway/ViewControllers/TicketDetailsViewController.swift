@@ -92,6 +92,11 @@ class TicketDetailsViewController: ViewController {
         }
     }
     
+    @IBAction private func shareButtonTap(_ sender: Any) {
+        let controller = UIActivityViewController(activityItems: [viewModel.shareMessage], applicationActivities: nil)
+        present(controller, animated: true, completion: nil)
+    }
+    
     @IBAction func viewDragged(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
