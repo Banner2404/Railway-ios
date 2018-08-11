@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нет Билетов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdS-r1-5Wc">
+                                <rect key="frame" x="110.5" y="45" width="99" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uza-K4-rmM">
                                 <rect key="frame" x="16" y="18" width="288" height="74"/>
                                 <subviews>
@@ -41,6 +47,8 @@
                             </stackView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="3It-Fo-NRU"/>
+                            <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="6RM-BI-ag2"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="uza-K4-rmM" secondAttribute="trailing" constant="16" id="IjD-ks-vA0"/>
                             <constraint firstItem="uza-K4-rmM" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="XFf-HB-Iec"/>
                             <constraint firstItem="uza-K4-rmM" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="yhx-Cq-eYI"/>
@@ -52,7 +60,9 @@
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="dateLabel" destination="9E8-8X-Vcu" id="A7A-Ad-41h"/>
+                        <outlet property="noTicketsLabel" destination="sdS-r1-5Wc" id="5a7-kK-vb1"/>
                         <outlet property="placeView" destination="74n-Ri-j9C" id="6TY-no-xTY"/>
+                        <outlet property="stackView" destination="uza-K4-rmM" id="L64-fD-XgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

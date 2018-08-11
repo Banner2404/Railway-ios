@@ -69,6 +69,19 @@
 		D189540920FBD61F0040411D /* TicketTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540820FBD61F0040411D /* TicketTransitionView.swift */; };
 		D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */; };
 		D1B6C68520CBB8DE005774AA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */; };
+		D1BB8718211EC512005D8FB6 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BB8716211EC512005D8FB6 /* Interface.storyboard */; };
+		D1BB871A211EC514005D8FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BB8719211EC514005D8FB6 /* Assets.xcassets */; };
+		D1BB8721211EC514005D8FB6 /* Railway Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1BB8720211EC514005D8FB6 /* Railway Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D1BB8726211EC514005D8FB6 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB8725211EC514005D8FB6 /* InterfaceController.swift */; };
+		D1BB8728211EC514005D8FB6 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */; };
+		D1BB872A211EC514005D8FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BB8729211EC514005D8FB6 /* Assets.xcassets */; };
+		D1BB872E211EC514005D8FB6 /* Railway Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D1BB8714211EC512005D8FB6 /* Railway Watch.app */; };
+		D1BB8738211F1FAF005D8FB6 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */; };
+		D1BB8739211F241C005D8FB6 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72320741BB1000587C8 /* Ticket.swift */; };
+		D1BB873A211F2420005D8FB6 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72520741C20000587C8 /* Station.swift */; };
+		D1BB873B211F2420005D8FB6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
+		D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */; };
+		D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -107,6 +120,20 @@
 			remoteGlobalIDString = D12510FC210F8F2400393C31;
 			remoteInfo = RailwayWidget;
 		};
+		D1BB8722211EC514005D8FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1DBE70620741A06000587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1BB871F211EC514005D8FB6;
+			remoteInfo = "Railway Watch Extension";
+		};
+		D1BB872C211EC514005D8FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1DBE70620741A06000587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1BB8713211EC512005D8FB6;
+			remoteInfo = "Railway Watch";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +146,28 @@
 				D1251109210F8F2500393C31 /* RailwayWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BB8734211EC514005D8FB6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D1BB8721211EC514005D8FB6 /* Railway Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BB8736211EC514005D8FB6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D1BB872E211EC514005D8FB6 /* Railway Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -178,6 +227,18 @@
 		D189540820FBD61F0040411D /* TicketTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTransitionView.swift; sourceTree = "<group>"; };
 		D1895EFD20BF0B730008EDB2 /* AddPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewModel.swift; sourceTree = "<group>"; };
 		D1B6C68420CBB8DE005774AA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		D1BB8714211EC512005D8FB6 /* Railway Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Railway Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1BB8717211EC512005D8FB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D1BB8719211EC514005D8FB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1BB871B211EC514005D8FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1BB8720211EC514005D8FB6 /* Railway Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Railway Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1BB8725211EC514005D8FB6 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D1BB8729211EC514005D8FB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D1BB872B211EC514005D8FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketExpandedRowController.swift; sourceTree = "<group>"; };
+		D1BB8740211F2A47005D8FB6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -215,6 +276,13 @@
 			files = (
 				D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */,
 				AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BB871D211EC514005D8FB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +324,7 @@
 				D12BC03220CB1A400005CBD1 /* Typealiases.swift */,
 				D15AFF3920CF09370023E596 /* SettingsSection.swift */,
 				D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */,
+				D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +411,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D1BB8715211EC512005D8FB6 /* Railway Watch */ = {
+			isa = PBXGroup;
+			children = (
+				D1BB8716211EC512005D8FB6 /* Interface.storyboard */,
+				D1BB8719211EC514005D8FB6 /* Assets.xcassets */,
+				D1BB871B211EC514005D8FB6 /* Info.plist */,
+			);
+			path = "Railway Watch";
+			sourceTree = "<group>";
+		};
+		D1BB8724211EC514005D8FB6 /* Railway Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D1BB8725211EC514005D8FB6 /* InterfaceController.swift */,
+				D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */,
+				D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */,
+				D1BB8729211EC514005D8FB6 /* Assets.xcassets */,
+				D1BB872B211EC514005D8FB6 /* Info.plist */,
+			);
+			path = "Railway Watch Extension";
+			sourceTree = "<group>";
+		};
 		D1D40F1D20EA7CFE002BE278 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +446,8 @@
 			children = (
 				D1DBE71020741A06000587C8 /* Railway */,
 				D1251100210F8F2500393C31 /* RailwayWidget */,
+				D1BB8715211EC512005D8FB6 /* Railway Watch */,
+				D1BB8724211EC514005D8FB6 /* Railway Watch Extension */,
 				D1DBE70F20741A06000587C8 /* Products */,
 				E0396B275D6BBF7FE0DB7C48 /* Pods */,
 				E110037B107136DD757F6919 /* Frameworks */,
@@ -366,6 +459,8 @@
 			children = (
 				D1DBE70E20741A06000587C8 /* Railway.app */,
 				D12510FD210F8F2400393C31 /* RailwayWidget.appex */,
+				D1BB8714211EC512005D8FB6 /* Railway Watch.app */,
+				D1BB8720211EC514005D8FB6 /* Railway Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -432,6 +527,40 @@
 			productReference = D12510FD210F8F2400393C31 /* RailwayWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D1BB8713211EC512005D8FB6 /* Railway Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1BB8735211EC514005D8FB6 /* Build configuration list for PBXNativeTarget "Railway Watch" */;
+			buildPhases = (
+				D1BB8712211EC512005D8FB6 /* Resources */,
+				D1BB8734211EC514005D8FB6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D1BB8723211EC514005D8FB6 /* PBXTargetDependency */,
+			);
+			name = "Railway Watch";
+			productName = "Railway Watch";
+			productReference = D1BB8714211EC512005D8FB6 /* Railway Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D1BB871F211EC514005D8FB6 /* Railway Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1BB8733211EC514005D8FB6 /* Build configuration list for PBXNativeTarget "Railway Watch Extension" */;
+			buildPhases = (
+				D1BB871C211EC514005D8FB6 /* Sources */,
+				D1BB871D211EC514005D8FB6 /* Frameworks */,
+				D1BB871E211EC514005D8FB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Railway Watch Extension";
+			productName = "Railway Watch Extension";
+			productReference = D1BB8720211EC514005D8FB6 /* Railway Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		D1DBE70D20741A06000587C8 /* Railway */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1DBE72020741A07000587C8 /* Build configuration list for PBXNativeTarget "Railway" */;
@@ -444,11 +573,13 @@
 				E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */,
 				D191AF1320D4F24200F71E67 /* ShellScript */,
 				D125110D210F8F2500393C31 /* Embed App Extensions */,
+				D1BB8736211EC514005D8FB6 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				D1251108210F8F2500393C31 /* PBXTargetDependency */,
+				D1BB872D211EC514005D8FB6 /* PBXTargetDependency */,
 			);
 			name = Railway;
 			productName = Railway;
@@ -475,6 +606,14 @@
 							};
 						};
 					};
+					D1BB8713211EC512005D8FB6 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
+					D1BB871F211EC514005D8FB6 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+					};
 					D1DBE70D20741A06000587C8 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Manual;
@@ -493,6 +632,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = D1DBE70520741A06000587C8;
 			productRefGroup = D1DBE70F20741A06000587C8 /* Products */;
@@ -501,6 +641,8 @@
 			targets = (
 				D1DBE70D20741A06000587C8 /* Railway */,
 				D12510FC210F8F2400393C31 /* RailwayWidget */,
+				D1BB8713211EC512005D8FB6 /* Railway Watch */,
+				D1BB871F211EC514005D8FB6 /* Railway Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -512,6 +654,23 @@
 			files = (
 				D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */,
 				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BB8712211EC512005D8FB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1BB871A211EC514005D8FB6 /* Assets.xcassets in Resources */,
+				D1BB8718211EC512005D8FB6 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1BB871E211EC514005D8FB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1BB872A211EC514005D8FB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +821,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1BB871C211EC514005D8FB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1BB8728211EC514005D8FB6 /* ExtensionDelegate.swift in Sources */,
+				D1BB8739211F241C005D8FB6 /* Ticket.swift in Sources */,
+				D1BB873A211F2420005D8FB6 /* Station.swift in Sources */,
+				D1BB8726211EC514005D8FB6 /* InterfaceController.swift in Sources */,
+				D1BB873B211F2420005D8FB6 /* Place.swift in Sources */,
+				D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */,
+				D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1DBE70A20741A06000587C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -672,6 +845,7 @@
 				D12BEBC4207939070044F6F1 /* TicketCollapsedTableViewCell.swift in Sources */,
 				D133E9862083D90100D007F4 /* PlaceViewModel.swift in Sources */,
 				D13F4B2F20DFDFDA00A3F8D9 /* NotificationsViewModel.swift in Sources */,
+				D1BB8738211F1FAF005D8FB6 /* WatchConnectivityManager.swift in Sources */,
 				D1DBE72E20741F1D000587C8 /* TicketListViewModel.swift in Sources */,
 				D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */,
 				D1F4985A20E910C000796F93 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -735,6 +909,16 @@
 			target = D12510FC210F8F2400393C31 /* RailwayWidget */;
 			targetProxy = D1251107210F8F2500393C31 /* PBXContainerItemProxy */;
 		};
+		D1BB8723211EC514005D8FB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1BB871F211EC514005D8FB6 /* Railway Watch Extension */;
+			targetProxy = D1BB8722211EC514005D8FB6 /* PBXContainerItemProxy */;
+		};
+		D1BB872D211EC514005D8FB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1BB8713211EC512005D8FB6 /* Railway Watch */;
+			targetProxy = D1BB872C211EC514005D8FB6 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -744,6 +928,15 @@
 				D1251104210F8F2500393C31 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		D1BB8716211EC512005D8FB6 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1BB8717211EC512005D8FB6 /* Base */,
+				D1BB8740211F2A47005D8FB6 /* ru */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 		D1DBE71520741A06000587C8 /* Main.storyboard */ = {
@@ -805,6 +998,86 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1BB872F211EC514005D8FB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				IBSC_MODULE = Railway_Watch_Extension;
+				INFOPLIST_FILE = "Railway Watch/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		D1BB8730211EC514005D8FB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				IBSC_MODULE = Railway_Watch_Extension;
+				INFOPLIST_FILE = "Railway Watch/Info.plist";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Release;
+		};
+		D1BB8731211EC514005D8FB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = "Railway Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+			};
+			name = Debug;
+		};
+		D1BB8732211EC514005D8FB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = "Railway Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.3;
 			};
 			name = Release;
 		};
@@ -971,6 +1244,24 @@
 			buildConfigurations = (
 				D125110A210F8F2500393C31 /* Debug */,
 				D125110B210F8F2500393C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1BB8733211EC514005D8FB6 /* Build configuration list for PBXNativeTarget "Railway Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1BB8731211EC514005D8FB6 /* Debug */,
+				D1BB8732211EC514005D8FB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1BB8735211EC514005D8FB6 /* Build configuration list for PBXNativeTarget "Railway Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1BB872F211EC514005D8FB6 /* Debug */,
+				D1BB8730211EC514005D8FB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

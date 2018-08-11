@@ -12,8 +12,11 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     private let database = DefaultDatabaseManager()
+    private var ticket: Ticket?
     @IBOutlet private weak var placeView: PlaceView!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var noTicketsLabel: UILabel!
     
     private lazy var dateComponentsFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -26,14 +29,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+        let latestTicket = database.getNextTicket()
+        ticket = latestTicket
+        updateInterface(with: ticket)
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        guard let ticket = database.getNextTicket() else {
+        let newTicket = database.getNextTicket()
+        
+        if newTicket == nil && self.ticket == nil {
             completionHandler(.noData)
             return
         }
+        ticket = newTicket
+        updateInterface(with: ticket)
+        completionHandler(.newData)
+    }
+    
+    func updateInterface(with ticket: Ticket?) {
+        guard let ticket = ticket else {
+            stackView.isHidden = true
+            noTicketsLabel.isHidden = false
+            return
+        }
+        stackView.isHidden = false
+        noTicketsLabel.isHidden = true
         if ticket.departure.timeIntervalSinceNow > 60 * 60 * 2 {
             setupFullDate(with: ticket)
         } else if ticket.departure.timeIntervalSinceNow > 0 {
@@ -45,7 +65,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             placeView.carriageLabel.text = String(place.carriage)
             placeView.seatLabel.text = place.seat
         }
-        completionHandler(NCUpdateResult.newData)
     }
     
     func setupFullDate(with ticket: Ticket) {

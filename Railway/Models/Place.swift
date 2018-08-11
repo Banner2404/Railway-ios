@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Place {
+struct Place: Codable {
     let id: String
     let carriage: Int
     let seat: String

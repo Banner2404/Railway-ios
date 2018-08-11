@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Ticket {
+struct Ticket: Codable {
     var id: String
     let sourceStation: Station
     let destinationStation: Station

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14306.4" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14237"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Railway_Watch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" spacing="10" pagingScroll="YES" id="CvZ-4U-Kne">
+                            <items>
+                                <tableRow identifier="TicketExpandedRowController" selectable="NO" id="2W6-50-VEF" customClass="TicketExpandedRowController" customModule="Railway_Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="9" id="eja-oo-t6z">
+                                        <items>
+                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="YGH-PK-Mjx">
+                                                <items>
+                                                    <label alignment="left" text="Минск" id="w0i-bN-rCi">
+                                                        <fontDescription key="font" type="system" weight="light" pointSize="15"/>
+                                                    </label>
+                                                    <label alignment="left" text="Ивацевичи" id="4fH-yY-THU">
+                                                        <fontDescription key="font" type="system" weight="light" pointSize="15"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" layout="vertical" spacing="0.0" id="mYh-iO-2fe">
+                                                <items>
+                                                    <label alignment="left" text="10:20 - 20:30" id="ptd-HD-8LP">
+                                                        <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
+                                                    </label>
+                                                    <label alignment="left" text="Воскресенье, 12 декабря" id="GCx-7I-Bau">
+                                                        <fontDescription key="font" type="system" weight="light" pointSize="15"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <group width="1" alignment="left" id="Vk6-TM-sK8">
+                                                <items>
+                                                    <group width="0.5" alignment="left" spacing="10" id="ddP-76-K0d">
+                                                        <items>
+                                                            <label alignment="left" text="в" id="WiH-Yf-2Ks"/>
+                                                            <label alignment="left" text="12" id="u2G-VB-dPW" userLabel="12"/>
+                                                        </items>
+                                                    </group>
+                                                    <group width="0.5" alignment="left" spacing="10" id="cTV-DY-UlS">
+                                                        <items>
+                                                            <label alignment="left" text="м" id="Gnd-w4-Ulh" userLabel="Место"/>
+                                                            <label alignment="left" text="13" id="h1h-bZ-3fg"/>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <edgeInsets key="margins" left="5" right="5" top="5" bottom="5"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="carriageLabel" destination="u2G-VB-dPW" id="tbz-7s-XdO"/>
+                                        <outlet property="dateLabel" destination="GCx-7I-Bau" id="RyA-A2-HAz"/>
+                                        <outlet property="destinationLabel" destination="4fH-yY-THU" id="WZX-xH-cZw"/>
+                                        <outlet property="seatLabel" destination="h1h-bZ-3fg" id="nQf-3A-qNR"/>
+                                        <outlet property="sourceLabel" destination="w0i-bN-rCi" id="myx-QN-zOM"/>
+                                        <outlet property="timeLabel" destination="ptd-HD-8LP" id="SvK-L2-1eZ"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="CvZ-4U-Kne" id="aJG-92-VQD"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
