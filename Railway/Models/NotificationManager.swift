@@ -119,7 +119,7 @@ class NotificationManager {
     }
     
     private func createNotificationIdentifier(for ticket: Ticket, alert: NotificationAlert) -> String {
-        return "\(ticket.id)-\(alert.rawValue)"
+        return "\(ticket.id)"
     }
     
     private func createNotificationContent(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationContent {
