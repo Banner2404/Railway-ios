@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ExpandedTicketView: UIView {
     
@@ -15,6 +16,10 @@ class ExpandedTicketView: UIView {
         didSet {
             updatePlaces()
         }
+    }
+    
+    var shareAction: ControlEvent<Void> {
+        return shareButton.rx.tap
     }
     
     @IBOutlet weak var stationsLabel: UILabel!
@@ -26,6 +31,7 @@ class ExpandedTicketView: UIView {
     @IBOutlet weak var notesView: UIView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     private let disposeBag = DisposeBag()
     
     init() {

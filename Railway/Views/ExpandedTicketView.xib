@@ -14,12 +14,13 @@
             <connections>
                 <outlet property="arrivalLabel" destination="hhN-lN-aKb" id="fMg-yy-wKF"/>
                 <outlet property="dateLabel" destination="KgK-O3-aPy" id="lCG-YT-VOH"/>
-                <outlet property="deleteButton" destination="MDF-G2-cNV" id="KUa-Ih-IG2"/>
+                <outlet property="deleteButton" destination="RAr-uh-zbF" id="yQm-RZ-AFL"/>
                 <outlet property="departureLabel" destination="dKc-9X-qF9" id="eck-eW-fMV"/>
-                <outlet property="editButton" destination="hJW-h6-0CF" id="gyM-3U-vOu"/>
+                <outlet property="editButton" destination="a2K-IC-xEf" id="0Gm-K2-xhB"/>
                 <outlet property="notesTextView" destination="UgB-uy-ARH" id="dnO-v9-B3S"/>
                 <outlet property="notesView" destination="kpt-vt-neH" id="Ov5-dE-8xP"/>
                 <outlet property="placesView" destination="Zjc-9R-vKn" id="Gk7-Ug-K3Y"/>
+                <outlet property="shareButton" destination="2BV-nO-duF" id="Kyf-sn-Peu"/>
                 <outlet property="stationsLabel" destination="HQT-eD-wnI" id="UpT-Er-9Y5"/>
             </connections>
         </placeholder>
@@ -42,29 +43,29 @@
                     </constraints>
                 </view>
                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWJ-3n-7qQ">
-                    <rect key="frame" x="8" y="219" width="359" height="1"/>
+                    <rect key="frame" x="8" y="209" width="359" height="1"/>
                     <color key="backgroundColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="tSx-za-OW4"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ofy-fX-rei">
-                    <rect key="frame" x="16" y="97" width="176" height="74.5"/>
+                    <rect key="frame" x="16" y="97" width="176" height="64.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKc-9X-qF9">
-                            <rect key="frame" x="0.0" y="19.5" width="78.5" height="36"/>
+                            <rect key="frame" x="0.0" y="14.5" width="78.5" height="36"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                             <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Vy-aW-GXq">
-                            <rect key="frame" x="83.5" y="27" width="8" height="20.5"/>
+                            <rect key="frame" x="83.5" y="22" width="8" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhN-lN-aKb">
-                            <rect key="frame" x="96.5" y="19.5" width="79.5" height="36"/>
+                            <rect key="frame" x="96.5" y="14.5" width="79.5" height="36"/>
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                             <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
@@ -72,27 +73,23 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вторник, 10 марта 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-O3-aPy">
-                    <rect key="frame" x="16" y="181.5" width="200" height="21.5"/>
+                    <rect key="frame" x="16" y="171.5" width="200" height="21.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="359" placeholderIntrinsicHeight="31" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-9R-vKn">
-                    <rect key="frame" x="8" y="236" width="359" height="31"/>
+                    <rect key="frame" x="8" y="226" width="359" height="31"/>
                 </stackView>
                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8y-hY-hfB">
-                    <rect key="frame" x="8" y="283" width="359" height="1"/>
+                    <rect key="frame" x="8" y="273" width="359" height="1"/>
                     <color key="backgroundColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="gNP-3D-b4t"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-h6-0CF">
-                    <rect key="frame" x="320" y="16" width="30" height="30"/>
-                    <state key="normal" title="Ред"/>
-                </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vir-6r-5Uo">
-                    <rect key="frame" x="8" y="289" width="359" height="196"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vir-6r-5Uo">
+                    <rect key="frame" x="8" y="284" width="359" height="211"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpt-vt-neH">
                             <rect key="frame" x="0.0" y="0.0" width="359" height="151"/>
@@ -126,12 +123,23 @@
                                 <constraint firstAttribute="bottom" secondItem="7XC-H7-2EU" secondAttribute="bottom" id="qi7-NG-rTI"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDF-G2-cNV">
-                            <rect key="frame" x="127.5" y="166" width="104" height="30"/>
-                            <state key="normal" title="Удалить Билет">
-                                <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="I89-m0-3bZ">
+                            <rect key="frame" x="0.0" y="166" width="145" height="45"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BV-nO-duF">
+                                    <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                    <state key="normal" image="share_button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2K-IC-xEf">
+                                    <rect key="frame" x="50" y="0.0" width="45" height="45"/>
+                                    <state key="normal" image="edit_button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAr-uh-zbF">
+                                    <rect key="frame" x="100" y="0.0" width="45" height="45"/>
+                                    <state key="normal" image="delete_button"/>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="kpt-vt-neH" firstAttribute="leading" secondItem="vir-6r-5Uo" secondAttribute="leading" id="Xcd-T9-yLi"/>
@@ -143,7 +151,7 @@
             <constraints>
                 <constraint firstItem="CWJ-3n-7qQ" firstAttribute="leading" secondItem="yKd-oG-7EL" secondAttribute="leading" id="0U1-Mb-h9A"/>
                 <constraint firstItem="yKd-oG-7EL" firstAttribute="leading" secondItem="Grk-qf-ePU" secondAttribute="leading" constant="8" id="3M3-sY-zOW"/>
-                <constraint firstAttribute="bottom" secondItem="vir-6r-5Uo" secondAttribute="bottom" constant="15" id="6bt-Rb-Ha3"/>
+                <constraint firstAttribute="bottom" secondItem="vir-6r-5Uo" secondAttribute="bottom" constant="5" id="6bt-Rb-Ha3"/>
                 <constraint firstItem="Ofy-fX-rei" firstAttribute="leading" secondItem="Grk-qf-ePU" secondAttribute="leading" constant="16" id="7Ss-Gd-o2U"/>
                 <constraint firstItem="KgK-O3-aPy" firstAttribute="leading" secondItem="Ofy-fX-rei" secondAttribute="leading" id="At4-0E-qqF"/>
                 <constraint firstItem="HQT-eD-wnI" firstAttribute="top" secondItem="Grk-qf-ePU" secondAttribute="top" constant="16" id="Dfh-Lp-okq"/>
@@ -152,13 +160,11 @@
                 <constraint firstItem="vir-6r-5Uo" firstAttribute="leading" secondItem="M8y-hY-hfB" secondAttribute="leading" id="FfR-l8-hu6"/>
                 <constraint firstItem="M8y-hY-hfB" firstAttribute="leading" secondItem="CWJ-3n-7qQ" secondAttribute="leading" id="H0I-pJ-ffz"/>
                 <constraint firstItem="Zjc-9R-vKn" firstAttribute="trailing" secondItem="CWJ-3n-7qQ" secondAttribute="trailing" id="S0X-eN-cfA"/>
-                <constraint firstItem="hJW-h6-0CF" firstAttribute="leading" secondItem="HQT-eD-wnI" secondAttribute="trailing" constant="5" id="SjB-yI-SVL"/>
                 <constraint firstItem="Ofy-fX-rei" firstAttribute="top" secondItem="yKd-oG-7EL" secondAttribute="bottom" constant="16" id="TDK-0d-6uE"/>
                 <constraint firstItem="KgK-O3-aPy" firstAttribute="top" secondItem="Ofy-fX-rei" secondAttribute="bottom" constant="10" id="THC-Iv-W5P"/>
-                <constraint firstItem="hJW-h6-0CF" firstAttribute="top" secondItem="HQT-eD-wnI" secondAttribute="top" id="TQA-qE-AmA"/>
                 <constraint firstItem="yKd-oG-7EL" firstAttribute="top" secondItem="HQT-eD-wnI" secondAttribute="bottom" constant="16" id="TgF-sR-Hw5"/>
                 <constraint firstItem="Zjc-9R-vKn" firstAttribute="leading" secondItem="CWJ-3n-7qQ" secondAttribute="leading" id="VGC-X0-6y1"/>
-                <constraint firstItem="vir-6r-5Uo" firstAttribute="top" secondItem="M8y-hY-hfB" secondAttribute="bottom" constant="5" id="ZtE-ZD-MJL"/>
+                <constraint firstItem="vir-6r-5Uo" firstAttribute="top" secondItem="M8y-hY-hfB" secondAttribute="bottom" constant="10" id="ZtE-ZD-MJL"/>
                 <constraint firstItem="HQT-eD-wnI" firstAttribute="leading" secondItem="Grk-qf-ePU" secondAttribute="leading" constant="60" id="dWa-BY-lV7"/>
                 <constraint firstItem="Zjc-9R-vKn" firstAttribute="top" secondItem="CWJ-3n-7qQ" secondAttribute="bottom" constant="16" id="f1c-Tn-G3t"/>
                 <constraint firstItem="CWJ-3n-7qQ" firstAttribute="top" secondItem="KgK-O3-aPy" secondAttribute="bottom" constant="16" id="fl5-KN-pbG"/>
@@ -177,4 +183,9 @@
             </userDefinedRuntimeAttributes>
         </view>
     </objects>
+    <resources>
+        <image name="delete_button" width="45" height="45"/>
+        <image name="edit_button" width="45" height="45"/>
+        <image name="share_button" width="45" height="45"/>
+    </resources>
 </document>

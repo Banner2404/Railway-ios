@@ -92,7 +92,8 @@ class TicketDetailsViewController: ViewController {
         }
     }
     
-    @IBAction private func shareButtonTap(_ sender: Any) {
+    
+    private func shareButtonTap() {
         let controller = UIActivityViewController(activityItems: [viewModel.shareMessage], applicationActivities: nil)
         present(controller, animated: true, completion: nil)
     }
@@ -192,6 +193,12 @@ class TicketDetailsViewController: ViewController {
         viewModel.collapsedTicketViewModel
             .subscribe(onNext: { vm in
                 self.ticketView.collapsedView.setup(with: vm)
+            })
+            .disposed(by: disposeBag)
+        
+        ticketView.expandedView.shareAction
+            .subscribe(onNext: { _ in
+                self.shareButtonTap()
             })
             .disposed(by: disposeBag)
     }

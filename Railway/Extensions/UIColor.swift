@@ -17,4 +17,5 @@ extension UIColor {
     static var tableBackgroundColor: UIColor {
         return UIColor(red: 39.0 / 255, green: 106.0 / 255, blue: 115.0 / 255, alpha: 1.0)
     }
+    
 }

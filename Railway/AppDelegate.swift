@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mail = GmailSyncronizer(databaseManager: database)
         let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mail, notificationManager: notification)
         let rootController = TicketListViewController.loadFromStoryboard(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: rootController)
+        let navigationController = NavigationController(rootViewController: rootController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         

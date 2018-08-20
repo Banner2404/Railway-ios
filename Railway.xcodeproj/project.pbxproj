@@ -82,6 +82,7 @@
 		D1BB873B211F2420005D8FB6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
 		D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */; };
 		D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
+		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -239,6 +240,7 @@
 		D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketExpandedRowController.swift; sourceTree = "<group>"; };
 		D1BB8740211F2A47005D8FB6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
+		D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				D1DBE72B20741CF8000587C8 /* ViewController.swift */,
+				D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */,
 				D16C046B20DFA032007155ED /* ContainerViewController.swift */,
 				D1DBE72720741C92000587C8 /* TicketListViewController.swift */,
 				D133E9752083C31400D007F4 /* TicketDetailsViewController.swift */,
@@ -876,6 +879,7 @@
 				D1DBE71220741A06000587C8 /* AppDelegate.swift in Sources */,
 				D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */,
 				D1DD9C6420C3E9D70050D56F /* MessageProcessor.swift in Sources */,
+				D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */,
 				D133E96D2083A1BF00D007F4 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
 				D133E9722083A1BF00D007F4 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
 				D133E9702083A1BF00D007F4 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
@@ -1212,7 +1216,7 @@
 				PROVISIONING_PROFILE = "4a7f57cf-e7a6-44b0-88f0-2aa0a8458b18";
 				PROVISIONING_PROFILE_SPECIFIER = "Railway dev";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1232,7 +1236,7 @@
 				PROVISIONING_PROFILE = "4a7f57cf-e7a6-44b0-88f0-2aa0a8458b18";
 				PROVISIONING_PROFILE_SPECIFIER = "Railway dev";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
