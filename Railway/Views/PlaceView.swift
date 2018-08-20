@@ -14,7 +14,7 @@ class PlaceView: UIView {
     @IBOutlet weak var seatLabel: UILabel!
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0, height: 40)
+        return CGSize(width: 0, height: 44)
     }
     
     convenience init() {

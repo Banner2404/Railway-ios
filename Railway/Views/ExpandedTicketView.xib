@@ -78,7 +78,7 @@
                     <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="359" placeholderIntrinsicHeight="31" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-9R-vKn">
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="359" placeholderIntrinsicHeight="31" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zjc-9R-vKn">
                     <rect key="frame" x="8" y="226" width="359" height="31"/>
                 </stackView>
                 <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8y-hY-hfB">
