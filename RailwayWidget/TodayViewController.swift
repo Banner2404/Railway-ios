@@ -32,6 +32,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let latestTicket = database.getNextTicket()
         ticket = latestTicket
         updateInterface(with: ticket)
+        placeView.backgroundView.isHidden = true
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {

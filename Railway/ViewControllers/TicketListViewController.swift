@@ -65,15 +65,40 @@ class TicketListViewController: ViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    func updateSelectedIndexPath(with detailsViewModel: TicketDetailsViewModel) {
+        guard let collapsedViewModel = self.viewModel.ticketViewModel(for: detailsViewModel) else {
+            selectedIndexPath = nil
+            return
+        }
+        let indexPath = dataSource.sectionModels.enumerated()
+            .flatMap { (sectionIndex, section) in
+                section.items.enumerated().map { (rowIndex, item) in
+                    (item, IndexPath(row: rowIndex, section: sectionIndex))
+                }
+            }
+            .first { $0.0 === collapsedViewModel }
+            .map { $0.1 }
+        selectedIndexPath = indexPath
+    }
+    
     func animatePop() {
+        showAllRows()
         guard let selectedIndexPath = selectedIndexPath else { return }
-        collapseTableView(at: selectedIndexPath)
+        hideRow(at: selectedIndexPath)
     }
     
     func completePop() {
-        guard let selectedIndexPath = selectedIndexPath else { return }
-        guard let cell = tableView.cellForRow(at: selectedIndexPath) else { return }
-        cell.isHidden = false
+        showAllRows()
+    }
+    
+    func frameForSelectedCell() -> CGRect? {
+        guard let indexPath = selectedIndexPath else { return nil }
+        if let cell = tableView.cellForRow(at: indexPath) as? TicketCollapsedTableViewCell {
+            let ticketFrame = cell.mainView.convert(cell.mainView.bounds, to: view)
+            return ticketFrame
+        } else {
+            return tableView.rectForRow(at: indexPath)
+        }
     }
     
 }
@@ -87,35 +112,13 @@ private extension TicketListViewController {
         navigationController?.pushViewController(detailController, animated: true)
     }
     
-    func expandTableView(at indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)!
-        guard let index = tableView.visibleCells.firstIndex(of: cell) else { return }
-        let topCells = Array(tableView.visibleCells.prefix(upTo: index))
-        let bottomCells = Array(tableView.visibleCells.suffix(from: index + 1))
-        topCells.forEach { self.moveAnimated(cell: $0, multiplier: -1, alpha: 0.0) }
-        bottomCells.forEach { self.moveAnimated(cell: $0, multiplier: +1, alpha: 0.0) }
-        cell.isHidden = true
+    func hideRow(at indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        cell.alpha = 0
     }
     
-    func collapseTableView(at indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)!
-        guard let index = tableView.visibleCells.firstIndex(of: cell) else { return }
-        let topCells = Array(tableView.visibleCells.prefix(upTo: index))
-        let bottomCells = Array(tableView.visibleCells.suffix(from: index + 1))
-        topCells.forEach { self.moveAnimated(cell: $0, multiplier: +1, alpha: 1.0) }
-        bottomCells.forEach { self.moveAnimated(cell: $0, multiplier: -1, alpha: 1.0) }
-    }
-    
-    func moveAnimated(cell: UITableViewCell, multiplier: Int, alpha: CGFloat) {
-        UIView.animate(withDuration: transitionAnimator.AnimationDuration * 0.7) {
-            self.move(cell: cell, multiplier: multiplier, alpha: alpha)
-        }
-    }
-    
-    func move(cell: UITableViewCell, multiplier: Int, alpha: CGFloat) {
-        let offset = view.frame.height / 2
-        cell.frame.origin.y = cell.frame.origin.y + CGFloat(multiplier) * offset
-        cell.alpha = alpha
+    func showAllRows() {
+        tableView.visibleCells.forEach { $0.alpha = 1 }
     }
     
     func setupTickets() {
@@ -175,7 +178,7 @@ private extension TicketListViewController {
         tableView.rx.itemSelected
             .do(onNext: { indexPath in
                 self.updateAnimatorInitialFrame(for: indexPath)
-                self.expandTableView(at: indexPath)
+                self.hideRow(at: indexPath)
                 self.selectedIndexPath = indexPath
             })
             .map { self.dataSource.sectionModels[$0.section].items[$0.row] }

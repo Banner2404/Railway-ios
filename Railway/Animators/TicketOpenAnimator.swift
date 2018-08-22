@@ -14,7 +14,6 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var initialViewModel: TicketViewModel!
     var finalViewModel: TicketDetailsViewModel!
     var transition: Transition = .push
-    var animatePop = true
     
     let AnimationDuration: TimeInterval = 0.4
     
@@ -41,7 +40,6 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         toVC.animateAppearance { finished in
             transitionContext.completeTransition(finished)
         }
-        animatePop = true
     }
     
     func animatePopTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -50,10 +48,11 @@ class TicketOpenAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         let toView = transitionContext.view(forKey: .to)!
         let fromVC = transitionContext.viewController(forKey: .from) as! TicketDetailsViewController
         let toVC = transitionContext.viewController(forKey: .to) as! TicketListViewController
-        if animatePop {
+        toVC.updateSelectedIndexPath(with: fromVC.viewModel)
+        if let endFrame = toVC.frameForSelectedCell() {
             container.insertSubview(toView, belowSubview: fromView)
             toVC.animatePop()
-            fromVC.animateDisappearance { finished in
+            fromVC.animateDisappearance(endFrame: endFrame) { finished in
                 toVC.completePop()
                 transitionContext.completeTransition(finished)
             }

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaceView" customModule="Railway" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="qL1-Zf-hIi" id="g20-OR-sBl"/>
                 <outlet property="carriageLabel" destination="zO7-89-6W9" id="czO-x0-mjn"/>
                 <outlet property="seatLabel" destination="mcs-OZ-7qi" id="E4o-DL-s8K"/>
             </connections>

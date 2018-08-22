@@ -14,10 +14,10 @@ class TicketDetailsViewController: ViewController {
 
     var initialFrame: CGRect = .zero
     var animator: TicketOpenAnimator?
-    
+    private(set) var viewModel: TicketDetailsViewModel!
+
     private var shouldGoBack = false
     private let disposeBag = DisposeBag()
-    private var viewModel: TicketDetailsViewModel!
     private var startPoint = CGPoint.zero
     @IBOutlet weak var ticketView: TicketTransitionView!
     @IBOutlet private weak var ticketContainer: UIView!
@@ -63,8 +63,8 @@ class TicketDetailsViewController: ViewController {
         })
     }
     
-    func animateDisappearance(completion: ((Bool) -> Void)? = nil) {
-        let finalFrame = ticketContainer.convert(initialFrame, from: view)
+    func animateDisappearance(endFrame: CGRect, completion: ((Bool) -> Void)? = nil) {
+        let finalFrame = ticketContainer.convert(endFrame, from: view)
         UIView.animate(withDuration: SnapAnimationDuration / 3) {
             self.topLabel.alpha = 0
         }
@@ -134,7 +134,6 @@ class TicketDetailsViewController: ViewController {
         let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет?", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
             self.viewModel.delete()
-            self.animator?.animatePop = false
             self.navigationController?.popViewController(animated: true)
         }
         let noAction = UIAlertAction(title: "Нет", style: .cancel, handler: nil)

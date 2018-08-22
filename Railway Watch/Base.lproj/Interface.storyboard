@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14306.4" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.13.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14237"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.4.1"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -41,21 +41,23 @@
                                             </group>
                                             <group width="1" alignment="left" id="Vk6-TM-sK8">
                                                 <items>
-                                                    <group width="0.5" alignment="left" spacing="10" id="ddP-76-K0d">
+                                                    <group width="0.5" alignment="left" spacing="5" id="ddP-76-K0d">
                                                         <items>
-                                                            <label alignment="left" text="в" id="WiH-Yf-2Ks"/>
-                                                            <label alignment="left" text="12" id="u2G-VB-dPW" userLabel="12"/>
+                                                            <imageView width="20" height="20" alignment="right" image="carriage-white" id="1Ha-PA-mSc"/>
+                                                            <label width="0.5" alignment="right" text="12" id="u2G-VB-dPW" userLabel="12"/>
                                                         </items>
                                                     </group>
-                                                    <group width="0.5" alignment="left" spacing="10" id="cTV-DY-UlS">
+                                                    <group width="0.5" alignment="left" spacing="5" id="cTV-DY-UlS">
                                                         <items>
-                                                            <label alignment="left" text="м" id="Gnd-w4-Ulh" userLabel="Место"/>
-                                                            <label alignment="left" text="13" id="h1h-bZ-3fg"/>
+                                                            <imageView width="20" height="20" alignment="right" image="seat-white" id="D5x-to-nu9"/>
+                                                            <label width="0.5" alignment="right" text="13" id="h1h-bZ-3fg"/>
                                                         </items>
                                                     </group>
                                                 </items>
+                                                <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
                                             </group>
                                         </items>
+                                        <color key="backgroundColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                         <edgeInsets key="margins" left="5" right="5" top="5" bottom="5"/>
                                     </group>
                                     <connections>

@@ -83,6 +83,7 @@
 		D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */; };
 		D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
 		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
+		D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -611,11 +612,11 @@
 					};
 					D1BB8713211EC512005D8FB6 = {
 						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D1BB871F211EC514005D8FB6 = {
 						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D1DBE70D20741A06000587C8 = {
 						CreatedOnToolsVersion = 9.3;
@@ -656,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */,
+				D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */,
 				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -991,14 +993,14 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RailwayWidget/RailwayWidget.entitlements;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = RailwayWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.RailwayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway widget dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1010,7 +1012,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				IBSC_MODULE = Railway_Watch_Extension;
 				INFOPLIST_FILE = "Railway Watch/Info.plist";
@@ -1018,6 +1020,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway watch dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1031,13 +1034,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				IBSC_MODULE = Railway_Watch_Extension;
 				INFOPLIST_FILE = "Railway Watch/Info.plist";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway watch dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1050,7 +1054,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = "Railway Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1058,6 +1062,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway watch extension dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -1070,13 +1075,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = "Railway Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "Railway watch extension dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;

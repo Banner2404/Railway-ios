@@ -12,6 +12,7 @@ class PlaceView: UIView {
     
     @IBOutlet weak var carriageLabel: UILabel!
     @IBOutlet weak var seatLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 0, height: 44)

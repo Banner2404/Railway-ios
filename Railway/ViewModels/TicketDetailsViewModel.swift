@@ -37,7 +37,7 @@ class TicketDetailsViewModel {
             "\(departureTimeText.value)-\(arrivalTimeText.value)"
     }
     
-    private var ticket: Ticket
+    private(set) var ticket: Ticket
     private let deleteSubject = PublishSubject<Ticket>()
     private let editSubject = PublishSubject<Ticket>()
 
