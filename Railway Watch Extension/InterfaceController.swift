@@ -21,6 +21,7 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        PhoneConnectivityManager.shared.delegate = self
         updateTickets()
     }
     
@@ -52,4 +53,13 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
+}
+
+//MARK: - PhoneConnectivityManagerDelegate
+extension InterfaceController: PhoneConnectivityManagerDelegate {
+    
+    func phoneConnectivityManager(_ manager: PhoneConnectivityManager, didRecieve tickets: [Ticket]) {
+        self.tickets = tickets
+        updateTickets()
+    }
 }

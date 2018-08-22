@@ -36,17 +36,32 @@ class WatchConnectivityManager: NSObject {
     
     private func sync(tickets: [Ticket]) {
         guard session.isWatchAppInstalled else { return }
-        let filtered = tickets
-            .filter { $0.arrival > Date() }
-            .sorted { $0.arrival < $1.arrival }
-        let encoder = PropertyListEncoder()
+        guard let context = getLatestTickets() else { return }
         do {
-            let data = try filtered.map { try encoder.encode($0) }
-            let context = ["tickets": data]
             try session.updateApplicationContext(context)
         } catch {
             print(error)
         }
+    }
+    
+    private func getLatestTickets() -> [String: Any]? {
+        do {
+            return try getLatestTicketsData()
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    private func getLatestTicketsData() throws -> [String: Any] {
+        let tickets = try database.tickets.value()
+        let filtered = tickets
+            .filter { $0.arrival > Date() }
+            .sorted { $0.arrival < $1.arrival }
+        let encoder = PropertyListEncoder()
+        let data = try filtered.map { try encoder.encode($0) }
+        let context = ["tickets": data]
+        return context
     }
 }
 
@@ -62,11 +77,17 @@ extension WatchConnectivityManager: WCSessionDelegate {
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Session activated")
         if let error = error {
             print("Activation error: \(error)")
         } else if activationState == .activated {
             sendTickets()
         }
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        let context = getLatestTickets() ?? ["tickets": []]
+        replyHandler(context)
     }
     
 }

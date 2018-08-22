@@ -11,10 +11,8 @@ import WatchConnectivity
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
-    var session: WCSession?
-
     func applicationDidFinishLaunching() {
-        setupConnectivity()
+        PhoneConnectivityManager.shared.activate()
     }
 
     func applicationDidBecomeActive() {
@@ -48,31 +46,5 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 task.setTaskCompletedWithSnapshot(false)
             }
         }
-    }
-
-    private func setupConnectivity() {
-        guard WCSession.isSupported() else { return }
-        let session = WCSession.default
-        session.delegate = self
-        session.activate()
-    }
-}
-
-//MARK: - WCSessionDelegate
-extension ExtensionDelegate: WCSessionDelegate {
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        if let error = error {
-            print("Activation error: \(error)")
-        }
-    }
-    
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        guard let data = applicationContext["tickets"] as? [Data] else { return }
-        let decoder = PropertyListDecoder()
-        guard let tickets = try? data.map({ try decoder.decode(Ticket.self, from: $0)}) else { return}
-        print(tickets)
-        guard let interfaceController = WKExtension.shared().rootInterfaceController as? InterfaceController else { return }
-        interfaceController.tickets = tickets
     }
 }

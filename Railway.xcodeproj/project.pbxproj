@@ -55,6 +55,7 @@
 		D13F4B2F20DFDFDA00A3F8D9 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B2E20DFDFDA00A3F8D9 /* NotificationsViewModel.swift */; };
 		D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */; };
 		D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */; };
+		D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */; };
@@ -213,6 +214,7 @@
 		D13F4B2E20DFDFDA00A3F8D9 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
 		D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSection.swift; sourceTree = "<group>"; };
 		D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivityManager.swift; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceView.xib; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 				D1BB8725211EC514005D8FB6 /* InterfaceController.swift */,
 				D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */,
 				D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */,
+				D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */,
 				D1BB8729211EC514005D8FB6 /* Assets.xcassets */,
 				D1BB872B211EC514005D8FB6 /* Info.plist */,
 			);
@@ -835,6 +838,7 @@
 				D1BB873A211F2420005D8FB6 /* Station.swift in Sources */,
 				D1BB8726211EC514005D8FB6 /* InterfaceController.swift in Sources */,
 				D1BB873B211F2420005D8FB6 /* Place.swift in Sources */,
+				D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */,
 				D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */,
 				D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */,
 			);
