@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string> ru</string>
+	<string>ru</string>
 	<key>CFBundleDisplayName</key>
 	<string>Ticks</string>
 	<key>CFBundleExecutable</key>

@@ -1,0 +1,12 @@
+
+/* Class = "UITextField"; placeholder = "Вагон"; ObjectID = "JUc-Sp-yxK"; */
+"JUc-Sp-yxK.placeholder" = "Carriage";
+
+/* Class = "UILabel"; text = "Место"; ObjectID = "MIt-dc-uGB"; */
+"MIt-dc-uGB.text" = "Seat";
+
+/* Class = "UITextField"; placeholder = "Место"; ObjectID = "YNM-nc-e6t"; */
+"YNM-nc-e6t.placeholder" = "Seat";
+
+/* Class = "UILabel"; text = "Вагон"; ObjectID = "x4z-Dn-0vQ"; */
+"x4z-Dn-0vQ.text" = "Carriage";

@@ -5,12 +5,6 @@
 /* Class = "WKInterfaceLabel"; text = "Воскресенье, 12 декабря"; ObjectID = "GCx-7I-Bau"; */
 "GCx-7I-Bau.text" = "Воскресенье, 12 декабря";
 
-/* Class = "WKInterfaceLabel"; text = "м"; ObjectID = "Gnd-w4-Ulh"; */
-"Gnd-w4-Ulh.text" = "м";
-
-/* Class = "WKInterfaceLabel"; text = "в"; ObjectID = "WiH-Yf-2Ks"; */
-"WiH-Yf-2Ks.text" = "в";
-
 /* Class = "WKInterfaceLabel"; text = "13"; ObjectID = "h1h-bZ-3fg"; */
 "h1h-bZ-3fg.text" = "13";
 

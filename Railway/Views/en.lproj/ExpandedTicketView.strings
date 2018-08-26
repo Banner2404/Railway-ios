@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "-"; ObjectID = "7Vy-aW-GXq"; */
+"7Vy-aW-GXq.text" = "-";
+
+/* Class = "UILabel"; text = "Минск-Пассажирский - Ивацевичи"; ObjectID = "HQT-eD-wnI"; */
+"HQT-eD-wnI.text" = "Минск-Пассажирский - Ивацевичи";
+
+/* Class = "UILabel"; text = "Вторник, 10 марта 2018"; ObjectID = "KgK-O3-aPy"; */
+"KgK-O3-aPy.text" = "Вторник, 10 марта 2018";
+
+/* Class = "UITextView"; text = "Заметки"; ObjectID = "UgB-uy-ARH"; */
+"UgB-uy-ARH.text" = "Notes";
+
+/* Class = "UILabel"; text = "10:20"; ObjectID = "dKc-9X-qF9"; */
+"dKc-9X-qF9.text" = "10:20";
+
+/* Class = "UILabel"; text = "20:30"; ObjectID = "hhN-lN-aKb"; */
+"hhN-lN-aKb.text" = "20:30";

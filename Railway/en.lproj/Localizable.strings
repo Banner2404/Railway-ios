@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Railway
+
+  Created by Евгений Соболь on 8/26/18.
+  Copyright © 2018 Евгений Соболь. All rights reserved.
+*/
+
+"Прошедшие" = "Old";
+"Ближайший" = "Next";
+"Будущие" = "Future";
+
+"Первое" = "First";
+"Второе" = "Second";
+"Третье" = "Third";
+"Четвертое" = "Fourth";
+"Пятое" = "Fifth";
+"Шестое" = "Sixth";
+"Седьмое" = "Seventh";
+"Восьмое" = "Eighth";
+"Девятое" = "Nineth";
+
+"Во время отправления" = "At departure time";
+"За 5 минут" = "5 minutes before";
+"За 10 минут" = "10 minutes before";
+"За 15 минут" = "15 minutes before";
+"За 30 минут" = "30 minutes before";
+"За 1 час" = "1 hour before";
+"За 2 часа" = "2 hours before";
+
+"Удалить Билет?" = "Delete ticket?";
+"Вы действительно хотите удалить билет?" = "Are you sure want to delete ticket?";
+"Да" = "Yes";
+"Нет" = "No";
+"Закрыть" = "Close";
+"Cмахните чтобы закрыть" = "Swipe to close";
+

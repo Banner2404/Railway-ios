@@ -48,7 +48,6 @@ class NotificationsViewController: ViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        print("TEST:", "childWillLayout")
         adjustTableViewHeight()
     }
 }

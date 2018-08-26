@@ -58,12 +58,10 @@
 		D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
-		D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
 		D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046720DF9CDA007155ED /* NotificationsViewController.swift */; };
 		D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */; };
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
-		D189540120FBD0E60040411D /* ExpandedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189540020FBD0E60040411D /* ExpandedTicketView.xib */; };
 		D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189540220FBD2850040411D /* CollapsedTicketView.xib */; };
 		D189540520FBD2BC0040411D /* ExpandedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540420FBD2BC0040411D /* ExpandedTicketView.swift */; };
 		D189540720FBD3BD0040411D /* CollapsedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540620FBD3BD0040411D /* CollapsedTicketView.swift */; };
@@ -83,6 +81,9 @@
 		D1BB873B211F2420005D8FB6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
 		D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */; };
 		D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
+		D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5472132CE30008E6288 /* AddPlaceView.xib */; };
+		D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C54C2132CEF9008E6288 /* ExpandedTicketView.xib */; };
+		D1C7C5512132D05D008E6288 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5532132D05D008E6288 /* Localizable.strings */; };
 		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
 		D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
@@ -217,14 +218,11 @@
 		D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivityManager.swift; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
-		D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddPlaceView.xib; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
-		D16C046520DF98B1007155ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		D16C046620DF98B2007155ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D16C046720DF9CDA007155ED /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		D189540020FBD0E60040411D /* ExpandedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandedTicketView.xib; sourceTree = "<group>"; };
 		D189540220FBD2850040411D /* CollapsedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollapsedTicketView.xib; sourceTree = "<group>"; };
 		D189540420FBD2BC0040411D /* ExpandedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTicketView.swift; sourceTree = "<group>"; };
 		D189540620FBD3BD0040411D /* CollapsedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedTicketView.swift; sourceTree = "<group>"; };
@@ -243,6 +241,15 @@
 		D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketExpandedRowController.swift; sourceTree = "<group>"; };
 		D1BB8740211F2A47005D8FB6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Interface.strings; sourceTree = "<group>"; };
+		D1C7C5412132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Interface.strings; sourceTree = "<group>"; };
+		D1C7C5422132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D1C7C5432132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D1C7C5442132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		D1C7C5462132CE30008E6288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddPlaceView.xib; sourceTree = "<group>"; };
+		D1C7C5492132CE35008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AddPlaceView.strings; sourceTree = "<group>"; };
+		D1C7C54B2132CEF9008E6288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ExpandedTicketView.xib; sourceTree = "<group>"; };
+		D1C7C54E2132CEFF008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExpandedTicketView.strings; sourceTree = "<group>"; };
+		D1C7C5522132D05D008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -380,9 +387,9 @@
 				D1F4985020E8E07900796F93 /* NotificationSaveTableViewCell.swift */,
 				D133E97E2083D3A400D007F4 /* PlaceView.xib */,
 				D133E9802083D5CF00D007F4 /* PlaceView.swift */,
-				D15E4F7120BC8E1200B18643 /* AddPlaceView.xib */,
+				D1C7C5472132CE30008E6288 /* AddPlaceView.xib */,
 				D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */,
-				D189540020FBD0E60040411D /* ExpandedTicketView.xib */,
+				D1C7C54C2132CEF9008E6288 /* ExpandedTicketView.xib */,
 				D189540420FBD2BC0040411D /* ExpandedTicketView.swift */,
 				D189540220FBD2850040411D /* CollapsedTicketView.xib */,
 				D189540620FBD3BD0040411D /* CollapsedTicketView.swift */,
@@ -488,6 +495,7 @@
 				D1DBE71820741A07000587C8 /* Assets.xcassets */,
 				D1DBE71A20741A07000587C8 /* LaunchScreen.storyboard */,
 				D1DBE71D20741A07000587C8 /* Info.plist */,
+				D1C7C5532132D05D008E6288 /* Localizable.strings */,
 			);
 			path = Railway;
 			sourceTree = "<group>";
@@ -637,9 +645,8 @@
 			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
-				ru,
+				en,
 			);
 			mainGroup = D1DBE70520741A06000587C8;
 			productRefGroup = D1DBE70F20741A06000587C8 /* Products */;
@@ -686,11 +693,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D189540120FBD0E60040411D /* ExpandedTicketView.xib in Resources */,
+				D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */,
 				D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */,
-				D15E4F7220BC8E1200B18643 /* AddPlaceView.xib in Resources */,
+				D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */,
 				D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */,
 				D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */,
+				D1C7C5512132D05D008E6288 /* Localizable.strings in Resources */,
 				D133E97F2083D3A400D007F4 /* PlaceView.xib in Resources */,
 				D1DBE71720741A06000587C8 /* Main.storyboard in Resources */,
 			);
@@ -936,6 +944,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1251104210F8F2500393C31 /* Base */,
+				D1C7C5442132CD76008E6288 /* en */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -945,15 +954,42 @@
 			children = (
 				D1BB8717211EC512005D8FB6 /* Base */,
 				D1BB8740211F2A47005D8FB6 /* ru */,
+				D1C7C5412132CD76008E6288 /* en */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D1C7C5472132CE30008E6288 /* AddPlaceView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1C7C5462132CE30008E6288 /* Base */,
+				D1C7C5492132CE35008E6288 /* en */,
+			);
+			name = AddPlaceView.xib;
+			sourceTree = "<group>";
+		};
+		D1C7C54C2132CEF9008E6288 /* ExpandedTicketView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1C7C54B2132CEF9008E6288 /* Base */,
+				D1C7C54E2132CEFF008E6288 /* en */,
+			);
+			name = ExpandedTicketView.xib;
+			sourceTree = "<group>";
+		};
+		D1C7C5532132D05D008E6288 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1C7C5522132D05D008E6288 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		D1DBE71520741A06000587C8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D1DBE71620741A06000587C8 /* Base */,
-				D16C046520DF98B1007155ED /* ru */,
+				D1C7C5422132CD76008E6288 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -963,6 +999,7 @@
 			children = (
 				D1DBE71B20741A07000587C8 /* Base */,
 				D16C046620DF98B2007155ED /* ru */,
+				D1C7C5432132CD76008E6288 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

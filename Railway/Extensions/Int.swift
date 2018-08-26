@@ -13,23 +13,23 @@ extension Int {
     var string: String {
         switch self {
         case 1:
-            return "Первое"
+            return NSLocalizedString("Первое", comment: "")
         case 2:
-            return "Второе"
+            return NSLocalizedString("Второе", comment: "")
         case 3:
-            return "Третье"
+            return NSLocalizedString("Третье", comment: "")
         case 4:
-            return "Четвертое"
+            return NSLocalizedString("Четвертое", comment: "")
         case 5:
-            return "Пятое"
+            return NSLocalizedString("Пятое", comment: "")
         case 6:
-            return "Шестое"
+            return NSLocalizedString("Шестое", comment: "")
         case 7:
-            return "Седьмое"
+            return NSLocalizedString("Седьмое", comment: "")
         case 8:
-            return "Восьмое"
+            return NSLocalizedString("Восьмое", comment: "")
         case 9:
-            return "Девятое"
+            return NSLocalizedString("Девятое", comment: "")
         default:
             assertionFailure("Not supported")
             return ""

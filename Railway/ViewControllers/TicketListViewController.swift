@@ -146,9 +146,9 @@ private extension TicketListViewController {
     func createSections() -> Observable<[SectionModel<String, TicketViewModel>]> {
         return Observable.combineLatest(oldTickets, closestTickets, futureTickets)
             .map { arguments -> [SectionModel<String, TicketViewModel>] in
-                let old = SectionModel(model: "Прошедшие", items: arguments.0)
-                let next = SectionModel(model: "Ближайший", items: arguments.1)
-                let future = SectionModel(model: "Будущие", items: arguments.2)
+                let old = SectionModel(model: NSLocalizedString("Прошедшие", comment: "section title") , items: arguments.0)
+                let next = SectionModel(model: NSLocalizedString("Ближайший", comment: "section title"), items: arguments.1)
+                let future = SectionModel(model: NSLocalizedString("Будущие", comment: "section title"), items: arguments.2)
                 let sections = [old, next, future]
                 return sections.filter { $0.items.count > 0 }
 

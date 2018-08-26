@@ -79,7 +79,7 @@ class TicketDetailsViewController: ViewController {
     func animateExpand() {
         ticketView.set(state: .expanded, animated: true)
         UIView.animate(withDuration: ticketView.AnimationDuration) {
-            self.topLabel.text = "Cмахните чтобы закрыть"
+            self.topLabel.text = NSLocalizedString("Cмахните чтобы закрыть", comment: "")
             self.topLabel.transform = .identity
         }
     }
@@ -87,7 +87,7 @@ class TicketDetailsViewController: ViewController {
     func animateCollapse() {
         ticketView.set(state: .collapsed, animated: true)
         UIView.animate(withDuration: ticketView.AnimationDuration) {
-            self.topLabel.text = "Закрыть"
+            self.topLabel.text = NSLocalizedString("Закрыть", comment: "")
             self.topLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         }
     }
@@ -131,12 +131,17 @@ class TicketDetailsViewController: ViewController {
     }
     
     private func deleteButtonTap() {
-        let alert = UIAlertController(title: "Удалить Билет?", message: "Вы действительно хотите удалить билет?", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
+        let alert = UIAlertController(title: NSLocalizedString("Удалить Билет?", comment: ""),
+                                      message: NSLocalizedString("Вы действительно хотите удалить билет?", comment: ""),
+                                      preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: NSLocalizedString("Да", comment: ""),
+                                      style: .destructive) { _ in
             self.viewModel.delete()
             self.navigationController?.popViewController(animated: true)
         }
-        let noAction = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        let noAction = UIAlertAction(title: NSLocalizedString("Нет", comment: ""),
+                                     style: .cancel,
+                                     handler: nil)
         alert.addAction(yesAction)
         alert.addAction(noAction)
         present(alert, animated: true, completion: nil)

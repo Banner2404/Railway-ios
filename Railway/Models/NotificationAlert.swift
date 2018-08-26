@@ -23,19 +23,19 @@ struct NotificationAlert: OptionSet  {
     var string: String {
         switch self {
         case .atEventTime:
-            return "Во время отправления"
+            return NSLocalizedString("Во время отправления", comment: "")
         case .fiveMinutes:
-            return "За 5 минут"
+            return NSLocalizedString("За 5 минут", comment: "")
         case .tenMinutes:
-            return "За 10 минут"
+            return NSLocalizedString("За 10 минут", comment: "")
         case .fifteenMinutes:
-            return "За 15 минут"
+            return NSLocalizedString("За 15 минут", comment: "")
         case .halfHour:
-            return "За 30 минут"
+            return NSLocalizedString("За 30 минут", comment: "")
         case .oneHour:
-            return "За 1 час"
+            return NSLocalizedString("За 1 час", comment: "")
         case .twoHours:
-            return "За 2 часа"
+            return NSLocalizedString("За 2 часа", comment: "")
         default:
             return ""
         }
@@ -63,10 +63,10 @@ struct NotificationAlert: OptionSet  {
     }
     
     var included: [NotificationAlert] {
-        return NotificationAlert.all.filter { self.contains($0) }
+        return NotificationAlert.all.reversed().filter { self.contains($0) }
     }
     
     var excluded: [NotificationAlert] {
-        return NotificationAlert.all.filter { !self.contains($0) }
+        return NotificationAlert.all.reversed().filter { !self.contains($0) }
     }
 }

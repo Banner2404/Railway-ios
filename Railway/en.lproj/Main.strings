@@ -1,0 +1,75 @@
+
+/* Class = "UILabel"; text = "Уведомления"; ObjectID = "5nk-Qp-duP"; */
+"5nk-Qp-duP.text" = "Notifications";
+
+/* Class = "UILabel"; text = "Прибытие"; ObjectID = "689-qg-nyT"; */
+"689-qg-nyT.text" = "Arrival";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "8D8-iM-hJw"; */
+"8D8-iM-hJw.title" = "Save";
+
+/* Class = "UINavigationItem"; title = "Настройки"; ObjectID = "AGj-Od-iHs"; */
+"AGj-Od-iHs.title" = "Settings";
+
+/* Class = "UILabel"; text = "Добавить место"; ObjectID = "Avq-De-njp"; */
+"Avq-De-njp.text" = "Add place";
+
+/* Class = "UILabel"; text = "Откуда"; ObjectID = "Ccr-ve-9LP"; */
+"Ccr-ve-9LP.text" = "From";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "Dqu-xE-eWi"; */
+"Dqu-xE-eWi.placeholder" = "Departure";
+
+/* Class = "UILabel"; text = "За 2 часа"; ObjectID = "Hwt-3j-S8n"; */
+"Hwt-3j-S8n.text" = "За 2 часа";
+
+/* Class = "UIButton"; normalTitle = "Отмена"; ObjectID = "NGQ-mN-3Po"; */
+"NGQ-mN-3Po.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "Tvj-ve-3vh"; */
+"Tvj-ve-3vh.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "Отправление"; ObjectID = "WuG-qK-9OV"; */
+"WuG-qK-9OV.text" = "Departure";
+
+/* Class = "UITextField"; placeholder = "Назначение"; ObjectID = "YN9-jW-0RO"; */
+"YN9-jW-0RO.placeholder" = "Arrival";
+
+/* Class = "UILabel"; text = "Отключить Gmail"; ObjectID = "ZjG-kH-9tO"; */
+"ZjG-kH-9tO.text" = "Disconnect from Gmail";
+
+/* Class = "UILabel"; text = "Смахните чтобы закрыть"; ObjectID = "bDh-F2-J51"; */
+"bDh-F2-J51.text" = "Swipe to close";
+
+/* Class = "UIButton"; normalTitle = "Добавить"; ObjectID = "cpg-k7-92d"; */
+"cpg-k7-92d.normalTitle" = "Add";
+
+/* Class = "UIBarButtonItem"; title = "Настройки"; ObjectID = "cry-OD-8ZD"; */
+"cry-OD-8ZD.title" = "Settings";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "dNZ-Ib-Zor"; */
+"dNZ-Ib-Zor.placeholder" = "Departure";
+
+/* Class = "UILabel"; text = "Билеты"; ObjectID = "eP5-ec-3yv"; */
+"eP5-ec-3yv.text" = "Tickets";
+
+/* Class = "UILabel"; text = "Нет Билетов"; ObjectID = "jzH-ih-JDD"; */
+"jzH-ih-JDD.text" = "No Tickets";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "o0q-2J-iRS"; */
+"o0q-2J-iRS.placeholder" = "Departure";
+
+/* Class = "UILabel"; text = "Куда"; ObjectID = "q7z-vG-4If"; */
+"q7z-vG-4If.text" = "To";
+
+/* Class = "UILabel"; text = "Подключить Gmail"; ObjectID = "qJL-TC-XQy"; */
+"qJL-TC-XQy.text" = "Connect to Gmail";
+
+/* Class = "UINavigationItem"; title = "Новый Билет"; ObjectID = "tQD-VZ-hao"; */
+"tQD-VZ-hao.title" = "New Ticket";
+
+/* Class = "UINavigationItem"; title = "Билеты"; ObjectID = "v0V-y1-rpb"; */
+"v0V-y1-rpb.title" = "Tickets";
+
+/* Class = "UILabel"; text = "Первое"; ObjectID = "yVh-yM-p6i"; */
+"yVh-yM-p6i.text" = "First";
