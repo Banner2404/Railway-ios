@@ -18,12 +18,7 @@ class PhoneConnectivityManager: NSObject {
 
     weak var delegate: PhoneConnectivityManagerDelegate?
     
-    static let shared = PhoneConnectivityManager()
     private var session: WCSession?
-    
-    private override init() {
-        super.init()
-    }
     
     func activate() {
         setupSession()

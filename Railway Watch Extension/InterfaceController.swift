@@ -12,16 +12,11 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
-    var tickets: [Ticket] = [] {
-        didSet {
-            updateTickets()
-        }
-    }
     @IBOutlet private var table: WKInterfaceTable!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        PhoneConnectivityManager.shared.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTickets), name: .ticketsDidUpdate, object: nil)
         updateTickets()
     }
     
@@ -35,7 +30,9 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
+    @objc
     private func updateTickets() {
+        let tickets = TicketsStorage.shared.tickets
         table.setNumberOfRows(tickets.count, withRowType: "TicketExpandedRowController")
         print("Updating \(tickets.count)")
         for (index, ticket) in tickets.enumerated() {
@@ -53,13 +50,4 @@ class InterfaceController: WKInterfaceController {
         }
     }
 
-}
-
-//MARK: - PhoneConnectivityManagerDelegate
-extension InterfaceController: PhoneConnectivityManagerDelegate {
-    
-    func phoneConnectivityManager(_ manager: PhoneConnectivityManager, didRecieve tickets: [Ticket]) {
-        self.tickets = tickets
-        updateTickets()
-    }
 }

@@ -12,7 +12,7 @@ import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     func applicationDidFinishLaunching() {
-        PhoneConnectivityManager.shared.activate()
+        TicketsStorage.shared.activate()
     }
 
     func applicationDidBecomeActive() {

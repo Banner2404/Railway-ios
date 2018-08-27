@@ -84,6 +84,8 @@
 		D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5472132CE30008E6288 /* AddPlaceView.xib */; };
 		D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C54C2132CEF9008E6288 /* ExpandedTicketView.xib */; };
 		D1C7C5512132D05D008E6288 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5532132D05D008E6288 /* Localizable.strings */; };
+		D1C7C5552132DB76008E6288 /* ComplicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C7C5542132DB76008E6288 /* ComplicationsController.swift */; };
+		D1C7C5572132E082008E6288 /* TicketsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C7C5562132E082008E6288 /* TicketsStorage.swift */; };
 		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
 		D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
@@ -250,6 +252,8 @@
 		D1C7C54B2132CEF9008E6288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ExpandedTicketView.xib; sourceTree = "<group>"; };
 		D1C7C54E2132CEFF008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ExpandedTicketView.strings; sourceTree = "<group>"; };
 		D1C7C5522132D05D008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1C7C5542132DB76008E6288 /* ComplicationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationsController.swift; sourceTree = "<group>"; };
+		D1C7C5562132E082008E6288 /* TicketsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsStorage.swift; sourceTree = "<group>"; };
 		D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -438,9 +442,11 @@
 			isa = PBXGroup;
 			children = (
 				D1BB8725211EC514005D8FB6 /* InterfaceController.swift */,
+				D1C7C5562132E082008E6288 /* TicketsStorage.swift */,
 				D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */,
 				D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */,
 				D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */,
+				D1C7C5542132DB76008E6288 /* ComplicationsController.swift */,
 				D1BB8729211EC514005D8FB6 /* Assets.xcassets */,
 				D1BB872B211EC514005D8FB6 /* Info.plist */,
 			);
@@ -849,6 +855,8 @@
 				D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */,
 				D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */,
 				D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */,
+				D1C7C5552132DB76008E6288 /* ComplicationsController.swift in Sources */,
+				D1C7C5572132E082008E6288 /* TicketsStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
