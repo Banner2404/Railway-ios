@@ -242,14 +242,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="196-d2-Ehk">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Откуда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccr-ve-9LP">
-                                                                <rect key="frame" x="8" y="12" width="57.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqu-xE-eWi">
-                                                                <rect key="frame" x="70.5" y="11.5" width="264.5" height="21"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqu-xE-eWi">
+                                                                <rect key="frame" x="8" y="11.5" width="327" height="21"/>
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -260,10 +254,8 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Ccr-ve-9LP" firstAttribute="centerY" secondItem="196-d2-Ehk" secondAttribute="centerY" id="IfV-cq-Igr"/>
+                                                            <constraint firstItem="Dqu-xE-eWi" firstAttribute="leading" secondItem="196-d2-Ehk" secondAttribute="leading" constant="8" id="NV5-Vy-rea"/>
                                                             <constraint firstAttribute="height" constant="44" id="PLE-Ag-dtE"/>
-                                                            <constraint firstItem="Dqu-xE-eWi" firstAttribute="leading" secondItem="Ccr-ve-9LP" secondAttribute="trailing" constant="5" id="YhR-MK-SOw"/>
-                                                            <constraint firstItem="Ccr-ve-9LP" firstAttribute="leading" secondItem="196-d2-Ehk" secondAttribute="leading" constant="8" id="b6a-3A-WvC"/>
                                                             <constraint firstAttribute="trailing" secondItem="Dqu-xE-eWi" secondAttribute="trailing" constant="8" id="qYL-43-eei"/>
                                                             <constraint firstItem="Dqu-xE-eWi" firstAttribute="centerY" secondItem="196-d2-Ehk" secondAttribute="centerY" id="wFj-ZW-FpH"/>
                                                         </constraints>
@@ -271,14 +263,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4U-xR-Uzj">
                                                         <rect key="frame" x="0.0" y="44" width="343" height="44"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Куда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7z-vG-4If">
-                                                                <rect key="frame" x="8" y="12" width="38.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Назначение" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-jW-0RO">
-                                                                <rect key="frame" x="51.5" y="11.5" width="283.5" height="21"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Назначение" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-jW-0RO">
+                                                                <rect key="frame" x="8" y="11.5" width="327" height="21"/>
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -289,11 +275,9 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="q7z-vG-4If" firstAttribute="leading" secondItem="S4U-xR-Uzj" secondAttribute="leading" constant="8" id="7Nj-pg-ozj"/>
-                                                            <constraint firstItem="q7z-vG-4If" firstAttribute="centerY" secondItem="S4U-xR-Uzj" secondAttribute="centerY" id="AYn-rP-F5Y"/>
                                                             <constraint firstAttribute="trailing" secondItem="YN9-jW-0RO" secondAttribute="trailing" constant="8" id="Ptl-Ni-88u"/>
                                                             <constraint firstAttribute="height" constant="44" id="gVq-cK-IFC"/>
-                                                            <constraint firstItem="YN9-jW-0RO" firstAttribute="leading" secondItem="q7z-vG-4If" secondAttribute="trailing" constant="5" id="rfC-xK-hKh"/>
+                                                            <constraint firstItem="YN9-jW-0RO" firstAttribute="leading" secondItem="S4U-xR-Uzj" secondAttribute="leading" constant="8" id="rD6-C7-dTO"/>
                                                             <constraint firstItem="YN9-jW-0RO" firstAttribute="centerY" secondItem="S4U-xR-Uzj" secondAttribute="centerY" id="uq2-yO-tBb"/>
                                                         </constraints>
                                                     </view>
@@ -374,16 +358,36 @@
                                                             <constraint firstAttribute="height" constant="1" id="JT1-MN-Rvi"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-gW-ZGj">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7u6-2Y-M5u">
                                                         <rect key="frame" x="0.0" y="267" width="343" height="160"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заметки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-k9-37m">
+                                                                <rect key="frame" x="5" y="8" width="67.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-gW-ZGj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="343" height="160"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="bx0-gv-3is"/>
+                                                                </constraints>
+                                                                <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="160" id="bx0-gv-3is"/>
+                                                            <constraint firstAttribute="trailing" secondItem="zHz-gW-ZGj" secondAttribute="trailing" id="3Mi-sk-4gW"/>
+                                                            <constraint firstItem="zpS-k9-37m" firstAttribute="top" secondItem="7u6-2Y-M5u" secondAttribute="top" constant="8" id="MFV-hU-NPu"/>
+                                                            <constraint firstItem="zpS-k9-37m" firstAttribute="leading" secondItem="7u6-2Y-M5u" secondAttribute="leading" constant="5" id="ewv-dF-EBw"/>
+                                                            <constraint firstItem="zHz-gW-ZGj" firstAttribute="top" secondItem="7u6-2Y-M5u" secondAttribute="top" id="lOf-Gk-zOq"/>
+                                                            <constraint firstItem="zHz-gW-ZGj" firstAttribute="leading" secondItem="7u6-2Y-M5u" secondAttribute="leading" id="t0q-ap-eDx"/>
+                                                            <constraint firstAttribute="bottom" secondItem="zHz-gW-ZGj" secondAttribute="bottom" id="tvf-y8-7Eg"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -431,6 +435,7 @@
                         <outlet property="arrivalTimeTextField" destination="dNZ-Ib-Zor" id="E3I-3n-gXv"/>
                         <outlet property="departureTimeTextField" destination="o0q-2J-iRS" id="SyY-Ke-dSO"/>
                         <outlet property="destinationTextField" destination="YN9-jW-0RO" id="fIf-oh-yoo"/>
+                        <outlet property="notesPlaceholder" destination="zpS-k9-37m" id="BBU-y7-LmP"/>
                         <outlet property="notesTextView" destination="zHz-gW-ZGj" id="d6N-Y2-BDI"/>
                         <outlet property="placesView" destination="Qr1-c2-H7T" id="Ls7-gR-YQe"/>
                         <outlet property="saveButton" destination="8D8-iM-hJw" id="ztZ-NJ-zIT"/>

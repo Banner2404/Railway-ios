@@ -73,3 +73,6 @@
 
 /* Class = "UILabel"; text = "Первое"; ObjectID = "yVh-yM-p6i"; */
 "yVh-yM-p6i.text" = "First";
+
+/* Class = "UILabel"; text = "Заметки"; ObjectID = "zpS-k9-37m"; */
+"zpS-k9-37m.text" = "Notes";

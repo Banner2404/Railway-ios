@@ -25,6 +25,7 @@ class AddTicketViewController: ViewController {
     @IBOutlet private weak var placesView: UIView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private weak var notesTextView: UITextView!
+    @IBOutlet private weak var notesPlaceholder: UILabel!
     
     class func loadFromStoryboard(_ viewModel: AddTicketViewModel) -> AddTicketViewController {
         let viewController = loadViewControllerFromStoryboard() as AddTicketViewController
@@ -36,6 +37,7 @@ class AddTicketViewController: ViewController {
         super.viewDidLoad()
         setupPlacesView()
         setupDatePickers()
+        setupPlaceholder()
         setupDefaultInfo()
 
         sourceTextField.rx.text
@@ -85,6 +87,8 @@ class AddTicketViewController: ViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        
+        sourceTextField.becomeFirstResponder()
     }
     
     deinit {
@@ -94,6 +98,13 @@ class AddTicketViewController: ViewController {
     @IBAction func saveButtonTap(_ sender: Any) {
         viewModel.save()
         navigationController?.popViewController(animated: true)
+    }
+    
+    private func setupPlaceholder() {
+        notesTextView.rx.text
+            .map { !($0?.isEmpty ?? true) }
+            .bind(to: notesPlaceholder.rx.isHidden)
+            .disposed(by: disposeBag)
     }
     
     private func setupDefaultInfo() {

@@ -49,7 +49,7 @@ class TicketDetailsViewModel {
     
     func set(_ ticket: Ticket) {
         self.ticket = ticket
-        stationsText.accept("\(ticket.sourceStation.name) - \(ticket.destinationStation.name)")
+        stationsText.accept("\(ticket.sourceStation.name)\n\(ticket.destinationStation.name)")
         fromText.accept(ticket.sourceStation.name)
         toText.accept(ticket.destinationStation.name)
         departureTimeText.accept(DateFormatters.shortTime.string(from: ticket.departure))

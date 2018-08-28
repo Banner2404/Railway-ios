@@ -15,7 +15,7 @@ class PlaceView: UIView {
     @IBOutlet weak var backgroundView: UIView!
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 0, height: 44)
+        return CGSize(width: 0, height: 50)
     }
     
     convenience init() {

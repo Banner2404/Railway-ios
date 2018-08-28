@@ -35,8 +35,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YwD-Qd-kmv">
                     <rect key="frame" x="217" y="0.0" width="158" height="44"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNM-nc-e6t">
-                            <rect key="frame" x="56" y="11.5" width="97" height="21"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Место" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNM-nc-e6t">
+                            <rect key="frame" x="55" y="11.5" width="98" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -44,33 +44,24 @@
                                 <outlet property="delegate" destination="-1" id="WDX-PW-9gm"/>
                             </connections>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Место" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIt-dc-uGB">
-                            <rect key="frame" x="0.0" y="12" width="51" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" image="seat" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-33-rpg">
+                            <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="lY3-33-rpg" firstAttribute="leading" secondItem="YwD-Qd-kmv" secondAttribute="leading" id="7KL-8L-b8h"/>
                         <constraint firstAttribute="trailing" secondItem="YNM-nc-e6t" secondAttribute="trailing" constant="5" id="DCV-1i-eYd"/>
                         <constraint firstItem="YNM-nc-e6t" firstAttribute="centerY" secondItem="YwD-Qd-kmv" secondAttribute="centerY" id="Hgx-yI-6tq"/>
-                        <constraint firstItem="MIt-dc-uGB" firstAttribute="centerY" secondItem="YwD-Qd-kmv" secondAttribute="centerY" id="plK-fC-shv"/>
-                        <constraint firstItem="YNM-nc-e6t" firstAttribute="leading" secondItem="MIt-dc-uGB" secondAttribute="trailing" constant="5" id="t8x-ap-ScN"/>
-                        <constraint firstItem="MIt-dc-uGB" firstAttribute="leading" secondItem="YwD-Qd-kmv" secondAttribute="leading" id="yZv-Gh-bs9"/>
+                        <constraint firstItem="YNM-nc-e6t" firstAttribute="leading" secondItem="lY3-33-rpg" secondAttribute="trailing" constant="15" id="ZcY-te-5ML"/>
+                        <constraint firstItem="lY3-33-rpg" firstAttribute="centerY" secondItem="YwD-Qd-kmv" secondAttribute="centerY" id="b8G-fe-uTC"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekA-hX-y37">
                     <rect key="frame" x="51" y="0.0" width="158" height="44"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Вагон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4z-Dn-0vQ">
-                            <rect key="frame" x="0.0" y="12" width="47" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Вагон" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-Sp-yxK">
-                            <rect key="frame" x="52" y="11.5" width="101" height="21"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Вагон" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JUc-Sp-yxK">
+                            <rect key="frame" x="55" y="11.5" width="98" height="21"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -78,13 +69,16 @@
                                 <outlet property="delegate" destination="-1" id="stA-an-cVd"/>
                             </connections>
                         </textField>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" image="carriage" translatesAutoresizingMaskIntoConstraints="NO" id="QTh-bK-HPc">
+                            <rect key="frame" x="0.0" y="2" width="40" height="40"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="QTh-bK-HPc" firstAttribute="centerY" secondItem="ekA-hX-y37" secondAttribute="centerY" id="50q-Do-cBa"/>
                         <constraint firstAttribute="trailing" secondItem="JUc-Sp-yxK" secondAttribute="trailing" constant="5" id="7fX-C1-RIL"/>
-                        <constraint firstItem="x4z-Dn-0vQ" firstAttribute="centerY" secondItem="ekA-hX-y37" secondAttribute="centerY" id="S4Y-8g-4Jw"/>
-                        <constraint firstItem="x4z-Dn-0vQ" firstAttribute="leading" secondItem="ekA-hX-y37" secondAttribute="leading" id="egr-Re-tY1"/>
-                        <constraint firstItem="JUc-Sp-yxK" firstAttribute="leading" secondItem="x4z-Dn-0vQ" secondAttribute="trailing" constant="5" id="tNv-f2-nQp"/>
+                        <constraint firstItem="JUc-Sp-yxK" firstAttribute="leading" secondItem="QTh-bK-HPc" secondAttribute="trailing" constant="15" id="Bb5-mA-eue"/>
+                        <constraint firstItem="QTh-bK-HPc" firstAttribute="leading" secondItem="ekA-hX-y37" secondAttribute="leading" id="QHn-34-4fh"/>
                         <constraint firstItem="JUc-Sp-yxK" firstAttribute="centerY" secondItem="ekA-hX-y37" secondAttribute="centerY" id="uA1-nb-VQE"/>
                     </constraints>
                 </view>
@@ -108,6 +102,8 @@
         </view>
     </objects>
     <resources>
+        <image name="carriage" width="40" height="40"/>
         <image name="remove_place_button" width="38" height="38"/>
+        <image name="seat" width="40" height="40"/>
     </resources>
 </document>
