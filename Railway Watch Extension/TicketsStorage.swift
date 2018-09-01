@@ -12,7 +12,9 @@ class TicketsStorage {
     
     private(set) var tickets: [Ticket] = [] {
         didSet {
-            NotificationCenter.default.post(name: .ticketsDidUpdate, object: nil)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: .ticketsDidUpdate, object: nil)
+            }
         }
     }
     private let connectivityManager: PhoneConnectivityManager

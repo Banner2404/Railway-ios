@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.4.1"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Билеты-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Railway_Watch" customModuleProvider="target">
+                <controller title="Билеты" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Railway_Watch" customModuleProvider="target">
                     <items>
                         <table alignment="left" spacing="10" pagingScroll="YES" id="CvZ-4U-Kne">
                             <items>
@@ -56,15 +56,56 @@
                                                 </items>
                                                 <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
                                             </group>
+                                            <group width="1" alignment="left" id="Hpq-1q-B1t">
+                                                <items>
+                                                    <group width="0.5" alignment="left" spacing="5" id="JyU-2g-Bhr">
+                                                        <items>
+                                                            <imageView width="20" height="20" alignment="right" image="carriage-white" id="524-iU-cZv"/>
+                                                            <label width="0.5" alignment="right" text="12" id="g2f-Aj-DP0" userLabel="12"/>
+                                                        </items>
+                                                    </group>
+                                                    <group width="0.5" alignment="left" spacing="5" id="dsc-og-1dO">
+                                                        <items>
+                                                            <imageView width="20" height="20" alignment="right" image="seat-white" id="fcC-JF-lYZ"/>
+                                                            <label width="0.5" alignment="right" text="13" id="9rE-K3-88Y"/>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                                <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                                            </group>
+                                            <group width="1" alignment="left" id="xJd-sr-hsF">
+                                                <items>
+                                                    <group width="0.5" alignment="left" spacing="5" id="kXN-Ql-NgF">
+                                                        <items>
+                                                            <imageView width="20" height="20" alignment="right" image="carriage-white" id="QgD-nq-eYc"/>
+                                                            <label width="0.5" alignment="right" text="12" id="VH7-Wz-MG2" userLabel="12"/>
+                                                        </items>
+                                                    </group>
+                                                    <group width="0.5" alignment="left" spacing="5" id="iDq-sg-bfm">
+                                                        <items>
+                                                            <imageView width="20" height="20" alignment="right" image="seat-white" id="7gg-lo-8N6"/>
+                                                            <label width="0.5" alignment="right" text="13" id="Fqw-bw-8cx"/>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                                <edgeInsets key="margins" left="5" right="5" top="0.0" bottom="0.0"/>
+                                            </group>
                                         </items>
                                         <color key="backgroundColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                         <edgeInsets key="margins" left="5" right="5" top="5" bottom="5"/>
                                     </group>
                                     <connections>
-                                        <outlet property="carriageLabel" destination="u2G-VB-dPW" id="tbz-7s-XdO"/>
+                                        <outlet property="carriageLabel1" destination="u2G-VB-dPW" id="Xqz-j5-Uur"/>
+                                        <outlet property="carriageLabel2" destination="g2f-Aj-DP0" id="IMM-AX-1hY"/>
+                                        <outlet property="carriageLabel3" destination="VH7-Wz-MG2" id="qx7-Bz-ca6"/>
                                         <outlet property="dateLabel" destination="GCx-7I-Bau" id="RyA-A2-HAz"/>
                                         <outlet property="destinationLabel" destination="4fH-yY-THU" id="WZX-xH-cZw"/>
-                                        <outlet property="seatLabel" destination="h1h-bZ-3fg" id="nQf-3A-qNR"/>
+                                        <outlet property="placeGroup1" destination="Vk6-TM-sK8" id="xBg-0j-kfx"/>
+                                        <outlet property="placeGroup2" destination="Hpq-1q-B1t" id="kOM-GT-YSp"/>
+                                        <outlet property="placeGroup3" destination="xJd-sr-hsF" id="tQ0-YX-Th3"/>
+                                        <outlet property="seatLabel1" destination="h1h-bZ-3fg" id="JmN-6c-QKn"/>
+                                        <outlet property="seatLabel2" destination="9rE-K3-88Y" id="RG0-Ea-L9z"/>
+                                        <outlet property="seatLabel3" destination="Fqw-bw-8cx" id="8OT-wN-PtT"/>
                                         <outlet property="sourceLabel" destination="w0i-bN-rCi" id="myx-QN-zOM"/>
                                         <outlet property="timeLabel" destination="ptd-HD-8LP" id="SvK-L2-1eZ"/>
                                     </connections>

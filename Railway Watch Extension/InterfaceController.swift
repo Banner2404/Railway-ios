@@ -45,9 +45,16 @@ class InterfaceController: WKInterfaceController {
             row.timeLabel.setText(departute + " - " + arrival)
             let date = DateFormatters.longDateShortMonth.string(from: ticket.departure)
             row.dateLabel.setText(date)
-            guard let place = ticket.places.first else { continue }
-            row.carriageLabel.setText(String(place.carriage))
-            row.seatLabel.setText(place.seat)
+            setupPlaces(for: row, ticket: ticket)
+        }
+    }
+    
+    private func setupPlaces(for row: TicketExpandedRowController, ticket: Ticket) {
+        row.numberOfPlaces = ticket.places.count
+        let displayedPlaces = ticket.places.prefix(row.maxNumberOfPlaces)
+        displayedPlaces.enumerated().forEach {
+            row.carriageLabels[$0.offset].setText(String($0.element.carriage))
+            row.seatLabels[$0.offset].setText(String($0.element.seat))
         }
     }
 
