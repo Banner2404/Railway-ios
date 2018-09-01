@@ -31,10 +31,10 @@
                                             </group>
                                             <group width="1" alignment="left" layout="vertical" spacing="0.0" id="mYh-iO-2fe">
                                                 <items>
-                                                    <label alignment="left" text="10:20 - 20:30" id="ptd-HD-8LP">
+                                                    <label alignment="left" text="10:20PM - 20:30PM" minimumScaleFactor="0.5" id="ptd-HD-8LP">
                                                         <fontDescription key="font" type="system" weight="medium" pointSize="20"/>
                                                     </label>
-                                                    <label alignment="left" text="Воскресенье, 12 декабря" id="GCx-7I-Bau">
+                                                    <label alignment="left" text="Воскресенье, 12 декабря" minimumScaleFactor="0.5" id="GCx-7I-Bau">
                                                         <fontDescription key="font" type="system" weight="light" pointSize="15"/>
                                                     </label>
                                                 </items>

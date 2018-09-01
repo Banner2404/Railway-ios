@@ -111,6 +111,7 @@
 		D1F6AB1A20D0549500461579 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1F6AB1C20D0554A00461579 /* HighlightableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */; };
 		D1F6AB1E20D055D700461579 /* GmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */; };
+		D1F7411C213AB61B00B4D082 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1F7411B213AB61B00B4D082 /* Localizable.strings */; };
 		D1F78BA520E15798003DA8AF /* NotificationAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA420E15798003DA8AF /* NotificationAlert.swift */; };
 		D1F78BA720E16599003DA8AF /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA620E16599003DA8AF /* Int.swift */; };
 		D1F78BA920E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */; };
@@ -277,6 +278,7 @@
 		D1F6AB1920D0549500461579 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		D1F6AB1B20D0554A00461579 /* HighlightableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightableTableViewCell.swift; sourceTree = "<group>"; };
 		D1F6AB1D20D055D700461579 /* GmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GmailTableViewCell.swift; sourceTree = "<group>"; };
+		D1F7411B213AB61B00B4D082 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D1F78BA420E15798003DA8AF /* NotificationAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAlert.swift; sourceTree = "<group>"; };
 		D1F78BA620E16599003DA8AF /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAddAlertTableViewCell.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				D1BB8727211EC514005D8FB6 /* ExtensionDelegate.swift */,
 				D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */,
 				D1C7C5542132DB76008E6288 /* ComplicationsController.swift */,
+				D1F7411B213AB61B00B4D082 /* Localizable.strings */,
 				D1BB8729211EC514005D8FB6 /* Assets.xcassets */,
 				D1BB872B211EC514005D8FB6 /* Info.plist */,
 			);
@@ -693,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1BB872A211EC514005D8FB6 /* Assets.xcassets in Resources */,
+				D1F7411C213AB61B00B4D082 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

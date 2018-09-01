@@ -59,6 +59,7 @@ extension PhoneConnectivityManager: WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print("Context updated")
         let tickets = self.tickets(from: applicationContext)
         delegate?.phoneConnectivityManager(self, didRecieve: tickets)
     }

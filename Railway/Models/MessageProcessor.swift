@@ -61,7 +61,8 @@ class MessageProcessor {
         if components.count < 8 { return nil }
         guard let carriage = Int(components[3]) else { return nil}
         let seat = components[7]
-        return Place(carriage: carriage, seat: seat)
+        let cleanSeat = String(seat.drop { $0 == "0" })
+        return Place(carriage: carriage, seat: cleanSeat)
     }
 }
 

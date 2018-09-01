@@ -15,6 +15,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet private var table: WKInterfaceTable!
     
     override func awake(withContext context: Any?) {
+        print("Interface awake")
         super.awake(withContext: context)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTickets), name: .ticketsDidUpdate, object: nil)
         updateTickets()
@@ -42,7 +43,7 @@ class InterfaceController: WKInterfaceController {
             let departute = DateFormatters.shortTime.string(from: ticket.departure)
             let arrival = DateFormatters.shortTime.string(from: ticket.arrival)
             row.timeLabel.setText(departute + " - " + arrival)
-            let date = DateFormatters.longDate.string(from: ticket.departure)
+            let date = DateFormatters.longDateShortMonth.string(from: ticket.departure)
             row.dateLabel.setText(date)
             guard let place = ticket.places.first else { continue }
             row.carriageLabel.setText(String(place.carriage))
