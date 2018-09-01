@@ -13,6 +13,7 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet private var table: WKInterfaceTable!
+    @IBOutlet private var noTicketsLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         print("Interface awake")
@@ -34,8 +35,28 @@ class InterfaceController: WKInterfaceController {
     @objc
     private func updateTickets() {
         let tickets = TicketsStorage.shared.tickets
-        table.setNumberOfRows(tickets.count, withRowType: "TicketExpandedRowController")
         print("Updating \(tickets.count)")
+        if tickets.count > 0 {
+            setupTable(with: tickets)
+            noTicketsLabel.setHidden(true)
+            table.setHidden(false)
+        } else {
+            noTicketsLabel.setHidden(false)
+            table.setHidden(true)
+        }
+    }
+    
+    private func setupPlaces(for row: TicketExpandedRowController, ticket: Ticket) {
+        row.numberOfPlaces = ticket.places.count
+        let displayedPlaces = ticket.places.prefix(row.maxNumberOfPlaces)
+        displayedPlaces.enumerated().forEach {
+            row.carriageLabels[$0.offset].setText(String($0.element.carriage))
+            row.seatLabels[$0.offset].setText(String($0.element.seat))
+        }
+    }
+    
+    private func setupTable(with tickets: [Ticket]) {
+        table.setNumberOfRows(tickets.count, withRowType: "TicketExpandedRowController")
         for (index, ticket) in tickets.enumerated() {
             let row = table.rowController(at: index) as! TicketExpandedRowController
             row.sourceLabel.setText(ticket.sourceStation.name)
@@ -46,15 +67,6 @@ class InterfaceController: WKInterfaceController {
             let date = DateFormatters.longDateShortMonth.string(from: ticket.departure)
             row.dateLabel.setText(date)
             setupPlaces(for: row, ticket: ticket)
-        }
-    }
-    
-    private func setupPlaces(for row: TicketExpandedRowController, ticket: Ticket) {
-        row.numberOfPlaces = ticket.places.count
-        let displayedPlaces = ticket.places.prefix(row.maxNumberOfPlaces)
-        displayedPlaces.enumerated().forEach {
-            row.carriageLabels[$0.offset].setText(String($0.element.carriage))
-            row.seatLabels[$0.offset].setText(String($0.element.seat))
         }
     }
 

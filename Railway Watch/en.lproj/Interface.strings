@@ -17,6 +17,9 @@
 /* Class = "WKInterfaceLabel"; text = "12"; ObjectID = "VH7-Wz-MG2"; */
 "VH7-Wz-MG2.text" = "12";
 
+/* Class = "WKInterfaceLabel"; text = "Нет Билетов"; ObjectID = "a0O-EP-H4W"; */
+"a0O-EP-H4W.text" = "No Tickets";
+
 /* Class = "WKInterfaceLabel"; text = "12"; ObjectID = "g2f-Aj-DP0"; */
 "g2f-Aj-DP0.text" = "12";
 
@@ -30,4 +33,4 @@
 "u2G-VB-dPW.text" = "12";
 
 /* Class = "WKInterfaceLabel"; text = "Минск"; ObjectID = "w0i-bN-rCi"; */
-"w0i-bN-rCi.text" = "Минск1";
+"w0i-bN-rCi.text" = "Минск";

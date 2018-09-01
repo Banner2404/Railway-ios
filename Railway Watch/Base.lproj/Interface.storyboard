@@ -14,6 +14,7 @@
             <objects>
                 <controller title="Билеты" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Railway_Watch" customModuleProvider="target">
                     <items>
+                        <label height="80" alignment="center" text="Нет Билетов" textAlignment="left" id="a0O-EP-H4W"/>
                         <table alignment="left" spacing="10" pagingScroll="YES" id="CvZ-4U-Kne">
                             <items>
                                 <tableRow identifier="TicketExpandedRowController" selectable="NO" id="2W6-50-VEF" customClass="TicketExpandedRowController" customModule="Railway_Watch_Extension">
@@ -114,6 +115,7 @@
                         </table>
                     </items>
                     <connections>
+                        <outlet property="noTicketsLabel" destination="a0O-EP-H4W" id="Mpe-eQ-4pr"/>
                         <outlet property="table" destination="CvZ-4U-Kne" id="aJG-92-VQD"/>
                     </connections>
                 </controller>
