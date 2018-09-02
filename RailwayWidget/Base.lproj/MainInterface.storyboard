@@ -24,34 +24,36 @@
                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uza-K4-rmM">
-                                <rect key="frame" x="16" y="18" width="288" height="74"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlo-K1-mD2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Суббота, 15 мая, 10:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="9E8-8X-Vcu">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74n-Ri-j9C" customClass="PlaceView" customModule="RailwayWidget" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="34" width="288" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Rq4-VD-ml5"/>
-                                        </constraints>
-                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uza-K4-rmM">
+                                        <rect key="frame" x="16" y="16" width="288" height="24"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Суббота, 15 мая, 10:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="9E8-8X-Vcu">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="74n-Ri-j9C" firstAttribute="width" secondItem="uza-K4-rmM" secondAttribute="width" priority="999" id="eeM-rW-s0g"/>
+                                    <constraint firstItem="uza-K4-rmM" firstAttribute="top" secondItem="xlo-K1-mD2" secondAttribute="top" constant="16" id="5od-vj-fIV"/>
+                                    <constraint firstItem="uza-K4-rmM" firstAttribute="leading" secondItem="xlo-K1-mD2" secondAttribute="leading" constant="16" id="DhB-wr-LFr"/>
+                                    <constraint firstAttribute="bottom" secondItem="uza-K4-rmM" secondAttribute="bottom" constant="16" id="DwI-2N-r2P"/>
+                                    <constraint firstAttribute="trailing" secondItem="uza-K4-rmM" secondAttribute="trailing" constant="16" id="lXY-xa-43i"/>
                                 </constraints>
-                            </stackView>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="3It-Fo-NRU"/>
                             <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="6RM-BI-ag2"/>
-                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="uza-K4-rmM" secondAttribute="trailing" constant="16" id="IjD-ks-vA0"/>
-                            <constraint firstItem="uza-K4-rmM" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="XFf-HB-Iec"/>
-                            <constraint firstItem="uza-K4-rmM" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="yhx-Cq-eYI"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="xlo-K1-mD2" secondAttribute="trailing" id="boJ-Hg-YcH"/>
+                            <constraint firstItem="xlo-K1-mD2" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="dNH-K9-rrD"/>
+                            <constraint firstItem="xlo-K1-mD2" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="wzT-cV-PpC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -61,8 +63,8 @@
                     <connections>
                         <outlet property="dateLabel" destination="9E8-8X-Vcu" id="A7A-Ad-41h"/>
                         <outlet property="noTicketsLabel" destination="sdS-r1-5Wc" id="5a7-kK-vb1"/>
-                        <outlet property="placeView" destination="74n-Ri-j9C" id="6TY-no-xTY"/>
                         <outlet property="stackView" destination="uza-K4-rmM" id="L64-fD-XgK"/>
+                        <outlet property="stackViewContainer" destination="xlo-K1-mD2" id="mEa-zC-G7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

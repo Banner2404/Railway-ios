@@ -47,7 +47,6 @@ class DefaultDatabaseManager: DatabaseManager {
     
     init() {
         _ = persistentContainer
-        loadTickets()
     }
 
     

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = "828532157765-6v55upkt90dsau7mh3m8qvi13bbiveq4.apps.googleusercontent.com"
         let database = DefaultDatabaseManager()
+        database.loadTickets()
         watchConnectivityManager = WatchConnectivityManager(database: database)
         let notification = NotificationManager(database: database)
         let mail = GmailSyncronizer(databaseManager: database)

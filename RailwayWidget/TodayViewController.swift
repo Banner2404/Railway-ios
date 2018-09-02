@@ -13,10 +13,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     private let database = DefaultDatabaseManager()
     private var ticket: Ticket?
-    @IBOutlet private weak var placeView: PlaceView!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var noTicketsLabel: UILabel!
+    @IBOutlet private weak var stackViewContainer: UIView!
     
     private lazy var dateComponentsFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
@@ -32,7 +32,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let latestTicket = database.getNextTicket()
         ticket = latestTicket
         updateInterface(with: ticket)
-        placeView.backgroundView.isHidden = true
+    }
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        switch activeDisplayMode {
+        case .compact:
+            preferredContentSize = maxSize
+        case .expanded:
+            let size = stackViewContainer.systemLayoutSizeFitting(CGSize(width: 1000, height: 1000))
+            preferredContentSize = size
+        }
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -51,6 +60,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         guard let ticket = ticket else {
             stackView.isHidden = true
             noTicketsLabel.isHidden = false
+            extensionContext?.widgetLargestAvailableDisplayMode = .compact
             return
         }
         stackView.isHidden = false
@@ -62,14 +72,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         } else {
             setupArrivalDate(with: ticket)
         }
-        if let place = ticket.places.first {
-            placeView.carriageLabel.text = String(place.carriage)
-            placeView.seatLabel.text = place.seat
-        }
+        extensionContext?.widgetLargestAvailableDisplayMode = ticket.places.count > 1 ? .expanded : .compact
+        setupPlaceViews(with: ticket)
     }
     
     func setupFullDate(with ticket: Ticket) {
-        dateLabel.text = DateFormatters.longDateAndTime.string(from: ticket.departure)
+        dateLabel.text = DateFormatters.longDateAndTime.string(from: ticket.departure).capitalized
     }
     
     func setupDepartureDate(with ticket: Ticket) {
@@ -83,5 +91,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let interval = dateComponentsFormatter.string(from: Date(), to: ticket.arrival) ?? ""
         dateLabel.text = "Прибытие через \(interval), \(time)"
     }
+    
+    func setupPlaceViews(with ticket: Ticket) {
+        stackView.arrangedSubviews
+            .filter { $0 is PlaceView }
+            .forEach {
+                stackView.removeArrangedSubview($0)
+                $0.removeFromSuperview() }
+        
+        for place in ticket.places {
+            let placeView = PlaceView(frame: .zero)
+            placeView.carriageLabel.text = String(place.carriage)
+            placeView.seatLabel.text = place.seat
+            placeView.backgroundView.isHidden = true
+            stackView.addArrangedSubview(placeView)
+        }
+        
+    }
+
     
 }
