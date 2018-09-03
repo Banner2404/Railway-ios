@@ -29,25 +29,33 @@ class MessageProcessor {
     }
     
     private static func ticket(from page: PDFPage) -> Ticket? {
+        if let ticket = ticket(from: page, offset: 0) {
+            return ticket
+        } else {
+            return ticket(from: page, offset: 2)
+        }
+    }
+    
+    private static func ticket(from page: PDFPage, offset: Int) -> Ticket? {
         let strings = page.string?.split(separator: "\n") ?? []
-        let departureDay = String(strings[14])
-        let departureTime = String(strings[15])
+        let departureDay = String(strings[14 + offset])
+        let departureTime = String(strings[15 + offset])
         guard let departure = date(fromDateString: departureDay, timeString: departureTime) else { return nil }
         
-        let arrivalDay = String(strings[18])
-        let arrivalTime = String(strings[19])
+        let arrivalDay = String(strings[18 + offset])
+        let arrivalTime = String(strings[19 + offset])
         guard let arrival = date(fromDateString: arrivalDay, timeString: arrivalTime) else { return nil }
-
-        let route = strings[16].split(separator: "→")
+        
+        let route = strings[16 + offset].split(separator: "→")
         guard let from = route.first?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized,
             let to = route.last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized else { return nil }
         
         let source = Station(name: from)
         let destination = Station(name: to)
         
-        let placeString = strings[23]
+        let placeString = strings[23 + offset]
         guard let place = self.place(from: String(placeString)) else { return nil }
-
+        
         return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: [place])
     }
     

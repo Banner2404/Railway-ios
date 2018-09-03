@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var watchConnectivityManager: WatchConnectivityManager!
-
+    var mailSyncronizer: MailSyncronizer!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print(Locale.current)
         Fabric.with([Crashlytics.self])
@@ -25,14 +26,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         database.loadTickets()
         watchConnectivityManager = WatchConnectivityManager(database: database)
         let notification = NotificationManager(database: database)
-        let mail = GmailSyncronizer(databaseManager: database)
-        let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mail, notificationManager: notification)
+        mailSyncronizer = GmailSyncronizer(databaseManager: database)
+        let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mailSyncronizer, notificationManager: notification)
         let rootController = TicketListViewController.loadFromStoryboard(viewModel: viewModel)
         let navigationController = NavigationController(rootViewController: rootController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
+        application.setMinimumBackgroundFetchInterval(30 * 60)
         return true
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        mailSyncronizer.sync()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completionHandler(.noData)
+        }
     }
 
     func application(_ application: UIApplication,
