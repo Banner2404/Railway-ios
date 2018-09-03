@@ -10,7 +10,10 @@ import Foundation
 
 class TicketsStorage {
     
-    private(set) var tickets: [Ticket] = [] {
+    var futureTickets: [Ticket] {
+        return tickets.filter { $0.arrival > Date() }
+    }
+    private var tickets: [Ticket] = [] {
         didSet {
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: .ticketsDidUpdate, object: nil)
@@ -39,6 +42,7 @@ extension TicketsStorage: PhoneConnectivityManagerDelegate {
     
     func phoneConnectivityManager(_ manager: PhoneConnectivityManager, didRecieve tickets: [Ticket]) {
         self.tickets = tickets
+        
     }
 }
 

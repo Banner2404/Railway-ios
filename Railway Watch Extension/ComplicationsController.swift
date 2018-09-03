@@ -13,11 +13,10 @@ class ComplicationsController: NSObject, CLKComplicationDataSource {
     
     override init() {
         super.init()
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadComplications), name: .ticketsDidUpdate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ticketsDidUpdate), name: .ticketsDidUpdate, object: nil)
     }
     
-    @objc
-    private func reloadComplications() {
+    static func reloadComplications() {
         print("Reload complications")
         let server = CLKComplicationServer.sharedInstance()
         guard let complications = server.activeComplications else { return }
@@ -33,7 +32,7 @@ class ComplicationsController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication,
                                  withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        let ticket = TicketsStorage.shared.tickets.first
+        let ticket = TicketsStorage.shared.futureTickets.first
         if let template = createTemplate(for: complication, ticket: ticket) {
             let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
             handler(entry)
@@ -43,9 +42,18 @@ class ComplicationsController: NSObject, CLKComplicationDataSource {
         
     }
     
-    func getPlaceholderTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
+    func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         let template = createTemplate(for: complication, ticket: Ticket.fake)
         handler(template)
+    }
+    
+    func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
+        handler(.hideOnLockScreen)
+    }
+    
+    @objc
+    private func ticketsDidUpdate() {
+        ComplicationsController.reloadComplications()
     }
     
     private func createTemplate(for complication: CLKComplication, ticket: Ticket?) -> CLKComplicationTemplate? {
@@ -175,7 +183,7 @@ extension CLKComplicationTemplateUtilitarianLargeFlat {
         let seatLong = NSLocalizedString("Место", comment: "")
         let carriageShort = NSLocalizedString("В", comment: "")
         let seatShort = NSLocalizedString("М", comment: "")
-        
+
         let text = [carriageLong, carriageString, seatLong, seatString].joined(separator: " ")
         let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
         self.textProvider = CLKSimpleTextProvider(text: text, shortText: shortText)

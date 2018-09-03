@@ -14,6 +14,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     func applicationDidFinishLaunching() {
         print("App did finish launching")
         TicketsStorage.shared.activate()
+        NotificationCenter.default.addObserver(self, selector: #selector(ticketsDidUpdate), name: .ticketsDidUpdate, object: nil)
     }
 
     func applicationDidBecomeActive() {
@@ -29,10 +30,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
         // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
         print("Handle background tasks")
         for task in backgroundTasks {
+            print(type(of: task))
             // Use a switch statement to check the task type
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                // Be sure to complete the background task once you’re done.
+                ComplicationsController.reloadComplications()
                 backgroundTask.setTaskCompletedWithSnapshot(false)
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -47,6 +49,16 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
                 // make sure to complete unhandled task types
                 task.setTaskCompletedWithSnapshot(false)
             }
+        }
+    }
+    
+    @objc
+    func ticketsDidUpdate() {
+        guard let nextTicket = TicketsStorage.shared.futureTickets.first else { return }
+        let refreshDate = nextTicket.arrival.addingTimeInterval(60)
+        print("Schedule refresh at \(refreshDate)")
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: refreshDate,
+                                                       userInfo: nil) { _ in
         }
     }
 }

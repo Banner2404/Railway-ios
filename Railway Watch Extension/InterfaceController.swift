@@ -19,11 +19,10 @@ class InterfaceController: WKInterfaceController {
         print("Interface awake")
         super.awake(withContext: context)
         NotificationCenter.default.addObserver(self, selector: #selector(updateTickets), name: .ticketsDidUpdate, object: nil)
-        updateTickets()
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
+        updateTickets()
         super.willActivate()
     }
     
@@ -34,7 +33,7 @@ class InterfaceController: WKInterfaceController {
     
     @objc
     private func updateTickets() {
-        let tickets = TicketsStorage.shared.tickets
+        let tickets = TicketsStorage.shared.futureTickets
         print("Updating \(tickets.count)")
         if tickets.count > 0 {
             setupTable(with: tickets)
