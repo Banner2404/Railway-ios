@@ -63,6 +63,10 @@ class DefaultDatabaseManager: DatabaseManager {
     }
 
     func loadTickets() {
+        #if MOCK_DATA
+            loadFakeTickets()
+            return
+        #endif
         do {
             let tickets = try managedContext
                 .fetch(TicketCoreDataModel.fetchRequest())
@@ -242,3 +246,50 @@ extension Place {
         self.seat = place.seat!
     }
 }
+
+#if MOCK_DATA
+extension DatabaseManager {
+    
+    func loadFakeTickets() {
+        let minsk = Station(name: "Минск")
+        let minskPass = Station(name: "Минск-Пассажирский")
+        let vitebsk = Station(name: "Витебск")
+        let bereza = Station(name: "Береза")
+        let gomel = Station(name: "Гомель")
+        let brest = Station(name: "Брест")
+        let grodno = Station(name: "Гродно")
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        
+        let ticket1 = Ticket(sourceStation: minsk,
+                             destinationStation: vitebsk,
+                             departure: formatter.date(from: "25.08.2018 20:29")!,
+                             arrival: formatter.date(from: "25.08.2018 20:30")!,
+                             notes: "", places: [])
+        
+        let ticket2 = Ticket(sourceStation: bereza,
+                             destinationStation: gomel,
+                             departure: formatter.date(from: "25.08.2018 23:00")!,
+                             arrival: formatter.date(from: "25.08.2018 23:30")!,
+                             notes: "", places: [])
+        
+        let ticket3 = Ticket(sourceStation: minskPass,
+                             destinationStation: brest,
+                             departure: formatter.date(from: "10.09.2018 10:00")!,
+                             arrival: formatter.date(from: "10.09.2018 23:30")!,
+                             notes: "Телефон\nДеньги\nПаспорт",
+                             places: [Place(carriage: 1, seat: "23")])
+        
+        let ticket4 = Ticket(sourceStation: gomel,
+                             destinationStation: grodno,
+                             departure: formatter.date(from: "13.09.2018 14:23")!,
+                             arrival: formatter.date(from: "13.09.2018 18:30")!,
+                             notes: "",
+                             places: [Place(carriage: 9, seat: "23"), Place(carriage: 9, seat: "24")])
+        
+        tickets.onNext([ticket1, ticket2, ticket3, ticket4])
+    }
+}
+
+#endif

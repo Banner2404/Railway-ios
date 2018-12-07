@@ -208,7 +208,7 @@ private extension TicketListViewController {
     
     func setupTableViewInsets() {
         if tableView.numberOfSections < 1 { return }
-        let visibleHeight = tableView.contentSize.height - tableView.rect(forSection: 0).height
+        let visibleHeight = tableView.contentSize.height - tableView.rect(forSection: 0).height + tableView.safeAreaInsets.bottom
         tableView.contentInset.bottom = max(tableView.frame.height - visibleHeight - view.safeAreaInsets.top, 0.0)
     }
     

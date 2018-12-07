@@ -77,7 +77,7 @@ extension AddPlaceViewController: AddPlaceViewDelegate {
     
     func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool {
         let views = stackView.arrangedSubviews.filter { $0 is AddPlaceView }
-        if let index = views.firstIndex(of: view), index < views.endIndex - 1 {
+        if let index = views.index(of: view), index < views.endIndex - 1 {
             views[index + 1].becomeFirstResponder()
         } else {
             _ = view.resignFirstResponder()

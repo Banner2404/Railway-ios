@@ -159,7 +159,7 @@ extension AddTicketViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let textFields = [sourceTextField, destinationTextField, departureTimeTextField, arrivalTimeTextField]
-        if let index = textFields.firstIndex(of: textField), index < textFields.endIndex - 1 {
+        if let index = textFields.index(of: textField), index < textFields.endIndex - 1 {
             textFields[index + 1]?.becomeFirstResponder()
         } else {
             _ = placesViewController.becomeFirstResponder()
