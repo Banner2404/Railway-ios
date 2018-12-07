@@ -125,20 +125,24 @@ class NotificationManager {
     private func createNotificationContent(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationContent {
         let content = UNMutableNotificationContent()
         content.sound = UNNotificationSound.default()
-        content.title = "Поезд \(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
+        let train = NSLocalizedString("Поезд", comment: "")
+        content.title = "\(train) \(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
         content.body = "\(timeString(for: alert))\(seatString(for: ticket))"
         return content
     }
     
     private func timeString(for alert: NotificationAlert) -> String {
-        if alert == .atEventTime { return "Сейчас" }
-        return "Через \(dateComponentsFormatter.string(from: alert.timeInterval ?? 0.0) ?? "")"
+        if alert == .atEventTime { return NSLocalizedString("Сейчас", comment: "") }
+        let inPrefix = NSLocalizedString("Через", comment: "")
+        return "\(inPrefix) \(dateComponentsFormatter.string(from: alert.timeInterval ?? 0.0) ?? "")"
     }
     
     private func seatString(for ticket: Ticket) -> String {
         guard ticket.places.count == 1 else { return "" }
         let place = ticket.places[0]
-        return "\n\(place.carriage) вагон \(place.seat) место"
+        let carriage = NSLocalizedString("вагон", comment: "")
+        let seat = NSLocalizedString("место", comment: "")
+        return "\n\(place.carriage) \(carriage) \(place.seat) \(seat)"
     }
     
     private func createNotificationTrigger(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationTrigger {
