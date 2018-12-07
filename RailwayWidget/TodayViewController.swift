@@ -83,13 +83,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func setupDepartureDate(with ticket: Ticket) {
         let time = DateFormatters.shortTime.string(from: ticket.departure)
         let interval = dateComponentsFormatter.string(from: Date(), to: ticket.departure) ?? ""
-        dateLabel.text = "Отправление через \(interval), \(time)"
+        let departure = NSLocalizedString("Отправление через", comment: "")
+        dateLabel.text = "\(departure) \(interval), \(time)"
     }
     
     func setupArrivalDate(with ticket: Ticket) {
         let time = DateFormatters.shortTime.string(from: ticket.arrival)
         let interval = dateComponentsFormatter.string(from: Date(), to: ticket.arrival) ?? ""
-        dateLabel.text = "Прибытие через \(interval), \(time)"
+        let arrival = NSLocalizedString("Прибытие через", comment: "")
+        dateLabel.text = "\(arrival) \(interval), \(time)"
     }
     
     func setupPlaceViews(with ticket: Ticket) {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */; };
+		D11DB94721BA4EEA00638D6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D11DB94621BA4EEA00638D6F /* Localizable.strings */; };
 		D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12510FE210F8F2500393C31 /* NotificationCenter.framework */; };
 		D1251102210F8F2500393C31 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1251101210F8F2500393C31 /* TodayViewController.swift */; };
 		D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1251103210F8F2500393C31 /* MainInterface.storyboard */; };
@@ -185,6 +186,7 @@
 		484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.release.xcconfig"; sourceTree = "<group>"; };
 		59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.debug.xcconfig"; sourceTree = "<group>"; };
 		D109DF092135D3A2003989EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		D11DB94621BA4EEA00638D6F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		D12510FD210F8F2400393C31 /* RailwayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RailwayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12510FE210F8F2500393C31 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		D1251101210F8F2500393C31 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				D1251101210F8F2500393C31 /* TodayViewController.swift */,
 				D1251103210F8F2500393C31 /* MainInterface.storyboard */,
 				D1251106210F8F2500393C31 /* Info.plist */,
+				D11DB94621BA4EEA00638D6F /* Localizable.strings */,
 			);
 			path = RailwayWidget;
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */,
+				D11DB94721BA4EEA00638D6F /* Localizable.strings in Resources */,
 				D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */,
 				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
 			);

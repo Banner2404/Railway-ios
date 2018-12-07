@@ -78,7 +78,7 @@ class AddTicketViewController: ViewController {
         
         viewModel.isValidArrival
             .map { isValid in
-                isValid ? UIColor.black : UIColor.red
+                isValid ? UIColor.textColor : UIColor.red
             }
             .subscribe(onNext: { color in
                 self.arrivalTimeTextField.textColor = color

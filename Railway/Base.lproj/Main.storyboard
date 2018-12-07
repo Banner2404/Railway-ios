@@ -325,7 +325,7 @@
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-Ib-Zor">
                                                                 <rect key="frame" x="94.5" y="11.5" width="240.5" height="21"/>
-                                                                <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
+                                                                <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
