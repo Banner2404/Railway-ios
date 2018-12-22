@@ -38,14 +38,15 @@ class MessageProcessor {
     
     private static func ticket(from page: PDFPage, offset: Int) -> Ticket? {
         let strings = page.string?.split(separator: "\n") ?? []
+        let departureYearString = String(strings[5 + offset])
+        let departureYear = year(fromString: departureYearString)
         let departureDay = String(strings[14 + offset])
         let departureTime = String(strings[15 + offset])
-        guard let departure = date(fromDateString: departureDay, timeString: departureTime) else { return nil }
+        guard let departure = date(fromDateString: departureDay, timeString: departureTime, year: departureYear) else { return nil }
         
         let arrivalDay = String(strings[18 + offset])
         let arrivalTime = String(strings[19 + offset])
-        guard let arrival = date(fromDateString: arrivalDay, timeString: arrivalTime) else { return nil }
-        
+        guard let arrival = date(fromDateString: arrivalDay, timeString: arrivalTime, year: departureYear) else { return nil }
         let route = strings[16 + offset].split(separator: "→")
         guard let from = route.first?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized,
             let to = route.last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized else { return nil }
@@ -58,9 +59,18 @@ class MessageProcessor {
         
         return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: [place])
     }
+
+    private static func year(fromString string: String) -> String? {
+        let yearRegex = "\\d{4}"
+        if let yearRange = string.range(of: yearRegex, options: .regularExpression), let year = Int(string[yearRange]) {
+            return String(year)
+        }
+        return nil
+    }
     
-    private static func date(fromDateString dateString: String, timeString: String) -> Date? {
-        let fullDateString = "\(Date().year) \(dateString.trimmed) \(timeString.trimmed)"
+    private static func date(fromDateString dateString: String, timeString: String, year: String?) -> Date? {
+        let year = year ?? Date().year
+        let fullDateString = "\(year) \(dateString.trimmed) \(timeString.trimmed)"
         return DateFormatters.emailDateAndTime.date(from: fullDateString)
     }
     
