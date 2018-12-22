@@ -105,9 +105,11 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
                 self.fetchAttachment(from: message)
                 .asObservable()
             }
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .default))
             .map { data in
                 MessageProcessor.process(messageData: data)
             }
+            .observeOn(MainScheduler.instance)
             .flatMap { tickets in
                 Observable.from(tickets)
             }
