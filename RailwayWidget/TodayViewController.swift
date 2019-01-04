@@ -26,6 +26,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         formatter.includesTimeRemainingPhrase = false
         return formatter
     }()
+
+    private lazy var timeLeftFormatter: DateComponentsFormatter = {
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .short
+        formatter.allowedUnits = [.minute]
+        formatter.includesApproximationPhrase = false
+        formatter.includesTimeRemainingPhrase = false
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,12 +74,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
         stackView.isHidden = false
         noTicketsLabel.isHidden = true
+        dateLabel.isHidden = false
+        removeTimeline()
         if ticket.departure.timeIntervalSinceNow > 60 * 60 * 2 {
             setupFullDate(with: ticket)
         } else if ticket.departure.timeIntervalSinceNow > 0 {
             setupDepartureDate(with: ticket)
         } else {
-            setupArrivalDate(with: ticket)
+            dateLabel.isHidden = true
+            setupTimeline(with: ticket)
         }
         extensionContext?.widgetLargestAvailableDisplayMode = ticket.places.count > 1 ? .expanded : .compact
         setupPlaceViews(with: ticket)
@@ -86,12 +98,23 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let departure = NSLocalizedString("Отправление через", comment: "")
         dateLabel.text = "\(departure) \(interval), \(time)"
     }
-    
-    func setupArrivalDate(with ticket: Ticket) {
-        let time = DateFormatters.shortTime.string(from: ticket.arrival)
-        let interval = dateComponentsFormatter.string(from: Date(), to: ticket.arrival) ?? ""
-        let arrival = NSLocalizedString("Прибытие через", comment: "")
-        dateLabel.text = "\(arrival) \(interval), \(time)"
+
+    func removeTimeline() {
+        stackView.arrangedSubviews
+            .filter { $0 is TimelineView }
+            .forEach {
+                stackView.removeArrangedSubview($0)
+                $0.removeFromSuperview() }
+    }
+
+    func setupTimeline(with ticket: Ticket) {
+        let timeline = TimelineView()
+        timeline.leftText = DateFormatters.shortTime.string(from: ticket.departure)
+        timeline.rightText = DateFormatters.shortTime.string(from: ticket.arrival)
+        let leftString = NSLocalizedString("осталось", comment: "")
+        timeline.centerText = (timeLeftFormatter.string(from: Date(), to: ticket.arrival) ?? "") + " " + leftString
+        timeline.value = CGFloat(completePart(for: ticket))
+        stackView.addArrangedSubview(timeline)
     }
     
     func setupPlaceViews(with ticket: Ticket) {
@@ -109,6 +132,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             stackView.addArrangedSubview(placeView)
         }
         
+    }
+
+    func completePart(for ticket: Ticket) -> Double {
+        let startTime = ticket.departure.timeIntervalSince1970
+        let endTime = ticket.arrival.timeIntervalSince1970
+        let currentTime = Date().timeIntervalSince1970
+        let duration = endTime - startTime
+        let complete = currentTime - startTime
+        let value = complete / duration
+        return min(1.0, max(0.0, value))
     }
 
     

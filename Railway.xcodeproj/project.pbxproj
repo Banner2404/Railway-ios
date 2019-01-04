@@ -60,6 +60,8 @@
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
+		D164010121DE2ED200559CA2 /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D164010021DE2ED200559CA2 /* TimelineView.swift */; };
+		D164010221DE2F4800559CA2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046720DF9CDA007155ED /* NotificationsViewController.swift */; };
 		D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */; };
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
@@ -225,6 +227,7 @@
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
+		D164010021DE2ED200559CA2 /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
 		D16C046620DF98B2007155ED /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D16C046720DF9CDA007155ED /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
@@ -321,6 +324,7 @@
 			children = (
 				D125110F210F911B00393C31 /* RailwayWidget.entitlements */,
 				D1251101210F8F2500393C31 /* TodayViewController.swift */,
+				D164010021DE2ED200559CA2 /* TimelineView.swift */,
 				D1251103210F8F2500393C31 /* MainInterface.storyboard */,
 				D1251106210F8F2500393C31 /* Info.plist */,
 				D11DB94621BA4EEA00638D6F /* Localizable.strings */,
@@ -832,8 +836,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1251119210F974500393C31 /* Ticket.swift in Sources */,
+				D164010221DE2F4800559CA2 /* UIColor.swift in Sources */,
 				D125111D210F975100393C31 /* Date.swift in Sources */,
 				D125111B210F974500393C31 /* Place.swift in Sources */,
+				D164010121DE2ED200559CA2 /* TimelineView.swift in Sources */,
 				D125111F210F992800393C31 /* Railway.xcdatamodeld in Sources */,
 				D1251117210F973F00393C31 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
 				D125111E210F976000393C31 /* DateFormatters.swift in Sources */,
@@ -1192,7 +1198,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1255,7 +1261,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
