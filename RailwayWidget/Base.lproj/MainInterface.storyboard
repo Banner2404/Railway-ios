@@ -48,6 +48,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="3It-Fo-NRU"/>
                             <constraint firstItem="sdS-r1-5Wc" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="6RM-BI-ag2"/>
@@ -56,6 +57,9 @@
                             <constraint firstItem="xlo-K1-mD2" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" id="wzT-cV-PpC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kdI-H0-9pf" appends="YES" id="bWc-Y1-n9B"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -68,6 +72,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kdI-H0-9pf">
+                    <connections>
+                        <action selector="widgetTapAction:" destination="M4Y-Lb-cyx" id="QYh-71-DHO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="32" y="34.182908545727138"/>
         </scene>

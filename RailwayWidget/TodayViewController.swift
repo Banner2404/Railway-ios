@@ -42,7 +42,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         ticket = latestTicket
         updateInterface(with: ticket)
     }
-    
+
+    @IBAction func widgetTapAction(_ sender: Any) {
+        guard let url = URL(string: "ticks://open") else { return }
+        extensionContext?.open(url, completionHandler: nil)
+    }
+
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         switch activeDisplayMode {
         case .compact:
