@@ -126,7 +126,6 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     private func fetchMessagesList() -> Single<[GTLRGmail_Message]> {
         let query = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
         query.q = "from: admpoezd@mnsk.rw.by " +
-            "subject: Заказ на покупку проездных документов (билетов) " +
             (lastSyncQuery() ?? "")
         return Single.create { handler -> Disposable in
             let disposable = Disposables.create()
@@ -219,7 +218,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     private func lastSyncDate() -> Date? {
         let timestamp = UserDefaults.standard.double(forKey: "GmailSyncDate")
         if timestamp < 1.0 { return nil }
-        return Date(timeIntervalSince1970: timestamp)
+        return Date(timeIntervalSinceNow: -60 * 60 * 24 * 10) //Date(timeIntervalSince1970: timestamp)
     }
 }
 
