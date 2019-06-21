@@ -30,7 +30,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     private lazy var timeLeftFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .short
-        formatter.allowedUnits = [.minute]
+        formatter.allowedUnits = [.minute, .hour]
         formatter.includesApproximationPhrase = false
         formatter.includesTimeRemainingPhrase = false
         return formatter
@@ -116,8 +116,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let timeline = TimelineView()
         timeline.leftText = DateFormatters.shortTime.string(from: ticket.departure)
         timeline.rightText = DateFormatters.shortTime.string(from: ticket.arrival)
-        let leftString = NSLocalizedString("осталось", comment: "")
-        timeline.centerText = (timeLeftFormatter.string(from: Date(), to: ticket.arrival) ?? "") + " " + leftString
+        let leftFormat = NSLocalizedString("time_left", comment: "")
+        let leftTimeString = timeLeftFormatter.string(from: Date(), to: ticket.arrival) ?? ""
+        timeline.centerText = String(format: leftFormat, leftTimeString)
         timeline.value = CGFloat(completePart(for: ticket))
         stackView.addArrangedSubview(timeline)
     }

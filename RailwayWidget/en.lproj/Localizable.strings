@@ -1,4 +1,4 @@
 
 "Прибытие через" = "Arrival in";
 "Отправление через" = "Departure in";
-"осталось" = "left";
+"time_left" = "%@ left";
