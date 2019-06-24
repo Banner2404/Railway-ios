@@ -240,7 +240,7 @@ extension TicketListViewController: UITableViewDelegate {
         return 0.1
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
@@ -288,7 +288,7 @@ extension TicketListViewController: TicketCollapsedTableViewCellDelegate {
 //MARK: - UINavigationControllerDelegate
 extension TicketListViewController: UINavigationControllerDelegate {
     
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if toVC is TicketDetailsViewController, operation == .push {
             transitionAnimator.transition = .push
             return transitionAnimator

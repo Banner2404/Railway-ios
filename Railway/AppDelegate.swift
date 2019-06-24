@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var watchConnectivityManager: WatchConnectivityManager!
     var mailSyncronizer: MailSyncronizer!
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         print(Locale.current)
         Fabric.with([Crashlytics.self])
         GIDSignIn.sharedInstance().clientID = "828532157765-6v55upkt90dsau7mh3m8qvi13bbiveq4.apps.googleusercontent.com"
@@ -53,9 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @available(iOS 9.0, *)
     func application(_ app: UIApplication, open url: URL,
-                     options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        let sourceApplication = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
-        let annotation = options[UIApplicationOpenURLOptionsKey.annotation]
+                     options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
+        let annotation = options[UIApplication.OpenURLOptionsKey.annotation]
         return GIDSignIn.sharedInstance().handle(url,
                                                  sourceApplication: sourceApplication,
                                                  annotation: annotation)

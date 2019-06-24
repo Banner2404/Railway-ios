@@ -124,7 +124,7 @@ class NotificationManager {
     
     private func createNotificationContent(for ticket: Ticket, alert: NotificationAlert) -> UNNotificationContent {
         let content = UNMutableNotificationContent()
-        content.sound = UNNotificationSound.default()
+        content.sound = UNNotificationSound.default
         let train = NSLocalizedString("Поезд", comment: "")
         content.title = "\(train) \(ticket.sourceStation.name) - \(ticket.destinationStation.name)"
         content.body = "\(timeString(for: alert))\(seatString(for: ticket))"

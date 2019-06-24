@@ -49,7 +49,7 @@ class TicketListViewModel {
     }
     
     func detailedTicketViewModel(for viewModel: TicketViewModel) -> TicketDetailsViewModel? {
-        guard let index = allTicketsViewModelsRelay.value.index(where: { $0 === viewModel }) else { return nil }
+        guard let index = allTicketsViewModelsRelay.value.firstIndex(where: { $0 === viewModel }) else { return nil }
         let ticket = allTicketsRelay.value[index]
         let viewModel = TicketDetailsViewModel(ticket)
         viewModel.deleteObservable
@@ -94,13 +94,13 @@ class TicketListViewModel {
     }
     
     func deleteTicket(viewModel: TicketViewModel) {
-        guard let index = allTicketsViewModelsRelay.value.index(where: { $0 === viewModel }) else { return }
+        guard let index = allTicketsViewModelsRelay.value.firstIndex(where: { $0 === viewModel }) else { return }
         let ticket = allTicketsRelay.value[index]
         databaseManager.delete(ticket)
     }
     
     func ticketViewModel(for detailsViewModel: TicketDetailsViewModel) -> TicketViewModel? {
-        guard let index = allTicketsRelay.value.index(where: { $0.id == detailsViewModel.ticket.id }) else { return nil }
+        guard let index = allTicketsRelay.value.firstIndex(where: { $0.id == detailsViewModel.ticket.id }) else { return nil }
         return allTicketsViewModelsRelay.value[index]
     }
 }

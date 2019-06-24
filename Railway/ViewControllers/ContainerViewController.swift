@@ -19,8 +19,8 @@ protocol ContainerViewController {
 extension ContainerViewController where Self: UIViewController {
     
     func move(from fromViewController: UIViewController, to toViewController: UIViewController, inContainerView containerView: UIView) {
-        addChildViewController(toViewController)
-        toViewController.didMove(toParentViewController: self)
+        addChild(toViewController)
+        toViewController.didMove(toParent: self)
         
         let fromView = fromViewController.view!
         let toView = toViewController.view!
@@ -36,8 +36,8 @@ extension ContainerViewController where Self: UIViewController {
         containerView.bottomAnchor.constraint(equalTo: toView.bottomAnchor).isActive = true
         containerView.rightAnchor.constraint(equalTo: toView.rightAnchor).isActive = true
         
-        fromViewController.willMove(toParentViewController: nil)
-        fromViewController.removeFromParentViewController()
+        fromViewController.willMove(toParent: nil)
+        fromViewController.removeFromParent()
         UIView.animate(withDuration: 0.3, animations: {
             fromView.alpha = 0
             toView.alpha = 1
@@ -50,7 +50,7 @@ extension ContainerViewController where Self: UIViewController {
     }
     
     func show(_ viewController: UIViewController, inContainerView containerView: UIView) {
-        addChildViewController(viewController)
+        addChild(viewController)
         let childView = viewController.view!
         
         containerView.addSubview(childView)
@@ -61,20 +61,20 @@ extension ContainerViewController where Self: UIViewController {
         containerView.rightAnchor.constraint(equalTo: childView.rightAnchor).isActive = true
         containerView.bottomAnchor.constraint(equalTo: childView.bottomAnchor).isActive = true
         
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
     
     func removeViewControllerFromContainerView(_ viewController: UIViewController?) {
         
-        viewController?.willMove(toParentViewController: nil)
+        viewController?.willMove(toParent: nil)
         viewController?.view.removeFromSuperview()
-        viewController?.removeFromParentViewController()
+        viewController?.removeFromParent()
         
     }
     
     
     func replaceCurrentViewController(with newViewController: UIViewController, in containerView: UIView) {
-        if let viewController = childViewControllers.first {
+        if let viewController = children.first {
             move(from: viewController, to: newViewController, inContainerView: containerView)
         } else {
             show(newViewController, inContainerView: containerView)

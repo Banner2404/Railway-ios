@@ -69,7 +69,7 @@ class AddPlaceViewController: ViewController {
 extension AddPlaceViewController: AddPlaceViewDelegate {
     
     func addPlaceViewDidTapRemove(_ view: AddPlaceView) {
-        guard let index = stackView.arrangedSubviews.index(of: view) else { return }
+        guard let index = stackView.arrangedSubviews.firstIndex(of: view) else { return }
         stackView.removeArrangedSubview(view)
         view.removeFromSuperview()
         viewModel.places.value.remove(at: index)
@@ -77,7 +77,7 @@ extension AddPlaceViewController: AddPlaceViewDelegate {
     
     func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool {
         let views = stackView.arrangedSubviews.filter { $0 is AddPlaceView }
-        if let index = views.index(of: view), index < views.endIndex - 1 {
+        if let index = views.firstIndex(of: view), index < views.endIndex - 1 {
             views[index + 1].becomeFirstResponder()
         } else {
             _ = view.resignFirstResponder()

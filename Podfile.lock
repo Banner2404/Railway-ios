@@ -1,8 +1,8 @@
 PODS:
-  - Crashlytics (3.10.2):
-    - Fabric (~> 1.7.7)
-  - Differentiator (3.0.2)
-  - Fabric (1.7.7)
+  - Crashlytics (3.13.2):
+    - Fabric (~> 1.10.2)
+  - Differentiator (3.1.0)
+  - Fabric (1.10.2)
   - GoogleAPIClientForREST/Core (1.2.1):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Gmail (1.2.1):
@@ -13,36 +13,36 @@ PODS:
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
     - GTMOAuth2 (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.1.4):
-    - GoogleToolboxForMac/Defines (= 2.1.4)
-  - GoogleToolboxForMac/Defines (2.1.4)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
-    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
-    - GoogleToolboxForMac/Defines (= 2.1.4)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GoogleToolboxForMac/DebugUtils (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
   - GTMOAuth2 (1.1.6):
     - GTMSessionFetcher (~> 1.1)
-  - GTMSessionFetcher (1.1.15):
-    - GTMSessionFetcher/Full (= 1.1.15)
-  - GTMSessionFetcher/Core (1.1.15)
-  - GTMSessionFetcher/Full (1.1.15):
-    - GTMSessionFetcher/Core (= 1.1.15)
-  - Reveal-SDK (15)
-  - RxCocoa (4.2.0):
-    - RxSwift (~> 4.0)
-  - RxDataSources (3.0.2):
+  - GTMSessionFetcher (1.2.2):
+    - GTMSessionFetcher/Full (= 1.2.2)
+  - GTMSessionFetcher/Core (1.2.2)
+  - GTMSessionFetcher/Full (1.2.2):
+    - GTMSessionFetcher/Core (= 1.2.2)
+  - Reveal-SDK (22)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
+  - RxSwift (4.5.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - GoogleAPIClientForREST/Gmail (~> 1.2.1)
   - GoogleSignIn (~> 4.1.1)
-  - Reveal-SDK
+  - Reveal-SDK (= 22)
   - RxCocoa (~> 4.0)
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.0)
@@ -63,19 +63,19 @@ SPEC REPOS:
     - RxSwift
 
 SPEC CHECKSUMS:
-  Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
-  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
+  Crashlytics: 611738c7847f8291a1a51084e35987b86ba6b3ee
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   GoogleAPIClientForREST: a8b95a252014ce2e618df6b75dc72eca2c00b4af
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
-  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
-  GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
-  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
-  Reveal-SDK: 25e21896c478b60b948f876043f91570d368d23d
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
+  GTMOAuth2: e8b6512c896235149df975c41d9a36c868ab7fba
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  Reveal-SDK: 1385ab77aa15e9a3e21f798c74bd8e94cb54c651
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: bbe333099d794ffe47a2a908e0f268cdf18ef13d
+PODFILE CHECKSUM: 174765f29d08c136a25d58b9b6e2136bd86bc683
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

@@ -35,7 +35,7 @@ class TimelineView: UIView {
     var font: UIFont = UIFont.systemFont(ofSize: 16.0)
 
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: font.pointSize + capSize * 4)
+        return CGSize(width: UIView.noIntrinsicMetric, height: font.pointSize + capSize * 4)
     }
 
     private var capSize: CGFloat = 4.0

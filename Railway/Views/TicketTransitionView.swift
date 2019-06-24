@@ -82,7 +82,7 @@ private extension TicketTransitionView {
         if animated {
             UIView.animate(withDuration: AnimationDuration,
                            delay: 0.0,
-                           options: UIViewAnimationOptions.beginFromCurrentState,
+                           options: UIView.AnimationOptions.beginFromCurrentState,
                            animations: {
                                 self.expandedView.alpha = 0.0
                                 self.collapsedView.alpha = 1.0
@@ -101,7 +101,7 @@ private extension TicketTransitionView {
         if animated {
             UIView.animate(withDuration: AnimationDuration,
                            delay: 0.0,
-                           options: UIViewAnimationOptions.beginFromCurrentState,
+                           options: UIView.AnimationOptions.beginFromCurrentState,
                            animations: {
                                 self.expandedView.alpha = 1.0
                                 self.collapsedView.alpha = 0.0

@@ -55,6 +55,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case .expanded:
             let size = stackViewContainer.systemLayoutSizeFitting(CGSize(width: 1000, height: 1000))
             preferredContentSize = size
+        @unknown default:
+            preferredContentSize = maxSize
         }
     }
         

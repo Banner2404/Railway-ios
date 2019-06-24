@@ -85,8 +85,8 @@ class AddTicketViewController: ViewController {
             })
             .disposed(by: disposeBag)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         sourceTextField.becomeFirstResponder()
     }
@@ -132,8 +132,8 @@ class AddTicketViewController: ViewController {
     private func setupPlacesView() {
         placesViewController = AddPlaceViewController.loadFromStoryboard(viewModel: viewModel)
         placesView.addSubview(placesViewController.view)
-        addChildViewController(placesViewController)
-        placesViewController.didMove(toParentViewController: self)
+        addChild(placesViewController)
+        placesViewController.didMove(toParent: self)
         placesViewController.view.translatesAutoresizingMaskIntoConstraints = false
         placesView.leftAnchor.constraint(equalTo: placesViewController.view.leftAnchor).isActive = true
         placesView.rightAnchor.constraint(equalTo: placesViewController.view.rightAnchor).isActive = true
@@ -143,7 +143,7 @@ class AddTicketViewController: ViewController {
     
     @objc
     private func keyboardWillShow(_ notification: Notification) {
-        guard let frame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+        guard let frame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height, right: 0)
     }
     
@@ -159,7 +159,7 @@ extension AddTicketViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let textFields = [sourceTextField, destinationTextField, departureTimeTextField, arrivalTimeTextField]
-        if let index = textFields.index(of: textField), index < textFields.endIndex - 1 {
+        if let index = textFields.firstIndex(of: textField), index < textFields.endIndex - 1 {
             textFields[index + 1]?.becomeFirstResponder()
         } else {
             _ = placesViewController.becomeFirstResponder()

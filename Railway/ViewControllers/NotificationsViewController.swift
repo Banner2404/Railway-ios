@@ -261,7 +261,7 @@ extension NotificationsViewController: UIPickerViewDelegate {
 //MARK: - UITableViewDelegate
 extension NotificationsViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 }
