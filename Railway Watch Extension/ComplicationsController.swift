@@ -69,8 +69,19 @@ class ComplicationsController: NSObject, CLKComplicationDataSource {
         case .utilitarianLarge:
             return CLKComplicationTemplateUtilitarianLargeFlat(ticket: ticket)
         default:
-            return nil
+            break
         }
+        if #available(watchOSApplicationExtension 5.0, *) {
+            switch complication.family {
+            case .graphicCorner:
+                return CLKComplicationTemplateGraphicCornerStackText(ticket: ticket)
+            case .graphicRectangular:
+                return CLKComplicationTemplateGraphicRectangularStandardBody(ticket: ticket)
+            default:
+                break
+            }
+        }
+        return nil
     }
     
 }
@@ -190,3 +201,66 @@ extension CLKComplicationTemplateUtilitarianLargeFlat {
     }
 }
 
+@available(watchOSApplicationExtension 5.0, *)
+extension CLKComplicationTemplateGraphicCornerStackText {
+
+    convenience init(ticket: Ticket?) {
+        self.init()
+        let carriageString: String
+        let seatString: String
+        let dateTextProvider: CLKTextProvider
+        if let ticket = ticket, let place = ticket.places.first {
+            if ticket.departure.timeIntervalSinceNow > 60 * 60 * 24 {
+                dateTextProvider = CLKDateTextProvider(date: ticket.departure, units: [.day, .month, .weekday])
+            } else {
+                dateTextProvider = CLKTimeTextProvider(date: ticket.departure)
+            }
+            carriageString = String(place.carriage)
+            seatString = place.seat
+        } else {
+            dateTextProvider = CLKSimpleTextProvider(text: "--:--")
+            carriageString = "-"
+            seatString = "-"
+        }
+        let carriageLong = NSLocalizedString("Вагон", comment: "")
+        let seatLong = NSLocalizedString("Место", comment: "")
+        let carriageShort = NSLocalizedString("В", comment: "")
+        let seatShort = NSLocalizedString("М", comment: "")
+        let text = [carriageLong, carriageString, seatLong, seatString].joined(separator: " ")
+        let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
+        innerTextProvider = dateTextProvider
+        outerTextProvider = CLKSimpleTextProvider(text: text, shortText: shortText)
+    }
+}
+
+@available(watchOSApplicationExtension 5.0, *)
+extension CLKComplicationTemplateGraphicRectangularStandardBody {
+
+    convenience init(ticket: Ticket?) {
+        self.init()
+        let carriageString: String
+        let seatString: String
+        let dateTextProvider: CLKTextProvider
+        if let ticket = ticket, let place = ticket.places.first {
+            if ticket.departure.timeIntervalSinceNow > 60 * 60 * 24 {
+                dateTextProvider = CLKDateTextProvider(date: ticket.departure, units: [.day, .month, .weekday])
+            } else {
+                dateTextProvider = CLKTimeTextProvider(date: ticket.departure)
+            }
+            carriageString = String(place.carriage)
+            seatString = place.seat
+        } else {
+            dateTextProvider = CLKSimpleTextProvider(text: "--:--")
+            carriageString = "-"
+            seatString = "-"
+        }
+        let carriageLong = NSLocalizedString("Вагон", comment: "")
+        let seatLong = NSLocalizedString("Место", comment: "")
+        let carriageShort = NSLocalizedString("В", comment: "")
+        let seatShort = NSLocalizedString("М", comment: "")
+        let text = [carriageLong, carriageString, seatLong, seatString].joined(separator: " ")
+        let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
+        headerTextProvider = dateTextProvider
+        body1TextProvider = CLKSimpleTextProvider(text: text, shortText: shortText)
+    }
+}
