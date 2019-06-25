@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor(red: 39.0 / 255, green: 106.0 / 255, blue: 115.0 / 255, alpha: 1.0)
     }
 
+    static var complicationAccentColor: UIColor {
+        return UIColor(red: 48.0 / 255, green: 132.0 / 255, blue: 144.0 / 255, alpha: 1.0)
+    }
+
     static var textColor: UIColor {
         return UIColor(red: 4.0 / 255, green: 59.0 / 255, blue: 64.0 / 255, alpha: 1.0)
     }

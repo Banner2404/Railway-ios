@@ -74,7 +74,11 @@ class ComplicationsController: NSObject, CLKComplicationDataSource {
         if #available(watchOSApplicationExtension 5.0, *) {
             switch complication.family {
             case .graphicCorner:
-                return CLKComplicationTemplateGraphicCornerStackText(ticket: ticket)
+                if let ticket = ticket, ticket.departure < Date() {
+                    return CLKComplicationTemplateGraphicCornerGaugeText(ticket: ticket)
+                } else {
+                    return CLKComplicationTemplateGraphicCornerStackText(ticket: ticket)
+                }
             case .graphicRectangular:
                 return CLKComplicationTemplateGraphicRectangularStandardBody(ticket: ticket)
             default:
@@ -230,6 +234,32 @@ extension CLKComplicationTemplateGraphicCornerStackText {
         let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
         innerTextProvider = dateTextProvider
         outerTextProvider = CLKSimpleTextProvider(text: text, shortText: shortText)
+    }
+}
+
+@available(watchOSApplicationExtension 5.0, *)
+extension CLKComplicationTemplateGraphicCornerGaugeText {
+
+    convenience init(ticket: Ticket) {
+        self.init()
+        let carriageString: String
+        let seatString: String
+        if let place = ticket.places.first {
+            carriageString = String(place.carriage)
+            seatString = place.seat
+        } else {
+            carriageString = "-"
+            seatString = "-"
+        }
+        let carriageLong = NSLocalizedString("Вагон", comment: "")
+        let seatLong = NSLocalizedString("Место", comment: "")
+        let carriageShort = NSLocalizedString("В", comment: "")
+        let seatShort = NSLocalizedString("М", comment: "")
+        let text = [carriageLong, carriageString, seatLong, seatString].joined(separator: " ")
+        let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
+        outerTextProvider = CLKSimpleTextProvider(text: text, shortText: shortText)
+        gaugeProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.complicationAccentColor], gaugeColorLocations: [0.5],
+                                                     start: ticket.departure, end: ticket.arrival)
     }
 }
 

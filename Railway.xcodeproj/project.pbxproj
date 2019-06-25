@@ -92,6 +92,7 @@
 		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
 		D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
+		D1D551F822C23D990070EDD9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
 		D1D676DC211387E300AB0179 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9832083D63D00D007F4 /* UIView.swift */; };
@@ -883,6 +884,7 @@
 				D1BB873B211F2420005D8FB6 /* Place.swift in Sources */,
 				D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */,
 				D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */,
+				D1D551F822C23D990070EDD9 /* UIColor.swift in Sources */,
 				D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */,
 				D1C7C5552132DB76008E6288 /* ComplicationsController.swift in Sources */,
 				D1C7C5572132E082008E6288 /* TicketsStorage.swift in Sources */,
