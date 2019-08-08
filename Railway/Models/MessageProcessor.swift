@@ -29,34 +29,41 @@ class MessageProcessor {
     }
     
     private static func ticket(from page: PDFPage) -> Ticket? {
-        if let ticket = ticket(from: page, offset: 0) {
-            return ticket
-        } else {
-            return ticket(from: page, offset: 2)
-        }
+        let strings = page.string?.components(separatedBy: "\n") ?? []
+        return ticket(from: strings)
     }
     
-    private static func ticket(from page: PDFPage, offset: Int) -> Ticket? {
-        let strings = page.string?.split(separator: "\n") ?? []
+    private static func ticket(from strings: [String]) -> Ticket? {
+        guard strings.count > 10 else { return nil }
+        if strings[5].contains("Контрольный номер") {
+            return ticket(from: strings, offset: 3)
+        } else if strings[5].contains("Номер заказа") {
+            return ticket(from: strings, offset: 2)
+        } else {
+            return ticket(from: strings, offset: 0)
+        }
+    }
+
+    private static func ticket(from strings: [String], offset: Int) -> Ticket? {
         let departureYearString = String(strings[5 + offset])
         let departureYear = year(fromString: departureYearString)
         let departureDay = String(strings[14 + offset])
         let departureTime = String(strings[15 + offset])
         guard let departure = date(fromDateString: departureDay, timeString: departureTime, year: departureYear) else { return nil }
-        
+
         let arrivalDay = String(strings[18 + offset])
         let arrivalTime = String(strings[19 + offset])
         guard let arrival = date(fromDateString: arrivalDay, timeString: arrivalTime, year: departureYear) else { return nil }
         let route = strings[16 + offset].split(separator: "→")
         guard let from = route.first?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized,
             let to = route.last?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).capitalized else { return nil }
-        
+
         let source = Station(name: from)
         let destination = Station(name: to)
-        
+
         let placeString = strings[23 + offset]
         guard let place = self.place(from: String(placeString)) else { return nil }
-        
+
         return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: [place])
     }
 

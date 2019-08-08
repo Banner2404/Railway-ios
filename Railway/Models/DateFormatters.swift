@@ -37,6 +37,7 @@ class DateFormatters {
     static var emailDateAndTime: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy dd.MM HH:mm"
+        dateFormatter.timeZone = TimeZone(identifier: "Europe/Minsk")
         return dateFormatter
     }()
     

@@ -54,8 +54,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
     
     @objc
     func ticketsDidUpdate() {
-        guard let nextTicket = TicketsStorage.shared.futureTickets.first else { return }
-        let refreshDate = nextTicket.arrival.addingTimeInterval(60)
+        let nextTicket = TicketsStorage.shared.futureTickets.first
+        let refreshDate = nextTicket?.arrival.addingTimeInterval(60) ?? Date().addingTimeInterval(60 * 60)
         print("Schedule refresh at \(refreshDate)")
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: refreshDate,
                                                        userInfo: nil) { _ in
