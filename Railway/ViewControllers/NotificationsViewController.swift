@@ -41,6 +41,7 @@ class NotificationsViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .cardBackground
         tableTypeDidUpdate()
         setupTableView()
         tableView.reloadData()

@@ -10,5 +10,12 @@ import UIKit
 
 class NotificationsToggleTableViewCell: DisposableTableViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switchControl: UISwitch!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleLabel.textColor = .text
+        switchControl.onTintColor = .switchTint
+    }
 }

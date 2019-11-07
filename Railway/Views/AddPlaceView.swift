@@ -15,6 +15,8 @@ protocol AddPlaceViewDelegate: class {
 
 class AddPlaceView: UIView {
     
+    @IBOutlet weak var carriageImageView: UIImageView!
+    @IBOutlet weak var seatImageView: UIImageView!
     @IBOutlet weak var carriageTextField: UITextField!
     @IBOutlet weak var placeTextField: UITextField!
     weak var delegate: AddPlaceViewDelegate?
@@ -54,6 +56,10 @@ private extension AddPlaceView {
         rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        carriageImageView.tintColor = .navigationBarTint
+        seatImageView.tintColor = .navigationBarTint
+        carriageTextField.textColor = .text
+        placeTextField.textColor = .text
     }
 }
 

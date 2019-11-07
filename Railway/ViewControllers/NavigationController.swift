@@ -13,7 +13,8 @@ class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBar.tintColor = UIColor.tableBackgroundColor
+        navigationBar.barTintColor = .navigationBarBackground
+        navigationBar.tintColor = .navigationBarTint
     }
 
 }

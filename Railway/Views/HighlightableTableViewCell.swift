@@ -11,6 +11,11 @@ import UIKit
 class HighlightableTableViewCell: UITableViewCell {
     
     @IBOutlet weak var mainView: UIView!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        mainView.backgroundColor = .cardBackground
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {}
 
@@ -25,6 +30,6 @@ class HighlightableTableViewCell: UITableViewCell {
     }
     
     private func updateBackground(highlighted: Bool) {
-        self.mainView.backgroundColor = highlighted ? .cellHighlightColor : .white
+        self.alpha = highlighted ? 0.75 : 1.0
     }
 }

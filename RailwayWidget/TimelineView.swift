@@ -15,8 +15,8 @@ class TimelineView: UIView {
             setNeedsDisplay()
         }
     }
-    var color: UIColor = UIColor.tableBackgroundColor
-    var textColor: UIColor = UIColor.textColor
+    var color: UIColor = UIColor.timeline
+    var textColor: UIColor = UIColor.text
     var leftText: String = "10:20" {
         didSet {
             setNeedsDisplay()

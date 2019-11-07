@@ -14,4 +14,8 @@ class NotificationAddAlertTableViewCell: DisposableTableViewCell {
 
     @IBOutlet weak var addButton: UIButton!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addButton.setTitleColor(.navigationBarTint, for: .normal)
+    }
 }

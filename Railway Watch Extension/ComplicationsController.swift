@@ -258,7 +258,7 @@ extension CLKComplicationTemplateGraphicCornerGaugeText {
         let text = [carriageLong, carriageString, seatLong, seatString].joined(separator: " ")
         let shortText = [carriageShort, carriageString, seatShort, seatString].joined(separator: " ")
         outerTextProvider = CLKSimpleTextProvider(text: text, shortText: shortText)
-        gaugeProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.complicationAccentColor], gaugeColorLocations: [0.5],
+        gaugeProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.complicationAccent], gaugeColorLocations: [0.5],
                                                      start: ticket.departure, end: ticket.arrival)
     }
 }

@@ -21,10 +21,12 @@ class ExpandedTicketView: UIView {
     var shareAction: ControlEvent<Void> {
         return shareButton.rx.tap
     }
-    
+
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var stationsLabel: UILabel!
     @IBOutlet weak var departureLabel: UILabel!
     @IBOutlet weak var arrivalLabel: UILabel!
+    @IBOutlet weak var dashLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var placesView: UIStackView!
     @IBOutlet weak var notesTextView: UITextView!
@@ -63,5 +65,14 @@ private extension ExpandedTicketView {
         view.translatesAutoresizingMaskIntoConstraints  = false
         addSubview(view)
         view.attachToFrame(of: self)
+        mainView.backgroundColor = .cardBackground
+        stationsLabel.textColor = .text
+        departureLabel.textColor = .text
+        arrivalLabel.textColor = .text
+        dateLabel.textColor = .text
+        dashLabel.textColor = .text
+        editButton.tintColor = .navigationBarTint
+        shareButton.tintColor = .navigationBarTint
+        deleteButton.tintColor = .navigationBarTint
     }
 }

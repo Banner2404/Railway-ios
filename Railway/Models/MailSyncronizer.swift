@@ -72,11 +72,11 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         
         googleSignIn.delegate = self
         googleSignIn.scopes = [kGTLRAuthScopeGmailReadonly]
-        googleSignIn.signInSilently()
+        googleSignIn.restorePreviousSignIn()
     }
     
     func requestSignIn(on viewController: UIViewController) -> Single<Void> {
-        googleSignIn.uiDelegate = viewController
+        googleSignIn.presentingViewController = viewController
         googleSignIn.signIn()
         return Single.create(subscribe: { handler -> Disposable in
             let disposable = Disposables.create()
@@ -249,5 +249,3 @@ extension GmailSyncronizer: GIDSignInDelegate {
         
     }
 }
-
-extension UIViewController: GIDSignInUIDelegate {}

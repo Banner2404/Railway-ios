@@ -10,4 +10,11 @@ import UIKit
 
 class GmailTableViewCell: HighlightableTableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleLabel?.textColor = .text
+    }
+
 }

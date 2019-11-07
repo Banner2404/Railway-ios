@@ -28,7 +28,8 @@ class TicketListViewController: ViewController {
     private var selectedIndexPath: IndexPath?
     @IBOutlet private weak var syncIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
-    
+    @IBOutlet private weak var navigationTitleLabel: UILabel!
+
     class func loadFromStoryboard(viewModel: TicketListViewModel) -> TicketListViewController {
         let viewController = loadViewControllerFromStoryboard() as TicketListViewController
         viewController.viewModel = viewModel
@@ -41,6 +42,8 @@ class TicketListViewController: ViewController {
         setupTableView()
         setupActivityIndicator()
         navigationController?.delegate = self
+        view.backgroundColor = .tableBackground
+        navigationTitleLabel.textColor = .navigationBarTint
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -197,6 +200,12 @@ private extension TicketListViewController {
             .map { !$0 }
             .bind(to: syncIndicator.rx.isHidden)
             .disposed(by: disposeBag)
+
+        if #available(iOS 13.0, *) {
+            syncIndicator.style = .medium
+        } else {
+            syncIndicator.style = .gray
+        }
     }
     
     func updateAnimatorInitialFrame(for selectedIndexPath: IndexPath) {

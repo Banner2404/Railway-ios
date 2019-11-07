@@ -10,6 +10,7 @@ import UIKit
 
 class CollapsedTicketView: UIView {
     
+    @IBOutlet var mainView: UIView!
     @IBOutlet weak var stationsLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -38,5 +39,8 @@ private extension CollapsedTicketView {
         addSubview(view)
         view.attachToFrame(of: self)
         self.backgroundColor = UIColor.clear
+        mainView.backgroundColor = .cardBackground
+        stationsLabel.textColor = .text
+        dateLabel.textColor = .text
     }
 }

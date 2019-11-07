@@ -18,9 +18,12 @@ class AddTicketViewController: ViewController {
     private var arrivalDatePicker: UIDatePicker!
     private var placesViewController: AddPlaceViewController!
     @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollViewContent: UIView!
     @IBOutlet private weak var sourceTextField: UITextField!
     @IBOutlet private weak var destinationTextField: UITextField!
+    @IBOutlet private weak var departureTimeLabel: UILabel!
     @IBOutlet private weak var departureTimeTextField: UITextField!
+    @IBOutlet private weak var arrivalTimeLabel: UILabel!
     @IBOutlet private weak var arrivalTimeTextField: UITextField!
     @IBOutlet private weak var placesView: UIView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
@@ -35,6 +38,15 @@ class AddTicketViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .tableBackground
+        scrollViewContent.backgroundColor = .cardBackground
+        departureTimeLabel.textColor = .text
+        arrivalTimeLabel.textColor = .text
+        departureTimeTextField.textColor = .text
+        arrivalTimeTextField.textColor = .text
+        sourceTextField.textColor = .text
+        destinationTextField.textColor = .text
+
         setupPlacesView()
         setupDatePickers()
         setupPlaceholder()
@@ -78,7 +90,7 @@ class AddTicketViewController: ViewController {
         
         viewModel.isValidArrival
             .map { isValid in
-                isValid ? UIColor.textColor : UIColor.red
+                isValid ? UIColor.text : UIColor.red
             }
             .subscribe(onNext: { color in
                 self.arrivalTimeTextField.textColor = color

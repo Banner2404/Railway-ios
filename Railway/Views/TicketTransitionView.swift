@@ -118,6 +118,7 @@ private extension TicketTransitionView {
         setupCollapsedView()
         setupExpandedView()
         updateState(animated: false)
-        self.clipsToBounds = true
+        clipsToBounds = true
+        backgroundColor = .cardBackground
     }
 }

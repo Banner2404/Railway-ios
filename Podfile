@@ -1,5 +1,6 @@
 inhibit_all_warnings!
 use_frameworks!
+platform :ios, '11.3'
 
 target 'Railway' do
     pod 'Fabric'
@@ -7,9 +8,9 @@ target 'Railway' do
   	pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxDataSources', '~> 3.0'
-    pod 'Reveal-SDK', '22', :configurations => ['Debug']
-    pod 'GoogleAPIClientForREST/Gmail', '~> 1.2.1'
-    pod 'GoogleSignIn', '~> 4.1.1'
+    pod 'Reveal-SDK', :configurations => ['Debug']
+    pod 'GoogleAPIClientForREST/Gmail'
+    pod 'GoogleSignIn'
 end
 
 target 'RailwayWidget' do

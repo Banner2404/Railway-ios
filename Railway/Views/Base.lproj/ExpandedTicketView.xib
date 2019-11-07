@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,10 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandedTicketView" customModule="Railway" customModuleProvider="target">
             <connections>
                 <outlet property="arrivalLabel" destination="hhN-lN-aKb" id="fMg-yy-wKF"/>
+                <outlet property="dashLabel" destination="7Vy-aW-GXq" id="oXb-dw-OJG"/>
                 <outlet property="dateLabel" destination="KgK-O3-aPy" id="lCG-YT-VOH"/>
                 <outlet property="deleteButton" destination="RAr-uh-zbF" id="yQm-RZ-AFL"/>
                 <outlet property="departureLabel" destination="dKc-9X-qF9" id="eck-eW-fMV"/>
                 <outlet property="editButton" destination="a2K-IC-xEf" id="0Gm-K2-xhB"/>
+                <outlet property="mainView" destination="Grk-qf-ePU" id="ros-EG-LmU"/>
                 <outlet property="notesTextView" destination="UgB-uy-ARH" id="dnO-v9-B3S"/>
                 <outlet property="notesView" destination="kpt-vt-neH" id="Ov5-dE-8xP"/>
                 <outlet property="placesView" destination="Zjc-9R-vKn" id="Gk7-Ug-K3Y"/>
@@ -98,7 +98,7 @@
                             <subviews>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заметки" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UgB-uy-ARH">
                                     <rect key="frame" x="0.0" y="0.0" width="359" height="150"/>
-                                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94117647058823528" alpha="1" colorSpace="deviceRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="6FF-If-rgJ"/>
                                     </constraints>
@@ -114,7 +114,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="UgB-uy-ARH" secondAttribute="trailing" id="2zF-Zf-YaN"/>
                                 <constraint firstItem="7XC-H7-2EU" firstAttribute="leading" secondItem="kpt-vt-neH" secondAttribute="leading" id="Nwr-lc-mba"/>

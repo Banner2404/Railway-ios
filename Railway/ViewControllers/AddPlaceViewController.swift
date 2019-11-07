@@ -13,6 +13,7 @@ import RxCocoa
 class AddPlaceViewController: ViewController {
 
     @IBOutlet private weak var stackView: UIStackView!
+    @IBOutlet private weak var addPlaceLabel: UILabel!
     private var viewModel: AddTicketViewModel!
     private let disposeBag = DisposeBag()
     
@@ -24,6 +25,7 @@ class AddPlaceViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addPlaceLabel.textColor = .text
         setupDefaultInfo()
     }
     

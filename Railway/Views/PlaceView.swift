@@ -10,6 +10,8 @@ import UIKit
 
 class PlaceView: UIView {
     
+    @IBOutlet weak var carriageImageView: UIImageView!
+    @IBOutlet weak var seatImageView: UIImageView!
     @IBOutlet weak var carriageLabel: UILabel!
     @IBOutlet weak var seatLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
@@ -42,5 +44,9 @@ private extension PlaceView {
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(view)
         self.backgroundColor = .clear
+        carriageLabel.textColor = .text
+        seatLabel.textColor = .text
+        carriageImageView.tintColor = .navigationBarTint
+        seatImageView.tintColor = .navigationBarTint
     }
 }

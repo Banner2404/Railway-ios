@@ -26,6 +26,7 @@ class SettingsViewController: ViewController, ContainerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        view.backgroundColor = .tableBackground
     }
 }
 

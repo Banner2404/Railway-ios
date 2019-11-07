@@ -22,4 +22,10 @@ class NotificationSaveTableViewCell: DisposableTableViewCell {
 
     @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var saveButton: UIButton!
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        cancelButton.setTitleColor(.navigationBarTint, for: .normal)
+        saveButton.setTitleColor(.navigationBarTint, for: .normal)
+    }
 }

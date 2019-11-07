@@ -56,7 +56,7 @@ class TicketDetailsViewController: ViewController {
         topLabel.alpha = 0
         UIView.animate(withDuration: SnapAnimationDuration, animations: {
             self.view.layoutIfNeeded()
-            self.view.backgroundColor = UIColor.tableBackgroundColor
+            self.view.backgroundColor = UIColor.tableBackground
             self.topLabel.alpha = 1
         }, completion: { finished in
             completion?(finished)
