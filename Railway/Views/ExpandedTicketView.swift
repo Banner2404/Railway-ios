@@ -34,6 +34,7 @@ class ExpandedTicketView: UIView {
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet var separators: [UIView]!
     private let disposeBag = DisposeBag()
     
     init() {
@@ -74,5 +75,6 @@ private extension ExpandedTicketView {
         editButton.tintColor = .navigationBarTint
         shareButton.tintColor = .navigationBarTint
         deleteButton.tintColor = .navigationBarTint
+        separators.forEach { $0.backgroundColor = .text }
     }
 }
