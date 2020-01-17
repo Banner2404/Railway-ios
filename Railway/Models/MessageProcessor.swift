@@ -45,6 +45,7 @@ class MessageProcessor {
     }
 
     private static func ticket(from strings: [String], offset: Int) -> Ticket? {
+        guard strings.count > 23 + offset else { return nil }
         let departureYearString = String(strings[5 + offset])
         let departureYear = year(fromString: departureYearString)
         let departureDay = String(strings[14 + offset])

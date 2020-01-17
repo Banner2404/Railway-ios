@@ -129,7 +129,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     private func fetchMessagesList() -> Single<[GTLRGmail_Message]> {
         let query = GTLRGmailQuery_UsersMessagesList.query(withUserId: "me")
         query.q = "from: admpoezd@mnsk.rw.by " +
-            (lastSyncQuery() ?? "")
+            (lastSyncQuery() ?? firstSyncQuery())
         return Single.create { handler -> Disposable in
             let disposable = Disposables.create()
             self.gmailService.executeQuery(query) { (ticket, data, error) in
@@ -211,6 +211,11 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
     
     private func lastSyncQuery() -> String? {
         guard let date = lastSyncDate() else { return nil }
+        return "after: \(Int(date.timeIntervalSince1970))"
+    }
+
+    private func firstSyncQuery() -> String {
+        let date = Date().addingTimeInterval(-60 * 60 * 24 * 365)
         return "after: \(Int(date.timeIntervalSince1970))"
     }
     
