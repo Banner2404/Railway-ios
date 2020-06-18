@@ -63,7 +63,7 @@
 		D156A844249BCA2C00AD7D2B /* print_offset_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */; };
 		D156A845249BCA2C00AD7D2B /* default_new.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A841249BCA2C00AD7D2B /* default_new.pdf */; };
 		D156A848249BCCF800AD7D2B /* multiple.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A847249BCCF800AD7D2B /* multiple.pdf */; };
-		D156A84A249BE83700AD7D2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D156A849249BE83700AD7D2B /* GoogleService-Info.plist */; };
+		D156A84D249BEEF600AD7D2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D156A84C249BEEF600AD7D2B /* GoogleService-Info.plist */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
@@ -248,7 +248,7 @@
 		D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = print_offset_2.pdf; sourceTree = "<group>"; };
 		D156A841249BCA2C00AD7D2B /* default_new.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = default_new.pdf; sourceTree = "<group>"; };
 		D156A847249BCCF800AD7D2B /* multiple.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = multiple.pdf; sourceTree = "<group>"; };
-		D156A849249BE83700AD7D2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D156A84C249BEEF600AD7D2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
@@ -576,7 +576,7 @@
 				D1DBE71D20741A07000587C8 /* Info.plist */,
 				D1C7C5532132D05D008E6288 /* Localizable.strings */,
 				D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */,
-				D156A849249BE83700AD7D2B /* GoogleService-Info.plist */,
+				D156A84C249BEEF600AD7D2B /* GoogleService-Info.plist */,
 			);
 			path = Railway;
 			sourceTree = "<group>";
@@ -821,8 +821,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */,
+				D156A84D249BEEF600AD7D2B /* GoogleService-Info.plist in Resources */,
 				D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */,
-				D156A84A249BE83700AD7D2B /* GoogleService-Info.plist in Resources */,
 				D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */,
 				D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */,
 				D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */,
