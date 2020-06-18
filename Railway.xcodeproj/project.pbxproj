@@ -63,6 +63,7 @@
 		D156A844249BCA2C00AD7D2B /* print_offset_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */; };
 		D156A845249BCA2C00AD7D2B /* default_new.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A841249BCA2C00AD7D2B /* default_new.pdf */; };
 		D156A848249BCCF800AD7D2B /* multiple.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A847249BCCF800AD7D2B /* multiple.pdf */; };
+		D156A84A249BE83700AD7D2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D156A849249BE83700AD7D2B /* GoogleService-Info.plist */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
@@ -247,6 +248,7 @@
 		D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = print_offset_2.pdf; sourceTree = "<group>"; };
 		D156A841249BCA2C00AD7D2B /* default_new.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = default_new.pdf; sourceTree = "<group>"; };
 		D156A847249BCCF800AD7D2B /* multiple.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = multiple.pdf; sourceTree = "<group>"; };
+		D156A849249BE83700AD7D2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 				D1DBE71D20741A07000587C8 /* Info.plist */,
 				D1C7C5532132D05D008E6288 /* Localizable.strings */,
 				D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */,
+				D156A849249BE83700AD7D2B /* GoogleService-Info.plist */,
 			);
 			path = Railway;
 			sourceTree = "<group>";
@@ -683,9 +686,9 @@
 				D1DBE70C20741A06000587C8 /* Resources */,
 				35EC9A7E4F070911FE4DDA85 /* [CP] Embed Pods Frameworks */,
 				E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */,
-				D191AF1320D4F24200F71E67 /* ShellScript */,
 				D125110D210F8F2500393C31 /* Embed App Extensions */,
 				D1BB8736211EC514005D8FB6 /* Embed Watch Content */,
+				D156A84B249BEA7F00AD7D2B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -819,6 +822,7 @@
 			files = (
 				D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */,
 				D1DBE71C20741A07000587C8 /* LaunchScreen.storyboard in Resources */,
+				D156A84A249BE83700AD7D2B /* GoogleService-Info.plist in Resources */,
 				D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */,
 				D1DBE71920741A07000587C8 /* Assets.xcassets in Resources */,
 				D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */,
@@ -843,10 +847,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -855,10 +862,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -883,18 +893,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D191AF1320D4F24200F71E67 /* ShellScript */ = {
+		D156A84B249BEA7F00AD7D2B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
+			);
+			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" b77d33fb659e7a29dc3523531a005322d40201f6 376039fb696d8d071944efc7dddf477158d041146d40cd9c625b7eb3070e418f\n";
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

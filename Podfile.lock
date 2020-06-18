@@ -4,19 +4,57 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.2.0)
   - AppAuth/Core (1.2.0)
   - AppAuth/ExternalUserAgent (1.2.0)
-  - Crashlytics (3.14.0):
-    - Fabric (~> 1.10.2)
   - Differentiator (3.1.0)
-  - Fabric (1.10.2)
+  - Firebase/CoreOnly (6.25.0):
+    - FirebaseCore (= 6.7.1)
+  - Firebase/Crashlytics (6.25.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.1.0)
+  - FirebaseAnalyticsInterop (1.5.0)
+  - FirebaseCore (6.7.1):
+    - FirebaseCoreDiagnostics (~> 1.3)
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.3.0):
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 1.30905.0)
+  - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseCrashlytics (4.1.1):
+    - FirebaseAnalyticsInterop (~> 1.2)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransport (~> 6.1)
+    - GoogleDataTransportCCTSupport (~> 3.1)
+    - nanopb (~> 1.30905.0)
+    - PromisesObjC (~> 1.2)
+  - FirebaseInstallations (1.2.0):
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/Environment (~> 6.6)
+    - GoogleUtilities/UserDefaults (~> 6.6)
+    - PromisesObjC (~> 1.2)
   - GoogleAPIClientForREST/Core (1.3.10):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Gmail (1.3.10):
     - GoogleAPIClientForREST/Core
     - GTMSessionFetcher (>= 1.1.7)
+  - GoogleDataTransport (6.1.1)
+  - GoogleDataTransportCCTSupport (3.1.0):
+    - GoogleDataTransport (~> 6.1)
+    - nanopb (~> 1.30905.0)
   - GoogleSignIn (5.0.1):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleUtilities/Environment (6.6.0):
+    - PromisesObjC (~> 1.2)
+  - GoogleUtilities/Logger (6.6.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/UserDefaults (6.6.0):
+    - GoogleUtilities/Logger
   - GTMAppAuth (1.0.0):
     - AppAuth/Core (~> 1.0)
     - GTMSessionFetcher (~> 1.1)
@@ -25,6 +63,12 @@ PODS:
   - GTMSessionFetcher/Core (1.3.0)
   - GTMSessionFetcher/Full (1.3.0):
     - GTMSessionFetcher/Core (= 1.3.0)
+  - nanopb (1.30905.0):
+    - nanopb/decode (= 1.30905.0)
+    - nanopb/encode (= 1.30905.0)
+  - nanopb/decode (1.30905.0)
+  - nanopb/encode (1.30905.0)
+  - PromisesObjC (1.2.8)
   - Reveal-SDK (24)
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -35,8 +79,7 @@ PODS:
   - RxSwift (4.5.0)
 
 DEPENDENCIES:
-  - Crashlytics
-  - Fabric
+  - Firebase/Crashlytics
   - GoogleAPIClientForREST/Gmail
   - GoogleSignIn
   - Reveal-SDK
@@ -47,13 +90,23 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AppAuth
-    - Crashlytics
     - Differentiator
-    - Fabric
+    - Firebase
+    - FirebaseAnalyticsInterop
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseCrashlytics
+    - FirebaseInstallations
     - GoogleAPIClientForREST
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
     - GoogleSignIn
+    - GoogleUtilities
     - GTMAppAuth
     - GTMSessionFetcher
+    - nanopb
+    - PromisesObjC
     - Reveal-SDK
     - RxCocoa
     - RxDataSources
@@ -61,18 +114,28 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppAuth: bce82c76043657c99d91e7882e8a9e1a93650cd4
-  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
+  Firebase: 5719b4f965f76643241a1bb8244483ff6117db39
+  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
+  FirebaseCore: 6023faeada5afa95a349fccafb40900e32e9ac42
+  FirebaseCoreDiagnostics: 4a773a47bd83bbd5a9b1ccf1ce7caa8b2d535e67
+  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseCrashlytics: a87cce5746d3335995bd18b1b60d073cd05a6920
+  FirebaseInstallations: 2119fb3e46b0a88bfdbf12562f855ee3252462fa
   GoogleAPIClientForREST: 4acfffd77f1c3c8741b6be9eaed0e603278efbde
+  GoogleDataTransport: ad884314b81cdb808fb1d23787b367ff8da4e28a
+  GoogleDataTransportCCTSupport: d70a561f7d236af529fee598835caad5e25f6d3d
   GoogleSignIn: 3a51b9bb8e48b635fd7f4272cee06ca260345b86
+  GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
+  nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 2db2f87f677d9ea1ee4787c189cdeab9a0da3d7c
+PODFILE CHECKSUM: 28e5b8608731cd180cd4d3a2da0e2e5cae23c795
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.2
