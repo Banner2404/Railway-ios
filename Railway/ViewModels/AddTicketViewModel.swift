@@ -40,7 +40,7 @@ class AddTicketViewModel {
         let placesValid = places.asObservable()
             .flatMapLatest { item -> Observable<Bool> in
                 if item.isEmpty { return Observable.just(false) }
-                return Observable.combineLatest(item.map { $0.isValid }).debug().map { values in
+                return Observable.combineLatest(item.map { $0.isValid }).map { values in
                     values.reduce(true, { $0 && $1 })
                 }
             }

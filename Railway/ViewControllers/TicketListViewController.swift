@@ -196,7 +196,6 @@ private extension TicketListViewController {
     
     func setupActivityIndicator() {
         viewModel.isSyncronizing
-            .debug()
             .map { !$0 }
             .bind(to: syncIndicator.rx.isHidden)
             .disposed(by: disposeBag)

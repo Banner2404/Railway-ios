@@ -30,23 +30,35 @@ class MessageProcessor {
     
     private static func ticket(from page: PDFPage) -> Ticket? {
         let strings = page.string?.components(separatedBy: "\n") ?? []
-        return ticket(from: strings)
+        if let ticket = ticket(from: strings, parser: legacyTicketParser(from:offset:)) {
+            return ticket
+        } else {
+            return ticket(from: strings, parser: newTicketParser(from:offset:))
+        }
     }
     
-    private static func ticket(from strings: [String]) -> Ticket? {
+    private static func ticket(from strings: [String], parser: ([String], Int) -> Ticket?) -> Ticket? {
         guard strings.count > 10 else { return nil }
         if strings[5].contains("Контрольный номер") {
-            return ticket(from: strings, offset: 3)
+            return parser(strings, 3)
         } else if strings[5].contains("Номер заказа") {
-            return ticket(from: strings, offset: 2)
+            return parser(strings, 2)
         } else {
-            return ticket(from: strings, offset: 0)
+            return parser(strings, 0)
         }
     }
 
-    private static func ticket(from strings: [String], offset: Int) -> Ticket? {
+    private static func legacyTicketParser(from strings: [String], offset: Int) -> Ticket? {
+        return ticket(from: strings, offset: offset, yearOffset: 0)
+    }
+
+    private static func newTicketParser(from strings: [String], offset: Int) -> Ticket? {
+        return ticket(from: strings, offset: offset + 1, yearOffset: -1)
+    }
+
+    private static func ticket(from strings: [String], offset: Int, yearOffset: Int) -> Ticket? {
         guard strings.count > 23 + offset else { return nil }
-        let departureYearString = String(strings[5 + offset])
+        let departureYearString = String(strings[5 + offset + yearOffset])
         let departureYear = year(fromString: departureYearString)
         let departureDay = String(strings[14 + offset])
         let departureTime = String(strings[15 + offset])

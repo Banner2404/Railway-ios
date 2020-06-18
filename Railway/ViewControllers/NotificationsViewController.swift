@@ -163,7 +163,6 @@ private extension NotificationsViewController {
         let sections = setupSections()
         let dataSource = setupDataSource()
         sections
-            .debug()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         

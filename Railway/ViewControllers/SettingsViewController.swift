@@ -89,7 +89,6 @@ private extension SettingsViewController {
         show(viewController, inContainerView: view)
         
         viewController.resizeCell
-            .debug()
             .subscribe(onNext: { [weak self] _ in
                 self?.tableView.beginUpdates()
                 self?.tableView.endUpdates()

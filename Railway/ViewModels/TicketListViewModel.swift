@@ -13,7 +13,7 @@ import RxCocoa
 class TicketListViewModel {
     
     var allTickets: Observable<[TicketViewModel]> {
-        return allTicketsViewModelsRelay.asObservable()
+        return allTicketsViewModelsRelay.asObservable().throttle(0.5, scheduler: MainScheduler.instance)
     }
     
     var isSyncronizing: Observable<Bool> {

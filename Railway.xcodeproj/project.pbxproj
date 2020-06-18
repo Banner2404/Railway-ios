@@ -57,6 +57,12 @@
 		D13F4B3120DFE13F00A3F8D9 /* NotificationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */; };
 		D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */; };
 		D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */; };
+		D156A837249BCA1600AD7D2B /* MessageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156A836249BCA1600AD7D2B /* MessageProcessorTests.swift */; };
+		D156A842249BCA2C00AD7D2B /* international_offset_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A83E249BCA2B00AD7D2B /* international_offset_3.pdf */; };
+		D156A843249BCA2C00AD7D2B /* default.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A83F249BCA2C00AD7D2B /* default.pdf */; };
+		D156A844249BCA2C00AD7D2B /* print_offset_2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */; };
+		D156A845249BCA2C00AD7D2B /* default_new.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A841249BCA2C00AD7D2B /* default_new.pdf */; };
+		D156A848249BCCF800AD7D2B /* multiple.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D156A847249BCCF800AD7D2B /* multiple.pdf */; };
 		D15AFF3A20CF09370023E596 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15AFF3920CF09370023E596 /* SettingsSection.swift */; };
 		D15E4F7020BC8C8300B18643 /* AddPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */; };
 		D15E4F7420BC8E5E00B18643 /* AddPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */; };
@@ -130,6 +136,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D12510FC210F8F2400393C31;
 			remoteInfo = RailwayWidget;
+		};
+		D156A839249BCA1600AD7D2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D1DBE70620741A06000587C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D1DBE70D20741A06000587C8;
+			remoteInfo = Railway;
 		};
 		D1BB8722211EC514005D8FB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -226,6 +239,14 @@
 		D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSection.swift; sourceTree = "<group>"; };
 		D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnectivityManager.swift; sourceTree = "<group>"; };
+		D156A834249BCA1600AD7D2B /* RailwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RailwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D156A836249BCA1600AD7D2B /* MessageProcessorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProcessorTests.swift; sourceTree = "<group>"; };
+		D156A838249BCA1600AD7D2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D156A83E249BCA2B00AD7D2B /* international_offset_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = international_offset_3.pdf; sourceTree = "<group>"; };
+		D156A83F249BCA2C00AD7D2B /* default.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = default.pdf; sourceTree = "<group>"; };
+		D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = print_offset_2.pdf; sourceTree = "<group>"; };
+		D156A841249BCA2C00AD7D2B /* default_new.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = default_new.pdf; sourceTree = "<group>"; };
+		D156A847249BCCF800AD7D2B /* multiple.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = multiple.pdf; sourceTree = "<group>"; };
 		D15AFF3920CF09370023E596 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D15E4F6F20BC8C8300B18643 /* AddPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceViewController.swift; sourceTree = "<group>"; };
 		D15E4F7320BC8E5E00B18643 /* AddPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlaceView.swift; sourceTree = "<group>"; };
@@ -308,6 +329,13 @@
 			files = (
 				D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */,
 				AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D156A831249BCA1600AD7D2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +474,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D156A835249BCA1600AD7D2B /* RailwayTests */ = {
+			isa = PBXGroup;
+			children = (
+				D156A846249BCA3100AD7D2B /* Tickets */,
+				D156A836249BCA1600AD7D2B /* MessageProcessorTests.swift */,
+				D156A838249BCA1600AD7D2B /* Info.plist */,
+			);
+			path = RailwayTests;
+			sourceTree = "<group>";
+		};
+		D156A846249BCA3100AD7D2B /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				D156A841249BCA2C00AD7D2B /* default_new.pdf */,
+				D156A83F249BCA2C00AD7D2B /* default.pdf */,
+				D156A83E249BCA2B00AD7D2B /* international_offset_3.pdf */,
+				D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */,
+				D156A847249BCCF800AD7D2B /* multiple.pdf */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
 		D1BB8715211EC512005D8FB6 /* Railway Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +537,7 @@
 				D1251100210F8F2500393C31 /* RailwayWidget */,
 				D1BB8715211EC512005D8FB6 /* Railway Watch */,
 				D1BB8724211EC514005D8FB6 /* Railway Watch Extension */,
+				D156A835249BCA1600AD7D2B /* RailwayTests */,
 				D1DBE70F20741A06000587C8 /* Products */,
 				E0396B275D6BBF7FE0DB7C48 /* Pods */,
 				E110037B107136DD757F6919 /* Frameworks */,
@@ -500,6 +551,7 @@
 				D12510FD210F8F2400393C31 /* RailwayWidget.appex */,
 				D1BB8714211EC512005D8FB6 /* Railway Watch.app */,
 				D1BB8720211EC514005D8FB6 /* Railway Watch Extension.appex */,
+				D156A834249BCA1600AD7D2B /* RailwayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,6 +620,24 @@
 			productReference = D12510FD210F8F2400393C31 /* RailwayWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		D156A833249BCA1600AD7D2B /* RailwayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D156A83D249BCA1600AD7D2B /* Build configuration list for PBXNativeTarget "RailwayTests" */;
+			buildPhases = (
+				D156A830249BCA1600AD7D2B /* Sources */,
+				D156A831249BCA1600AD7D2B /* Frameworks */,
+				D156A832249BCA1600AD7D2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D156A83A249BCA1600AD7D2B /* PBXTargetDependency */,
+			);
+			name = RailwayTests;
+			productName = RailwayTests;
+			productReference = D156A834249BCA1600AD7D2B /* RailwayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D1BB8713211EC512005D8FB6 /* Railway Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1BB8735211EC514005D8FB6 /* Build configuration list for PBXNativeTarget "Railway Watch" */;
@@ -635,7 +705,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Евгений Соболь";
 				TargetAttributes = {
@@ -648,6 +718,11 @@
 								enabled = 1;
 							};
 						};
+					};
+					D156A833249BCA1600AD7D2B = {
+						CreatedOnToolsVersion = 11.5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D1DBE70D20741A06000587C8;
 					};
 					D1BB8713211EC512005D8FB6 = {
 						CreatedOnToolsVersion = 10.0;
@@ -691,6 +766,7 @@
 				D12510FC210F8F2400393C31 /* RailwayWidget */,
 				D1BB8713211EC512005D8FB6 /* Railway Watch */,
 				D1BB871F211EC514005D8FB6 /* Railway Watch Extension */,
+				D156A833249BCA1600AD7D2B /* RailwayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -704,6 +780,18 @@
 				D106048322BD187F00E050E3 /* Localizable.strings in Resources */,
 				D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */,
 				D1251105210F8F2500393C31 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D156A832249BCA1600AD7D2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D156A848249BCCF800AD7D2B /* multiple.pdf in Resources */,
+				D156A843249BCA2C00AD7D2B /* default.pdf in Resources */,
+				D156A845249BCA2C00AD7D2B /* default_new.pdf in Resources */,
+				D156A842249BCA2C00AD7D2B /* international_offset_3.pdf in Resources */,
+				D156A844249BCA2C00AD7D2B /* print_offset_2.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +963,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D156A830249BCA1600AD7D2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D156A837249BCA1600AD7D2B /* MessageProcessorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D1BB871C211EC514005D8FB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -967,6 +1063,11 @@
 			isa = PBXTargetDependency;
 			target = D12510FC210F8F2400393C31 /* RailwayWidget */;
 			targetProxy = D1251107210F8F2500393C31 /* PBXContainerItemProxy */;
+		};
+		D156A83A249BCA1600AD7D2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D1DBE70D20741A06000587C8 /* Railway */;
+			targetProxy = D156A839249BCA1600AD7D2B /* PBXContainerItemProxy */;
 		};
 		D1BB8723211EC514005D8FB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1102,6 +1203,45 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D156A83B249BCA1600AD7D2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = RailwayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esobol.RailwayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Railway.app/Railway";
+			};
+			name = Debug;
+		};
+		D156A83C249BCA1600AD7D2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 59BWRK25DR;
+				INFOPLIST_FILE = RailwayTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esobol.RailwayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Railway.app/Railway";
 			};
 			name = Release;
 		};
@@ -1358,6 +1498,15 @@
 			buildConfigurations = (
 				D125110A210F8F2500393C31 /* Debug */,
 				D125110B210F8F2500393C31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D156A83D249BCA1600AD7D2B /* Build configuration list for PBXNativeTarget "RailwayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D156A83B249BCA1600AD7D2B /* Debug */,
+				D156A83C249BCA1600AD7D2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

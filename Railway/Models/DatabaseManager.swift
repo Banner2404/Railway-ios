@@ -72,7 +72,6 @@ class DefaultDatabaseManager: DatabaseManager {
                 .fetch(TicketCoreDataModel.fetchRequest())
                 .map { Ticket($0 as! TicketCoreDataModel) }
             self.tickets.onNext(tickets)
-            print(tickets.map { ($0.arrival.timeIntervalSince1970, $0.departure.timeIntervalSince1970) })
         } catch {
             fatalError("Unable to read from core data \(error)")
         }
