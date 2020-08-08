@@ -4,15 +4,15 @@ platform :ios, '11.3'
 
 target 'Railway' do
     pod 'Firebase/Crashlytics'
-  	pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
-    pod 'RxDataSources', '~> 3.0'
-    pod 'Reveal-SDK', :configurations => ['Debug']
+  	pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxDataSources'
+    pod 'Reveal-SDK', '24', :configurations => ['Debug']
     pod 'GoogleAPIClientForREST/Gmail'
     pod 'GoogleSignIn'
 end
 
 target 'RailwayWidget' do
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
 end
