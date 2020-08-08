@@ -58,7 +58,7 @@ private extension NotificationsViewController {
     
     func toggleValueChanged(enabled: Bool) {
         if enabled == viewModel.isEnabled.value { return }
-        viewModel.isEnabled.value = enabled
+        viewModel.isEnabled.accept(enabled)
         resizeTableView()
     }
     
@@ -73,14 +73,18 @@ private extension NotificationsViewController {
     }
     
     func delete(alert: NotificationAlert) {
-        viewModel.alerts.value.remove(alert)
+        var value = viewModel.alerts.value
+        value.remove(alert)
+        viewModel.alerts.accept(value)
         resizeTableView()
     }
     
     func saveButtonTap() {
         guard let index = pickerView?.selectedRow(inComponent: 0) else { return }
         let alert = availableAlerts[index]
-        viewModel.alerts.value.insert(alert)
+        var value = viewModel.alerts.value
+        value.insert(alert)
+        viewModel.alerts.accept(value)
         tableType = .closed
         resizeTableView()
     }

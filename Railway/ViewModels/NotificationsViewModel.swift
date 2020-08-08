@@ -12,11 +12,11 @@ import RxCocoa
 
 class NotificationsViewModel {
     
-    var isEnabled: Variable<Bool> {
+    var isEnabled: BehaviorRelay<Bool> {
         return notificationManager.isEnabled
     }
     
-    var alerts: Variable<NotificationAlert> {
+    var alerts: BehaviorRelay<NotificationAlert> {
         return notificationManager.alerts
     }
     

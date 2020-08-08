@@ -17,7 +17,7 @@ class AddTicketViewModel {
     let departureDate = BehaviorRelay<Date>(value: Date().nextHour)
     let arrivalDate = BehaviorRelay<Date>(value: Date().nextHour.addingTimeInterval(60 * 60))
     let notes = BehaviorRelay<String>(value: "")
-    let places = Variable<[AddPlaceViewModel]>([AddPlaceViewModel(place: nil)])
+    let places = BehaviorRelay<[AddPlaceViewModel]>(value: [AddPlaceViewModel(place: nil)])
     let bag = DisposeBag()
     let isValid = BehaviorRelay<Bool>(value: true)
     let isValidArrival: Observable<Bool>
@@ -66,7 +66,7 @@ class AddTicketViewModel {
         destinationName.accept(currentTicket.destinationStation.name)
         departureDate.accept(currentTicket.departure)
         arrivalDate.accept(currentTicket.arrival)
-        places.value = currentTicket.places.map { AddPlaceViewModel(place: $0) }
+        places.accept(currentTicket.places.map { AddPlaceViewModel(place: $0) })
         notes.accept(currentTicket.notes)
     }
     

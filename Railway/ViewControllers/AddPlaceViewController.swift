@@ -35,9 +35,10 @@ class AddPlaceViewController: ViewController {
     }
     
     @IBAction func addPlaceTap(_ sender: Any) {
-        
         let placeViewModel = AddPlaceViewModel(place: nil)
-        viewModel.places.value.append(placeViewModel)
+        var value = viewModel.places.value
+        value.append(placeViewModel)
+        viewModel.places.accept(value)
         addPlaceView(for: placeViewModel)
         
     }
@@ -74,7 +75,9 @@ extension AddPlaceViewController: AddPlaceViewDelegate {
         guard let index = stackView.arrangedSubviews.firstIndex(of: view) else { return }
         stackView.removeArrangedSubview(view)
         view.removeFromSuperview()
-        viewModel.places.value.remove(at: index)
+        var value = viewModel.places.value
+        value.remove(at: index)
+        viewModel.places.accept(value)
     }
     
     func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool {

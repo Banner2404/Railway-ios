@@ -13,8 +13,8 @@ import UserNotifications
 
 class NotificationManager {
     
-    var isEnabled = Variable<Bool>(false)
-    var alerts = Variable<NotificationAlert>([.fiveMinutes, .oneHour])
+    var isEnabled = BehaviorRelay<Bool>(value: false)
+    var alerts = BehaviorRelay<NotificationAlert>(value: [.fiveMinutes, .oneHour])
     
     private let database: DatabaseManager
     private let disposeBag = DisposeBag()
@@ -56,11 +56,11 @@ class NotificationManager {
     
     private func loadSettings() {
         if let (enabled, alerts) = database.getNotificationSettings() {
-            self.isEnabled.value = enabled
-            self.alerts.value = alerts
+            self.isEnabled.accept(enabled)
+            self.alerts.accept(alerts)
         } else {
-            self.isEnabled.value = false
-            self.alerts.value = [.fiveMinutes, .oneHour]
+            self.isEnabled.accept(false)
+            self.alerts.accept([.fiveMinutes, .oneHour])
         }
        
     }
