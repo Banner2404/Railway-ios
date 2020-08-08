@@ -16,3 +16,8 @@ target 'RailwayWidget' do
     pod 'RxSwift'
     pod 'RxCocoa'
 end
+
+target 'RailwayModernWidgetExtension' do
+    pod 'RxSwift'
+    pod 'RxCocoa'
+end

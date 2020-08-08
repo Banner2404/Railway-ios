@@ -62,7 +62,8 @@ class DefaultDatabaseManager: DatabaseManager {
         }
     }
 
-    func loadTickets() {
+    @discardableResult
+    func loadTickets() -> [Ticket] {
         #if MOCK_DATA
             loadFakeTickets()
             return
@@ -72,6 +73,7 @@ class DefaultDatabaseManager: DatabaseManager {
                 .fetch(TicketCoreDataModel.fetchRequest())
                 .map { Ticket($0 as! TicketCoreDataModel) }
             self.tickets.onNext(tickets)
+            return tickets
         } catch {
             fatalError("Unable to read from core data \(error)")
         }
