@@ -14,22 +14,20 @@ class AddTicketViewController: ViewController {
     
     private var viewModel: AddTicketViewModel!
     private let disposeBag = DisposeBag()
-    private var departureDatePicker: UIDatePicker!
-    private var arrivalDatePicker: UIDatePicker!
     private var placesViewController: AddPlaceViewController!
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var scrollViewContent: UIView!
     @IBOutlet private weak var sourceTextField: UITextField!
     @IBOutlet private weak var destinationTextField: UITextField!
     @IBOutlet private weak var departureTimeLabel: UILabel!
-    @IBOutlet private weak var departureTimeTextField: UITextField!
+    @IBOutlet private weak var departureDateView: DateInputView!
     @IBOutlet private weak var arrivalTimeLabel: UILabel!
-    @IBOutlet private weak var arrivalTimeTextField: UITextField!
+    @IBOutlet private weak var arrivalDateView: DateInputView!
     @IBOutlet private weak var placesView: UIView!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     @IBOutlet private weak var notesTextView: UITextView!
     @IBOutlet private weak var notesPlaceholder: UILabel!
-    
+
     class func loadFromStoryboard(_ viewModel: AddTicketViewModel) -> AddTicketViewController {
         let viewController = loadViewControllerFromStoryboard() as AddTicketViewController
         viewController.viewModel = viewModel
@@ -42,13 +40,10 @@ class AddTicketViewController: ViewController {
         scrollViewContent.backgroundColor = .cardBackground
         departureTimeLabel.textColor = .text
         arrivalTimeLabel.textColor = .text
-        departureTimeTextField.textColor = .text
-        arrivalTimeTextField.textColor = .text
         sourceTextField.textColor = .text
         destinationTextField.textColor = .text
 
         setupPlacesView()
-        setupDatePickers()
         setupPlaceholder()
         setupDefaultInfo()
 
@@ -62,20 +57,12 @@ class AddTicketViewController: ViewController {
             .map{ $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
             .bind(to: viewModel.destinationName)
             .disposed(by: disposeBag)
-        
-        departureDatePicker.rx.value
-            .map { DateFormatters.shortDateAndTime.string(from: $0) }
-            .bind(to: departureTimeTextField.rx.text)
-            .disposed(by: disposeBag)
-        departureDatePicker.rx.value
+
+        departureDateView.datePicker.rx.value
             .bind(to: viewModel.departureDate)
             .disposed(by: disposeBag)
-        
-        arrivalDatePicker.rx.value
-            .map { DateFormatters.shortDateAndTime.string(from: $0) }
-            .bind(to: arrivalTimeTextField.rx.text)
-            .disposed(by: disposeBag)
-        arrivalDatePicker.rx.value
+
+        arrivalDateView.datePicker.rx.value
             .bind(to: viewModel.arrivalDate)
             .disposed(by: disposeBag)
         
@@ -89,12 +76,7 @@ class AddTicketViewController: ViewController {
             .disposed(by: disposeBag)
         
         viewModel.isValidArrival
-            .map { isValid in
-                isValid ? UIColor.text : UIColor.red
-            }
-            .subscribe(onNext: { color in
-                self.arrivalTimeTextField.textColor = color
-            })
+            .bind(to: arrivalDateView.rx.isValid)
             .disposed(by: disposeBag)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -122,8 +104,8 @@ class AddTicketViewController: ViewController {
     private func setupDefaultInfo() {
         sourceTextField.text = viewModel.sourceName.value
         destinationTextField.text = viewModel.destinationName.value
-        departureDatePicker.date = viewModel.departureDate.value
-        arrivalDatePicker.date = viewModel.arrivalDate.value
+        departureDateView.datePicker.date = viewModel.departureDate.value
+        arrivalDateView.datePicker.date = viewModel.arrivalDate.value
         notesTextView.text = viewModel.notes.value
     }
     
@@ -131,14 +113,6 @@ class AddTicketViewController: ViewController {
         let picker = UIDatePicker(frame: .zero)
         picker.datePickerMode = .dateAndTime
         return picker
-    }
-    
-    private func setupDatePickers() {
-        departureDatePicker = createDatePicker()
-        departureTimeTextField.inputView = departureDatePicker
-        
-        arrivalDatePicker = createDatePicker()
-        arrivalTimeTextField.inputView = arrivalDatePicker
     }
     
     private func setupPlacesView() {
@@ -170,7 +144,7 @@ class AddTicketViewController: ViewController {
 extension AddTicketViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let textFields = [sourceTextField, destinationTextField, departureTimeTextField, arrivalTimeTextField]
+        let textFields = [sourceTextField, destinationTextField]
         if let index = textFields.firstIndex(of: textField), index < textFields.endIndex - 1 {
             textFields[index + 1]?.becomeFirstResponder()
         } else {
