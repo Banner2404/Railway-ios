@@ -40,7 +40,9 @@ struct WidgetTimelineProvider: TimelineProvider {
             entries.append(timelineEntry(for: ticket, displayDate: displayDate))
             previousTicket = ticket
         }
-        let timeline = Timeline(entries: entries, policy: .atEnd)
+        let displayDate = previousTicket?.arrival.addingTimeInterval(60 * 10) ?? Date()
+        entries.append(TicketTimelineEntry(date: displayDate, ticket: nil))
+        let timeline = Timeline(entries: entries, policy: .never)
         completion(timeline)
     }
 
@@ -53,9 +55,11 @@ struct WidgetTimelineProvider: TimelineProvider {
         }
         return TicketTimelineEntry(
             date: displayDate,
-            carriage: carriage,
-            seat: ticket.places.first?.seat ?? "-",
-            departure: ticket.departure
+            ticket: .init(
+                carriage: carriage,
+                seat: ticket.places.first?.seat ?? "-",
+                departure: ticket.departure
+            )
         )
     }
 

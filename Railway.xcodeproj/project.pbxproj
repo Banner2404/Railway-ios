@@ -129,6 +129,8 @@
 		D1CE0C3C212B3CD6008D93C4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */; };
 		D1CE0C3D212B44A6008D93C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
+		D1D43678253B143A007F7BEE /* WidgetRefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D43677253B143A007F7BEE /* WidgetRefreshManager.swift */; };
+		D1D43680253B1848007F7BEE /* NoTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4367F253B1848007F7BEE /* NoTicketsView.swift */; };
 		D1D551F822C23D990070EDD9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -337,6 +339,8 @@
 		D1C7C5562132E082008E6288 /* TicketsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsStorage.swift; sourceTree = "<group>"; };
 		D1CE0C3B212B3CD6008D93C4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
+		D1D43677253B143A007F7BEE /* WidgetRefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetRefreshManager.swift; sourceTree = "<group>"; };
+		D1D4367F253B1848007F7BEE /* NoTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTicketsView.swift; sourceTree = "<group>"; };
 		D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Railway-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -453,6 +457,7 @@
 				D15AFF3920CF09370023E596 /* SettingsSection.swift */,
 				D13F4B3020DFE13F00A3F8D9 /* NotificationsSection.swift */,
 				D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */,
+				D1D43677253B143A007F7BEE /* WidgetRefreshManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -569,6 +574,7 @@
 				D17E203824DEDAEC007F4B8E /* RailwayModernWidget.swift */,
 				D17E204724DEE3E6007F4B8E /* SmallWidgetView.swift */,
 				D17E204424DEDE61007F4B8E /* PlaceView.swift */,
+				D1D4367F253B1848007F7BEE /* NoTicketsView.swift */,
 				D1AEDFB624DEFDB3005637FD /* PlaceComponentView.swift */,
 				D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */,
 				D198508024DEEC3F0081BC50 /* WidgetTimelineProvider.swift */,
@@ -1139,6 +1145,7 @@
 				D198508924DEF2610081BC50 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
 				D17E204B24DEE4BC007F4B8E /* Ticket.swift in Sources */,
 				D198508524DEF2610081BC50 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1D43680253B1848007F7BEE /* NoTicketsView.swift in Sources */,
 				D198508F24DEF7BE0081BC50 /* Railway.xcdatamodeld in Sources */,
 				D198508724DEF2610081BC50 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */,
 				D17E204A24DEE457007F4B8E /* TicketTimelineEntry.swift in Sources */,
@@ -1193,6 +1200,7 @@
 				D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */,
 				D1F4985A20E910C000796F93 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
 				D133E9742083A33F00D007F4 /* DatabaseManager.swift in Sources */,
+				D1D43678253B143A007F7BEE /* WidgetRefreshManager.swift in Sources */,
 				D12BEBE8207956860044F6F1 /* Railway.xcdatamodeld in Sources */,
 				D1895EFE20BF0B730008EDB2 /* AddPlaceViewModel.swift in Sources */,
 				D1F4985120E8E07900796F93 /* NotificationSaveTableViewCell.swift in Sources */,

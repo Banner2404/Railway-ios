@@ -13,16 +13,25 @@ struct SmallWidgetView : View {
     var entry: TicketTimelineEntry
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            HStack {
-                Text(entry.departure, formatter: DateFormatters.shortDateAndTime)
-                    .font(.system(size: 20))
-                    .foregroundColor(Color(.text))
-                Spacer()
+        ZStack {
+            Color(.cardBackground)
+            Group {
+                if let ticket = entry.ticket {
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text(ticket.departure, formatter: DateFormatters.shortDateAndTime)
+                                .font(.system(size: 20))
+                                .foregroundColor(Color(.text))
+                            Spacer()
+                        }
+                        VPlaceView(carriage: ticket.carriage, seat: ticket.seat)
+                    }
+                } else {
+                    NoTicketsView()
+                }
             }
-            VPlaceView(carriage: entry.carriage, seat: entry.seat)
+            .padding()
         }
-        .padding()
     }
 }
 
@@ -31,11 +40,20 @@ struct SmallWidgetView_Previews: PreviewProvider {
         SmallWidgetView(
             entry: TicketTimelineEntry(
                 date: Date(),
-                carriage: "5",
-                seat: "34",
-                departure: Date().addingTimeInterval(60 * 60 * 4)
+                ticket: .init(
+                    carriage: "5",
+                    seat: "34",
+                    departure: Date().addingTimeInterval(60 * 60 * 4)
+                )
             )
         )
-        .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        SmallWidgetView(
+            entry: TicketTimelineEntry(
+                date: Date(),
+                ticket: nil
+            )
+        )
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

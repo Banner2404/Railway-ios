@@ -12,11 +12,22 @@ import SwiftUI
 struct TicketTimelineEntry: TimelineEntry {
 
     let date: Date
-    let carriage: String
-    let seat: String
-    let departure: Date
+    let ticket: TicketInfo?
 
     static var placeholder: TicketTimelineEntry {
-        return TicketTimelineEntry(date: Date(), carriage: "-", seat: "-", departure: Date().addingTimeInterval(60 * 60 * 24))
+        return TicketTimelineEntry(
+            date: Date(),
+            ticket: TicketInfo(
+                carriage: "-",
+                seat: "-",
+                departure: Date().addingTimeInterval(60 * 60 * 24)
+            )
+        )
+    }
+
+    struct TicketInfo {
+        let carriage: String
+        let seat: String
+        let departure: Date
     }
 }

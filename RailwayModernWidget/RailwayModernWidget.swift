@@ -29,9 +29,11 @@ struct RailwayModernWidget_Previews: PreviewProvider {
             entry:
                 TicketTimelineEntry(
                     date: Date(),
-                    carriage: "1",
-                    seat: "2",
-                    departure: Date().addingTimeInterval(60 * 60)
+                    ticket: .init(
+                        carriage: "1",
+                        seat: "2",
+                        departure: Date().addingTimeInterval(60 * 60)
+                    )
                 )
         )
         .previewContext(WidgetPreviewContext(family: .systemSmall))

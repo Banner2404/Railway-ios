@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var watchConnectivityManager: WatchConnectivityManager!
+    var widgetRefreshManager: WidgetRefreshManager!
     var mailSyncronizer: MailSyncronizer!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let database = DefaultDatabaseManager()
         database.loadTickets()
         watchConnectivityManager = WatchConnectivityManager(database: database)
+        widgetRefreshManager = WidgetRefreshManager(database: database)
         let notification = NotificationManager(database: database)
         mailSyncronizer = GmailSyncronizer(databaseManager: database)
         let viewModel = TicketListViewModel(databaseManager: database, mailSyncronizer: mailSyncronizer, notificationManager: notification)
