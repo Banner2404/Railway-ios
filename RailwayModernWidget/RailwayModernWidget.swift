@@ -15,31 +15,25 @@ struct RailwayModernWidget: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: WidgetTimelineProvider()) { entry in
-            SmallWidgetView(entry: entry)
+            WidgetView(entry: entry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct RailwayModernWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetView(
+        WidgetView(
             entry:
-                TicketTimelineEntry(
-                    date: Date(),
-                    ticket: .init(
-                        carriage: "1",
-                        seat: "2",
-                        departure: Date().addingTimeInterval(60 * 60)
-                    )
-                )
+                TicketTimelineEntry.preview
         )
         .previewContext(WidgetPreviewContext(family: .systemSmall))
-//        SmallWidgetView(entry: TicketTimelineEntry(date: Date(), carriage: "1", seat: "2"))
-//            .previewContext(WidgetPreviewContext(family: .systemMedium))
-//        SmallWidgetView(entry: TicketTimelineEntry(date: Date(), carriage: "1", seat: "2"))
-//            .previewContext(WidgetPreviewContext(family: .systemLarge))
+        WidgetView(
+            entry:
+                TicketTimelineEntry.preview
+        )
+        .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

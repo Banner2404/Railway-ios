@@ -11,15 +11,9 @@ import WidgetKit
 
 struct NoTicketsView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("No tickets")
-                    .font(.system(size: 18))
-                    .foregroundColor(Color(.text))
-                Spacer()
-            }
-            Spacer()
-        }
+        Text("No tickets")
+            .font(.system(size: 18))
+            .foregroundColor(Color(.text))
     }
 }
 

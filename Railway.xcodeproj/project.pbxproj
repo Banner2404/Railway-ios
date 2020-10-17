@@ -80,7 +80,7 @@
 		D17E203B24DEDAEC007F4B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D17E203A24DEDAEC007F4B8E /* Assets.xcassets */; };
 		D17E203F24DEDAED007F4B8E /* RailwayModernWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D17E203424DEDAEC007F4B8E /* RailwayModernWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D17E204324DEDE17007F4B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1DBE71820741A07000587C8 /* Assets.xcassets */; };
-		D17E204524DEDE61007F4B8E /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E204424DEDE61007F4B8E /* PlaceView.swift */; };
+		D17E204524DEDE61007F4B8E /* VPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E204424DEDE61007F4B8E /* VPlaceView.swift */; };
 		D17E204624DEDF83007F4B8E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D17E204824DEE3E6007F4B8E /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E204724DEE3E6007F4B8E /* SmallWidgetView.swift */; };
 		D17E204A24DEE457007F4B8E /* TicketTimelineEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */; };
@@ -131,6 +131,9 @@
 		D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */; };
 		D1D43678253B143A007F7BEE /* WidgetRefreshManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D43677253B143A007F7BEE /* WidgetRefreshManager.swift */; };
 		D1D43680253B1848007F7BEE /* NoTicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4367F253B1848007F7BEE /* NoTicketsView.swift */; };
+		D1D43688253B1CE1007F7BEE /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D43687253B1CE0007F7BEE /* MediumWidgetView.swift */; };
+		D1D43696253B1DAE007F7BEE /* HPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D43695253B1DAE007F7BEE /* HPlaceView.swift */; };
+		D1D4369E253B2034007F7BEE /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4369D253B2034007F7BEE /* WidgetView.swift */; };
 		D1D551F822C23D990070EDD9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -305,7 +308,7 @@
 		D17E203824DEDAEC007F4B8E /* RailwayModernWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RailwayModernWidget.swift; sourceTree = "<group>"; };
 		D17E203A24DEDAEC007F4B8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D17E203C24DEDAED007F4B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D17E204424DEDE61007F4B8E /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		D17E204424DEDE61007F4B8E /* VPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPlaceView.swift; sourceTree = "<group>"; };
 		D17E204724DEE3E6007F4B8E /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTimelineEntry.swift; sourceTree = "<group>"; };
 		D189540220FBD2850040411D /* CollapsedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollapsedTicketView.xib; sourceTree = "<group>"; };
@@ -341,6 +344,9 @@
 		D1D40F1E20EA7D1F002BE278 /* TicketOpenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOpenAnimator.swift; sourceTree = "<group>"; };
 		D1D43677253B143A007F7BEE /* WidgetRefreshManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetRefreshManager.swift; sourceTree = "<group>"; };
 		D1D4367F253B1848007F7BEE /* NoTicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTicketsView.swift; sourceTree = "<group>"; };
+		D1D43687253B1CE0007F7BEE /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		D1D43695253B1DAE007F7BEE /* HPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPlaceView.swift; sourceTree = "<group>"; };
+		D1D4369D253B2034007F7BEE /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Railway-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -572,8 +578,11 @@
 			isa = PBXGroup;
 			children = (
 				D17E203824DEDAEC007F4B8E /* RailwayModernWidget.swift */,
+				D1D4369D253B2034007F7BEE /* WidgetView.swift */,
 				D17E204724DEE3E6007F4B8E /* SmallWidgetView.swift */,
-				D17E204424DEDE61007F4B8E /* PlaceView.swift */,
+				D1D43687253B1CE0007F7BEE /* MediumWidgetView.swift */,
+				D17E204424DEDE61007F4B8E /* VPlaceView.swift */,
+				D1D43695253B1DAE007F7BEE /* HPlaceView.swift */,
 				D1D4367F253B1848007F7BEE /* NoTicketsView.swift */,
 				D1AEDFB624DEFDB3005637FD /* PlaceComponentView.swift */,
 				D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */,
@@ -1142,9 +1151,11 @@
 			files = (
 				D17E204824DEE3E6007F4B8E /* SmallWidgetView.swift in Sources */,
 				D198508324DEEF8B0081BC50 /* DatabaseManager.swift in Sources */,
+				D1D43688253B1CE1007F7BEE /* MediumWidgetView.swift in Sources */,
 				D198508924DEF2610081BC50 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
 				D17E204B24DEE4BC007F4B8E /* Ticket.swift in Sources */,
 				D198508524DEF2610081BC50 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
+				D1D4369E253B2034007F7BEE /* WidgetView.swift in Sources */,
 				D1D43680253B1848007F7BEE /* NoTicketsView.swift in Sources */,
 				D198508F24DEF7BE0081BC50 /* Railway.xcdatamodeld in Sources */,
 				D198508724DEF2610081BC50 /* NotificationSettingsCoreDataModel+CoreDataClass.swift in Sources */,
@@ -1157,11 +1168,12 @@
 				D1AEDFB724DEFDB3005637FD /* PlaceComponentView.swift in Sources */,
 				D198508B24DEF2610081BC50 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D198508C24DEF2610081BC50 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
-				D17E204524DEDE61007F4B8E /* PlaceView.swift in Sources */,
+				D17E204524DEDE61007F4B8E /* VPlaceView.swift in Sources */,
 				D198508624DEF2610081BC50 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D198508D24DEF2790081BC50 /* Date.swift in Sources */,
 				D17E204624DEDF83007F4B8E /* UIColor.swift in Sources */,
 				D17E203924DEDAEC007F4B8E /* RailwayModernWidget.swift in Sources */,
+				D1D43696253B1DAE007F7BEE /* HPlaceView.swift in Sources */,
 				D198508824DEF2610081BC50 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
 				D17E204C24DEE4CE007F4B8E /* Station.swift in Sources */,
 			);

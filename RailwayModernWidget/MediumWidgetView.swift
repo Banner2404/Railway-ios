@@ -1,15 +1,16 @@
 //
-//  SmallWidgetView.swift
+//  MediumWidgetView.swift
 //  RailwayModernWidgetExtension
 //
-//  Created by Евгений Соболь on 8/8/20.
+//  Created by Евгений Соболь on 10/17/20.
 //  Copyright © 2020 Евгений Соболь. All rights reserved.
 //
 
 import SwiftUI
 import WidgetKit
 
-struct SmallWidgetView : View {
+struct MediumWidgetView: View {
+
     var entry: TicketTimelineEntry
 
     var body: some View {
@@ -17,14 +18,21 @@ struct SmallWidgetView : View {
             Color(.cardBackground)
             Group {
                 if let ticket = entry.ticket {
-                    VStack(alignment: .leading, spacing: 5) {
+                    VStack(alignment: .center, spacing: 8) {
+                        HStack {
+                            Text(ticket.arrivalStation)
+                                .font(.system(size: 20))
+                                .foregroundColor(Color(.text))
+                            Spacer()
+                        }
                         HStack {
                             Text(ticket.departure, formatter: DateFormatters.shortDateAndTime)
                                 .font(.system(size: 20))
                                 .foregroundColor(Color(.text))
                             Spacer()
                         }
-                        VPlaceView(carriage: ticket.carriage, seat: ticket.seat)
+                        HPlaceView(carriage: ticket.carriage, seat: ticket.seat)
+                            .padding(.top, 5)
                     }
                 } else {
                     NoTicketsView()
@@ -35,26 +43,19 @@ struct SmallWidgetView : View {
     }
 }
 
-struct SmallWidgetView_Previews: PreviewProvider {
+struct MediumWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetView(
-            entry: TicketTimelineEntry(
-                date: Date(),
-                ticket: .init(
-                    carriage: "5",
-                    seat: "34",
-                    departure: Date().addingTimeInterval(60 * 60 * 4),
-                    arrivalStation: "Minsk"
-                )
-            )
+        MediumWidgetView(
+            entry: TicketTimelineEntry.preview
         )
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-        SmallWidgetView(
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+
+        MediumWidgetView(
             entry: TicketTimelineEntry(
                 date: Date(),
                 ticket: nil
             )
         )
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

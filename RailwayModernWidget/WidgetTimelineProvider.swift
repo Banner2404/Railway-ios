@@ -58,7 +58,8 @@ struct WidgetTimelineProvider: TimelineProvider {
             ticket: .init(
                 carriage: carriage,
                 seat: ticket.places.first?.seat ?? "-",
-                departure: ticket.departure
+                departure: ticket.departure,
+                arrivalStation: ticket.destinationStation.name
             )
         )
     }

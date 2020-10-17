@@ -1,5 +1,5 @@
 //
-//  PlaceView.swift
+//  VPlaceView.swift
 //  RailwayModernWidgetExtension
 //
 //  Created by Евгений Соболь on 8/8/20.
