@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class GmailTableViewCell: HighlightableTableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var signInButton: GIDSignInButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel?.textColor = .text
+        signInButton.style = .wide
     }
-
 }

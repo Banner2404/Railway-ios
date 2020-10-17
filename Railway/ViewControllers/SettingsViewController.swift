@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import GoogleSignIn
 
 class SettingsViewController: ViewController, ContainerViewController {
     
@@ -94,6 +95,7 @@ private extension SettingsViewController {
                 self?.tableView.endUpdates()
             })
             .disposed(by: disposeBag)
+
         viewController.view.setNeedsLayout()
         viewController.view.layoutIfNeeded()
     }

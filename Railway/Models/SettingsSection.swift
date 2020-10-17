@@ -26,7 +26,7 @@ struct SettingsSection {
             case .gmailConnect:
                 return "GmailConnectCell"
             case .gmailDisconnect:
-                return "GmailDisconnectCell"
+                return "HighlightableTableViewCell"
             case .notifications:
                 return "NotificationSettingsTableViewCell"
             }

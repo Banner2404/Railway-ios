@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -528,50 +529,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UyQ-Q0-0h7">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQE-Tl-F2B" customClass="GIDSignInButton">
                                                     <rect key="frame" x="8" y="0.0" width="359" height="41"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подключить Gmail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-TC-XQy">
-                                                            <rect key="frame" x="8" y="8" width="343" height="25"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="25" id="Ux0-Ar-yf7"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <color key="tintColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="qJL-TC-XQy" secondAttribute="trailing" constant="8" id="0Qd-xL-2cr"/>
-                                                        <constraint firstItem="qJL-TC-XQy" firstAttribute="leading" secondItem="UyQ-Q0-0h7" secondAttribute="leading" constant="8" id="5ky-Ck-Pv6"/>
-                                                        <constraint firstItem="qJL-TC-XQy" firstAttribute="top" secondItem="UyQ-Q0-0h7" secondAttribute="top" constant="8" id="Co6-bD-kHl"/>
-                                                        <constraint firstAttribute="bottom" secondItem="qJL-TC-XQy" secondAttribute="bottom" constant="8" id="MNq-yP-Jr3"/>
-                                                        <constraint firstItem="qJL-TC-XQy" firstAttribute="centerY" secondItem="UyQ-Q0-0h7" secondAttribute="centerY" id="uJe-sZ-qXa"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="UyQ-Q0-0h7" secondAttribute="trailing" constant="8" id="C3a-xB-rMe"/>
-                                                <constraint firstItem="UyQ-Q0-0h7" firstAttribute="top" secondItem="JsC-Em-nmq" secondAttribute="top" id="IMT-0t-zhW"/>
-                                                <constraint firstItem="UyQ-Q0-0h7" firstAttribute="leading" secondItem="JsC-Em-nmq" secondAttribute="leading" constant="8" id="ZH9-Cn-jDH"/>
-                                                <constraint firstAttribute="bottom" secondItem="UyQ-Q0-0h7" secondAttribute="bottom" id="nmF-1c-rH4"/>
+                                                <constraint firstAttribute="bottom" secondItem="NQE-Tl-F2B" secondAttribute="bottom" id="3bq-4c-u2C"/>
+                                                <constraint firstAttribute="trailing" secondItem="NQE-Tl-F2B" secondAttribute="trailing" constant="8" id="6cT-ly-nT9"/>
+                                                <constraint firstItem="NQE-Tl-F2B" firstAttribute="leading" secondItem="JsC-Em-nmq" secondAttribute="leading" constant="8" id="FW6-6Y-hfu"/>
+                                                <constraint firstItem="NQE-Tl-F2B" firstAttribute="top" secondItem="JsC-Em-nmq" secondAttribute="top" id="RRb-Tz-OTR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="mainView" destination="UyQ-Q0-0h7" id="WJK-5J-xG4"/>
-                                            <outlet property="titleLabel" destination="qJL-TC-XQy" id="6oM-3L-1HZ"/>
+                                            <outlet property="signInButton" destination="NQE-Tl-F2B" id="qx5-AM-oTX"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GmailDisconnectCell" rowHeight="41" id="oCk-Qp-wPH" customClass="GmailTableViewCell" customModule="Railway" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighlightableTableViewCell" rowHeight="41" id="oCk-Qp-wPH" customClass="HighlightableTableViewCell" customModule="Railway" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="96.5" width="375" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oCk-Qp-wPH" id="Emn-3m-RWO">
@@ -898,5 +874,8 @@
         <image name="add_button" width="25" height="25"/>
         <image name="add_place_button" width="38" height="38"/>
         <image name="settings_button" width="26" height="26"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

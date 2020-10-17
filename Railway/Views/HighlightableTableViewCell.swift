@@ -14,7 +14,7 @@ class HighlightableTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        mainView.backgroundColor = .cardBackground
+        mainView?.backgroundColor = .cardBackground
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {}
