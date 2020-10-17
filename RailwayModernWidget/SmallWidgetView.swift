@@ -10,27 +10,14 @@ import SwiftUI
 import WidgetKit
 
 struct SmallWidgetView : View {
-    var entry: TicketTimelineEntry
+    var ticket: TicketTimelineEntry.TicketInfo
 
     var body: some View {
-        ZStack {
-            Color(.cardBackground)
-            Group {
-                if let ticket = entry.ticket {
-                    VStack(alignment: .leading, spacing: 5) {
-                        HStack {
-                            Text(ticket.departure, formatter: DateFormatters.shortDateAndTime)
-                                .font(.system(size: 20))
-                                .foregroundColor(Color(.text))
-                            Spacer()
-                        }
-                        VPlaceView(carriage: ticket.carriage, seat: ticket.seat)
-                    }
-                } else {
-                    NoTicketsView()
-                }
-            }
-            .padding()
+        VStack(alignment: .leading, spacing: 5) {
+            Text(ticket.departure, formatter: DateFormatters.shortDateAndTime)
+                .primaryText()
+                .leftAligned()
+            VPlaceView(carriage: ticket.carriage, seat: ticket.seat)
         }
     }
 }
@@ -38,22 +25,7 @@ struct SmallWidgetView : View {
 struct SmallWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         SmallWidgetView(
-            entry: TicketTimelineEntry(
-                date: Date(),
-                ticket: .init(
-                    carriage: "5",
-                    seat: "34",
-                    departure: Date().addingTimeInterval(60 * 60 * 4),
-                    arrivalStation: "Minsk"
-                )
-            )
-        )
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-        SmallWidgetView(
-            entry: TicketTimelineEntry(
-                date: Date(),
-                ticket: nil
-            )
+            ticket: .preview
         )
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
