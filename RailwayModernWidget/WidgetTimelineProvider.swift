@@ -33,11 +33,10 @@ struct WidgetTimelineProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<TicketTimelineEntry>) -> ()) {
         print("Timeline")
         var entries: [TicketTimelineEntry] = []
-        let tickets = databaseManager.loadTickets()
-        print("\(tickets)")
+        let tickets = getTickets()
         var previousTicket: Ticket?
         for ticket in tickets {
-            let displayDate = previousTicket?.arrival ?? Date()
+            let displayDate = previousTicket?.arrival.addingTimeInterval(60 * 10) ?? Date()
             entries.append(timelineEntry(for: ticket, displayDate: displayDate))
             previousTicket = ticket
         }
@@ -58,5 +57,12 @@ struct WidgetTimelineProvider: TimelineProvider {
             seat: ticket.places.first?.seat ?? "-",
             departure: ticket.departure
         )
+    }
+
+    private func getTickets() -> [Ticket] {
+        let tickets = databaseManager.loadTickets()
+        return tickets
+            .filter { $0.arrival > Date() }
+            .sorted { $0.departure < $1.departure }
     }
 }

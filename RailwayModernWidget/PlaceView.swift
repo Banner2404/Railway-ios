@@ -9,12 +9,12 @@
 import WidgetKit
 import SwiftUI
 
-struct PlaceView: View {
+struct VPlaceView: View {
     let carriage: String
     let seat: String
 
     var body: some View {
-        HStack(spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) {
             PlaceComponentView(image: "carriage", value: carriage)
             PlaceComponentView(image: "seat", value: seat)
         }
@@ -23,8 +23,6 @@ struct PlaceView: View {
 
 struct PlaceView_Previews: PreviewProvider {
     static var previews: some View {
-        PlaceView(carriage: "1", seat: "55")
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
-        PlaceView(carriage: "4", seat: "54").previewContext(WidgetPreviewContext(family: .systemSmall))
+        VPlaceView(carriage: "4", seat: "54").previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

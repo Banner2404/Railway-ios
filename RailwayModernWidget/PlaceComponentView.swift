@@ -16,18 +16,14 @@ struct PlaceComponentView: View {
 
     var body: some View {
         HStack {
-            Spacer(minLength: 0)
             Image(image)
                 .foregroundColor(Color(.navigationBarTint))
-            Spacer()
-                .frame(minWidth: 0, maxWidth: 5)
             Text(value)
                 .font(Font.system(size: 30, weight: .medium))
                 .foregroundColor(Color(.text))
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
                 .layoutPriority(1)
-            Spacer(minLength: 0)
         }
     }
 }

@@ -13,16 +13,14 @@ struct SmallWidgetView : View {
     var entry: TicketTimelineEntry
 
     var body: some View {
-        VStack {
-            Spacer()
+        VStack(alignment: .leading, spacing: 5) {
             HStack {
                 Text(entry.departure, formatter: DateFormatters.shortDateAndTime)
                     .font(.system(size: 20))
                     .foregroundColor(Color(.text))
                 Spacer()
             }
-            PlaceView(carriage: entry.carriage, seat: entry.seat)
-            Spacer()
+            VPlaceView(carriage: entry.carriage, seat: entry.seat)
         }
         .padding()
     }
