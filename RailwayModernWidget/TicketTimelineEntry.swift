@@ -21,7 +21,10 @@ struct TicketTimelineEntry: TimelineEntry {
                 carriage: "-",
                 seat: "-",
                 departure: Date().addingTimeInterval(60 * 60 * 24),
-                arrivalStation: "-"
+                arrival: Date().addingTimeInterval(60 * 60 * 25),
+                sourceStation: "-",
+                destinationStation: "-",
+                notes: "-"
             )
         )
     }
@@ -29,12 +32,14 @@ struct TicketTimelineEntry: TimelineEntry {
     static var preview: TicketTimelineEntry {
         return TicketTimelineEntry(
             date: Date(),
-            ticket: TicketInfo(
-                carriage: "12",
-                seat: "42",
-                departure: Date().addingTimeInterval(60 * 60 * 24),
-                arrivalStation: "Минск-Пассажирский"
-            )
+            ticket: TicketInfo.preview
+        )
+    }
+
+    static var empty: TicketTimelineEntry {
+        return TicketTimelineEntry(
+            date: Date(),
+            ticket: nil
         )
     }
 
@@ -42,6 +47,21 @@ struct TicketTimelineEntry: TimelineEntry {
         let carriage: String
         let seat: String
         let departure: Date
-        let arrivalStation: String
+        let arrival: Date
+        let sourceStation: String
+        let destinationStation: String
+        let notes: String
+
+        static var preview: TicketInfo {
+            return TicketInfo(
+                carriage: "12",
+                seat: "42",
+                departure: Date(),
+                arrival: Date().addingTimeInterval(60 * 60 * 4),
+                sourceStation: "Ивацевичи",
+                destinationStation: "Минск-Пассажирский",
+                notes: "Паспорт\nТелефон"
+            )
+        }
     }
 }

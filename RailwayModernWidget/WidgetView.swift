@@ -15,13 +15,24 @@ struct WidgetView : View {
     @Environment(\.widgetFamily) var family
 
     var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallWidgetView(entry: entry)
-        case .systemMedium:
-            MediumWidgetView(entry: entry)
-        default:
-            Text("")
+        ZStack {
+            Color(.cardBackground)
+            Group {
+                if let ticket = entry.ticket {
+                    switch family {
+                    case .systemSmall:
+                        SmallWidgetView(ticket: ticket)
+                    case .systemMedium:
+                        MediumWidgetView(ticket: ticket)
+                    case .systemLarge:
+                        LargeWidgetView(ticket: ticket)
+                    default:
+                        NoTicketsView()
+                    }
+                } else {
+                    NoTicketsView()
+                }
+            }.padding()
         }
     }
 }

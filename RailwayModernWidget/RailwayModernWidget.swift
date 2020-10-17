@@ -19,7 +19,7 @@ struct RailwayModernWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
@@ -35,5 +35,10 @@ struct RailwayModernWidget_Previews: PreviewProvider {
                 TicketTimelineEntry.preview
         )
         .previewContext(WidgetPreviewContext(family: .systemMedium))
+        WidgetView(
+            entry:
+                TicketTimelineEntry.preview
+        )
+        .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

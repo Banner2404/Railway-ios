@@ -15,8 +15,11 @@ struct HPlaceView: View {
 
     var body: some View {
         HStack() {
+            Spacer()
             PlaceComponentView(image: "carriage", value: carriage)
+            Spacer()
             PlaceComponentView(image: "seat", value: seat)
+            Spacer()
         }
     }
 }
