@@ -35,7 +35,7 @@ struct LargeWidgetView: View {
                 .padding(.top, 5)
             Divider()
             if ticket.notes.isEmpty {
-                Text("No notes")
+                Text("Нет заметок")
                     .font(.system(size: 17))
                     .foregroundColor(.gray)
                     .leftAligned()

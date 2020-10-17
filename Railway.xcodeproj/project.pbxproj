@@ -137,6 +137,7 @@
 		D1D436A6253B244E007F7BEE /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D436A5253B244E007F7BEE /* LargeWidgetView.swift */; };
 		D1D436CA253B2615007F7BEE /* PrimaryText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D436C9253B2615007F7BEE /* PrimaryText.swift */; };
 		D1D436E0253B2903007F7BEE /* TicketTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D436DF253B2903007F7BEE /* TicketTimeView.swift */; };
+		D1D43706253B3115007F7BEE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1D43708253B3115007F7BEE /* Localizable.strings */; };
 		D1D551F822C23D990070EDD9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F6AB1920D0549500461579 /* UIColor.swift */; };
 		D1D676DA211386A400AB0179 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D133E97E2083D3A400D007F4 /* PlaceView.xib */; };
 		D1D676DB211386A400AB0179 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E9802083D5CF00D007F4 /* PlaceView.swift */; };
@@ -353,6 +354,7 @@
 		D1D436A5253B244E007F7BEE /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
 		D1D436C9253B2615007F7BEE /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
 		D1D436DF253B2903007F7BEE /* TicketTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTimeView.swift; sourceTree = "<group>"; };
+		D1D43707253B3115007F7BEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Railway-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				D1AEDFB624DEFDB3005637FD /* PlaceComponentView.swift */,
 				D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */,
 				D198508024DEEC3F0081BC50 /* WidgetTimelineProvider.swift */,
+				D1D43708253B3115007F7BEE /* Localizable.strings */,
 				D17E203A24DEDAEC007F4B8E /* Assets.xcassets */,
 				D17E203C24DEDAED007F4B8E /* Info.plist */,
 			);
@@ -939,6 +942,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D17E204324DEDE17007F4B8E /* Assets.xcassets in Resources */,
+				D1D43706253B3115007F7BEE /* Localizable.strings in Resources */,
 				D17E203B24DEDAEC007F4B8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1358,6 +1362,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1C7C5522132D05D008E6288 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D1D43708253B3115007F7BEE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1D43707253B3115007F7BEE /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

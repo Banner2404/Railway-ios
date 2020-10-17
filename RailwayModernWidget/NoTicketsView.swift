@@ -11,7 +11,7 @@ import WidgetKit
 
 struct NoTicketsView: View {
     var body: some View {
-        Text("No tickets")
+        Text("Нет билетов")
             .font(.system(size: 18))
             .foregroundColor(Color(.text))
     }
