@@ -65,8 +65,7 @@ class DefaultDatabaseManager: DatabaseManager {
     @discardableResult
     func loadTickets() -> [Ticket] {
         #if MOCK_DATA
-            loadFakeTickets()
-            return
+            return loadFakeTickets()
         #endif
         do {
             let tickets = try managedContext
@@ -251,7 +250,7 @@ extension Place {
 #if MOCK_DATA
 extension DatabaseManager {
     
-    func loadFakeTickets() {
+    func loadFakeTickets() -> [Ticket] {
         let minsk = Station(name: "Минск")
         let minskPass = Station(name: "Минск-Пассажирский")
         let vitebsk = Station(name: "Витебск")
@@ -265,31 +264,32 @@ extension DatabaseManager {
         
         let ticket1 = Ticket(sourceStation: minsk,
                              destinationStation: vitebsk,
-                             departure: formatter.date(from: "25.08.2018 20:29")!,
-                             arrival: formatter.date(from: "25.08.2018 20:30")!,
+                             departure: formatter.date(from: "25.08.2021 20:29")!,
+                             arrival: formatter.date(from: "25.08.2021 20:30")!,
                              notes: "", places: [])
         
         let ticket2 = Ticket(sourceStation: bereza,
                              destinationStation: gomel,
-                             departure: formatter.date(from: "25.08.2018 23:00")!,
-                             arrival: formatter.date(from: "25.08.2018 23:30")!,
+                             departure: formatter.date(from: "25.08.2021 23:00")!,
+                             arrival: formatter.date(from: "25.08.2021 23:30")!,
                              notes: "", places: [])
         
         let ticket3 = Ticket(sourceStation: minskPass,
                              destinationStation: brest,
-                             departure: formatter.date(from: "10.09.2018 10:00")!,
-                             arrival: formatter.date(from: "10.09.2018 23:30")!,
+                             departure: formatter.date(from: "10.09.2021 10:00")!,
+                             arrival: formatter.date(from: "10.09.2021 23:30")!,
                              notes: "Телефон\nДеньги\nПаспорт",
                              places: [Place(carriage: 1, seat: "23")])
         
         let ticket4 = Ticket(sourceStation: gomel,
                              destinationStation: grodno,
-                             departure: formatter.date(from: "13.09.2018 14:23")!,
-                             arrival: formatter.date(from: "13.09.2018 18:30")!,
+                             departure: formatter.date(from: "13.09.2021 14:23")!,
+                             arrival: formatter.date(from: "13.09.2021 18:30")!,
                              notes: "",
                              places: [Place(carriage: 9, seat: "23"), Place(carriage: 9, seat: "24")])
-        
-        tickets.onNext([ticket1, ticket2, ticket3, ticket4])
+        let tickets = [ticket1, ticket2, ticket3, ticket4]
+        self.tickets.onNext(tickets)
+        return tickets
     }
 }
 
