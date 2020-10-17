@@ -86,6 +86,7 @@
 		D17E204B24DEE4BC007F4B8E /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72320741BB1000587C8 /* Ticket.swift */; };
 		D17E204C24DEE4CE007F4B8E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBE72520741C20000587C8 /* Station.swift */; };
 		D17E204D24DEE4D0007F4B8E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
+=		D176D2BC24FE920D009C2889 /* DateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D176D2BB24FE920D009C2889 /* DateInputView.swift */; };
 		D189540320FBD2850040411D /* CollapsedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D189540220FBD2850040411D /* CollapsedTicketView.xib */; };
 		D189540520FBD2BC0040411D /* ExpandedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540420FBD2BC0040411D /* ExpandedTicketView.swift */; };
 		D189540720FBD3BD0040411D /* CollapsedTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D189540620FBD3BD0040411D /* CollapsedTicketView.swift */; };
@@ -304,6 +305,7 @@
 		D17E204424DEDE61007F4B8E /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
 		D17E204724DEE3E6007F4B8E /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		D17E204924DEE457007F4B8E /* TicketTimelineEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTimelineEntry.swift; sourceTree = "<group>"; };
+		D176D2BB24FE920D009C2889 /* DateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputView.swift; sourceTree = "<group>"; };
 		D189540220FBD2850040411D /* CollapsedTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollapsedTicketView.xib; sourceTree = "<group>"; };
 		D189540420FBD2BC0040411D /* ExpandedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedTicketView.swift; sourceTree = "<group>"; };
 		D189540620FBD3BD0040411D /* CollapsedTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedTicketView.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 				D189540220FBD2850040411D /* CollapsedTicketView.xib */,
 				D189540620FBD3BD0040411D /* CollapsedTicketView.swift */,
 				D189540820FBD61F0040411D /* TicketTransitionView.swift */,
+				D176D2BB24FE920D009C2889 /* DateInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1200,6 +1203,7 @@
 				D133E97A2083CC1900D007F4 /* TicketDetailsViewModel.swift in Sources */,
 				D1F78BA920E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift in Sources */,
 				D1D40F1F20EA7D1F002BE278 /* TicketOpenAnimator.swift in Sources */,
+				D176D2BC24FE920D009C2889 /* DateInputView.swift in Sources */,
 				D133E96F2083A1BF00D007F4 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1F78BA720E16599003DA8AF /* Int.swift in Sources */,
 				D13F4B2D20DFDF9700A3F8D9 /* NotificationRecordTableViewCell.swift in Sources */,
@@ -1604,7 +1608,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1668,7 +1672,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 34;
+				CURRENT_PROJECT_VERSION = 35;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

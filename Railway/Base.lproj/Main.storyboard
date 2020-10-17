@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,6 +91,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.41568627450980389" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Je5-Ir-CHH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3sA-C9-A5k"/>
@@ -98,7 +99,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Je5-Ir-CHH" secondAttribute="trailing" id="XzS-s6-Nf6"/>
                             <constraint firstAttribute="bottom" secondItem="Je5-Ir-CHH" secondAttribute="bottom" id="cHY-LY-p4M"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sa6-gq-Dt7">
                         <nil key="title"/>
@@ -189,6 +189,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pdo-ui-f7D"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.41568627450980389" blue="0.45098039215686275" alpha="1" colorSpace="deviceRGB"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -196,7 +197,6 @@
                             <constraint firstItem="TsP-KF-97B" firstAttribute="leading" secondItem="pdo-ui-f7D" secondAttribute="leading" id="iT8-ny-pEE"/>
                             <constraint firstItem="TsP-KF-97B" firstAttribute="trailing" secondItem="pdo-ui-f7D" secondAttribute="trailing" id="r7a-tR-Qn7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pdo-ui-f7D"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="qKX-0F-fiJ" appends="YES" id="LrC-UK-sZb"/>
                         </connections>
@@ -240,7 +240,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqu-xE-eWi">
-                                                                <rect key="frame" x="8" y="11.5" width="327" height="21"/>
+                                                                <rect key="frame" x="8" y="11" width="327" height="22"/>
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -261,7 +261,7 @@
                                                         <rect key="frame" x="0.0" y="44" width="343" height="44"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Назначение" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-jW-0RO">
-                                                                <rect key="frame" x="8" y="11.5" width="327" height="21"/>
+                                                                <rect key="frame" x="8" y="11" width="327" height="22"/>
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -294,21 +294,19 @@
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0q-2J-iRS">
-                                                                <rect key="frame" x="120" y="11.5" width="215" height="21"/>
-                                                                <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" placeholderIntrinsicWidth="212" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="yp5-I4-iGZ" customClass="DateInputView" customModule="Railway" customModuleProvider="target">
+                                                                <rect key="frame" x="123" y="2" width="212" height="40"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="44" id="QEB-xL-M3z"/>
-                                                            <constraint firstAttribute="trailing" secondItem="o0q-2J-iRS" secondAttribute="trailing" constant="8" id="YLe-eb-XdT"/>
                                                             <constraint firstItem="WuG-qK-9OV" firstAttribute="leading" secondItem="TUe-IF-W44" secondAttribute="leading" constant="8" id="bDg-7V-yzI"/>
-                                                            <constraint firstItem="o0q-2J-iRS" firstAttribute="centerY" secondItem="TUe-IF-W44" secondAttribute="centerY" id="eOY-SW-aeg"/>
-                                                            <constraint firstItem="o0q-2J-iRS" firstAttribute="leading" secondItem="WuG-qK-9OV" secondAttribute="trailing" constant="5" id="rPg-gI-27R"/>
+                                                            <constraint firstItem="yp5-I4-iGZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WuG-qK-9OV" secondAttribute="trailing" constant="8" id="bpM-wc-tau"/>
                                                             <constraint firstItem="WuG-qK-9OV" firstAttribute="centerY" secondItem="TUe-IF-W44" secondAttribute="centerY" id="sUK-Bi-b6b"/>
+                                                            <constraint firstAttribute="trailing" secondItem="yp5-I4-iGZ" secondAttribute="trailing" constant="8" id="tI3-6P-3fD"/>
+                                                            <constraint firstItem="yp5-I4-iGZ" firstAttribute="centerY" secondItem="TUe-IF-W44" secondAttribute="centerY" id="x6C-Zo-WCP"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uby-Yj-F1O">
@@ -320,21 +318,19 @@
                                                                 <color key="textColor" red="0.015686274510000001" green="0.23137254900000001" blue="0.25098039220000001" alpha="1" colorSpace="deviceRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Отправление" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-Ib-Zor">
-                                                                <rect key="frame" x="94.5" y="11.5" width="240.5" height="21"/>
-                                                                <color key="textColor" red="0.015686274509803921" green="0.23137254901960785" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="260" horizontalCompressionResistancePriority="760" placeholderIntrinsicWidth="212" placeholderIntrinsicHeight="40" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-CS-EnE" customClass="DateInputView" customModule="Railway" customModuleProvider="target">
+                                                                <rect key="frame" x="123" y="2" width="212" height="40"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="dNZ-Ib-Zor" secondAttribute="trailing" constant="8" id="0Ta-ML-2P0"/>
+                                                            <constraint firstItem="1tO-CS-EnE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="689-qg-nyT" secondAttribute="trailing" constant="8" id="71U-NA-KO5"/>
+                                                            <constraint firstItem="1tO-CS-EnE" firstAttribute="centerY" secondItem="Uby-Yj-F1O" secondAttribute="centerY" id="JMk-ne-0aR"/>
                                                             <constraint firstItem="689-qg-nyT" firstAttribute="centerY" secondItem="Uby-Yj-F1O" secondAttribute="centerY" id="Sfw-Z9-xOU"/>
                                                             <constraint firstItem="689-qg-nyT" firstAttribute="leading" secondItem="Uby-Yj-F1O" secondAttribute="leading" constant="8" id="Tbn-DI-KVn"/>
-                                                            <constraint firstItem="dNZ-Ib-Zor" firstAttribute="leading" secondItem="689-qg-nyT" secondAttribute="trailing" constant="5" id="hMF-zI-yZL"/>
+                                                            <constraint firstAttribute="trailing" secondItem="1tO-CS-EnE" secondAttribute="trailing" constant="8" id="iSL-9M-A0a"/>
                                                             <constraint firstAttribute="height" constant="44" id="nyZ-PL-SFm"/>
-                                                            <constraint firstItem="dNZ-Ib-Zor" firstAttribute="centerY" secondItem="Uby-Yj-F1O" secondAttribute="centerY" id="yGj-F8-En2"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhS-QD-5dw">
@@ -411,6 +407,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="sSV-qE-XD1"/>
                         <color key="backgroundColor" red="0.15294117647058825" green="0.41568627450980389" blue="0.45098039215686275" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="c1r-ls-jKN" firstAttribute="top" secondItem="sSV-qE-XD1" secondAttribute="top" id="Jk7-82-E6F"/>
@@ -419,7 +416,6 @@
                             <constraint firstItem="sSV-qE-XD1" firstAttribute="bottom" secondItem="c1r-ls-jKN" secondAttribute="bottom" id="jcI-4A-rGJ"/>
                             <constraint firstItem="c1r-ls-jKN" firstAttribute="leading" secondItem="sSV-qE-XD1" secondAttribute="leading" id="l1a-WF-fzP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sSV-qE-XD1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Новый Билет" id="tQD-VZ-hao">
                         <barButtonItem key="rightBarButtonItem" title="Сохранить" id="8D8-iM-hJw">
@@ -430,10 +426,10 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="arrivalDateView" destination="1tO-CS-EnE" id="Hdw-zl-anj"/>
                         <outlet property="arrivalTimeLabel" destination="689-qg-nyT" id="Z9r-uh-kb2"/>
-                        <outlet property="arrivalTimeTextField" destination="dNZ-Ib-Zor" id="E3I-3n-gXv"/>
+                        <outlet property="departureDateView" destination="yp5-I4-iGZ" id="6KW-ur-9B1"/>
                         <outlet property="departureTimeLabel" destination="WuG-qK-9OV" id="gsp-eS-HAC"/>
-                        <outlet property="departureTimeTextField" destination="o0q-2J-iRS" id="SyY-Ke-dSO"/>
                         <outlet property="destinationTextField" destination="YN9-jW-0RO" id="fIf-oh-yoo"/>
                         <outlet property="notesPlaceholder" destination="zpS-k9-37m" id="BBU-y7-LmP"/>
                         <outlet property="notesTextView" destination="zHz-gW-ZGj" id="d6N-Y2-BDI"/>
@@ -494,13 +490,13 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ikb-N8-M0x"/>
                         <constraints>
                             <constraint firstItem="ikb-N8-M0x" firstAttribute="trailing" secondItem="Kcb-wC-YpD" secondAttribute="trailing" id="3F2-fj-fut"/>
                             <constraint firstItem="ikb-N8-M0x" firstAttribute="bottom" secondItem="Kcb-wC-YpD" secondAttribute="bottom" id="Kcs-Mg-XZ7"/>
                             <constraint firstItem="Kcb-wC-YpD" firstAttribute="leading" secondItem="ikb-N8-M0x" secondAttribute="leading" id="TPX-p4-eSa"/>
                             <constraint firstItem="Kcb-wC-YpD" firstAttribute="top" secondItem="rJ4-0H-xaQ" secondAttribute="top" id="kKY-tO-bCA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ikb-N8-M0x"/>
                     </view>
                     <size key="freeformSize" width="375" height="44"/>
                     <connections>
@@ -659,6 +655,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="uYr-eR-eH8"/>
                         <color key="backgroundColor" red="0.1529411765" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="hJl-F5-lOK" firstAttribute="top" secondItem="uYr-eR-eH8" secondAttribute="top" id="75k-ey-j4H"/>
@@ -666,7 +663,6 @@
                             <constraint firstItem="uYr-eR-eH8" firstAttribute="trailing" secondItem="hJl-F5-lOK" secondAttribute="trailing" id="Vid-sO-jCl"/>
                             <constraint firstItem="hJl-F5-lOK" firstAttribute="leading" secondItem="uYr-eR-eH8" secondAttribute="leading" id="mhp-To-Sfx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="uYr-eR-eH8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Настройки" id="AGj-Od-iHs"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -838,14 +834,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-ve-3vh">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvj-ve-3vh">
                                                     <rect key="frame" x="192.5" y="0.0" width="167.5" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <state key="normal" title="Сохранить">
                                                         <color key="titleColor" red="0.1529411765" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="deviceRGB"/>
                                                     </state>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-mN-3Po">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGQ-mN-3Po">
                                                     <rect key="frame" x="15" y="0.0" width="167.5" height="44.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="tnt-dl-TRR"/>
@@ -878,6 +874,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eJ5-FN-mUJ"/>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94117647059999998" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="eJ5-FN-mUJ" firstAttribute="bottom" secondItem="EkE-As-bKu" secondAttribute="bottom" id="Duk-QN-ITl"/>
@@ -885,7 +882,6 @@
                             <constraint firstItem="EkE-As-bKu" firstAttribute="leading" secondItem="eJ5-FN-mUJ" secondAttribute="leading" id="bmW-za-G7Q"/>
                             <constraint firstItem="eJ5-FN-mUJ" firstAttribute="trailing" secondItem="EkE-As-bKu" secondAttribute="trailing" id="hQH-bL-Ird"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eJ5-FN-mUJ"/>
                     </view>
                     <size key="freeformSize" width="375" height="450"/>
                     <connections>
