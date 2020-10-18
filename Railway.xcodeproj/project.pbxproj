@@ -335,6 +335,7 @@
 		D1BB872B211EC514005D8FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1BB8737211F1FAF005D8FB6 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketExpandedRowController.swift; sourceTree = "<group>"; };
+		D1BC173F253C49420008D0A0 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1C7C5432132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		D1C7C5442132CD76008E6288 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		D1C7C5462132CE30008E6288 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AddPlaceView.xib; sourceTree = "<group>"; };
@@ -1370,6 +1371,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1D43707253B3115007F7BEE /* en */,
+				D1BC173F253C49420008D0A0 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
