@@ -40,5 +40,20 @@ struct RailwayModernWidget_Previews: PreviewProvider {
                 TicketTimelineEntry.preview
         )
         .previewContext(WidgetPreviewContext(family: .systemLarge))
+        WidgetView(
+            entry:
+                TicketTimelineEntry.placeholder
+        )
+        .previewContext(WidgetPreviewContext(family: .systemSmall))
+        WidgetView(
+            entry:
+                TicketTimelineEntry.placeholder
+        )
+        .previewContext(WidgetPreviewContext(family: .systemMedium))
+        WidgetView(
+            entry:
+                TicketTimelineEntry.placeholder
+        )
+        .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

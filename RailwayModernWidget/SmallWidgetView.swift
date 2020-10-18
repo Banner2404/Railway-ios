@@ -13,8 +13,8 @@ struct SmallWidgetView : View {
     var ticket: TicketTimelineEntry.TicketInfo
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text(ticket.departure, formatter: DateFormatters.shortDateAndTime)
+        VStack(alignment: .leading) {
+            Text(ticket.departure, formatter: DateFormatters.veryShortDateAndTime)
                 .primaryText()
                 .leftAligned()
             VPlaceView(carriage: ticket.carriage, seat: ticket.seat)
@@ -26,6 +26,10 @@ struct SmallWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         SmallWidgetView(
             ticket: .preview
+        )
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        SmallWidgetView(
+            ticket: .placeholder
         )
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }

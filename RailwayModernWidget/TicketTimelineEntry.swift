@@ -17,15 +17,7 @@ struct TicketTimelineEntry: TimelineEntry {
     static var placeholder: TicketTimelineEntry {
         return TicketTimelineEntry(
             date: Date(),
-            ticket: TicketInfo(
-                carriage: "-",
-                seat: "-",
-                departure: Date().addingTimeInterval(60 * 60 * 24),
-                arrival: Date().addingTimeInterval(60 * 60 * 25),
-                sourceStation: "-",
-                destinationStation: "-",
-                notes: "-"
-            )
+            ticket: TicketInfo.placeholder
         )
     }
 
@@ -51,6 +43,7 @@ struct TicketTimelineEntry: TimelineEntry {
         let sourceStation: String
         let destinationStation: String
         let notes: String
+        let isPlaceholder: Bool
 
         static var preview: TicketInfo {
             return TicketInfo(
@@ -60,7 +53,21 @@ struct TicketTimelineEntry: TimelineEntry {
                 arrival: Date().addingTimeInterval(60 * 60 * 4),
                 sourceStation: "Ивацевичи",
                 destinationStation: "Минск-Пассажирский",
-                notes: "Паспорт\nТелефон"
+                notes: "Паспорт\nТелефон",
+                isPlaceholder: false
+            )
+        }
+
+        static var placeholder: TicketInfo {
+            return TicketInfo(
+                carriage: "10",
+                seat: "10",
+                departure: Date(),
+                arrival: Date().addingTimeInterval(60 * 60 * 4),
+                sourceStation: "Ивацевичи",
+                destinationStation: "Минск-Пассажирский",
+                notes: "Паспорт\nТелефон",
+                isPlaceholder: true
             )
         }
     }

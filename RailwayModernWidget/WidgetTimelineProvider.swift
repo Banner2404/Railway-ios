@@ -62,7 +62,8 @@ struct WidgetTimelineProvider: TimelineProvider {
                 arrival: ticket.arrival,
                 sourceStation: ticket.sourceStation.name,
                 destinationStation: ticket.destinationStation.name,
-                notes: ticket.notes
+                notes: ticket.notes,
+                isPlaceholder: false
             )
         )
     }

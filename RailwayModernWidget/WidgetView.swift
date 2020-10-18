@@ -19,15 +19,19 @@ struct WidgetView : View {
             Color(.cardBackground)
             Group {
                 if let ticket = entry.ticket {
-                    switch family {
-                    case .systemSmall:
-                        SmallWidgetView(ticket: ticket)
-                    case .systemMedium:
-                        MediumWidgetView(ticket: ticket)
-                    case .systemLarge:
-                        LargeWidgetView(ticket: ticket)
-                    default:
-                        NoTicketsView()
+                    Group {
+                        switch family {
+                        case .systemSmall:
+                            SmallWidgetView(ticket: ticket)
+                        case .systemMedium:
+                            MediumWidgetView(ticket: ticket)
+                        case .systemLarge:
+                            LargeWidgetView(ticket: ticket)
+                        default:
+                            NoTicketsView()
+                        }
+                    }.if(ticket.isPlaceholder) {
+                        $0.redacted(reason: .placeholder)
                     }
                 } else {
                     NoTicketsView()
