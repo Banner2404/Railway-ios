@@ -48,7 +48,6 @@ class TicketListViewController: ViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print(tableView.contentSize)
         setupTableViewInsets()
         if shouldMakeInitialScroll {
             shouldMakeInitialScroll = false
@@ -230,7 +229,6 @@ private extension TicketListViewController {
         let contentSize = tableView.contentSize
         let oldestSize = tableView.rect(forSection: 0)
         let scrollRect = CGRect(x: 0, y: oldestSize.maxY, width: contentSize.width, height: contentSize.height - oldestSize.height)
-        print(scrollRect)
         tableView.scrollRectToVisible(scrollRect, animated: false)
         self.scrollViewDidScroll(tableView)
         shouldMakeInitialScroll = false
@@ -267,12 +265,10 @@ extension TicketListViewController: UITableViewDelegate {
             showOldestSection = false
             scrollView.contentInset.top = -oldTicketsHeight
             scrollView.contentOffset = contentOffset
-            print("Hide")
         } else if offset < oldTicketsHeight - 120 && !showOldestSection {
             showOldestSection = true
             scrollView.contentInset.top = 0
             scrollView.contentOffset = contentOffset
-            print("Show")
         }
     }
 }
