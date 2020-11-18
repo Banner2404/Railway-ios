@@ -95,6 +95,7 @@ class TicketDetailsViewController: ViewController {
     
     private func shareButtonTap() {
         let controller = UIActivityViewController(activityItems: [viewModel.shareMessage], applicationActivities: nil)
+        controller.popoverPresentationController?.sourceView = ticketView.expandedView.shareButton
         present(controller, animated: true, completion: nil)
     }
     
