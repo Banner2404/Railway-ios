@@ -17,8 +17,8 @@ struct RailwayModernWidget: Widget {
         StaticConfiguration(kind: kind, provider: WidgetTimelineProvider()) { entry in
             WidgetView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Ближайший билет")
+        .description("Описание виджета")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
