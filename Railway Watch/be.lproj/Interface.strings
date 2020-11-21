@@ -1,0 +1,36 @@
+
+/* Class = "WKInterfaceLabel"; text = "Ивацевичи"; ObjectID = "4fH-yY-THU"; */
+"4fH-yY-THU.text" = "Ивацевичи";
+
+/* Class = "WKInterfaceLabel"; text = "13"; ObjectID = "9rE-K3-88Y"; */
+"9rE-K3-88Y.text" = "13";
+
+/* Class = "WKInterfaceController"; title = "Билеты"; ObjectID = "AgC-eL-Hgc"; */
+"AgC-eL-Hgc.title" = "Квіткі";
+
+/* Class = "WKInterfaceLabel"; text = "13"; ObjectID = "Fqw-bw-8cx"; */
+"Fqw-bw-8cx.text" = "13";
+
+/* Class = "WKInterfaceLabel"; text = "Воскресенье, 12 декабря"; ObjectID = "GCx-7I-Bau"; */
+"GCx-7I-Bau.text" = "Воскресенье, 12 декабря";
+
+/* Class = "WKInterfaceLabel"; text = "12"; ObjectID = "VH7-Wz-MG2"; */
+"VH7-Wz-MG2.text" = "12";
+
+/* Class = "WKInterfaceLabel"; text = "Нет Билетов"; ObjectID = "a0O-EP-H4W"; */
+"a0O-EP-H4W.text" = "Няма Квіткоў";
+
+/* Class = "WKInterfaceLabel"; text = "12"; ObjectID = "g2f-Aj-DP0"; */
+"g2f-Aj-DP0.text" = "12";
+
+/* Class = "WKInterfaceLabel"; text = "13"; ObjectID = "h1h-bZ-3fg"; */
+"h1h-bZ-3fg.text" = "13";
+
+/* Class = "WKInterfaceLabel"; text = "10:20PM - 20:30PM"; ObjectID = "ptd-HD-8LP"; */
+"ptd-HD-8LP.text" = "10:20PM - 20:30PM";
+
+/* Class = "WKInterfaceLabel"; text = "12"; ObjectID = "u2G-VB-dPW"; */
+"u2G-VB-dPW.text" = "12";
+
+/* Class = "WKInterfaceLabel"; text = "Минск"; ObjectID = "w0i-bN-rCi"; */
+"w0i-bN-rCi.text" = "Минск";

@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Уведомления"; ObjectID = "5nk-Qp-duP"; */
+"5nk-Qp-duP.text" = "Абвесткі";
+
+/* Class = "UILabel"; text = "Прибытие"; ObjectID = "689-qg-nyT"; */
+"689-qg-nyT.text" = "Прыбыццё";
+
+/* Class = "UIBarButtonItem"; title = "Сохранить"; ObjectID = "8D8-iM-hJw"; */
+"8D8-iM-hJw.title" = "Захаваць";
+
+/* Class = "UINavigationItem"; title = "Настройки"; ObjectID = "AGj-Od-iHs"; */
+"AGj-Od-iHs.title" = "Налады";
+
+/* Class = "UILabel"; text = "Добавить место"; ObjectID = "Avq-De-njp"; */
+"Avq-De-njp.text" = "Дадаць месца";
+
+/* Class = "UITextField"; placeholder = "Отправление"; ObjectID = "Dqu-xE-eWi"; */
+"Dqu-xE-eWi.placeholder" = "Адпраўленне";
+
+/* Class = "UILabel"; text = "За 2 часа"; ObjectID = "Hwt-3j-S8n"; */
+"Hwt-3j-S8n.text" = "За 2 гадзiны";
+
+/* Class = "UIButton"; normalTitle = "Отмена"; ObjectID = "NGQ-mN-3Po"; */
+"NGQ-mN-3Po.normalTitle" = "Адмена";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "Tvj-ve-3vh"; */
+"Tvj-ve-3vh.normalTitle" = "Захаваць";
+
+/* Class = "UILabel"; text = "Отправление"; ObjectID = "WuG-qK-9OV"; */
+"WuG-qK-9OV.text" = "Адпраўленне";
+
+/* Class = "UITextField"; placeholder = "Назначение"; ObjectID = "YN9-jW-0RO"; */
+"YN9-jW-0RO.placeholder" = "Прыбыццё";
+
+/* Class = "UILabel"; text = "Отключить Gmail"; ObjectID = "ZjG-kH-9tO"; */
+"ZjG-kH-9tO.text" = "Адключыць Gmail";
+
+/* Class = "UILabel"; text = "Смахните чтобы закрыть"; ObjectID = "bDh-F2-J51"; */
+"bDh-F2-J51.text" = "Змахнiце каб закрыць";
+
+/* Class = "UIButton"; normalTitle = "Добавить"; ObjectID = "cpg-k7-92d"; */
+"cpg-k7-92d.normalTitle" = "Дадаць";
+
+/* Class = "UIBarButtonItem"; title = "Настройки"; ObjectID = "cry-OD-8ZD"; */
+"cry-OD-8ZD.title" = "Налады";
+
+/* Class = "UILabel"; text = "Билеты"; ObjectID = "eP5-ec-3yv"; */
+"eP5-ec-3yv.text" = "Квiткi";
+
+/* Class = "UILabel"; text = "Нет Билетов"; ObjectID = "jzH-ih-JDD"; */
+"jzH-ih-JDD.text" = "Няма квіткоў";
+
+/* Class = "UINavigationItem"; title = "Новый Билет"; ObjectID = "tQD-VZ-hao"; */
+"tQD-VZ-hao.title" = "Новы Квiток";
+
+/* Class = "UINavigationItem"; title = "Билеты"; ObjectID = "v0V-y1-rpb"; */
+"v0V-y1-rpb.title" = "Квiткi";
+
+/* Class = "UILabel"; text = "Первое"; ObjectID = "yVh-yM-p6i"; */
+"yVh-yM-p6i.text" = "Першае";
+
+/* Class = "UILabel"; text = "Заметки"; ObjectID = "zpS-k9-37m"; */
+"zpS-k9-37m.text" = "Заметкi";

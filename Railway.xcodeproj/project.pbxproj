@@ -356,6 +356,16 @@
 		D1D436C9253B2615007F7BEE /* PrimaryText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryText.swift; sourceTree = "<group>"; };
 		D1D436DF253B2903007F7BEE /* TicketTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTimeView.swift; sourceTree = "<group>"; };
 		D1D43707253B3115007F7BEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1D73AEE25692DEA003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/AddPlaceView.strings; sourceTree = "<group>"; };
+		D1D73AEF25692DEB003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/ExpandedTicketView.strings; sourceTree = "<group>"; };
+		D1D73AF025692DEB003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Main.strings; sourceTree = "<group>"; };
+		D1D73AF125692DEB003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D1D73AF225692DEC003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		D1D73AF325692DEC003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Interface.strings; sourceTree = "<group>"; };
+		D1D73AF425692DEC003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1D73AF525692DED003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1D73AF625692DED003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D1D73AF725692DED003FEC02 /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D1D7443A2374552E00A71846 /* Railway-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Railway-Bridging-Header.h"; sourceTree = "<group>"; };
 		D1DBE70E20741A06000587C8 /* Railway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Railway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DBE71120741A06000587C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -898,6 +908,7 @@
 				ru,
 				Base,
 				en,
+				be,
 			);
 			mainGroup = D1DBE70520741A06000587C8;
 			productRefGroup = D1DBE70F20741A06000587C8 /* Products */;
@@ -1319,6 +1330,7 @@
 			children = (
 				D106048422BD187F00E050E3 /* en */,
 				D106048622BD18E000E050E3 /* ru */,
+				D1D73AF525692DED003FEC02 /* be */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1328,6 +1340,7 @@
 			children = (
 				D1251104210F8F2500393C31 /* Base */,
 				D1C7C5442132CD76008E6288 /* en */,
+				D1D73AF225692DEC003FEC02 /* be */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -1337,6 +1350,7 @@
 			children = (
 				D1BB8717211EC512005D8FB6 /* Base */,
 				D1F7412D213ACEB600B4D082 /* en */,
+				D1D73AF325692DEC003FEC02 /* be */,
 			);
 			name = Interface.storyboard;
 			sourceTree = "<group>";
@@ -1346,6 +1360,7 @@
 			children = (
 				D1C7C5462132CE30008E6288 /* Base */,
 				D1C7C5492132CE35008E6288 /* en */,
+				D1D73AEE25692DEA003FEC02 /* be */,
 			);
 			name = AddPlaceView.xib;
 			sourceTree = "<group>";
@@ -1355,6 +1370,7 @@
 			children = (
 				D1C7C54B2132CEF9008E6288 /* Base */,
 				D1C7C54E2132CEFF008E6288 /* en */,
+				D1D73AEF25692DEB003FEC02 /* be */,
 			);
 			name = ExpandedTicketView.xib;
 			sourceTree = "<group>";
@@ -1363,6 +1379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1C7C5522132D05D008E6288 /* en */,
+				D1D73AF425692DEC003FEC02 /* be */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1372,6 +1389,7 @@
 			children = (
 				D1D43707253B3115007F7BEE /* en */,
 				D1BC173F253C49420008D0A0 /* ru */,
+				D1D73AF725692DED003FEC02 /* be */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1381,6 +1399,7 @@
 			children = (
 				D1DBE71620741A06000587C8 /* Base */,
 				D109DF092135D3A2003989EC /* en */,
+				D1D73AF025692DEB003FEC02 /* be */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1391,6 +1410,7 @@
 				D1DBE71B20741A07000587C8 /* Base */,
 				D16C046620DF98B2007155ED /* ru */,
 				D1C7C5432132CD76008E6288 /* en */,
+				D1D73AF125692DEB003FEC02 /* be */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1399,6 +1419,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D1F74126213AC99700B4D082 /* en */,
+				D1D73AF625692DED003FEC02 /* be */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1666,10 +1687,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1680,6 +1697,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = _MOCK_DATA;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
