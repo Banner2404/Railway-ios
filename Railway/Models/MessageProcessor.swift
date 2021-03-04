@@ -75,9 +75,9 @@ class MessageProcessor {
         let destination = Station(name: to)
 
         let placeString = strings[23 + offset]
-        guard let place = self.place(from: String(placeString)) else { return nil }
+        guard let places = self.places(from: String(placeString)), !places.isEmpty else { return nil }
 
-        return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: [place])
+        return Ticket(sourceStation: source, destinationStation: destination, departure: departure, arrival: arrival, notes: "", places: places)
     }
 
     private static func year(fromString string: String) -> String? {
@@ -94,13 +94,15 @@ class MessageProcessor {
         return DateFormatters.emailDateAndTime.date(from: fullDateString)
     }
     
-    private static func place(from string: String) -> Place? {
+    private static func places(from string: String) -> [Place]? {
         let components = string.trimmed.components(separatedBy: " ")
         if components.count < 8 { return nil }
-        guard let carriage = Int(components[3]) else { return nil}
-        let seat = components[7]
-        let cleanSeat = String(seat.drop { $0 == "0" })
-        return Place(carriage: carriage, seat: cleanSeat)
+        guard let carriage = Int(components[3]) else { return nil }
+        return components[7].split(separator: ";")
+            .map { seat in
+                let cleanSeat = String(seat.drop { $0 == "0" })
+                return Place(carriage: carriage, seat: cleanSeat)
+            }
     }
 }
 

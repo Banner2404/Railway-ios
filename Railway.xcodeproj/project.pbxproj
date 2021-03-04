@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F4C170AF794780C336DB471 /* Pods_RailwayModernWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2A34AF2A18CDB092607CE26 /* Pods_RailwayModernWidgetExtension.framework */; };
 		AE959B160044909078CE5B67 /* Pods_RailwayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */; };
+		CF1FD7CA61B731D8518EABEF /* Pods_RailwayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F5B895B757B97853D03B28F /* Pods_RailwayTests.framework */; };
 		D106048322BD187F00E050E3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D106048522BD187F00E050E3 /* Localizable.strings */; };
 		D12510FF210F8F2500393C31 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12510FE210F8F2500393C31 /* NotificationCenter.framework */; };
 		D1251102210F8F2500393C31 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1251101210F8F2500393C31 /* TodayViewController.swift */; };
@@ -73,6 +74,7 @@
 		D16C046820DF9CDA007155ED /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046720DF9CDA007155ED /* NotificationsViewController.swift */; };
 		D16C046A20DF9E23007155ED /* NotificationSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */; };
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
+		D172DB1725F13599008F8C6C /* multiple_places_single_passport.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D172DB1625F13599008F8C6C /* multiple_places_single_passport.pdf */; };
 		D176D2BC24FE920D009C2889 /* DateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D176D2BB24FE920D009C2889 /* DateInputView.swift */; };
 		D17E203524DEDAEC007F4B8E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E200A24DEDA59007F4B8E /* WidgetKit.framework */; };
 		D17E203624DEDAEC007F4B8E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E200C24DEDA59007F4B8E /* SwiftUI.framework */; };
@@ -247,9 +249,11 @@
 /* Begin PBXFileReference section */
 		08767504D871EFE1B23FDACE /* Pods_RailwayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RailwayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB2B7B43044D239C734C6C5 /* Pods-RailwayWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayWidget/Pods-RailwayWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		1F5B895B757B97853D03B28F /* Pods_RailwayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RailwayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		484DC03D9F1BB7A19C5B5258 /* Pods-Railway.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.release.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.release.xcconfig"; sourceTree = "<group>"; };
 		50B92EBC4DD8469A442D0FEC /* Pods-RailwayModernWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayModernWidgetExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayModernWidgetExtension/Pods-RailwayModernWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		59EC450D753214532F229326 /* Pods-Railway.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Railway.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Railway/Pods-Railway.debug.xcconfig"; sourceTree = "<group>"; };
+		BD796E01EF67347F8A50FEA6 /* Pods-RailwayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayTests/Pods-RailwayTests.release.xcconfig"; sourceTree = "<group>"; };
 		D106048422BD187F00E050E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D106048622BD18E000E050E3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D109DF092135D3A2003989EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -305,6 +309,7 @@
 		D16C046720DF9CDA007155ED /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D16C046920DF9E23007155ED /* NotificationSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		D172DB1625F13599008F8C6C /* multiple_places_single_passport.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = multiple_places_single_passport.pdf; sourceTree = "<group>"; };
 		D176D2BB24FE920D009C2889 /* DateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputView.swift; sourceTree = "<group>"; };
 		D17E200A24DEDA59007F4B8E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D17E200C24DEDA59007F4B8E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -395,6 +400,7 @@
 		D1F78BA820E16BAC003DA8AF /* NotificationAddAlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAddAlertTableViewCell.swift; sourceTree = "<group>"; };
 		D1F78BAA20E171F1003DA8AF /* NotificationPickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPickerTableViewCell.swift; sourceTree = "<group>"; };
 		D2A34AF2A18CDB092607CE26 /* Pods_RailwayModernWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RailwayModernWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F61A14C00865B6884DFAAA /* Pods-RailwayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayTests/Pods-RailwayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F331586F97BF46FF8B1FEDD7 /* Pods-RailwayModernWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayModernWidgetExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayModernWidgetExtension/Pods-RailwayModernWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		F9705C045ADDE100088C494D /* Pods-RailwayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RailwayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-RailwayWidget/Pods-RailwayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		FDAD9297375B4E06BACB57E3 /* Pods_Railway.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Railway.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,6 +427,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1FD7CA61B731D8518EABEF /* Pods_RailwayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +596,7 @@
 				D156A83E249BCA2B00AD7D2B /* international_offset_3.pdf */,
 				D156A840249BCA2C00AD7D2B /* print_offset_2.pdf */,
 				D156A847249BCCF800AD7D2B /* multiple.pdf */,
+				D172DB1625F13599008F8C6C /* multiple_places_single_passport.pdf */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -711,6 +719,8 @@
 				F9705C045ADDE100088C494D /* Pods-RailwayWidget.release.xcconfig */,
 				F331586F97BF46FF8B1FEDD7 /* Pods-RailwayModernWidgetExtension.debug.xcconfig */,
 				50B92EBC4DD8469A442D0FEC /* Pods-RailwayModernWidgetExtension.release.xcconfig */,
+				F0F61A14C00865B6884DFAAA /* Pods-RailwayTests.debug.xcconfig */,
+				BD796E01EF67347F8A50FEA6 /* Pods-RailwayTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -724,6 +734,7 @@
 				D17E200A24DEDA59007F4B8E /* WidgetKit.framework */,
 				D17E200C24DEDA59007F4B8E /* SwiftUI.framework */,
 				D2A34AF2A18CDB092607CE26 /* Pods_RailwayModernWidgetExtension.framework */,
+				1F5B895B757B97853D03B28F /* Pods_RailwayTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -753,9 +764,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D156A83D249BCA1600AD7D2B /* Build configuration list for PBXNativeTarget "RailwayTests" */;
 			buildPhases = (
+				25C3DF218208854701068ADE /* [CP] Check Pods Manifest.lock */,
 				D156A830249BCA1600AD7D2B /* Sources */,
 				D156A831249BCA1600AD7D2B /* Frameworks */,
 				D156A832249BCA1600AD7D2B /* Resources */,
+				37CBF7E238042082220289F2 /* [CP] Embed Pods Frameworks */,
+				233E1B0AC0434F4C614E493B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -946,6 +960,7 @@
 				D156A845249BCA2C00AD7D2B /* default_new.pdf in Resources */,
 				D156A842249BCA2C00AD7D2B /* international_offset_3.pdf in Resources */,
 				D156A844249BCA2C00AD7D2B /* print_offset_2.pdf in Resources */,
+				D172DB1725F13599008F8C6C /* multiple_places_single_passport.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1011,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		233E1B0AC0434F4C614E493B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RailwayTests/Pods-RailwayTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RailwayTests/Pods-RailwayTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25C3DF218208854701068ADE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RailwayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		35EC9A7E4F070911FE4DDA85 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1036,6 +1091,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Railway/Pods-Railway-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37CBF7E238042082220289F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RailwayTests/Pods-RailwayTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RailwayTests/Pods-RailwayTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E086722840C194ECD999425 /* [CP] Check Pods Manifest.lock */ = {
@@ -1472,6 +1569,7 @@
 		};
 		D156A83B249BCA1600AD7D2B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0F61A14C00865B6884DFAAA /* Pods-RailwayTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1493,6 +1591,7 @@
 		};
 		D156A83C249BCA1600AD7D2B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD796E01EF67347F8A50FEA6 /* Pods-RailwayTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1518,7 +1617,7 @@
 				CODE_SIGN_ENTITLEMENTS = RailwayModernWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = RailwayModernWidget/Info.plist;
@@ -1544,7 +1643,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = RailwayModernWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = RailwayModernWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1679,7 +1778,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1739,7 +1838,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 39;
+				CURRENT_PROJECT_VERSION = 40;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1770,9 +1869,11 @@
 				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.20.4;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4a7f57cf-e7a6-44b0-88f0-2aa0a8458b18";
@@ -1793,9 +1894,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Railway/Railway.entitlements;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 40;
 				DEVELOPMENT_TEAM = 59BWRK25DR;
 				INFOPLIST_FILE = Railway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.20.4;
 				PRODUCT_BUNDLE_IDENTIFIER = esobol.Railway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4a7f57cf-e7a6-44b0-88f0-2aa0a8458b18";

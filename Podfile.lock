@@ -60,7 +60,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - PromisesObjC (1.2.11)
+  - PromisesObjC (1.2.12)
   - Reveal-SDK (24)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -120,13 +120,13 @@ SPEC CHECKSUMS:
   GTMAppAuth: 4deac854479704f348309e7b66189e604cf5e01e
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 0e36f2dc8ed77ae48b21fc2c01d98f75883b314d
+PODFILE CHECKSUM: af9b6ac7ab426086a8cc5730ba273e5f172ac33d
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

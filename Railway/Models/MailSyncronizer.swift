@@ -73,6 +73,14 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         googleSignIn.delegate = self
         googleSignIn.scopes = [kGTLRAuthScopeGmailReadonly]
         googleSignIn.restorePreviousSignIn()
+
+        NotificationCenter.default.rx.notification(UIApplication.willEnterForegroundNotification)
+            .withLatestFrom(isAuthenticated) { ($0, $1) }
+            .filter { $1 }
+            .subscribe(onNext: { [weak self] _ in
+                self?.sync()
+            })
+            .disposed(by: disposeBag)
     }
     
     func requestSignIn(on viewController: UIViewController) -> Single<Void> {
@@ -89,7 +97,7 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         googleSignIn.signOut()
         isAuthenticatedRelay.accept(false)
     }
-    
+
     func sync() {
         isSyncronizingRelay.accept(true)
         fetchMessagesList()

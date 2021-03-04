@@ -2,14 +2,22 @@ inhibit_all_warnings!
 use_frameworks!
 platform :ios, '11.3'
 
-target 'Railway' do
+def shared_pods
     pod 'Firebase/Crashlytics'
-  	pod 'RxSwift'
+    pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxDataSources'
     pod 'Reveal-SDK', '24', :configurations => ['Debug']
     pod 'GoogleAPIClientForREST/Gmail'
     pod 'GoogleSignIn'
+end
+
+target 'Railway' do
+    shared_pods
+end
+
+target 'RailwayTests' do
+    shared_pods
 end
 
 target 'RailwayWidget' do
