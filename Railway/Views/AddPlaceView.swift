@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddPlaceViewDelegate: class {
+protocol AddPlaceViewDelegate: AnyObject {
     func addPlaceViewShouldReturn(_ view: AddPlaceView) -> Bool
     func addPlaceViewDidTapRemove(_ view: AddPlaceView)
 }

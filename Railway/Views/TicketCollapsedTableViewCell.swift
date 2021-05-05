@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-protocol TicketCollapsedTableViewCellDelegate: class {
+protocol TicketCollapsedTableViewCellDelegate: AnyObject {
     func ticketCollapsedTableViewCellDidShowDeleteButton(_ cell: TicketCollapsedTableViewCell)
     func ticketCollapsedTableViewCellDidTapDeleteButton(_ cell: TicketCollapsedTableViewCell)
 }

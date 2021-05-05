@@ -10,7 +10,7 @@ import Foundation
 import WatchConnectivity
 import WatchKit
 
-protocol PhoneConnectivityManagerDelegate: class {
+protocol PhoneConnectivityManagerDelegate: AnyObject {
     func phoneConnectivityManager(_ manager: PhoneConnectivityManager, didRecieve tickets: [Ticket])
 }
 
