@@ -9,9 +9,18 @@
 import Intents
 
 class IntentHandler: INExtension {
-    
+
+    let database = DefaultDatabaseManager()
+
     override func handler(for intent: INIntent) -> Any {
-        return GetNextTicketIntentHandler()
+        switch intent {
+        case is GetNextTicketIntent:
+            return GetNextTicketIntentHandler(databaseManager: database)
+        case is GetUpcomingTicketsIntent:
+            return GetUpcomingTicketsIntentHandler(databaseManager: database)
+        default:
+            fatalError("Unsupported intent")
+        }
     }
     
 }

@@ -21,6 +21,7 @@ protocol DatabaseManager {
     func saveNotificationSettings(isEnabled: Bool, alerts: NotificationAlert)
     
     func getNextTicket() -> Ticket?
+    func getUpcomingTickets() -> [Ticket]?
 }
 
 
@@ -140,6 +141,21 @@ class DefaultDatabaseManager: DatabaseManager {
                 .fetch(request)
                 .map { Ticket($0) }
             return tickets.first
+        } catch {
+            fatalError("Unable to read from core data \(error)")
+        }
+    }
+
+    func getUpcomingTickets() -> [Ticket]? {
+        do {
+            let entityName = String(describing: TicketCoreDataModel.self)
+            let request: NSFetchRequest<TicketCoreDataModel> = NSFetchRequest(entityName: entityName)
+            request.predicate = NSPredicate(format: "arrival > %@", Date() as NSDate)
+            request.sortDescriptors = [NSSortDescriptor(key: "departure", ascending: true)]
+            let tickets = try managedContext
+                .fetch(request)
+                .map { Ticket($0) }
+            return tickets
         } catch {
             fatalError("Unable to read from core data \(error)")
         }

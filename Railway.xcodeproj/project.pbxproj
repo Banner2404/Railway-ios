@@ -77,6 +77,9 @@
 		D16C046C20DFA032007155ED /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C046B20DFA032007155ED /* ContainerViewController.swift */; };
 		D172DB1725F13599008F8C6C /* multiple_places_single_passport.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D172DB1625F13599008F8C6C /* multiple_places_single_passport.pdf */; };
 		D176D2BC24FE920D009C2889 /* DateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D176D2BB24FE920D009C2889 /* DateInputView.swift */; };
+		D17785672642E551005C6B88 /* GetUpcomingTicketsIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17785662642E551005C6B88 /* GetUpcomingTicketsIntentHandler.swift */; };
+		D17785692642E5CD005C6B88 /* PlaceModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17785682642E5CD005C6B88 /* PlaceModelExtension.swift */; };
+		D177856B2642E5EF005C6B88 /* TicketModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D177856A2642E5EF005C6B88 /* TicketModelExtension.swift */; };
 		D17E203524DEDAEC007F4B8E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E200A24DEDA59007F4B8E /* WidgetKit.framework */; };
 		D17E203624DEDAEC007F4B8E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E200C24DEDA59007F4B8E /* SwiftUI.framework */; };
 		D17E203924DEDAEC007F4B8E /* RailwayModernWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17E203824DEDAEC007F4B8E /* RailwayModernWidget.swift */; };
@@ -344,6 +347,9 @@
 		D16C046B20DFA032007155ED /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D172DB1625F13599008F8C6C /* multiple_places_single_passport.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = multiple_places_single_passport.pdf; sourceTree = "<group>"; };
 		D176D2BB24FE920D009C2889 /* DateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInputView.swift; sourceTree = "<group>"; };
+		D17785662642E551005C6B88 /* GetUpcomingTicketsIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUpcomingTicketsIntentHandler.swift; sourceTree = "<group>"; };
+		D17785682642E5CD005C6B88 /* PlaceModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModelExtension.swift; sourceTree = "<group>"; };
+		D177856A2642E5EF005C6B88 /* TicketModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketModelExtension.swift; sourceTree = "<group>"; };
 		D17E200A24DEDA59007F4B8E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		D17E200C24DEDA59007F4B8E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		D17E203424DEDAEC007F4B8E /* RailwayModernWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RailwayModernWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -680,6 +686,9 @@
 				D1B851BE2641D1060008FF97 /* RailwayIntentsExtension.entitlements */,
 				D1B851A02641B76B0008FF97 /* IntentHandler.swift */,
 				D1B851AB2641B86F0008FF97 /* GetNextTicketIntentHandler.swift */,
+				D17785662642E551005C6B88 /* GetUpcomingTicketsIntentHandler.swift */,
+				D17785682642E5CD005C6B88 /* PlaceModelExtension.swift */,
+				D177856A2642E5EF005C6B88 /* TicketModelExtension.swift */,
 				D1B851A92641B77F0008FF97 /* Intents.intentdefinition */,
 				D1B851A22641B76B0008FF97 /* Info.plist */,
 			);
@@ -1434,12 +1443,14 @@
 				D1B851B62641B9500008FF97 /* NotificationSettingsCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1B851B72641B9500008FF97 /* StationCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1B851AA2641B77F0008FF97 /* Intents.intentdefinition in Sources */,
+				D17785672642E551005C6B88 /* GetUpcomingTicketsIntentHandler.swift in Sources */,
 				D1B851B32641B9500008FF97 /* StationCoreDataModel+CoreDataClass.swift in Sources */,
 				D1B851BA2641B9620008FF97 /* Date.swift in Sources */,
 				D1B851AE2641B9270008FF97 /* Ticket.swift in Sources */,
 				D1B851A12641B76B0008FF97 /* IntentHandler.swift in Sources */,
 				D1B851B52641B9500008FF97 /* PlaceCoreDataModel+CoreDataClass.swift in Sources */,
 				D1B851AF2641B92B0008FF97 /* Station.swift in Sources */,
+				D17785692642E5CD005C6B88 /* PlaceModelExtension.swift in Sources */,
 				D1B851B92641B9500008FF97 /* TicketCoreDataModel+CoreDataProperties.swift in Sources */,
 				D1B851BB2641B96A0008FF97 /* DateFormatters.swift in Sources */,
 				D1B851B02641B9340008FF97 /* Place.swift in Sources */,
@@ -1448,6 +1459,7 @@
 				D1B851AC2641B86F0008FF97 /* GetNextTicketIntentHandler.swift in Sources */,
 				D1B851B82641B9500008FF97 /* TicketCoreDataModel+CoreDataClass.swift in Sources */,
 				D1B851B42641B9500008FF97 /* PlaceCoreDataModel+CoreDataProperties.swift in Sources */,
+				D177856B2642E5EF005C6B88 /* TicketModelExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
