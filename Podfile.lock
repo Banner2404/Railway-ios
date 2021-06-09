@@ -4,7 +4,6 @@ PODS:
     - AppAuth/ExternalUserAgent (= 1.4.0)
   - AppAuth/Core (1.4.0)
   - AppAuth/ExternalUserAgent (1.4.0)
-  - Differentiator (4.0.1)
   - Firebase/CoreOnly (6.34.0):
     - FirebaseCore (= 6.10.4)
   - Firebase/Crashlytics (6.34.0):
@@ -62,30 +61,16 @@ PODS:
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.12)
   - Reveal-SDK (24)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxDataSources (4.0.1):
-    - Differentiator (~> 4.0)
-    - RxCocoa (~> 5.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - Firebase/Crashlytics
   - GoogleAPIClientForREST/Gmail
   - GoogleSignIn
   - Reveal-SDK (= 24)
-  - RxCocoa
-  - RxDataSources
-  - RxSwift
 
 SPEC REPOS:
   trunk:
     - AppAuth
-    - Differentiator
     - Firebase
     - FirebaseCore
     - FirebaseCoreDiagnostics
@@ -100,14 +85,9 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Reveal-SDK
-    - RxCocoa
-    - RxDataSources
-    - RxRelay
-    - RxSwift
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
-  Differentiator: 886080237d9f87f322641dedbc5be257061b0602
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
@@ -122,11 +102,7 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 1ad7c6967d660482442554823f7d4b51fc4c2ca3
+PODFILE CHECKSUM: b81074fd80e473effa715fcaf5b3bd5cf6f5fad7
 
 COCOAPODS: 1.10.1

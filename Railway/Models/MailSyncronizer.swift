@@ -142,16 +142,16 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             let disposable = Disposables.create()
             self.gmailService.executeQuery(query) { (ticket, data, error) in
                 if let error = error {
-                    handler(.error(error))
+                    handler(.failure(error))
                     return
                 }
                 guard let data = data else {
-                    handler(.error(GenericError.message("Unable to get data from server")))
+                    handler(.failure(GenericError.message("Unable to get data from server")))
                     return
                 }
                 guard let messagesList = data as? GTLRGmail_ListMessagesResponse,
                     let messages = messagesList.messages else {
-                    handler(.error(GenericError.message("Incorrect data type from server")))
+                    handler(.failure(GenericError.message("Incorrect data type from server")))
                     return
                 }
                 self.saveSyncDate()
@@ -165,22 +165,22 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         return Single.create { handler -> Disposable in
             let disposable = Disposables.create()
             guard let id = message.identifier else {
-                handler(.error(GenericError.message("Nil message identifier")))
+                handler(.failure(GenericError.message("Nil message identifier")))
                 return disposable
             }
             let query = GTLRGmailQuery_UsersMessagesGet.query(withUserId: "me", identifier: id)
             self.gmailService.executeQuery(query) { (_, data, error) in
                 if let error = error {
-                    handler(.error(error))
+                    handler(.failure(error))
                     return
                 }
                 guard let data = data else {
-                    handler(.error(GenericError.message("Unable to get data from server")))
+                    handler(.failure(GenericError.message("Unable to get data from server")))
                     return
                 }
                 guard let message = data as? GTLRGmail_Message else {
-                        handler(.error(GenericError.message("Incorrect data type from server")))
-                        return
+                    handler(.failure(GenericError.message("Incorrect data type from server")))
+                    return
                 }
                 handler(.success(message))
             }
@@ -193,22 +193,22 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             let disposable = Disposables.create()
             guard let messageId = message.identifier,
                 let attachmentId = message.payload?.parts?.first(where: { $0.mimeType == "application/pdf"})?.body?.attachmentId else {
-                handler(.error(GenericError.message("Unable to get attachment")))
+                handler(.failure(GenericError.message("Unable to get attachment")))
                 return disposable
             }
             let query = GTLRGmailQuery_UsersMessagesAttachmentsGet.query(withUserId: "me", messageId: messageId, identifier: attachmentId)
             self.gmailService.executeQuery(query) { (_, data, error) in
                 if let error = error {
-                    handler(.error(error))
+                    handler(.failure(error))
                     return
                 }
                 guard let data = data else {
-                    handler(.error(GenericError.message("Unable to get data from server")))
+                    handler(.failure(GenericError.message("Unable to get data from server")))
                     return
                 }
                 guard let attachment = data as? GTLRGmail_MessagePartBody,
                     let attachmentData = attachment.data else {
-                    handler(.error(GenericError.message("Incorrect data type from server")))
+                    handler(.failure(GenericError.message("Incorrect data type from server")))
                     return
                 }
                 handler(.success(attachmentData))
@@ -248,12 +248,12 @@ extension GmailSyncronizer: GIDSignInDelegate {
         if let error = error {
             print(error.localizedDescription)
             isAuthenticatedRelay.accept(false)
-            signInHandler?(.error(error))
+            signInHandler?(.failure(error))
             return
         }
         guard let user = user else {
             isAuthenticatedRelay.accept(false)
-            signInHandler?(.error(GenericError.message("Unable to get user data")))
+            signInHandler?(.failure(GenericError.message("Unable to get user data")))
             return
         }
         gmailService.authorizer = user.authentication.fetcherAuthorizer()

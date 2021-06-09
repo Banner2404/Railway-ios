@@ -4,9 +4,6 @@ platform :ios, '11.3'
 
 def shared_pods
     pod 'Firebase/Crashlytics'
-    pod 'RxSwift'
-    pod 'RxCocoa'
-    pod 'RxDataSources'
     pod 'Reveal-SDK', '24', :configurations => ['Debug']
     pod 'GoogleAPIClientForREST/Gmail'
     pod 'GoogleSignIn'
@@ -18,21 +15,6 @@ end
 
 target 'RailwayTests' do
     shared_pods
-end
-
-target 'RailwayWidget' do
-    pod 'RxSwift'
-    pod 'RxCocoa'
-end
-
-target 'RailwayModernWidgetExtension' do
-    pod 'RxSwift'
-    pod 'RxCocoa'
-end
-
-target 'RailwayIntentsExtension' do
-    pod 'RxSwift'
-    pod 'RxCocoa'
 end
 
 post_install do |installer|
