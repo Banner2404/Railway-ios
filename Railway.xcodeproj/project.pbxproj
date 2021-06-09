@@ -153,6 +153,7 @@
 		D1BB873B211F2420005D8FB6 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12BEBBC207934ED0044F6F1 /* Place.swift */; };
 		D1BB873D211F26AE005D8FB6 /* TicketExpandedRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BB873C211F26AE005D8FB6 /* TicketExpandedRowController.swift */; };
 		D1BB873E211F27AD005D8FB6 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D133E97C2083CC9B00D007F4 /* DateFormatters.swift */; };
+		D1C25E7C267153F300AA7863 /* GoogleAPIClientForREST_Gmail in Frameworks */ = {isa = PBXBuildFile; productRef = D1C25E7B267153F300AA7863 /* GoogleAPIClientForREST_Gmail */; };
 		D1C7C5452132CE30008E6288 /* AddPlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5472132CE30008E6288 /* AddPlaceView.xib */; };
 		D1C7C54A2132CEF9008E6288 /* ExpandedTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C54C2132CEF9008E6288 /* ExpandedTicketView.xib */; };
 		D1C7C5512132D05D008E6288 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1C7C5532132D05D008E6288 /* Localizable.strings */; };
@@ -508,6 +509,7 @@
 				D14133BB2671426800BF1262 /* RxDataSources in Frameworks */,
 				D14133C92671487900BF1262 /* FirebaseCrashlytics in Frameworks */,
 				D14133C0267143A200BF1262 /* RxSwift in Frameworks */,
+				D1C25E7C267153F300AA7863 /* GoogleAPIClientForREST_Gmail in Frameworks */,
 				EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -954,6 +956,7 @@
 				D14133BD267143A200BF1262 /* RxCocoa */,
 				D14133BF267143A200BF1262 /* RxSwift */,
 				D14133C82671487900BF1262 /* FirebaseCrashlytics */,
+				D1C25E7B267153F300AA7863 /* GoogleAPIClientForREST_Gmail */,
 			);
 			productName = Railway;
 			productReference = D1DBE70E20741A06000587C8 /* Railway.app */;
@@ -1032,6 +1035,7 @@
 				D14133B92671426800BF1262 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				D14133BC267143A200BF1262 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				D14133C72671487900BF1262 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D1C25E782671512B00AA7863 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */,
 			);
 			productRefGroup = D1DBE70F20741A06000587C8 /* Products */;
 			projectDirPath = "";
@@ -1177,7 +1181,6 @@
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1185,7 +1188,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1203,7 +1205,6 @@
 				"${BUILT_PRODUCTS_DIR}/AppAuth/AppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1211,7 +1212,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1958,6 +1958,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1968,7 +1969,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = _MOCK_DATA;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "_MOCK_DATA SWIFT_PACKAGE=1";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -2016,6 +2017,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "SWIFT_PACKAGE=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -2025,6 +2027,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE=1";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -2190,6 +2193,14 @@
 				minimumVersion = 7.3.0;
 			};
 		};
+		D1C25E782671512B00AA7863 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/google-api-objectivec-client-for-rest";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2227,6 +2238,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D14133C72671487900BF1262 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		D1C25E7B267153F300AA7863 /* GoogleAPIClientForREST_Gmail */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1C25E782671512B00AA7863 /* XCRemoteSwiftPackageReference "google-api-objectivec-client-for-rest" */;
+			productName = GoogleAPIClientForREST_Gmail;
 		};
 /* End XCSwiftPackageProductDependency section */
 

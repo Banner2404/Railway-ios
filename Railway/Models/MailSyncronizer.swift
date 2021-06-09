@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import GoogleSignIn
-import GoogleAPIClientForREST
+import GoogleAPIClientForREST_Gmail
 
 protocol MailSyncronizer {
     
