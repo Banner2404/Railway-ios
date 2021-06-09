@@ -74,7 +74,7 @@ private extension SettingsViewController {
     
     func connectGmail() {
         viewModel.signInMail(on: self)
-            .subscribe(onError: { error in
+            .subscribe(onFailure: { error in
                 print(error)
             })
             .disposed(by: disposeBag)

@@ -71,7 +71,7 @@ class DefaultDatabaseManager: DatabaseManager {
         do {
             let tickets = try managedContext
                 .fetch(TicketCoreDataModel.fetchRequest())
-                .map { Ticket($0 as! TicketCoreDataModel) }
+                .map { Ticket($0) }
             self.tickets.onNext(tickets)
             return tickets
         } catch {

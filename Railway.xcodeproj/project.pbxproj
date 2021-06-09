@@ -61,6 +61,7 @@
 		D14133C2267143FB00BF1262 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D14133C1267143FB00BF1262 /* RxSwift */; };
 		D14133C42671441100BF1262 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D14133C32671441100BF1262 /* RxSwift */; };
 		D14133C62671442F00BF1262 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D14133C52671442F00BF1262 /* RxSwift */; };
+		D14133C92671487900BF1262 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D14133C82671487900BF1262 /* FirebaseCrashlytics */; };
 		D1417B6E20D6D81C00A99DD8 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1417B6D20D6D81C00A99DD8 /* NotificationManager.swift */; };
 		D14A6824212DF50600BB1A69 /* PhoneConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14A6823212DF50600BB1A69 /* PhoneConnectivityManager.swift */; };
 		D156A837249BCA1600AD7D2B /* MessageProcessorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156A836249BCA1600AD7D2B /* MessageProcessorTests.swift */; };
@@ -505,6 +506,7 @@
 			files = (
 				D14133BE267143A200BF1262 /* RxCocoa in Frameworks */,
 				D14133BB2671426800BF1262 /* RxDataSources in Frameworks */,
+				D14133C92671487900BF1262 /* FirebaseCrashlytics in Frameworks */,
 				D14133C0267143A200BF1262 /* RxSwift in Frameworks */,
 				EC21ADD328B6DA7D6B600587 /* Pods_Railway.framework in Frameworks */,
 			);
@@ -951,6 +953,7 @@
 				D14133BA2671426800BF1262 /* RxDataSources */,
 				D14133BD267143A200BF1262 /* RxCocoa */,
 				D14133BF267143A200BF1262 /* RxSwift */,
+				D14133C82671487900BF1262 /* FirebaseCrashlytics */,
 			);
 			productName = Railway;
 			productReference = D1DBE70E20741A06000587C8 /* Railway.app */;
@@ -1028,6 +1031,7 @@
 			packageReferences = (
 				D14133B92671426800BF1262 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				D14133BC267143A200BF1262 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D14133C72671487900BF1262 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D1DBE70F20741A06000587C8 /* Products */;
 			projectDirPath = "";
@@ -1174,10 +1178,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1185,10 +1186,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1206,10 +1204,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMAppAuth/GTMAppAuth.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${PODS_ROOT}/Reveal-SDK/RevealServer/iOS/RevealServer.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1217,10 +1212,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMAppAuth.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1260,7 +1252,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${BUILD_DIR%Build/*}SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		E56219E6EA03A31FAD9D30EE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2190,6 +2182,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		D14133C72671487900BF1262 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2222,6 +2222,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D14133BC267143A200BF1262 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		D14133C82671487900BF1262 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D14133C72671487900BF1262 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 

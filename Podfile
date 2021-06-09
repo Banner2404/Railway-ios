@@ -3,7 +3,6 @@ use_frameworks!
 platform :ios, '11.3'
 
 def shared_pods
-    pod 'Firebase/Crashlytics'
     pod 'Reveal-SDK', '24', :configurations => ['Debug']
     pod 'GoogleAPIClientForREST/Gmail'
     pod 'GoogleSignIn'

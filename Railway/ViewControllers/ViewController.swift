@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ViewControllerProtocol: class {
+protocol ViewControllerProtocol: AnyObject {
     static func loadViewControllerFromStoryboard() -> Self
 }
 
