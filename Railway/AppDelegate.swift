@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 import Firebase
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var watchConnectivityManager: WatchConnectivityManager!
     var widgetRefreshManager: WidgetRefreshManager!
     var mailSyncronizer: MailSyncronizer!
+    var disposeBag = DisposeBag()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GIDSignIn.sharedInstance().clientID = "828532157765-6v55upkt90dsau7mh3m8qvi13bbiveq4.apps.googleusercontent.com"
@@ -38,10 +40,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        mailSyncronizer.sync()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            completionHandler(.noData)
-        }
+        print("Background fetch started")
+        mailSyncronizer.rxSync()
+            .subscribe(onSuccess: { tickets in
+                print("Background fetch complete: \(tickets.count) new tickets")
+                completionHandler(tickets.isEmpty ? .noData : .newData)
+            }, onError: { error in
+                print("Background fetch failed \(error)")
+                completionHandler(.failed)
+            })
+            .disposed(by: disposeBag)
     }
     
     func application(_ app: UIApplication, open url: URL,

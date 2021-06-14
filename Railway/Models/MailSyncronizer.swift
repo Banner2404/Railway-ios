@@ -20,6 +20,7 @@ protocol MailSyncronizer {
     
     func requestSignIn(on viewController: UIViewController) -> Single<Void>
     func signOut()
+    func rxSync() -> Single<[Ticket]>
     func sync()
 }
 
@@ -98,9 +99,8 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
         isAuthenticatedRelay.accept(false)
     }
 
-    func sync() {
-        isSyncronizingRelay.accept(true)
-        fetchMessagesList()
+    func rxSync() -> Single<[Ticket]> {
+        return fetchMessagesList()
             .asObservable()
             .flatMap { messages in
                 Observable.from(messages)
@@ -124,13 +124,21 @@ class GmailSyncronizer: NSObject, MailSyncronizer {
             .flatMap { tickets in
                 Observable.from(tickets)
             }
-            .subscribe(onNext: { ticket in
+            .do(onNext: { ticket in
                 self.newTicketsSubject.onNext(ticket)
             }, onError: { _ in
                 self.isSyncronizingRelay.accept(false)
             }, onCompleted: {
                 self.isSyncronizingRelay.accept(false)
+            }, onSubscribe: {
+                self.isSyncronizingRelay.accept(true)
             })
+            .toArray()
+    }
+
+    func sync() {
+        rxSync()
+            .subscribe()
             .disposed(by: disposeBag)
     }
     
